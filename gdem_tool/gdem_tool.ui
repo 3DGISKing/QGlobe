@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>gdem_toolClass</class>
+ <widget class="QMainWindow" name="gdem_toolClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>598</width>
+    <height>66</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>gdem_tool</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>32</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>598</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <addaction name="actionShowGDemExtractDlg"/>
+    <addaction name="actionHopeDBToGDem"/>
+    <addaction name="actionWriteRemoveJgw"/>
+    <addaction name="actionShowSimpleBuildingProDlg"/>
+    <addaction name="actionLatLongToImage"/>
+    <addaction name="actionImageMerge"/>
+    <addaction name="actionGeoShape"/>
+   </widget>
+   <widget class="QMenu" name="menuSqlBrowser">
+    <property name="title">
+     <string>SqlBrowser</string>
+    </property>
+    <addaction name="actionSqlBrowser"/>
+   </widget>
+   <widget class="QMenu" name="menuUtility">
+    <property name="title">
+     <string>Utility</string>
+    </property>
+    <addaction name="actionTileLatLong"/>
+    <addaction name="actionKeyGenerator"/>
+    <addaction name="actionMergeJpgFiles"/>
+   </widget>
+   <widget class="QMenu" name="menuKML">
+    <property name="title">
+     <string>KML</string>
+    </property>
+    <addaction name="actionKMLMaker"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuSqlBrowser"/>
+   <addaction name="menuKML"/>
+   <addaction name="menuUtility"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionShowGDemExtractDlg">
+   <property name="text">
+    <string>Extract</string>
+   </property>
+  </action>
+  <action name="actionShowSimpleBuildingProDlg">
+   <property name="text">
+    <string>Generate Simple Building </string>
+   </property>
+  </action>
+  <action name="actionHopeDBToGDem">
+   <property name="text">
+    <string>Make Gt File</string>
+   </property>
+  </action>
+  <action name="actionWriteRemoveJgw">
+   <property name="text">
+    <string>Write Or Remove jgw files</string>
+   </property>
+  </action>
+  <action name="actionLatLongToImage">
+   <property name="text">
+    <string>Tiling Image</string>
+   </property>
+  </action>
+  <action name="actionImageMerge">
+   <property name="text">
+    <string>Merge Images</string>
+   </property>
+  </action>
+  <action name="actionShowBrowser">
+   <property name="text">
+    <string>ShowBrowser</string>
+   </property>
+  </action>
+  <action name="actionSqlBrowser">
+   <property name="text">
+    <string>SqlBrowser</string>
+   </property>
+  </action>
+  <action name="actionTileLatLong">
+   <property name="text">
+    <string>TileLatLong</string>
+   </property>
+  </action>
+  <action name="actionGeoShape">
+   <property name="text">
+    <string>Make GeoShape</string>
+   </property>
+  </action>
+  <action name="actionKMLMaker">
+   <property name="text">
+    <string>KMLMaker</string>
+   </property>
+  </action>
+  <action name="actionKeyGenerator">
+   <property name="text">
+    <string>KeyGenerator</string>
+   </property>
+  </action>
+  <action name="actionMergeJpgFiles">
+   <property name="text">
+    <string>Merge Jpg Files</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="gdem_tool.qrc"/>
+ </resources>
+ <connections/>
+</ui>

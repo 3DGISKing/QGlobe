@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GDEM Client</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionOpenFile"/>
+    <addaction name="actionSaveMyPlace"/>
+    <addaction name="actionSaveAsPlaceMarkFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveImage"/>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionMoveToMyPlace"/>
+    <addaction name="separator"/>
+    <addaction name="actionImageCopy"/>
+    <addaction name="separator"/>
+    <addaction name="actionContentDel"/>
+    <addaction name="separator"/>
+    <addaction name="actionFindHistoryDel"/>
+    <addaction name="separator"/>
+    <addaction name="actionProperty"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuViewSize">
+     <property name="title">
+      <string>View Size</string>
+     </property>
+     <widget class="QMenu" name="menuComputer">
+      <property name="title">
+       <string>Computer Playback</string>
+      </property>
+      <addaction name="actionVGA"/>
+      <addaction name="actionSVGA"/>
+     </widget>
+     <widget class="QMenu" name="menuTV">
+      <property name="title">
+       <string>TV Playback</string>
+      </property>
+      <addaction name="actionNTSC"/>
+      <addaction name="actionPAL"/>
+      <addaction name="actionWideNTSC"/>
+      <addaction name="actionWidePAL"/>
+      <addaction name="action1080pHDTV"/>
+      <addaction name="action720pHDTV"/>
+      <addaction name="action480pDVD"/>
+     </widget>
+     <widget class="QMenu" name="menuPrintOutput">
+      <property name="title">
+       <string>Print Output</string>
+      </property>
+      <addaction name="actionLetter"/>
+      <addaction name="actionTabloid"/>
+      <addaction name="actionPostCard1"/>
+      <addaction name="actionPostCard2"/>
+     </widget>
+     <addaction name="menuComputer"/>
+     <addaction name="menuTV"/>
+     <addaction name="menuPrintOutput"/>
+    </widget>
+    <widget class="QMenu" name="menuNavigation">
+     <property name="title">
+      <string>Show Navigation</string>
+     </property>
+     <addaction name="actionNavAuto"/>
+     <addaction name="actionNavAlways"/>
+     <addaction name="actionNavDial"/>
+     <addaction name="actionNavNever"/>
+    </widget>
+    <widget class="QMenu" name="menuToolbar">
+     <property name="title">
+      <string>Toolbar</string>
+     </property>
+     <addaction name="actionShowStandardToolBar"/>
+     <addaction name="actionShowSimulationToolBar"/>
+    </widget>
+    <addaction name="actionGrid"/>
+    <addaction name="separator"/>
+    <addaction name="menuViewSize"/>
+    <addaction name="actionFullScreen"/>
+    <addaction name="separator"/>
+    <addaction name="menuNavigation"/>
+    <addaction name="separator"/>
+    <addaction name="menuToolbar"/>
+    <addaction name="actionStatusbar"/>
+    <addaction name="actionSidebar"/>
+    <addaction name="actionShowOverviewMap"/>
+    <addaction name="separator"/>
+    <addaction name="actionBuildingName"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="title">
+     <string>&amp;Setting</string>
+    </property>
+    <addaction name="actionOption"/>
+    <addaction name="actionServer"/>
+    <addaction name="actionContourSetting"/>
+    <addaction name="actionGeoshapeFormat"/>
+    <addaction name="actionObjectSetting"/>
+    <addaction name="separator"/>
+    <addaction name="actionLicence"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionHelpManual"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuLayer">
+    <property name="title">
+     <string>&amp;Layers</string>
+    </property>
+    <widget class="QMenu" name="menuRender">
+     <property name="title">
+      <string>Render</string>
+     </property>
+     <addaction name="actionRenderTexture"/>
+     <addaction name="actionRenderAltitude"/>
+     <addaction name="actionRenderGradient"/>
+     <addaction name="actionRenderIncline"/>
+    </widget>
+    <addaction name="actionTerrain"/>
+    <addaction name="menuRender"/>
+    <addaction name="actionContour"/>
+   </widget>
+   <widget class="QMenu" name="menuAdd">
+    <property name="title">
+     <string>&amp;Add</string>
+    </property>
+    <addaction name="actionAddFolder"/>
+    <addaction name="actionAddPlaceMark"/>
+    <addaction name="actionAddPath"/>
+    <addaction name="actionAddPolygon"/>
+    <addaction name="actionAdd3DObject"/>
+    <addaction name="actionObjectPlaceEdit"/>
+   </widget>
+   <widget class="QMenu" name="menuFind">
+    <property name="title">
+     <string>Find</string>
+    </property>
+    <addaction name="actionBuildingFind"/>
+    <addaction name="actionPeopleFind"/>
+   </widget>
+   <widget class="QMenu" name="menuSimulation">
+    <property name="title">
+     <string>Simulation</string>
+    </property>
+    <addaction name="actionFlightSimulator"/>
+    <addaction name="actionCarSimulator"/>
+    <addaction name="actionTourPlay"/>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionRuler"/>
+    <addaction name="actionMeasureArea"/>
+    <addaction name="actionGoTo"/>
+    <addaction name="actionSaveStartPos"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuFind"/>
+   <addaction name="menuView"/>
+   <addaction name="menuLayer"/>
+   <addaction name="menuAdd"/>
+   <addaction name="menuTool"/>
+   <addaction name="menuSimulation"/>
+   <addaction name="menuSetting"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionImageCopy">
+   <property name="text">
+    <string>Copy Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionContentDel">
+   <property name="text">
+    <string>Delete Contents</string>
+   </property>
+  </action>
+  <action name="actionFindHistoryDel">
+   <property name="text">
+    <string>Clear Search History</string>
+   </property>
+  </action>
+  <action name="actionProperty">
+   <property name="text">
+    <string>Properties</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Return</string>
+   </property>
+  </action>
+  <action name="actionSidebar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sidebar</string>
+   </property>
+  </action>
+  <action name="actionFullScreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F11</string>
+   </property>
+  </action>
+  <action name="actionStatusbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Status Bar</string>
+   </property>
+  </action>
+  <action name="actionGrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Grid</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionScaleLegend">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Scale Legend</string>
+   </property>
+  </action>
+  <action name="actionSaveStartPos1">
+   <property name="text">
+    <string>Make this my start location</string>
+   </property>
+  </action>
+  <action name="actionVGA">
+   <property name="text">
+    <string>640 x 480</string>
+   </property>
+   <property name="toolTip">
+    <string>640 x 480</string>
+   </property>
+  </action>
+  <action name="actionSVGA">
+   <property name="text">
+    <string>800 x 600</string>
+   </property>
+   <property name="toolTip">
+    <string>800 x 600</string>
+   </property>
+  </action>
+  <action name="actionNTSC">
+   <property name="text">
+    <string>720 x 486(NTSC)</string>
+   </property>
+  </action>
+  <action name="actionPAL">
+   <property name="text">
+    <string>720 x 576(PAL)</string>
+   </property>
+  </action>
+  <action name="actionWideNTSC">
+   <property name="text">
+    <string>864 x 486(NTSC 16:9)</string>
+   </property>
+  </action>
+  <action name="actionWidePAL">
+   <property name="text">
+    <string>1024 x 576(PAL 16:9)</string>
+   </property>
+  </action>
+  <action name="action1080pHDTV">
+   <property name="text">
+    <string>1920 x 1080p(HDTV)</string>
+   </property>
+  </action>
+  <action name="action720pHDTV">
+   <property name="text">
+    <string>1280 x 720p(HDTV)</string>
+   </property>
+  </action>
+  <action name="action480pDVD">
+   <property name="text">
+    <string>852 x 480p(DVD)</string>
+   </property>
+  </action>
+  <action name="actionLetter">
+   <property name="text">
+    <string>8.5 in. * 11 in.(Landscape Aspect ratio)</string>
+   </property>
+  </action>
+  <action name="actionTabloid">
+   <property name="text">
+    <string>11 in. * 17 in.(Landscape Aspect ratio)</string>
+   </property>
+  </action>
+  <action name="actionPostCard1">
+   <property name="text">
+    <string>5 in. * 7 in.(Landscape Aspect ratio))</string>
+   </property>
+  </action>
+  <action name="actionPostCard2">
+   <property name="text">
+    <string>4 in. * 6 in.(Landscape Aspect ratio)</string>
+   </property>
+  </action>
+  <action name="actionNavAuto">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Automatically</string>
+   </property>
+  </action>
+  <action name="actionNavAlways">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Always</string>
+   </property>
+  </action>
+  <action name="actionNavDial">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Compass Only</string>
+   </property>
+  </action>
+  <action name="actionNavNever">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Never</string>
+   </property>
+  </action>
+  <action name="actionOption">
+   <property name="text">
+    <string>Options...</string>
+   </property>
+  </action>
+  <action name="actionAddFolder">
+   <property name="text">
+    <string>Folder</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionAddPlaceMark">
+   <property name="text">
+    <string>Placemark</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Placemark</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+  <action name="actionHelpManual">
+   <property name="text">
+    <string>User Guide</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About GDEM Client</string>
+   </property>
+  </action>
+  <action name="actionRuler1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Ruler</string>
+   </property>
+   <property name="toolTip">
+    <string>Show Ruler</string>
+   </property>
+  </action>
+  <action name="actionOpenFile">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSaveAsPlaceMarkFile">
+   <property name="text">
+    <string>Save Place As ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionMoveToMyPlaceq">
+   <property name="text">
+    <string>Move to My Places</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionSaveMyPlace">
+   <property name="text">
+    <string>Save My Places</string>
+   </property>
+  </action>
+  <action name="actionSaveImage">
+   <property name="text">
+    <string>Save Image</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionContourSetting">
+   <property name="text">
+    <string>Contour Setting</string>
+   </property>
+  </action>
+  <action name="actionTerrain">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Terrain</string>
+   </property>
+  </action>
+  <action name="actionContour">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Contour</string>
+   </property>
+  </action>
+  <action name="actionServer">
+   <property name="text">
+    <string>Server Setting</string>
+   </property>
+  </action>
+  <action name="actionAddPath">
+   <property name="text">
+    <string>Path</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Path</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+T</string>
+   </property>
+  </action>
+  <action name="actionAddPolygon">
+   <property name="text">
+    <string>Polygon</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Polygon</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+G</string>
+   </property>
+  </action>
+  <action name="actionFlightSimulator1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enter Flight Simulator</string>
+   </property>
+  </action>
+  <action name="actionCarSimulator1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enter Car Simulator</string>
+   </property>
+  </action>
+  <action name="actionTourPlay1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>TourPlay</string>
+   </property>
+  </action>
+  <action name="actionRenderTexture">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Texture</string>
+   </property>
+  </action>
+  <action name="actionRenderAltitude">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Altitude</string>
+   </property>
+  </action>
+  <action name="actionRenderGradient">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Gradient</string>
+   </property>
+  </action>
+  <action name="actionRenderIncline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Incline</string>
+   </property>
+  </action>
+  <action name="actionAdd3DObject">
+   <property name="text">
+    <string>Add 3D Object...</string>
+   </property>
+  </action>
+  <action name="actionAddPeople">
+   <property name="text">
+    <string>Add People...</string>
+   </property>
+  </action>
+  <action name="actionBuildingFind">
+   <property name="text">
+    <string>BuildingFind</string>
+   </property>
+  </action>
+  <action name="actionPeopleFind">
+   <property name="text">
+    <string>PeopleFind</string>
+   </property>
+  </action>
+  <action name="actionGeoshapeFormat">
+   <property name="text">
+    <string>Geoshape Format...</string>
+   </property>
+  </action>
+  <action name="actionLicence">
+   <property name="text">
+    <string>Licence</string>
+   </property>
+  </action>
+  <action name="actionBuildingName">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Building Name</string>
+   </property>
+  </action>
+  <action name="actionFlightSimulator">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enter Flight Simulator</string>
+   </property>
+  </action>
+  <action name="actionCarSimulator">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enter Car Simulator</string>
+   </property>
+  </action>
+  <action name="actionTourPlay">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>TourPlay</string>
+   </property>
+  </action>
+  <action name="actionRuler">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Ruler</string>
+   </property>
+  </action>
+  <action name="actionSaveStartPos">
+   <property name="text">
+    <string>Make this my start location</string>
+   </property>
+  </action>
+  <action name="actionShowStandardToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Standard</string>
+   </property>
+  </action>
+  <action name="actionShowSimulationToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Simulation</string>
+   </property>
+  </action>
+  <action name="actionMoveToMyPlace">
+   <property name="text">
+    <string>Move To My Place</string>
+   </property>
+  </action>
+  <action name="actionShowOverviewMap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Overview Map</string>
+   </property>
+  </action>
+  <action name="actionAnimation">
+   <property name="text">
+    <string>Animation...</string>
+   </property>
+  </action>
+  <action name="actionMeasureArea">
+   <property name="text">
+    <string>Measure Area</string>
+   </property>
+  </action>
+  <action name="actionObjectPlaceEdit">
+   <property name="text">
+    <string>ObjectPlaceEdit...</string>
+   </property>
+  </action>
+  <action name="actionObjectSetting">
+   <property name="text">
+    <string>ObjectSetting...</string>
+   </property>
+  </action>
+  <action name="actionGoTo">
+   <property name="text">
+    <string>GoTo</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

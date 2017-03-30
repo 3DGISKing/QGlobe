@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GDSTestSuiteClass</class>
+ <widget class="QMainWindow" name="GDSTestSuiteClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GDSTestSuite</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>0</y>
+      <width>601</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCommand">
+    <property name="title">
+     <string>Command</string>
+    </property>
+    <widget class="QMenu" name="menuTest_Module">
+     <property name="title">
+      <string>Test Module</string>
+     </property>
+     <addaction name="actionFlow_Test"/>
+     <addaction name="actionSynchronize_Test"/>
+     <addaction name="actionAsynchronize_Test"/>
+    </widget>
+    <addaction name="actionStart_Server"/>
+    <addaction name="actionStop_Server"/>
+    <addaction name="separator"/>
+    <addaction name="menuTest_Module"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuCommand"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionStart_Server">
+   <property name="text">
+    <string>Start Server</string>
+   </property>
+  </action>
+  <action name="actionStop_Server">
+   <property name="text">
+    <string>Stop Server</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionFlow_Test">
+   <property name="text">
+    <string>Flow Test</string>
+   </property>
+  </action>
+  <action name="actionSynchronize_Test">
+   <property name="text">
+    <string>Synchronize Test</string>
+   </property>
+  </action>
+  <action name="actionAsynchronize_Test">
+   <property name="text">
+    <string>Asynchronize Test</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="gdstestsuite.qrc"/>
+ </resources>
+ <connections/>
+</ui>

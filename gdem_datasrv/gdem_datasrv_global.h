@@ -1,0 +1,11 @@
+#ifndef GDEM_DATASRV_GLOBAL_H
+#define GDEM_DATASRV_GLOBAL_H
+
+#include <qglobal.h>
+
+#ifdef GDEM_STATIC_LIBRARY
+# define GDEM_DATASRV_EXPORT Q_DECL_IMPORT
+#else
+# define GDEM_DATASRV_EXPORT Q_DECL_EXPORT
+#endif
+#endif // GDEM_DATASRV_GLOBAL_H

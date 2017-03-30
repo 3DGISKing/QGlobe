@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>placemarkcontent/back.png</file>
+        <file>placemarkcontent/close.png</file>
+        <file>placemarkcontent/play.png</file>
+        <file>placemarkcontent/titlebar.png</file>
+        <file>placemarkcontent/screen.png</file>
+    </qresource>
+</RCC>
