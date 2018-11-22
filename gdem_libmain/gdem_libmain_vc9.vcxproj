@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Alone|Win32">
+      <Configuration>Debug_Alone</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Alone|Win32">
+      <Configuration>Release_Alone</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gdem_libmain</ProjectName>
+    <ProjectGuid>{B42799EE-C14E-4BD2-B68D-7F39BE7DCAAE}</ProjectGuid>
+    <RootNamespace>gdem_libmain</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_base;.\..\gdem_gis;.\..\gdem_tile;.\..\gdem_decodeimg;.\GeneratedFiles\$(Configuration);.\..\gdem_common;.\..\gdem_compress;.\..\gdem_render;.\..\gdem_sim;.\..\gdem_terrainengine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_THREAD_SUPPORT;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;GDEM_LIBMAIN_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_base;.\..\gdem_gis;.\..\gdem_tile;.\..\gdem_decodeimg;.\GeneratedFiles\$(Configuration);.\..\gdem_common;.\..\gdem_compress;.\..\gdem_render;.\..\gdem_sim;.\..\gdem_terrainengine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;DEBUG;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_NETWORK_LIB;GDEM_LIBMAIN_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_base;.\..\gdem_gis;.\..\gdem_tile;.\..\gdem_decodeimg;.\GeneratedFiles\$(Configuration);.\..\gdem_common;.\..\gdem_compress;.\..\gdem_render;.\..\gdem_sim;.\..\gdem_terrainengine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_NETWORK_LIB;GDEM_LIBMAIN_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_base;.\..\gdem_gis;.\..\gdem_tile;.\..\gdem_decodeimg;.\GeneratedFiles\$(Configuration);.\..\gdem_common;.\..\gdem_compress;.\..\gdem_render;.\..\gdem_sim;.\..\gdem_terrainengine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_THREAD_SUPPORT;QT_CORE_LIB;QT_NETWORK_LIB;GDEM_LIBMAIN_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_base;.\..\gdem_gis;.\..\gdem_tile;.\..\gdem_decodeimg;.\GeneratedFiles\$(Configuration);.\..\gdem_common;.\..\gdem_compress;.\..\gdem_render;.\..\gdem_sim;.\..\gdem_terrainengine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_THREAD_SUPPORT;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;GDEM_LIBMAIN_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="ColorRamp.cpp" />
+    <ClCompile Include="GDM_3DObjectCache.cpp" />
+    <ClCompile Include="GDM_CollisionHandler.cpp" />
+    <ClCompile Include="GDM_DataFunc.cpp" />
+    <ClCompile Include="GDM_DataMgr.cpp" />
+    <ClCompile Include="GDM_FPSTester.cpp" />
+    <ClCompile Include="GDM_GISDataCache.cpp" />
+    <ClCompile Include="GDM_Interface.cpp" />
+    <ClCompile Include="GDM_Jpeg.cpp" />
+    <ClCompile Include="GDM_LoadDataMgr.cpp" />
+    <ClCompile Include="GDM_Option.cpp" />
+    <ClCompile Include="GDM_ParsingTile.cpp" />
+    <ClCompile Include="GDM_PreProcessTile.cpp" />
+    <ClCompile Include="GDM_PyramidMgr.cpp" />
+    <ClCompile Include="GDM_QuadNode.cpp" />
+    <ClCompile Include="GDM_RequestMgr.cpp" />
+    <ClCompile Include="GDM_SimpleBuildingCache.cpp" />
+    <ClCompile Include="GDM_TextMgr.cpp" />
+    <ClCompile Include="GDM_ThreadMgr.cpp" />
+    <ClCompile Include="GDM_TileFunc.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="RasterStretchColorRampRenderer.cpp" />
+    <ClCompile Include="gis_contour.cpp" />
+    <ClCompile Include="GDM_Camera.cpp" />
+    <ClCompile Include="GDM_CameraAnimationHandler.cpp" />
+    <ClCompile Include="GDM_CacheDataMgr.cpp" />
+    <ClCompile Include="GDM_CacheMgr.cpp" />
+    <ClCompile Include="GDM_ContourCache.cpp" />
+    <ClCompile Include="GDM_FileCacheMgr.cpp" />
+    <ClCompile Include="GDM_TerrainPtCache.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="ColorRamp.h" />
+    <ClInclude Include="gdem_libmain_global.h" />
+    <ClInclude Include="GDM_3DObjectCache.h" />
+    <ClInclude Include="GDM_CollisionHandler.h" />
+    <ClInclude Include="GDM_DataMgr.h" />
+    <ClInclude Include="GDM_FPSTester.h" />
+    <ClInclude Include="GDM_GISDataCache.h" />
+    <ClInclude Include="GDM_Interface.h" />
+    <ClInclude Include="GDM_Jpeg.h" />
+    <ClInclude Include="GDM_LoadDataMgr.h" />
+    <ClInclude Include="GDM_PyramidMgr.h" />
+    <ClInclude Include="GDM_QuadNode.h" />
+    <ClInclude Include="GDM_RenderTile.h" />
+    <ClInclude Include="GDM_RequestMgr.h" />
+    <ClInclude Include="GDM_SimpleBuildingCache.h" />
+    <ClInclude Include="GDM_TextMgr.h" />
+    <ClInclude Include="GDM_ThreadMgr.h" />
+    <ClInclude Include="GDM_Tile.h" />
+    <ClInclude Include="GDM_TileFunc.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="RasterRenderer.h" />
+    <ClInclude Include="RasterStretchColorRampRenderer.h" />
+    <ClInclude Include="stable.h" />
+    <ClInclude Include="gis_contour.h" />
+    <ClInclude Include="GDM_Camera.h" />
+    <ClInclude Include="GDM_CameraAnimationHandler.h" />
+    <ClInclude Include="GDM_CacheDataMgr.h" />
+    <ClInclude Include="GDM_CacheMgr.h" />
+    <ClInclude Include="GDM_ContourCache.h" />
+    <ClInclude Include="GDM_FileCacheMgr.h" />
+    <ClInclude Include="GDM_TerrainPtCache.h" />
+    <ClInclude Include="IGDM_TextureIDCache.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gdem_common\gdem_common_vc9.vcxproj">
+      <Project>{4d0319f1-74ae-4dc5-a23e-c1048234f9ff}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" QtVersion="4.8.0" QtVersion_x0020_Win32="Qt4.8.5" RccDir=".\GeneratedFiles" UicDir=".\GeneratedFiles" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

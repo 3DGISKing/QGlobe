@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Alone|Win32">
+      <Configuration>Debug_Alone</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Alone|Win32">
+      <Configuration>Release_Alone</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gdem_render</ProjectName>
+    <ProjectGuid>{FA9CA6EE-F987-37BF-8585-676806C58C8A}</ProjectGuid>
+    <RootNamespace>gdem_render</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(SolutionDir)lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_libmain;.\..\gdem_base;.\..\gdem_tile;.\GeneratedFiles\$(Configuration);.\..\common;.\..\gdem_terrainengine;.\..\gdem_scene;.\..\gdem_common;.\..\gdem_gis;.\..\gdem_sim;.\..\gdem_client;.\..\gdem_client\generatedfiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stable.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)render.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <ObjectFileName>debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>stable.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_libmain;.\..\gdem_base;.\..\gdem_tile;.\GeneratedFiles\$(Configuration);.\..\common;.\..\gdem_terrainengine;.\..\gdem_scene;.\..\gdem_common;.\..\gdem_gis;.\..\gdem_sim;.\..\gdem_client;.\..\gdem_client\generatedfiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stable.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)render.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <ObjectFileName>release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ForcedIncludeFiles>stable.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_libmain;.\..\gdem_base;.\..\gdem_tile;.\GeneratedFiles\$(Configuration);.\..\common;.\..\gdem_terrainengine;.\..\gdem_scene;.\..\gdem_common;.\..\gdem_gis;.\..\gdem_sim;.\..\gdem_client;.\..\gdem_client\generatedfiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stable.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)render.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <ObjectFileName>debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>stable.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_libmain;.\..\gdem_base;.\..\gdem_tile;.\GeneratedFiles\$(Configuration);.\..\common;.\..\gdem_terrainengine;.\..\gdem_scene;.\..\gdem_common;.\..\gdem_gis;.\..\gdem_sim;.\..\gdem_client;.\..\gdem_client\generatedfiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stable.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)render.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <ObjectFileName>debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>stable.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.;$(QTDIR)\mkspecs\win32-msvc2005;.\..\gdem_datasrv;.\..\gdem_libmain;.\..\gdem_base;.\..\gdem_tile;.\GeneratedFiles\$(Configuration);.\..\common;.\..\gdem_terrainengine;.\..\gdem_scene;.\..\gdem_common;.\..\gdem_gis;.\..\gdem_sim;.\..\gdem_client;.\..\gdem_client\generatedfiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stable.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)render.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <ObjectFileName>release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ForcedIncludeFiles>stable.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>QT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cameracontroller.cpp" />
+    <ClCompile Include="GDM_ObjectAddCmd.cpp" />
+    <ClCompile Include="GeoMeshUtil.cpp" />
+    <ClCompile Include="rendersrv.cpp" />
+    <ClCompile Include="generatedfiles\release\moc_GDM_CommandDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\test\moc_GDM_CommandDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\debug_alone\moc_GDM_CommandDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\release_alone\moc_GDM_CommandDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\debug\moc_GDM_CommandDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="stable.h.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(INHERIT)</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(INHERIT)</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(INHERIT)</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(INHERIT)</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(INHERIT)</PrecompiledHeaderFile>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="GDM_CameraCmd.cpp" />
+    <ClCompile Include="GDM_Command.cpp" />
+    <ClCompile Include="GDM_CommandMgr.cpp" />
+    <ClCompile Include="GDM_DrawCmd.cpp" />
+    <ClCompile Include="GDM_DrawObjectCmd.cpp" />
+    <ClCompile Include="GDM_DrawPolygonCmd.cpp" />
+    <ClCompile Include="GDM_MeasureAreaCmd.cpp" />
+    <ClCompile Include="GDM_PointCmd.cpp" />
+    <ClCompile Include="GDM_RulerCmd.cpp" />
+    <ClCompile Include="GDM_SimCmd.cpp" />
+    <ClCompile Include="GDM_CommandDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cameracontroller.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="GDM_ObjectAddCmd.h" />
+    <ClInclude Include="GeoMeshUtil.h" />
+    <ClInclude Include="render_global.h" />
+    <CustomBuild Include="rendersrv.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="stable.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">Generating precompiled header source file %27stable.h.cpp%27 ...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">echo /*-------------------------------------------------------------------- &gt;stable.h.cpp &amp;&amp; echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;stable.h.cpp &amp;&amp; echo * the .pch file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;stable.h.cpp &amp;&amp; echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;stable.h.cpp &amp;&amp; echo * create the PCH file directly from the header file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;stable.h.cpp &amp;&amp; echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;stable.h.cpp &amp;&amp; echo * generated when creating .vcproj project files, and is not used for&gt;&gt;stable.h.cpp &amp;&amp; echo * command line compilations by nmake.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * WARNING: All changes made in this file will be lost.&gt;&gt;stable.h.cpp &amp;&amp; echo --------------------------------------------------------------------*/&gt;&gt;stable.h.cpp &amp;&amp; echo #include "stable.h"&gt;&gt;stable.h.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">stable.h.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating precompiled header source file %27stable.h.cpp%27 ...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo /*-------------------------------------------------------------------- &gt;stable.h.cpp &amp;&amp; echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;stable.h.cpp &amp;&amp; echo * the .pch file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;stable.h.cpp &amp;&amp; echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;stable.h.cpp &amp;&amp; echo * create the PCH file directly from the header file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;stable.h.cpp &amp;&amp; echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;stable.h.cpp &amp;&amp; echo * generated when creating .vcproj project files, and is not used for&gt;&gt;stable.h.cpp &amp;&amp; echo * command line compilations by nmake.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * WARNING: All changes made in this file will be lost.&gt;&gt;stable.h.cpp &amp;&amp; echo --------------------------------------------------------------------*/&gt;&gt;stable.h.cpp &amp;&amp; echo #include "stable.h"&gt;&gt;stable.h.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stable.h.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">Generating precompiled header source file %27stable.h.cpp%27 ...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">echo /*-------------------------------------------------------------------- &gt;stable.h.cpp &amp;&amp; echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;stable.h.cpp &amp;&amp; echo * the .pch file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;stable.h.cpp &amp;&amp; echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;stable.h.cpp &amp;&amp; echo * create the PCH file directly from the header file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;stable.h.cpp &amp;&amp; echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;stable.h.cpp &amp;&amp; echo * generated when creating .vcproj project files, and is not used for&gt;&gt;stable.h.cpp &amp;&amp; echo * command line compilations by nmake.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * WARNING: All changes made in this file will be lost.&gt;&gt;stable.h.cpp &amp;&amp; echo --------------------------------------------------------------------*/&gt;&gt;stable.h.cpp &amp;&amp; echo #include "stable.h"&gt;&gt;stable.h.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">stable.h.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating precompiled header source file %27stable.h.cpp%27 ...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo /*-------------------------------------------------------------------- &gt;stable.h.cpp &amp;&amp; echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;stable.h.cpp &amp;&amp; echo * the .pch file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;stable.h.cpp &amp;&amp; echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;stable.h.cpp &amp;&amp; echo * create the PCH file directly from the header file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;stable.h.cpp &amp;&amp; echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;stable.h.cpp &amp;&amp; echo * generated when creating .vcproj project files, and is not used for&gt;&gt;stable.h.cpp &amp;&amp; echo * command line compilations by nmake.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * WARNING: All changes made in this file will be lost.&gt;&gt;stable.h.cpp &amp;&amp; echo --------------------------------------------------------------------*/&gt;&gt;stable.h.cpp &amp;&amp; echo #include "stable.h"&gt;&gt;stable.h.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stable.h.cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Generating precompiled header source file %27stable.h.cpp%27 ...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">echo /*-------------------------------------------------------------------- &gt;stable.h.cpp &amp;&amp; echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;stable.h.cpp &amp;&amp; echo * the .pch file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;stable.h.cpp &amp;&amp; echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;stable.h.cpp &amp;&amp; echo * create the PCH file directly from the header file.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;stable.h.cpp &amp;&amp; echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;stable.h.cpp &amp;&amp; echo * generated when creating .vcproj project files, and is not used for&gt;&gt;stable.h.cpp &amp;&amp; echo * command line compilations by nmake.&gt;&gt;stable.h.cpp &amp;&amp; echo *&gt;&gt;stable.h.cpp &amp;&amp; echo * WARNING: All changes made in this file will be lost.&gt;&gt;stable.h.cpp &amp;&amp; echo --------------------------------------------------------------------*/&gt;&gt;stable.h.cpp &amp;&amp; echo #include "stable.h"&gt;&gt;stable.h.cpp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">stable.h.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="GDM_CameraCmd.h" />
+    <ClInclude Include="GDM_Command.h" />
+    <ClInclude Include="GDM_CommandMgr.h" />
+    <ClInclude Include="GDM_DrawCmd.h" />
+    <ClInclude Include="GDM_DrawObjectCmd.h" />
+    <ClInclude Include="GDM_DrawPolygonCmd.h" />
+    <CustomBuild Include="GDM_MeasureAreaCmd.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="GDM_PointCmd.h" />
+    <ClInclude Include="GDM_RulerCmd.h" />
+    <ClInclude Include="GDM_SimCmd.h" />
+    <CustomBuild Include="GDM_CommandDlg.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">Moc%27ing %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">"$(QTDIR)\bin\moc.exe"   -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DUSING_PCH -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include" "-I$(QTDIR)\include\ActiveQt" "-I$(QTDIR)\mkspecs\win32-msvc2005" "-I.\..\gdem_datasrv" "-I.\..\gdem_libmain" "-I.\..\gdem_base" "-I.\..\gdem_tile" "-I.\GeneratedFiles\$(Configuration)\." "-I.\..\common" "-I.\..\gdem_terrainengine" "-I.\..\gdem_scene" "-I.\..\gdem_common" "-I.\..\gdem_gis" "-I.\..\gdem_sim" "-I.\..\gdem_client" "-I.\..\gdem_client\generatedfiles" "-I." "-I." "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp" "-fstable.h" "-f../../GDM_CommandDlg.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|Win32'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"   -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DUSING_PCH -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include" "-I$(QTDIR)\include\ActiveQt" "-I$(QTDIR)\mkspecs\win32-msvc2005" "-I.\..\gdem_datasrv" "-I.\..\gdem_libmain" "-I.\..\gdem_base" "-I.\..\gdem_tile" "-I.\GeneratedFiles\$(Configuration)\." "-I.\..\common" "-I.\..\gdem_terrainengine" "-I.\..\gdem_scene" "-I.\..\gdem_common" "-I.\..\gdem_gis" "-I.\..\gdem_sim" "-I.\..\gdem_client" "-I.\..\gdem_client\generatedfiles" "-I." "-I." "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp" "-fstable.h" "-f../../GDM_CommandDlg.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">Moc%27ing %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">"$(QTDIR)\bin\moc.exe"   -DQT_NO_DEBUG -DNDEBUG -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DUSING_PCH -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include" "-I$(QTDIR)\include\ActiveQt" "-I$(QTDIR)\mkspecs\win32-msvc2005" "-I.\..\gdem_datasrv" "-I.\..\gdem_libmain" "-I.\..\gdem_base" "-I.\..\gdem_tile" "-I.\GeneratedFiles\$(Configuration)\." "-I.\..\common" "-I.\..\gdem_terrainengine" "-I.\..\gdem_scene" "-I.\..\gdem_common" "-I.\..\gdem_gis" "-I.\..\gdem_sim" "-I.\..\gdem_client" "-I.\..\gdem_client\generatedfiles" "-I." "-I." "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp" "-fstable.h" "-f../../GDM_CommandDlg.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release_Alone|Win32'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"   -DQT_NO_DEBUG -DNDEBUG -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DUSING_PCH -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include" "-I$(QTDIR)\include\ActiveQt" "-I$(QTDIR)\mkspecs\win32-msvc2005" "-I.\..\gdem_datasrv" "-I.\..\gdem_libmain" "-I.\..\gdem_base" "-I.\..\gdem_tile" "-I.\GeneratedFiles\$(Configuration)\." "-I.\..\common" "-I.\..\gdem_terrainengine" "-I.\..\gdem_scene" "-I.\..\gdem_common" "-I.\..\gdem_gis" "-I.\..\gdem_sim" "-I.\..\gdem_client" "-I.\..\gdem_client\generatedfiles" "-I." "-I." "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp" "-fstable.h" "-f../../GDM_CommandDlg.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">Moc%27ing %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">"$(QTDIR)\bin\moc.exe"   -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DUSING_PCH -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_THREAD_SUPPORT  "-I." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtNetwork" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include" "-I$(QTDIR)\include\ActiveQt" "-I$(QTDIR)\mkspecs\win32-msvc2005" "-I.\..\gdem_datasrv" "-I.\..\gdem_libmain" "-I.\..\gdem_base" "-I.\..\gdem_tile" "-I.\GeneratedFiles\$(Configuration)\." "-I.\..\common" "-I.\..\gdem_terrainengine" "-I.\..\gdem_scene" "-I.\..\gdem_common" "-I.\..\gdem_gis" "-I.\..\gdem_sim" "-I.\..\gdem_client" "-I.\..\gdem_client\generatedfiles" "-I." "-I." "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp" "-fstable.h" "-f../../GDM_CommandDlg.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gdem_scene\gdem_scene_vc9.vcxproj">
+      <Project>{2ebfdd68-2e6a-405a-892c-67211c4ec59c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties QtVersion="4.8.0" QtVersion_x0020_Win32="Qt4.8.5" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

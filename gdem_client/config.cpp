@@ -330,6 +330,8 @@ void Config::ReadSettings()
 		m_IsLicence=false;
 	else
 		m_IsLicence=true;
+
+	m_IsLicence = true;
 }
 
 void Config::WriteSettings()

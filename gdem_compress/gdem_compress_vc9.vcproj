@@ -340,11 +340,11 @@
 		/>
 		<Global
 			Name="QtVersion"
-			Value="4.8.0"
+			Value="4.8.5"
 		/>
 		<Global
 			Name="QtVersion Win32"
-			Value="4.8.0"
+			Value="4.8.5"
 		/>
 		<Global
 			Name="RccDir"
