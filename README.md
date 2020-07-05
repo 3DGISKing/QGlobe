@@ -13,3 +13,7 @@ The standalone version reads directly all necessary data for rendering from the 
 
 In QGlobe all image, terrain, vector and 3d data are served through preprocessed tiled, so called “block” files. Each “block” file contains 128 * 128 tile and it is designed to quickly find the tile by tile identifier.
 
+# Hi, Enjoy my code.
+I am finding a long term GIS project.
+[This is my working experience.](https://docs.google.com/document/d/1LDBFsSW2ECTPW53f18EzqURBdfs8HDsvNumzYi7x9-Y/edit?usp=sharing) 
+Feel free to get in touch to chat about partnership.
