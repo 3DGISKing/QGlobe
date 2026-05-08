@@ -62,7 +62,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(Configuration);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtNetwork;.;$(QTDIR)\include\ActiveQt;$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;DEBUG;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;DEBUG;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -78,7 +78,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;DEBUG;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;DEBUG;QT_DLL;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
@@ -102,7 +102,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>.\GeneratedFiles;$(QTDIR)\include;.\GeneratedFiles\$(Configuration);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtSql;$(QTDIR)\include\QtNetwork;.;$(QTDIR)\include\ActiveQt;$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;RELEASE;QT_DLL;QT_NO_DEBUG;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;RELEASE;QT_DLL;QT_NO_DEBUG;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -118,7 +118,7 @@
       <DebugInformationFormat />
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;RELEASE;QT_DLL;QT_NO_DEBUG;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;RELEASE;QT_DLL;QT_NO_DEBUG;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtSqld4.lib;QtNetworkd4.lib;gds_common.lib;gds_network.lib;gds_database.lib;gds_core.lib;gdem_common.lib;%(AdditionalDependencies)</AdditionalDependencies>

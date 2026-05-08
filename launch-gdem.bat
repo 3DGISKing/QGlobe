@@ -7,6 +7,8 @@ set "PATH=%QTDIR%\bin;%PATH%"
 
 if "%~1"=="" (
     start "" "gdem_vs2022.sln"
+	start "" "gdem_server_vs2022.sln"
+	start "" "gdem_client_vs2022.sln"
 ) else (
     start "" "%~1"
 )

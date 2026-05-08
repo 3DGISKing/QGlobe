@@ -91,7 +91,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.\debug;.;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;QT_LARGEFILE_SUPPORT;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -110,7 +110,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -128,7 +128,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.\debug;.;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;QT_LARGEFILE_SUPPORT;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -147,7 +147,7 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -166,7 +166,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.\debug;.;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;QT_LARGEFILE_SUPPORT;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -185,7 +185,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;USING_PCH;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -203,7 +203,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;$(QTDIR)\include\ActiveQt;.\debug;.;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;QT_LARGEFILE_SUPPORT;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;USING_PCH;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;GDEM_COMMON_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -222,7 +222,7 @@
       <DebugInformationFormat />
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;USING_PCH;QT_NO_DEBUG;QT_OPENGL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>

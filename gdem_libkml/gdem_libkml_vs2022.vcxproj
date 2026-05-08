@@ -91,7 +91,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include;.;.\kml;.\third_party;.\third_party\expat;$(QTDIR)\include\ActiveQt;.\debug;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -107,7 +107,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -125,7 +125,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include;.;.\kml;.\third_party;.\third_party\expat;$(QTDIR)\include\ActiveQt;.\release;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -141,7 +141,7 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_NO_DEBUG;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -160,7 +160,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include;.;.\kml;.\third_party;.\third_party\expat;$(QTDIR)\include\ActiveQt;.\debug;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -176,7 +176,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
@@ -194,7 +194,7 @@
       <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34100 -w34189 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(QTDIR)\include\QtCore;$(QTDIR)\include;.;.\kml;.\third_party;.\third_party\expat;$(QTDIR)\include\ActiveQt;.\release;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_CORE_LIB;QT_THREAD_SUPPORT;XML_STATIC;LIBKML_BUILD_FLAG_MIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -210,7 +210,7 @@
       <DebugInformationFormat />
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_NO_DEBUG;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
