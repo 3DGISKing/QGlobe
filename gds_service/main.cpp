@@ -9,7 +9,7 @@
 
 #include "../gds_service_common/gdsservice_common.h"
 #include "../gds_core/GDSCoreInterface.h"
-#include "../gdem_common/gdem_environment.h"
+//#include "../gdem_common/gdem_environment.h"
 
 #include <qglobal.h>
 
@@ -19,7 +19,7 @@
 //#define SERVICE_CUR_PATH
 
 #ifndef SERVICE_CUR_PATH
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 QString g_CurrentPath("C:/GDEM Server");
 #else
 QString g_CurrentPath("/GDEM Server");
@@ -91,7 +91,7 @@ private:
 
 int main(int argc, char **argv)
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN)
     // GDSService stores service settings in SystemScope, which normally require root privileges.
     // To allow testing this example as non-root, we change the directory of the SystemScope settings file.
     QSettings::setPath(QSettings::NativeFormat, QSettings::SystemScope, QDir::tempPath());

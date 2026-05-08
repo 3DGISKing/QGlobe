@@ -23,7 +23,7 @@
     <ProjectName>gds_core</ProjectName>
     <ProjectGuid>{49155AB3-AF1F-358A-9897-BBDC8E3DB739}</ProjectGuid>
     <RootNamespace>gds_core</RootNamespace>
-    <Keyword>Qt4VSv1.0</Keyword>
+    <Keyword>Qt5VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'" Label="Configuration">
@@ -160,7 +160,7 @@
   <ImportGroup Label="ExtensionTargets"></ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" QtVersion="4.8.5" QtVersion_x0020_Win32="4.8.5" RccDir=".\GeneratedFiles" UicDir=".\GeneratedFiles" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" QtVersion="5" QtVersion_x0020_Win32="5" RccDir=".\GeneratedFiles" UicDir=".\GeneratedFiles" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <QObject>
-#include <QtGui>
+#include <QtWidgets>
 #include <QApplication>
 #include <QTranslator>
 

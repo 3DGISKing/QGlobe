@@ -1,11 +1,12 @@
 #include "gds_service_monitoring.h"
 
+#include <QtCore/QDir>
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
 
 int main(int argc, char *argv[])
 {
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN)
 	// GDSService stores service settings in SystemScope, which normally require root privileges.
 	// To allow testing this example as non-root, we change the directory of the SystemScope settings file.
 	QSettings::setPath(QSettings::NativeFormat, QSettings::SystemScope, QDir::tempPath());

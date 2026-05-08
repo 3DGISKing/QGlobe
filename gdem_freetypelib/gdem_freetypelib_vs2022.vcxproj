@@ -23,7 +23,7 @@
     <ProjectName>gdem_freetypelib</ProjectName>
     <ProjectGuid>{CC203FCB-3481-4AF2-B99E-E669D1B57B30}</ProjectGuid>
     <RootNamespace>gdem_freetypelib</RootNamespace>
-    <Keyword>Qt4VSv1.0</Keyword>
+    <Keyword>Qt5VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'" Label="Configuration">
@@ -198,7 +198,7 @@
   <ImportGroup Label="ExtensionTargets"></ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" QtVersion="4.8.5" QtVersion_x0020_Win32="4.8.5" RccDir=".\GeneratedFiles" UicDir=".\GeneratedFiles" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" QtVersion="5" QtVersion_x0020_Win32="5" RccDir=".\GeneratedFiles" UicDir=".\GeneratedFiles" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

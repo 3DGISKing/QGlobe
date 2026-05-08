@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QToolButton>
-#include <QtGui/QLineEdit>
+#include <QtWidgets/QLineEdit>
 
 class DirectoryBox : public QWidget
 {

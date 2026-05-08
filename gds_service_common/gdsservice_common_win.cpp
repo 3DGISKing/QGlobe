@@ -45,9 +45,10 @@
 ****************************************************************************/
 #include <qglobal.h>
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #include "gdsservice_common.h"
 #include "gdsservice_common_p.h"
+#include <QtCore/QAbstractNativeEventFilter>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDateTime>
 #include <QtCore/QFile>
@@ -495,7 +496,6 @@ public:
     QStringList serviceArgs;
 
     static QtServiceSysPrivate *instance;
-    static QCoreApplication::EventFilter nextFilter;
 
     QWaitCondition condition;
     QMutex mutex;
@@ -520,7 +520,6 @@ void GDSServiceControllerHandler::customEvent(QEvent *e)
 
 
 QtServiceSysPrivate *QtServiceSysPrivate::instance = 0;
-QCoreApplication::EventFilter QtServiceSysPrivate::nextFilter = 0;
 
 QtServiceSysPrivate::QtServiceSysPrivate()
 {
@@ -712,16 +711,22 @@ protected:
 };
 
 /*
-  Ignore WM_ENDSESSION system events, since they make the Qt kernel quit
+  Ignore WM_ENDSESSION system events, since they make the Qt kernel quit.
+  Qt 5: QCoreApplication::setEventFilter was removed; use QAbstractNativeEventFilter.
 */
-bool myEventFilter(void* message, long* result)
+class GDSServiceNativeEventFilter : public QAbstractNativeEventFilter
 {
-    MSG* msg = reinterpret_cast<MSG*>(message);
-    if (!msg || (msg->message != WM_ENDSESSION) || !(msg->lParam & ENDSESSION_LOGOFF))
-        return QtServiceSysPrivate::nextFilter ? QtServiceSysPrivate::nextFilter(message, result) : false;
+public:
+    bool nativeEventFilter(const QByteArray &eventType, void *message, long *result) override;
+};
 
-    if (QtServiceSysPrivate::nextFilter)
-        QtServiceSysPrivate::nextFilter(message, result);
+bool GDSServiceNativeEventFilter::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
+{
+    if (eventType != "windows_generic_MSG")
+        return false;
+    MSG *msg = static_cast<MSG *>(message);
+    if (!msg || (msg->message != WM_ENDSESSION) || !(msg->lParam & ENDSESSION_LOGOFF))
+        return false;
     if (result)
         *result = TRUE;
     return true;
@@ -785,7 +790,8 @@ bool GDSServiceBasePrivate::start()
     QCoreApplication *app = QCoreApplication::instance();
     if (!app)
         return false;
-    QtServiceSysPrivate::nextFilter = app->setEventFilter(myEventFilter);
+    static GDSServiceNativeEventFilter nativeEventFilter;
+    app->installNativeEventFilter(&nativeEventFilter);
 
     sys->controllerHandler = new GDSServiceControllerHandler(sys);
 

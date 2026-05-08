@@ -23,7 +23,7 @@
     <ProjectName>gdem_libkml</ProjectName>
     <ProjectGuid>{2E739F48-7C7A-382B-A327-EEACA49BB0D7}</ProjectGuid>
     <RootNamespace>gdem_libkml</RootNamespace>
-    <Keyword>Qt4VSv1.0</Keyword>
+    <Keyword>Qt5VSv1.0</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'" Label="Configuration">
@@ -340,7 +340,7 @@
   <ImportGroup Label="ExtensionTargets"></ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties QtVersion="4.8.5" QtVersion_x0020_Win32="4.8.5" />
+      <UserProperties QtVersion="5" QtVersion_x0020_Win32="5" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

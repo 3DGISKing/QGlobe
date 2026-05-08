@@ -20,7 +20,7 @@
 #ifndef _NOTE_H_
 #define NOTE_H_ 
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QtGui/QPainter>
 #include <QApplication>
 #include "../gds_service_common/gdsservice_common.h"
@@ -32,7 +32,7 @@
 
 #define SERVICE_NAME    "GDEMService"
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
-#if defined  (Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #define SERVICE_PATH    "/gds_service.exe"
 #define MONITOR_SERVICE_PATH    "/gds_service_monitoring.exe"
 #else

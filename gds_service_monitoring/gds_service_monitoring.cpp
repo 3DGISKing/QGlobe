@@ -21,7 +21,7 @@ void serviceStop()
 			gdsServiceController.stop();
 	}
 #else	/* kill service process */
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	QString sysCmd = "TASKKILL /F /IM gds_service.exe /T";
 #else /* LINUX, MacOS */
 	QString sysCmd = "killall gds_service";

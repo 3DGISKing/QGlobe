@@ -5,7 +5,7 @@
 #include "../gds_core/GDSCoreInterface.h"
 #include "../gds_database/GDSDatabaseInterface.h"
 #include "../gds_database/GDSBlockFileManager.h"
-#include "../gdem_common/gdem_environment.h"
+//#include "../gdem_common/gdem_environment.h"
 #include "../gds_common/GDSLog.h"
 
 //#include "../gdem_common/gdem_protocol.h"

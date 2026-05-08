@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include <QDir>
 #include <QString>
 #include <QMessageBox>

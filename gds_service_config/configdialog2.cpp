@@ -6,11 +6,12 @@
 #include "../gds_common/GDSConfigMgr.h"
 #include <QMessageBox>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QCoreApplication>
 
 #define MAIN_SERVICE_NAME    "GDEMService"
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
-#if defined  (Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #define SERVICE_PATH    "/gds_service.exe"
 #define MONITOR_SERVICE_PATH    "/gds_service_monitoring.exe"
 #else
@@ -25,9 +26,9 @@
 
 static void artisticSleep(int sleepTime)
 {
-	QTime time;
-	time.restart();
-	while (time.elapsed() < sleepTime)
+	QElapsedTimer timer;
+	timer.start();
+	while (timer.elapsed() < sleepTime)
 	{
 		QCoreApplication::processEvents(QEventLoop::AllEvents, 50);
 	}
