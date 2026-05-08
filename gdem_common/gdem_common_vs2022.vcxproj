@@ -114,7 +114,7 @@
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -189,7 +189,7 @@
       <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
