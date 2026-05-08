@@ -92,6 +92,9 @@ void SearchDlg::Search(QString key ,int start, int itemkey)
 
 bool SearchDlg::IsActiveView()
 {
+	if (!m_searchResultView)
+		return false;
+
 	if (m_searchResultView->GetSelectItem() && m_searchResultView->hasFocus())
 		return true;
 

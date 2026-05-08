@@ -1638,8 +1638,11 @@ void ResultTreeView::RemovedRows ( const QModelIndex & parent, int start, int en
 
 void ResultTreeView::selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected )
 {
-	m_sideBar->SetSelectItem(NULL);
-	g_app->GetMainWindow()->UpdateShortCutKey();
+	if (m_sideBar)
+		m_sideBar->SetSelectItem(NULL);
+
+	if (g_app && g_app->GetMainWindow())
+		g_app->GetMainWindow()->UpdateShortCutKey();
 }
 
 /********************************************************

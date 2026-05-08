@@ -1499,6 +1499,9 @@ void MainWindow::MenuUpdate()
 {
 	ResultTreeView *treeView = m_sideBar->GetActiveView();
 
+	if (!treeView)
+		return;
+
 	if (treeView->IsCutItem())
 		m_ui->actionCut->setEnabled(true);
 	else
