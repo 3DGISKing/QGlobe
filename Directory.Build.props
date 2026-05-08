@@ -3,6 +3,6 @@
   <PropertyGroup>
     <!-- Prefer externally provided QTDIR/QtDir, but keep a local fallback for IDE IntelliSense. -->
     <QTDIR Condition="'$(QTDIR)'=='' and '$(QtDir)'!=''">$(QtDir)</QTDIR>
-    <QTDIR Condition="'$(QTDIR)'=='' and Exists('C:\OSGeo4W\apps\Qt5\include')">C:\OSGeo4W\apps\Qt5</QTDIR>
+    <QTDIR Condition="'$(QTDIR)'=='' and Exists('qt-5.15.18-dynamic-msvc2022-x86_64')">qt-5.15.18-dynamic-msvc2022-x86_64</QTDIR>
   </PropertyGroup>
 </Project>

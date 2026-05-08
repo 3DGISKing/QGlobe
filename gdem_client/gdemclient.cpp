@@ -399,16 +399,16 @@ void GDemClient::ResetRenderKeys()
 
 void GDemClient::FullExtent()
 {
-#define LATI_KOREA		39.02 
-#define LONGI_KOREA		125.75 
+#define LATI_CHINA		35.8617 
+#define LONGI_CHINA		104.1954 
 #define DST			    (10500000)
 #define TIME            4000
 
 	GDM_CAMERA_INFO cameraInfo;	
 	memset(&cameraInfo , 0 , sizeof(GDM_CAMERA_INFO));
 	cameraInfo.m_loc.m_dDist=DST;
-	cameraInfo.m_loc.m_dLongitude=LONGI_KOREA*gdm_DEGTORAD;
-	cameraInfo.m_loc.m_dLatitude=LATI_KOREA*gdm_DEGTORAD;
+	cameraInfo.m_loc.m_dLongitude=LONGI_CHINA*gdm_DEGTORAD;
+	cameraInfo.m_loc.m_dLatitude=LATI_CHINA*gdm_DEGTORAD;
 
 	m_renderProxy->GetRenderSrv()->m_pCameraController->AutoMoveTo(0, cameraInfo, TIME);
 

@@ -2049,7 +2049,7 @@ QString QFontDatabase::writingSystemName(WritingSystem writingSystem)
         name = QT_TRANSLATE_NOOP("QFontDatabase", "Japanese");
         break;
     case Korean:
-        name = QT_TRANSLATE_NOOP("QFontDatabase", "Korean");
+        name = QT_TRANSLATE_NOOP("QFontDatabase", "n");
         break;
     case Vietnamese:
         name = QT_TRANSLATE_NOOP("QFontDatabase", "Vietnamese");
