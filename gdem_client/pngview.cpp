@@ -1,5 +1,5 @@
 #include "pngview.h"
-#include <QtGui/QHeaderView>
+#include <QtWidgets/QHeaderView>
 PngView::PngView(QWidget *parent)
 	: QTableWidget(parent)
 {

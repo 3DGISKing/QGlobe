@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "gdemclientbase.h"
 
 namespace Ui {

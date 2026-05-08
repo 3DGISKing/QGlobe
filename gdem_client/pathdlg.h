@@ -1,7 +1,7 @@
-#ifndef PATHDLG_H
+﻿#ifndef PATHDLG_H
 #define PATHDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "gdemclientbase.h"
 #include "GDM_CommandDlg.h"
 

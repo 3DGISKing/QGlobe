@@ -6,7 +6,7 @@
 #include "ui_smpbuildingprodlg.h"
 
 #include <QList>
-#include "../gdem_tile/GDM_TileInfo.h"
+#include "../gdem_libmain/GDM_Tile.h"
 
 class OGRFeature;
 class OGRLayer;

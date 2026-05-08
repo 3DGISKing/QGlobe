@@ -1,13 +1,13 @@
 #ifndef GDEMCUSTOMSTYLE_H
 #define GDEMCUSTOMSTYLE_H
 
-#include <QPlastiqueStyle>
+#include <QProxyStyle>
 
 #ifdef Q_WS_MAC
 #include <QMacStyle>
 class GDEMCustomStyle : public QMacStyle
 #else
-class GDEMCustomStyle : public QPlastiqueStyle
+class GDEMCustomStyle : public QProxyStyle
 #endif
 {
 public:
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif GDEMCUSTOMSTYLE_H
+#endif // GDEMCUSTOMSTYLE_H

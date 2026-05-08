@@ -2,10 +2,14 @@
 #include "GDM_SceneManager.h"
 #include "GDM_DataMgr.h"
 #include "GDM_TextMgr.h"
+#include <QSurfaceFormat>
 
 RenderView::RenderView(QWidget *parent)
-: QGLWidget(QGLFormat(QGL::DoubleBuffer/* | QGL::SampleBuffers*/), parent)
+: QOpenGLWidget(parent)
 {
+	QSurfaceFormat format = this->format();
+	format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
+	this->setFormat(format);
 	_RenderSceneMgr = 0;
 }
 

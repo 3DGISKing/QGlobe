@@ -1,4 +1,4 @@
-// GDSTcpServer.cpp
+﻿// GDSTcpServer.cpp
 
 #include "GDSTcpServer.h"
 #include "GDSTcpThread.h"
@@ -79,7 +79,7 @@ bool GDSTcpServer::start()
 
 	if (!listen(QHostAddress::Any, m_PortNo))
 	{
-		GDSLogOutput(E_LOG_ERROR, "%s", errorString().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "%s", errorString().toUtf8().data());
 
 		return false;
 	}
@@ -118,7 +118,7 @@ bool GDSTcpServer::resume()
 
 	if (!listen(QHostAddress::Any, m_PortNo))
 	{
-		GDSLogOutput(E_LOG_ERROR, "%s", errorString().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "%s", errorString().toUtf8().data());
 
 		return false;
 	}

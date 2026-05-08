@@ -17,7 +17,7 @@
 #define POLYLINE_THEME			"2"
 #define POLYGON_THEME			"3"
 
-ShapeDraw::ShapeDraw(QWidget *parent, Qt::WFlags flags)
+ShapeDraw::ShapeDraw(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
 	ui.setupUi(this);

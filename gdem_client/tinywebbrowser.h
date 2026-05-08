@@ -2,7 +2,7 @@
 #ifndef TINYWEBBROWSER_H
 #define TINYWEBBROWSER_H
 
-#include <QtWebKit/QWebView>
+#include <QWebEngineView>
 
 class TinyWebBrowser : public QFrame
 {
@@ -21,7 +21,7 @@ private slots:
 signals:
 	void titleChanged(QString);
 private:
-	QWebView* m_WebView;
+	QWebEngineView* m_WebView;
 	QString   m_CurrentTitle;
 
 };

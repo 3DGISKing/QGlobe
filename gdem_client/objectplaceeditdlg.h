@@ -1,7 +1,7 @@
 #ifndef OBJECTPLACEEDITDLG_H
 #define OBJECTPLACEEDITDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "gdemclientbase.h"
 #include "GDM_CommandDlg.h"
 

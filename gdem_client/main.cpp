@@ -1,5 +1,15 @@
-#include <QtGui/QApplication>
-#include <QtGui/QSplashScreen>
+﻿#include <QApplication>
+#include <QtWidgets/QSplashScreen>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+class QApplicationQt4Compat : public QApplication
+{
+public:
+    using QApplication::QApplication;
+    enum { UnicodeUTF8 = -1 };
+};
+#define QApplication QApplicationQt4Compat
+#endif
 
 #include "gdemclient.h"
 #include "mainwindow.h"
@@ -30,7 +40,7 @@ int main(int argc, char *argv[])
 	splash.show();
 	a.processEvents();
 
-	splash.showMessage(QApplication::translate("GDemClient","Initializing Application...",0,QApplication::UnicodeUTF8),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+	splash.showMessage(QApplication::translate("GDemClient","Initializing Application..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 	a.processEvents();
 
 	if (!a.Init())
@@ -43,12 +53,12 @@ int main(int argc, char *argv[])
 
 	a.SetMainWindow(&mainWnd);
 	
-	splash.showMessage(QApplication::translate("GDemClient","Creating Mainwindow...",0,QApplication::UnicodeUTF8),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+	splash.showMessage(QApplication::translate("GDemClient","Creating Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 	a.processEvents();
 
 	if (mainWnd.Init())
     {
-		splash.showMessage(QApplication::translate("GDemClient","Initializing Mainwindow...",0,QApplication::UnicodeUTF8),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+		splash.showMessage(QApplication::translate("GDemClient","Initializing Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 		a.processEvents();
 
         mainWnd.InitUpdate();
@@ -59,7 +69,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-		gu_MessageBox(NULL, QApplication::translate("GDemClient","Error",0,QApplication::UnicodeUTF8),QApplication::translate("GDemClient","Occured error in initialization",0,QApplication::UnicodeUTF8),MSGBOX_ICONCRITICAL);
+		gu_MessageBox(NULL, QApplication::translate("GDemClient","Error"),QApplication::translate("GDemClient","Occured error in initialization"),MSGBOX_ICONCRITICAL);
 		mainWnd.Release();
 		return 0;
     }

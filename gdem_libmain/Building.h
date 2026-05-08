@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QString>
+#include <QDataStream>
 
 #include "../gdem_base/GDM_Array.h"
 #include "../gdem_base/GDM_Location.h"

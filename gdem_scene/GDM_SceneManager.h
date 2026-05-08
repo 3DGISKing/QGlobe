@@ -1,7 +1,8 @@
 #ifndef __GDM_SCENEMANAGER_H__
 #define __GDM_SCENEMANAGER_H__
 
-#include <QtGui/QColor>
+#include <QColor>
+#include <QOpenGLWidget>
 
 #include "geoEngine.h"
 #include "gdem_scene_global.h"
@@ -32,7 +33,6 @@ namespace geo
 	}
 }
 
-class QGLWidget;
 class CGDM_TextureMgr;
 class CGIS_TextureMgr;
 class CGDM_TextureIDCache;
@@ -48,7 +48,7 @@ public:
 	virtual ~GDM_SceneManager(void);
 
 	void    Initialize();
-	bool    registerRenderEngine(QGLWidget* widget);
+	bool    registerRenderEngine(QOpenGLWidget* widget);
 	bool    prepareSceneGraph();
 	void	onBeforeRender();
 	void	onAfterRender();

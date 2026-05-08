@@ -1,8 +1,5 @@
 
-#include <QtGui/QItemDelegate>
-#include <phonon/videowidget.h>
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QItemDelegate>
 
 class	CameraKeyFrameDelegate : public QItemDelegate
 {
@@ -40,8 +37,4 @@ public:
 	void updateEditorGeometry(QWidget *editor,
 		const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
-private:
-	Phonon::VideoWidget *m_videoWidget;
-	Phonon::MediaObject m_MediaObject;
-	Phonon::AudioOutput m_AudioOutput;
 };

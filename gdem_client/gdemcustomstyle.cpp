@@ -140,7 +140,7 @@ void GDEMCustomStyle::polish(QWidget *widget)
 		}
 	}
 #else
-	QPlastiqueStyle::polish(widget);
+	QProxyStyle::polish(widget);
 #endif
 
 #ifndef Q_WS_WIN
@@ -157,7 +157,7 @@ void GDEMCustomStyle::polish(QWidget *widget)
 
 void GDEMCustomStyle::polish(QPalette &palette)
 {
-    QWindowsStyle::polish(palette);
+    QProxyStyle::polish(palette);
     palette.setBrush(QPalette::AlternateBase, palette.base().color().darker(110));
 #ifdef Q_WS_MAC
     palette.setBrush(QPalette::Shadow, Qt::black);
@@ -199,7 +199,7 @@ int GDEMCustomStyle::styleHint(StyleHint hint, const QStyleOption *option, const
 #ifdef Q_WS_MAC
 	        ret = QMacStyle::styleHint(hint, option, widget, returnData);
 #else
-			ret = QPlastiqueStyle::styleHint(hint, option, widget, returnData);
+			ret = QProxyStyle::styleHint(hint, option, widget, returnData);
 #endif
 			break;
 	}
@@ -352,7 +352,7 @@ void GDEMCustomStyle::drawPrimitive(PrimitiveElement element, const QStyleOption
         }
         break;
     default:
-		QPlastiqueStyle::drawPrimitive(element, option, painter, widget);
+		QProxyStyle::drawPrimitive(element, option, painter, widget);
         break;
     }
 #endif

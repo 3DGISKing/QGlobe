@@ -1232,7 +1232,6 @@ void ResultTreeView::SetupTreeView()
 	setWordWrap(true);
 	m_model = new TreeItemModel;
 	setModel(m_model);
-	m_model->setSupportedDragActions(Qt::MoveAction);
 
 	setItemDelegate(new TreeItemDelegate(this));
 
@@ -1639,8 +1638,11 @@ void ResultTreeView::RemovedRows ( const QModelIndex & parent, int start, int en
 
 void ResultTreeView::selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected )
 {
-	m_sideBar->SetSelectItem(NULL);
-	g_app->GetMainWindow()->UpdateShortCutKey();
+	if (m_sideBar)
+		m_sideBar->SetSelectItem(NULL);
+
+	if (g_app && g_app->GetMainWindow())
+		g_app->GetMainWindow()->UpdateShortCutKey();
 }
 
 /********************************************************

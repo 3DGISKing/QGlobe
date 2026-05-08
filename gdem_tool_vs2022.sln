@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gdem_tool", "gdem_tool\gdem_tool.vcxproj", "{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Alone|x64 = Debug_Alone|x64
+		Debug|x64 = Debug|x64
+		Release_Alone|x64 = Release_Alone|x64
+		Release|x64 = Release|x64
+		Test|x64 = Test|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Debug_Alone|x64.ActiveCfg = Debug|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Debug_Alone|x64.Build.0 = Debug|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Debug|x64.ActiveCfg = Debug|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Debug|x64.Build.0 = Debug|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Release_Alone|x64.ActiveCfg = Release|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Release_Alone|x64.Build.0 = Release|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Release|x64.ActiveCfg = Release|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Release|x64.Build.0 = Release|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Test|x64.ActiveCfg = Debug|x64
+		{AEEF5B4D-0A34-4849-8E0F-3261E5E45DDA}.Test|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

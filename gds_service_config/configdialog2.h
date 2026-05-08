@@ -1,7 +1,7 @@
-#ifndef CONFIGDIALOG2_H
+﻿#ifndef CONFIGDIALOG2_H
 #define CONFIGDIALOG2_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QAbstractButton>
 
 namespace Ui

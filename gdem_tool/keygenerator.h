@@ -1,7 +1,7 @@
-#ifndef KEYGENERATOR_H
+﻿#ifndef KEYGENERATOR_H
 #define KEYGENERATOR_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_keygenerator.h"
 
 class KeyGenerator : public QMainWindow
@@ -9,7 +9,7 @@ class KeyGenerator : public QMainWindow
 	Q_OBJECT
 
 public:
-	KeyGenerator(QWidget *parent = 0, Qt::WFlags flags = 0);
+	KeyGenerator(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~KeyGenerator();
 
 private:

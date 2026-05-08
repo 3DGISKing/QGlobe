@@ -178,39 +178,36 @@ bool LayersDlg::AddItems()
 	if (!AddRasterItems())
 		return false;
 
-	//ÃÔ¼³¼Ú»ª¼è ±ýµ¹,ºã´ª,´ª,»¤,°ë,¶®
+	//ï¿½Ô¼ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½,ï¿½ã´ª,ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½
 	if(!AddAdminCenters())
 		return false;
 
-	if(!AddRevolItems())
-		return false;
-
-	//º¤,µß °¬,Âöºã ¸Æ³Þ,º¿,¸É´ª,¶í Âß°é,°©·Í,¼«ºã¼è Êñ½ç,ÊÀºã,ÁåÁä ³Þ¶®,Ê·°º,½è³Þ¶®
+	//ï¿½ï¿½,ï¿½ï¿½ ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ ï¿½Æ³ï¿½,ï¿½ï¿½,ï¿½É´ï¿½,ï¿½ï¿½ ï¿½ß°ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½,Ê·ï¿½ï¿½,ï¿½ï¿½Þ¶ï¿½
 	if(!AddPlaceNames())
 		return false;
 
 	if(!AddSeaPlaceNames())
 		return false;
 
-	//±ýµ¹,´ª,»¤,°ë,¶®,°Ò±Ë
+	//ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½,ï¿½ï¿½,ï¿½Ò±ï¿½
 	if(!AddAdminBoundary())
 		return false;
 	
 	
 
-	//Ë©ºã¶ö
+	//Ë©ï¿½ï¿½ï¿½
 	if(!AddTransportNetwork())
 		return false;
 
-	//ºã±Ë¶ö
+	//ï¿½ï¿½Ë¶ï¿½
 	if(!AddWaterNetwork())
 		return false;
 
-	//´Ý¼è¶ö
+	//ï¿½Ý¼ï¿½ï¿½
 	if(!AddLanduseBoundary())
 		return false;
 
-	//3½ÓÌº Êï¹¶½¤Àâ
+	//3ï¿½ï¿½Ìº ï¿½ï¹¶ï¿½ï¿½ï¿½ï¿½
 	if(!Add3dObject())
 		return false;
 
@@ -427,68 +424,6 @@ bool LayersDlg::AddPlaceNames()
 	return true;
 }
 
-bool LayersDlg::AddRevolItems()
-{
-	LayerTreeItem* root=RootItem();
-
-	LayerTreeItem* placenames=new LayerTreeItem(tr("Revolutionary "));
-	root->appendRow(placenames);
-
-	QString iconName = "/sidebar/layers-bronze.png";
-
-	PlaceNameLayer* layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_BROMZEITEM,tr("Bronze"),iconName);
-	layer->SetProperty("tb_lm_bronze");
-
-	LayerTreeItem *item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-historical.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_HISTORICSITEITEM,tr("Historical"),iconName);
-	layer->SetProperty("tb_lm_historysite");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-battle.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_BATTLESITEITEM,tr("Battle"),iconName);
-	layer->SetProperty("tb_lm_battlesite");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-monument.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_MONUMENTITEM,tr("Monument"),iconName);
-	layer->SetProperty("tb_lm_monument");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-museum.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_MUSEUMITEM,tr("Museum"),iconName);
-	layer->SetProperty("tb_lm_museum");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-position.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_POSITIONITEM,tr("Position"),iconName);
-	layer->SetProperty("tb_lm_positionsite");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-
-	iconName = "/sidebar/layers-guidance.png";
-	layer=new PlaceNameLayer(E_GDM_SUBDATA_TYPE_NAME_GUIDANCEITEM,tr("Guidance"),iconName);
-	layer->SetProperty("tb_lm_guidance");
-
-	item=new LayerTreeItem(layer);
-	placenames->appendRow(item);
-	
-	m_layersView->setExpanded(placenames->index(),true);
-
-	placenames->PropagateStateToAllChilds(Qt::Checked);
-	return true;
-}
 bool LayersDlg::AddSeaPlaceNames()
 {
 	LayerTreeItem* root=RootItem();
@@ -602,7 +537,7 @@ bool LayersDlg::AddAdminBoundary()
 	LayerTreeItem* root=RootItem();
 
 	QString iconName = g_app->GetResource("/sidebar/layers-boundary.png");
-	LayerTreeItem* adminboundarys=new LayerTreeItem(tr("Admin Boundary"),iconName);
+	LayerTreeItem* adminboundarys=new LayerTreeItem(tr("Admin Boundary"));
 	root->appendRow(adminboundarys);
 
 	PolylineLayer* layer=new PolylineLayer(E_GDM_SUBDATA_TYPE_SHAPE_COUNTRY,tr("Country Border"));

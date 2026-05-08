@@ -1,7 +1,7 @@
-#ifndef CONTOURDLG_H
+﻿#ifndef CONTOURDLG_H
 #define CONTOURDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class ContourDlg;

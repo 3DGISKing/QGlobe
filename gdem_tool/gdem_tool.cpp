@@ -12,7 +12,7 @@
 #include "keygenerator.h"
 #include "imgtilemergedlg.h"
 
-gdem_tool::gdem_tool(QWidget *parent, Qt::WFlags flags)
+gdem_tool::gdem_tool(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
 	ui.setupUi(this);

@@ -186,10 +186,10 @@ namespace geo
 			int cy = m_simStatus->m_screenHeight / 2;
 
 			  float airplane[4*2] = {
-				cx,				cy, 
-				cx-SCALE_X(25), cy+SCALE_Y(20),
-				cx,				cy+SCALE_Y(8),
-				cx+SCALE_X(25), cy+SCALE_Y(20),
+				static_cast<float>(cx),                             static_cast<float>(cy),
+				static_cast<float>(cx - SCALE_X(25)),              static_cast<float>(cy + SCALE_Y(20)),
+				static_cast<float>(cx),                             static_cast<float>(cy + SCALE_Y(8)),
+				static_cast<float>(cx + SCALE_X(25)),              static_cast<float>(cy + SCALE_Y(20)),
 			};
  
 			Draw2DPolygon( airplane, 4 );

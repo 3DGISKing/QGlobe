@@ -45,7 +45,7 @@
 ****************************************************************************/
 #include <qglobal.h>
 
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
 #include "gdsservice_common.h"
 #include "gdsservice_common_p.h"
 #include "gdsunixsocket.h"

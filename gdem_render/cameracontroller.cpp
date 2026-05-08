@@ -18,9 +18,9 @@ extern GDM_RENDER_HANDLE	    g_pRender;
 #define SPEED_STEP				9
 #define CAMERA_TILT_LIMIT		1
 
-#define INIT_LATI_KOREA			39.02 
-#define INIT_LONGI_KOREA		125.75 
-#define INIT_DST_KOREA			(600000)
+#define LATI_CHINA		35.8617 
+#define LONGI_CHINA		104.1954 
+#define DST_CHINA			(10500000)
 
 #define INIT_LATI_PYONGSONG		39.27 
 #define INIT_LONGI_PYONGSONG	125.87 
@@ -30,9 +30,9 @@ extern GDM_RENDER_HANDLE	    g_pRender;
 #define INIT_LONGI_MTKUMKANG	128.2 
 #define INIT_DST_KUMKANG	    10000
 
-#define INIT_LATI		        INIT_LATI_KOREA
-#define INIT_LONGI		        INIT_LONGI_KOREA 
-#define INIT_DST			    INIT_DST_KOREA
+#define INIT_LATI		        LATI_CHINA
+#define INIT_LONGI		        LONGI_CHINA 
+#define INIT_DST			    DST_CHINA
 #define INIT_PITCH              0 //degree
 #define INIT_ROLL               0  //degreee
 
@@ -675,7 +675,7 @@ void CameraController::OnAnimation()
 		{
 			if(gdm_CameraOnAnimation(g_pRender , deltaHour) != GDM_SUCCESS)
 			{
-				// AnimationÀÌ ³¡³µÀ½À» Åëº¸
+				// Animationï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ëº¸
 				m_pRenderSrv->GetCommandMgr()->OnNotifyEvent(GDM_RENDER_NITIFY_END_ANIMATION, m_aniType);
 				m_pRenderSrv->GetCommandMgr()->OnNotifyEvent(GDM_RENDER_NITIFY_CAMERA_CHANGED);
 				EndAnimation();

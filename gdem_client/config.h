@@ -1,6 +1,13 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <QColor>
+#include <QFont>
+#include <QPoint>
+#include <QSize>
+#include <QString>
+#include <QStringList>
+#include <QRgb>
 #include "gdemclientbase.h"
 
 #define CONF_SET_ORG        "IEEI"

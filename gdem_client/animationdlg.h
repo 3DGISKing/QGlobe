@@ -1,8 +1,8 @@
-#ifndef ANIMATIONDLG_H
+﻿#ifndef ANIMATIONDLG_H
 #define ANIMATIONDLG_H
 
 #include <QtCore/QList>
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "keyframe.h"
 
 class QSlider;

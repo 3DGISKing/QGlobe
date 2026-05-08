@@ -51,15 +51,10 @@ void CameraKeyFrameDelegate::updateEditorGeometry(QWidget *editor,
 VideoKeyFrameDelegate::VideoKeyFrameDelegate(QObject* parent)
 :QItemDelegate(parent)
 {
-	m_videoWidget=new Phonon::VideoWidget();
-	m_videoWidget->setVisible(false);
-	Phonon::createPath(&m_MediaObject, m_videoWidget);
-	Phonon::createPath(&m_MediaObject, &m_AudioOutput);
 }
 
 VideoKeyFrameDelegate::~VideoKeyFrameDelegate()
 {
-	delete m_videoWidget;
 }
 
 QWidget* VideoKeyFrameDelegate::createEditor(QWidget *parent,

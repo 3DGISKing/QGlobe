@@ -1,4 +1,4 @@
-#include "smpbuildingprodlg.h"
+ï»¿#include "smpbuildingprodlg.h"
 
 #include <QFileDialog>
 #include <QSqlQueryModel>
@@ -83,7 +83,7 @@ void SmpBuildingProDlg::onClickedBrowserInput()
 
 	OGRDataSourceH datasrc;
 
-	datasrc=OGROpen(path.toAscii(),0,&drv);
+	datasrc=OGROpen(path.toUtf8(),0,&drv);
 	if(!datasrc)
 		return ;
 
@@ -91,7 +91,7 @@ void SmpBuildingProDlg::onClickedBrowserInput()
 
 	QString layername=fileName.mid(pos+1,fileName.length()-pos-5);
 
-	_layer=data->GetLayerByName(layername.toAscii());
+	_layer=data->GetLayerByName(layername.toUtf8());
 
 	if(!checkValidity())
 	{
@@ -150,9 +150,9 @@ void SmpBuildingProDlg::onClickedBrowserSqlite()
 
 int SmpBuildingProDlg::exportOneShapeTile(QList<OGRFeature*> & featurelist,GDM_TILE_INFO tileInfo)
 {
-	double tileWidth = gdm_TwoPI / (1 << tileInfo.nLevel);//À°ËÎÌ© ²¸¹¾¼¹¼³
+	double tileWidth = gdm_TwoPI / (1 << tileInfo.nLevel);//ï¿½ï¿½ï¿½ï¿½Ì© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	CGDM_Rect2D tileBox; //À°ËÎÌ© °Ò±Ë4°¢Âô°Î¼³
+	CGDM_Rect2D tileBox; //ï¿½ï¿½ï¿½ï¿½Ì© ï¿½Ò±ï¿½4ï¿½ï¿½ï¿½ï¿½Î¼ï¿½
 	tileBox.m_cMinPt.m_tX = tileWidth * tileInfo.nX - gdm_PI;
 	tileBox.m_cMinPt.m_tY = tileWidth * tileInfo.nY - gdm_PI;
 	tileBox.m_cMaxPt.m_tX = tileBox.m_cMinPt.m_tX + tileWidth;
@@ -161,13 +161,13 @@ int SmpBuildingProDlg::exportOneShapeTile(QList<OGRFeature*> & featurelist,GDM_T
 	unsigned int m = tileInfo.nX / TILE_ROW_COUNT_IN_BLOCK;
 	unsigned int n = tileInfo.nY / TILE_ROW_COUNT_IN_BLOCK;
 
-	QString path,filename;//´Ðµâ¹¢Ì® ÃùËÎËË¶§ÊÐ±¨
+	QString path,filename;//ï¿½Ðµâ¹¢Ì® ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½Ð±ï¿½
 	path=_savePath+path.sprintf(SIMPLEBUILDING_DIR_PATH, tileInfo.nLevel, m, n,tileInfo.nLevel);
 	filename=_savePath+filename.sprintf(SIMPLEBUILDING_FILE_PATH, tileInfo.nLevel, m, n,tileInfo.nLevel,tileInfo.nX,tileInfo.nY, tileInfo.nLevel);
 
 	QDir dir;
 
-	if(!dir.exists(path))//´Ðµâ¹¢°¡ ¼Á¼õÂ×¼è Ê±Ëº·² ´Ðµâ¹¢»¶ºÂ
+	if(!dir.exists(path))//ï¿½Ðµâ¹¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½×¼ï¿½ Ê±Ëºï¿½ï¿½ ï¿½Ðµâ¹¢ï¿½ï¿½ï¿½ï¿½
 		dir.mkpath(path);
 
 	QFile file(filename);           

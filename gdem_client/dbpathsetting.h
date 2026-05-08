@@ -1,9 +1,9 @@
-#ifndef DBPATHSETTING_H
+﻿#ifndef DBPATHSETTING_H
 #define DBPATHSETTING_H
 
 #include "../gdem_common/gdem_config.h"
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 #ifdef STANDARD_ALONE
 

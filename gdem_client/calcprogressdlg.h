@@ -1,7 +1,7 @@
-#ifndef CALCPROGRESSDLG_H
+﻿#ifndef CALCPROGRESSDLG_H
 #define CALCPROGRESSDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "IGIS_Progress.h"
 
 namespace Ui {

@@ -1,7 +1,7 @@
-#ifndef CTRLDIALOG_H
+﻿#ifndef CTRLDIALOG_H
 #define CTRLDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 #undef USE_DIALOG
 #define USE_DIALOG		0

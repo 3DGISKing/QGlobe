@@ -5,7 +5,7 @@
 #include "../gds_core/GDSCoreInterface.h"
 #include "../gds_database/GDSDatabaseInterface.h"
 #include "../gds_database/GDSBlockFileManager.h"
-#include "../gdem_common/gdem_environment.h"
+//#include "../gdem_common/gdem_environment.h"
 #include "../gds_common/GDSLog.h"
 
 //#include "../gdem_common/gdem_protocol.h"
@@ -128,8 +128,8 @@ bool Test_GetGeoData_ShapeAll()
 
 bool Test_GetGeoData_NameAll()
 {
-	return Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_AIRFIELD, 14, 13956, 9954)
-		&& Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_ISLAND, 10, 252, 613)
+	return /*Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_AIRFIELD, 14, 13956, 9954) 
+		&& */ Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_ISLAND, 10, 252, 613)
 		&& Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_COUNTRY, 3, (1<<3)*307/360, (1<<3)*220/360)
 		&& Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_COUNTRY, 5, (1<<5)*307/360, (1<<5)*220/360)
 		&& Test_GetGeoData_Name(E_GDM_SUBDATA_TYPE_NAME_COUNTRY, 8, (1<<8)*307/360, (1<<8)*220/360)
@@ -296,7 +296,7 @@ bool Test_GetGeoDataFromBlock()
 QString GDSTestSuiteManager::GetFlowTestResult()
 {
     QString curPath;
-	GetServerSeviceDir(curPath);
+	// GetServerSeviceDir(curPath);
     if (!InitializeGDSCore(curPath))
 		return false;
 

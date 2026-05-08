@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
 **
 ** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
 ** Contact: Nokia Corporation (qt-info@nokia.com)
@@ -494,7 +494,7 @@ QString qt_win_get_save_file_name(const QFileDialogArgs &args,
                                               qt_win_filter(args.filter),
 					      QFileDialog::AnyFile,
 					      args.options);
-        QByteArray asciiExt = defaultSaveExt.toAscii();
+        QByteArray asciiExt = defaultSaveExt.toUtf8();
         ofn->lpstrDefExt = asciiExt.data();
 
         if (idx)

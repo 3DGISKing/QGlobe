@@ -1,7 +1,7 @@
-#ifndef POLYGONDLG_H
+﻿#ifndef POLYGONDLG_H
 #define POLYGONDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "gdemclientbase.h"
 #include "GDM_CommandDlg.h"
 

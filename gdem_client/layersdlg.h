@@ -1,7 +1,7 @@
-#ifndef LAYERSDLG_H
+﻿#ifndef LAYERSDLG_H
 #define LAYERSDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QtCore/QBasicTimer>
 
 class SideBar;

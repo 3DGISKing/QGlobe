@@ -1,10 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
-#include <QtGui/QToolBar>
-#include <QtGui/QComboBox>
-#include <QtGui/QDialog>
+#include <QMainWindow>
+#include <QToolBar>
+#include <QComboBox>
+#include <QDialog>
 
 class SideBar;
 class RenderFrame;

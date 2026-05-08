@@ -6,11 +6,12 @@
 #include "../gds_common/GDSConfigMgr.h"
 #include <QMessageBox>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QCoreApplication>
 
 #define MAIN_SERVICE_NAME    "GDEMService"
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
-#if defined  (Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #define SERVICE_PATH    "/gds_service.exe"
 #define MONITOR_SERVICE_PATH    "/gds_service_monitoring.exe"
 #else
@@ -25,9 +26,9 @@
 
 static void artisticSleep(int sleepTime)
 {
-	QTime time;
-	time.restart();
-	while (time.elapsed() < sleepTime)
+	QElapsedTimer timer;
+	timer.start();
+	while (timer.elapsed() < sleepTime)
 	{
 		QCoreApplication::processEvents(QEventLoop::AllEvents, 50);
 	}
@@ -182,8 +183,8 @@ void ConfigDialog2::GetValues()
                 strDBPath1 = QString::fromUtf16((ushort*)tmpPath);
 	}	
 
-	g_ServerConfig.SetPortNo(m_ui->srvportSpin->value());
-	g_ServerConfig.SetMaxConnectNum(m_ui->srvconnectSpin->value());
+	//g_ServerConfig.SetPortNo(m_ui->srvportSpin->value());
+	//g_ServerConfig.SetMaxConnectNum(m_ui->srvconnectSpin->value());
     g_ServerConfig.SetFileDBPath(strDBPath1);
 
 	ST_DISTRIBUTE_FOLDER tFolder;
@@ -213,8 +214,8 @@ void ConfigDialog2::GetValues()
 void ConfigDialog2::SetValues()
 {
 	// configure
-	m_ui->srvportSpin->setValue(g_ServerConfig.GetPortNo());
-	m_ui->srvconnectSpin->setValue(g_ServerConfig.GetMaxConnectNum());
+	//m_ui->srvportSpin->setValue(g_ServerConfig.GetPortNo());
+	//m_ui->srvconnectSpin->setValue(g_ServerConfig.GetMaxConnectNum());
 	m_ui->dbpathEdit->setText(g_ServerConfig.GetFileDBPath());
 
 
@@ -225,10 +226,11 @@ void ConfigDialog2::SetValues()
 
 bool ConfigDialog2::IsChanged()
 {
+	/*
 	if (g_ServerConfig.GetPortNo() != m_ui->srvportSpin->value())
 		return true;
 	if (g_ServerConfig.GetMaxConnectNum() != m_ui->srvconnectSpin->value())
-		return true;
+		return true;*/
 	if (g_ServerConfig.GetFileDBPath().compare(m_ui->dbpathEdit->text()) != 0)
 		return true;
 

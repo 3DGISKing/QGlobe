@@ -2,10 +2,8 @@ TARGET   = gds_service
 DESTDIR = ../bin
 TEMPLATE = app
 CONFIG   += console qt
-macx: {
-CONFIG += x86
-}
 QT = core network sql
+include(../qt5_compat.pri)
 DEFINES += QT_SQL_LIB QT_NETWORK_LIB
 LIBS += -L"../lib" \
         -lgds_service_common \

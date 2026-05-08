@@ -1,7 +1,7 @@
-#ifndef GDEM_TOOL_H
+﻿#ifndef GDEM_TOOL_H
 #define GDEM_TOOL_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include <QSplitter>
 #include "ui_gdem_tool.h"
 
@@ -23,7 +23,7 @@ class gdem_tool : public QMainWindow
 	Q_OBJECT
 
 public:
-	gdem_tool(QWidget *parent = 0, Qt::WFlags flags = 0);
+	gdem_tool(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~gdem_tool();
 
 private:

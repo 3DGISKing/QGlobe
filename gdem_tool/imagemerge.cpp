@@ -1,4 +1,4 @@
-#include "imagemerge.h"
+﻿#include "imagemerge.h"
 #include <math.h>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -475,7 +475,7 @@ void ImageMerge::saveJpg( QImage saveimg,QString path)
 	//cinfo.err = jpeg_std_error(&jerr);
 	//jpeg_create_compress(&cinfo);
 
-	//QByteArray strBuffer = path.toAscii();
+	//QByteArray strBuffer = path.toUtf8();
 	//const char *lpszFileName = strBuffer.constData();
 
 	//if ((outfile = fopen(lpszFileName, "wb")) == NULL) {
@@ -703,7 +703,7 @@ void ImageMerge::WriteJgw(int x,int y,int level,int imgSize,QString filepath)
 	zeroStr.setNum(0.0f,'f',16);
 
 
-	QByteArray fnameArray = filepath.toAscii();
+	QByteArray fnameArray = filepath.toUtf8();
 	const char *fnamedata = fnameArray.constData();
 
 	std::fstream fp;
@@ -711,19 +711,19 @@ void ImageMerge::WriteJgw(int x,int y,int level,int imgSize,QString filepath)
 	if (!fp.good())	return;
 
 	const char enter = (char)10;
-	QByteArray longArray = longStr.toAscii();
+	QByteArray longArray = longStr.toUtf8();
 	const char *longdata = longArray.constData();
 
-	QByteArray latArray = latStr.toAscii();
+	QByteArray latArray = latStr.toUtf8();
 	const char *latdata = latArray.constData();
 
-	QByteArray longStepArray = longStepStr.toAscii();
+	QByteArray longStepArray = longStepStr.toUtf8();
 	const char *longStepdata = longStepArray.constData();
 
-	QByteArray latStepArray = latStepStr.toAscii();
+	QByteArray latStepArray = latStepStr.toUtf8();
 	const char *latStepdata = latStepArray.constData();
 
-	QByteArray zeroArray = zeroStr.toAscii();
+	QByteArray zeroArray = zeroStr.toUtf8();
 	const char *zerodata = zeroArray.constData();
 
 	fp.write(longStepdata,longStepArray.length());

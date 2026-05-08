@@ -1,4 +1,4 @@
-#include "GDSLog.h"
+﻿#include "GDSLog.h"
 #include "GDSConfigMgr.h"
 #include <QDate>
 #include <QTime>
@@ -46,7 +46,7 @@ void OpenLogFile()
 
 	QString strLogFileName;
 	strLogFileName.sprintf("%s/server%04d-%02d-%02d-%02d-%02d-%02d.log",
-		strLogPath.toAscii().data(),
+		strLogPath.toUtf8().data(),
 		tDate.year(), 
 		tDate.month(), 
 		tDate.day(),

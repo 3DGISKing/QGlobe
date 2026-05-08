@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2008 Nikolaus Gebhardt
+﻿// Copyright (C) 2002-2008 Nikolaus Gebhardt
 // This file is part of the "Geo Engine".
 // For conditions of distribution and use, see copyright notice in geoEngine.h
 
@@ -235,7 +235,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 			WORD KeyAsc=0;
 			GetKeyboardState(allKeys);
-			ToAscii((UINT)wParam,(UINT)lParam,allKeys,&KeyAsc,0);
+			toUtf8((UINT)wParam,(UINT)lParam,allKeys,&KeyAsc,0);
 
 			event.KeyInput.Shift = ((allKeys[VK_SHIFT] & 0x80)!=0);
 			event.KeyInput.Control = ((allKeys[VK_CONTROL] & 0x80)!=0);

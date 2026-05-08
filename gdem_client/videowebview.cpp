@@ -1,8 +1,8 @@
 #include "videowebview.h"
 
-#include <QtGui/QPushButton>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QHBoxLayout>
 #include "tinywebbrowser.h"
 #include "mediaplayer.h"
 

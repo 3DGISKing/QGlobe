@@ -1,7 +1,7 @@
-#ifndef SHAPEDRAW_H
+﻿#ifndef SHAPEDRAW_H
 #define SHAPEDRAW_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_shapedraw.h"
 #include "renderarea.h"
 #include <QDomDocument>
@@ -14,7 +14,7 @@ class ShapeDraw : public QMainWindow
 	Q_OBJECT
 
 public:
-	ShapeDraw(QWidget *parent = 0, Qt::WFlags flags = 0);
+	ShapeDraw(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~ShapeDraw();
 
 private:

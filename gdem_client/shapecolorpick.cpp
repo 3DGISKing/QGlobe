@@ -31,12 +31,15 @@ void shapeColorPick::Init()
 	m_fileName = gdm_GetWorkPath() + "/ShapeAttribute.xml";
 
 	QFile file(m_fileName);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		return;
 	QXmlSimpleReader reader;
 
 	ColorXmlParser handler;
 	reader.setContentHandler(&handler);
 	reader.setErrorHandler(&handler);
-	reader.parse(&file);
+	QXmlInputSource source(&file);
+	reader.parse(source);
 	handler.GetAttributeList(m_fileAttrList);
 
 	for (int i=0; i<m_fileAttrList->size(); i++)

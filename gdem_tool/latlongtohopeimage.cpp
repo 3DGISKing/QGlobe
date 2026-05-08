@@ -1,4 +1,4 @@
-#include "latlongtohopeimage.h"
+﻿#include "latlongtohopeimage.h"
 #include <QFileDialog>
 #include <QMessageBox>
 #include <fstream>
@@ -715,7 +715,7 @@ void LatLongToHopeImage::WriteMarginImageInfo(QString imgPath, double left, doub
 	_xResolStr.setNum(pixWidth,'f',16); _yResolStr = "-" + _xResolStr;
 	zeroStr.setNum(0.0f, 'f',16);
 
-	QByteArray jgwNameArray = filepath.toAscii();
+	QByteArray jgwNameArray = filepath.toUtf8();
 	const char *jgwNamedata = jgwNameArray.constData();
 
 	std::fstream jgwfp;
@@ -723,18 +723,18 @@ void LatLongToHopeImage::WriteMarginImageInfo(QString imgPath, double left, doub
 	if (!jgwfp.good())	return;
 
 	const char _enter = (char)10;
-	const char *_leftdata = _leftStr.toAscii().constData();
-	const char *_topdata = _topStr.toAscii().constData();
-	const char *_xResoldata = _xResolStr.toAscii().constData();
-	const char *_yResoldata = _yResolStr.toAscii().constData();
-	const char *zeroStrdata = zeroStr.toAscii().constData();
+	const char *_leftdata = _leftStr.toUtf8().constData();
+	const char *_topdata = _topStr.toUtf8().constData();
+	const char *_xResoldata = _xResolStr.toUtf8().constData();
+	const char *_yResoldata = _yResolStr.toUtf8().constData();
+	const char *zeroStrdata = zeroStr.toUtf8().constData();
 
-	jgwfp.write(_xResoldata, _xResolStr.toAscii().length()); jgwfp.write(&_enter,1);	
-	jgwfp.write(zeroStrdata, zeroStr.toAscii().length()); jgwfp.write(&_enter,1);	
-	jgwfp.write(zeroStrdata, zeroStr.toAscii().length()); jgwfp.write(&_enter,1);	
-	jgwfp.write(_yResoldata, _yResolStr.toAscii().length()); 	jgwfp.write(&_enter,1);	
-	jgwfp.write(_leftdata, _leftStr.toAscii().length());	jgwfp.write(&_enter,1);
-	jgwfp.write(_topdata, _topStr.toAscii().length());
+	jgwfp.write(_xResoldata, _xResolStr.toUtf8().length()); jgwfp.write(&_enter,1);	
+	jgwfp.write(zeroStrdata, zeroStr.toUtf8().length()); jgwfp.write(&_enter,1);	
+	jgwfp.write(zeroStrdata, zeroStr.toUtf8().length()); jgwfp.write(&_enter,1);	
+	jgwfp.write(_yResoldata, _yResolStr.toUtf8().length()); 	jgwfp.write(&_enter,1);	
+	jgwfp.write(_leftdata, _leftStr.toUtf8().length());	jgwfp.write(&_enter,1);
+	jgwfp.write(_topdata, _topStr.toUtf8().length());
 	jgwfp.close();
 	
 }
@@ -979,7 +979,7 @@ void LatLongToHopeImage::WriteJgwFile(int x,int y,int level,QString filepath)
 	zeroStr.setNum(0.0f,'f',16);
 
 
-	QByteArray fnameArray = filepath.toAscii();
+	QByteArray fnameArray = filepath.toUtf8();
 	const char *fnamedata = fnameArray.constData();
 
 	std::fstream fp;
@@ -987,19 +987,19 @@ void LatLongToHopeImage::WriteJgwFile(int x,int y,int level,QString filepath)
 	if (!fp.good())	return;
 
 	const char enter = (char)10;
-	QByteArray longArray = longStr.toAscii();
+	QByteArray longArray = longStr.toUtf8();
 	const char *longdata = longArray.constData();
 
-	QByteArray latArray = latStr.toAscii();
+	QByteArray latArray = latStr.toUtf8();
 	const char *latdata = latArray.constData();
 
-	QByteArray longStepArray = longStepStr.toAscii();
+	QByteArray longStepArray = longStepStr.toUtf8();
 	const char *longStepdata = longStepArray.constData();
 
-	QByteArray latStepArray = latStepStr.toAscii();
+	QByteArray latStepArray = latStepStr.toUtf8();
 	const char *latStepdata = latStepArray.constData();
 
-	QByteArray zeroArray = zeroStr.toAscii();
+	QByteArray zeroArray = zeroStr.toUtf8();
 	const char *zerodata = zeroArray.constData();
 
 	fp.write(longStepdata,longStepArray.length());

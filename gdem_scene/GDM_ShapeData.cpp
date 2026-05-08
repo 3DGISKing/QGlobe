@@ -14,6 +14,7 @@
 //end addition
 
 #include <QList>
+#include <algorithm>
 
 #define OFFSET_RADIUS_COUNTRY			500
 #define OFFSET_RADIUS_FIRST_ADMIN		0
@@ -356,7 +357,7 @@ inline void GetExactPtsInLogicTile(const GDM_LOGIC_TILE *ptile, CGDM_Line2DF* li
 		inPtArr.push_back(crossingPt);
 	}
 	
-	qSort(inPtArr.begin(), inPtArr.end(), hasBiggerZValue);
+	std::sort(inPtArr.begin(), inPtArr.end(), hasBiggerZValue);
 	
 	for (int i = 0; i<inPtArr.size(); i++)
 	{

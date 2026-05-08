@@ -206,7 +206,7 @@ IReadFile* CZipReader::openFile(s32 index)
 		}
 	case 8:
 		{
-  			#ifdef _GEO_COMPILE_WITH_ZLIB_
+  			#if defined(_GEO_COMPILE_WITH_ZLIB_) && 0
 			
 			const u32 uncompressedSize = FileList[index].header.DataDescriptor.UncompressedSize;			
 			const u32 compressedSize = FileList[index].header.DataDescriptor.CompressedSize;
@@ -265,7 +265,7 @@ IReadFile* CZipReader::openFile(s32 index)
 				return io::createMemoryReadFile(pBuf, uncompressedSize, FileList[index].zipFileName.c_str(), true);
 			
 			#else
-			return 0; // zlib not compiled, we cannot decompress the data.
+			return 0; // zlib path disabled in this build.
 			#endif
 		}
 	default:

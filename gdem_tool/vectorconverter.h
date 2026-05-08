@@ -1,7 +1,7 @@
-#ifndef VECTORCONVERTER_H
+﻿#ifndef VECTORCONVERTER_H
 #define VECTORCONVERTER_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_vectorconverter.h"
 
 #define		AV_NULL_SHP				0
@@ -14,7 +14,7 @@ class VectorConverter : public QMainWindow
 	Q_OBJECT
 
 public:
-	VectorConverter(QWidget *parent = 0, Qt::WFlags flags = 0);
+	VectorConverter(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~VectorConverter();
 
 private:

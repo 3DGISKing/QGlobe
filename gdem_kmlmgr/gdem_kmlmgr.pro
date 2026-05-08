@@ -9,7 +9,7 @@ QT += network \
 CONFIG += staticlib \
     precompile_header \
     build_pass
-macx::CONFIG += x86
+include(../qt5_compat.pri)
 DEFINES +=
 
 DEPENDPATH += .

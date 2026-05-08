@@ -1,4 +1,4 @@
-#include <QtGui/QSplitter>
+#include <QtWidgets/QSplitter>
 #include "gdemclient.h"
 #include "sidebar.h"
 #include "searchdlg.h"
@@ -189,7 +189,10 @@ ResultTreeView* SideBar::GetActiveView()
 	if (IsActiveSearchView())
 		return m_searchDlg->GetSearchView();
 
-	return m_placeDlg->GetPlaceView();
+	if(m_placeDlg)
+		m_placeDlg->GetPlaceView();
+
+	return NULL;
 }
 
 void SideBar::ChangePanel(int sender)

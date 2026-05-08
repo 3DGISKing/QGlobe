@@ -1,4 +1,4 @@
-
+﻿
 #include "common.h"
 #include <QMessageBox>
 #include <fstream>
@@ -26,7 +26,7 @@ void writeJgw(int x,int y,int level,QString filepath)
 	longStepStr.setNum(longStep,'f',16); latStepStr.setNum(latStep,'f',16);
 	zeroStr.setNum(0.0f,'f',16);
 
-	QByteArray fnameArray = filepath.toAscii();
+	QByteArray fnameArray = filepath.toUtf8();
 	const char *fnamedata = fnameArray.constData();
 
 	std::fstream fp;
@@ -34,19 +34,19 @@ void writeJgw(int x,int y,int level,QString filepath)
 	if (!fp.good())	return;
 
 	const char enter = (char)10;
-	QByteArray longArray = longStr.toAscii();
+	QByteArray longArray = longStr.toUtf8();
 	const char *longdata = longArray.constData();
 
-	QByteArray latArray = latStr.toAscii();
+	QByteArray latArray = latStr.toUtf8();
 	const char *latdata = latArray.constData();
 
-	QByteArray longStepArray = longStepStr.toAscii();
+	QByteArray longStepArray = longStepStr.toUtf8();
 	const char *longStepdata = longStepArray.constData();
 
-	QByteArray latStepArray = latStepStr.toAscii();
+	QByteArray latStepArray = latStepStr.toUtf8();
 	const char *latStepdata = latStepArray.constData();
 
-	QByteArray zeroArray = zeroStr.toAscii();
+	QByteArray zeroArray = zeroStr.toUtf8();
 	const char *zerodata = zeroArray.constData();
 
 	fp.write(longStepdata,longStepArray.length());

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f4f15b51-8845-4d6f-8838-9b6a1e3ea4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CarSim">
+      <UniqueIdentifier>{90e12146-6753-4593-aaf7-5811196404cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FlightSim">
+      <UniqueIdentifier>{c22e822f-fc01-42bc-bb46-9b0ca2240da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PathSim">
+      <UniqueIdentifier>{eaf2ef01-d4c1-455a-9336-e8f7c726a488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GDM_SimMgr.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_Simulator.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_Car.cpp">
+      <Filter>CarSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_CarSim.cpp">
+      <Filter>CarSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_AircraftSpecs.cpp">
+      <Filter>FlightSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_ControlSurface.cpp">
+      <Filter>FlightSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_FlightSim.cpp">
+      <Filter>FlightSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_FlightSimInput.cpp">
+      <Filter>FlightSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_FlightSimPhysics.cpp">
+      <Filter>FlightSim</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_PathSim.cpp">
+      <Filter>PathSim</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GDM_SimMgr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_Simulator.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_Car.h">
+      <Filter>CarSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_CarSim.h">
+      <Filter>CarSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_AircraftSpecs.h">
+      <Filter>FlightSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_ControlSurface.h">
+      <Filter>FlightSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_FlightSim.h">
+      <Filter>FlightSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_FlightSimTypes.h">
+      <Filter>FlightSim</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_PathSim.h">
+      <Filter>PathSim</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

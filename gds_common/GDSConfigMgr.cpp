@@ -38,7 +38,7 @@ GDSConfig::GDSConfig()
 	m_dbName		= "dbworld";
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	m_dbPath		= DEFAULT_DBPATH_WIN;
 #else
 	m_dbPath		= "/database";

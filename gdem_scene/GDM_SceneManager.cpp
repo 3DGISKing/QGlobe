@@ -1,4 +1,4 @@
-#include <QGLWidget>
+#include <QOpenGLWidget>
 #include "os.h"
 
 #include "GDM_SceneManager.h"
@@ -115,7 +115,7 @@ void GDM_SceneManager::Initialize()
 	gdm_GetDataMgr()->SetTextureIDCache(m_pTextureIdCache);
 }
 
-bool GDM_SceneManager::registerRenderEngine(QGLWidget* widget)
+bool GDM_SceneManager::registerRenderEngine(QOpenGLWidget* widget)
 {
 	geo::SGeoCreationParameters params;
 

@@ -1,6 +1,6 @@
-#include <QDesktopServices>
 #include <QDir>
 #include <QString>
+#include <QStandardPaths>
 #include <stdio.h>
 #include "common.h"
 #include "../gdem_common/gdem_protocol.h"
@@ -166,7 +166,7 @@ CGDM_FileCacheMgr::CGDM_FileCacheMgr()
 	m_nCurSize		= 0;
 
 	/* Open cache data file */
-	tmpPath = QDir::toNativeSeparators(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/dbCache.dat");	
+	tmpPath = QDir::toNativeSeparators(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/dbCache.dat");
 	OpenCacheDataFile(tmpPath.toUtf8().constData());
 }
 

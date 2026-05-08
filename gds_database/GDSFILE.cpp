@@ -1,4 +1,4 @@
-#include "GDSFile.h"
+ï»¿#include "GDSFile.h"
 #include <QtCore/QFile>
 #include "../gds_common/GDSLog.h"
 #include "../gds_common/GDSConfigMgr.h"
@@ -6,7 +6,7 @@
 #include "../gdem_libmain/GDM_DataMgr.h"
 #include "../gdem_libmain/Layer.h"
 
-//¹¦µá¿ÍÃùËÎËË Ê­³£µ¹ ±¶¸ë¼¬ËÍ ÃùËÎËæº· »ôµê¶¦ ÊÐ²÷³Þ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ê­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ë¼¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½æº· ï¿½ï¿½ê¶¦ ï¿½Ð²ï¿½ï¿½ï¿½
 bool GetGeoDataFromFile(IN E_GDM_MAINDATA_TYPE a_eMainDataType, 
 						IN E_GDM_SUBDATA_TYPE a_eSubDataType, 
 						IN unsigned int a_nLevel,
@@ -37,7 +37,7 @@ bool GetGeoDataFromFile(IN E_GDM_MAINDATA_TYPE a_eMainDataType,
 
 	if (newFile == NULL)
 	{
-		GDSLogOutput(E_LOG_ERROR, "new QFile failed at GetGeoDataFromFile.[file : %s]", tFileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "new QFile failed at GetGeoDataFromFile.[file : %s]", tFileName.toUtf8().data());
 		*a_pBytes = sizeof(ST_GEODATA_COMMON) - sizeof(unsigned char)*4;
 		return false;
 	}
@@ -48,7 +48,7 @@ bool GetGeoDataFromFile(IN E_GDM_MAINDATA_TYPE a_eMainDataType,
 	{
 		delete newFile;
 
-		GDSLogOutput(E_LOG_ERROR, "File size is zero at GetGeoDataFromFile.[file : %s]", tFileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File size is zero at GetGeoDataFromFile.[file : %s]", tFileName.toUtf8().data());
 		return false;
 	}
 
@@ -56,7 +56,7 @@ bool GetGeoDataFromFile(IN E_GDM_MAINDATA_TYPE a_eMainDataType,
 	{
 		delete newFile;
 
-		GDSLogOutput(E_LOG_ERROR, "File open failed at GetGeoDataFromFile.[file : %s]", tFileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File open failed at GetGeoDataFromFile.[file : %s]", tFileName.toUtf8().data());
 		return false;
 	}
 

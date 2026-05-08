@@ -1,7 +1,7 @@
-#ifndef PLACEFOLDERDLG_H
+﻿#ifndef PLACEFOLDERDLG_H
 #define PLACEFOLDERDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 #include "gdemclientbase.h"
 

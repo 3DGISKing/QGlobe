@@ -1,5 +1,5 @@
-#include <QtGui/QTableWidget>
-#include <QtGui/QLabel>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QLabel>
 
 #include "keyframe.h"
 

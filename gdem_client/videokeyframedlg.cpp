@@ -1,6 +1,8 @@
 #include "stable.h"
 #include "videokeyframedlg.h"
 #include "keyframe.h"
+#include <QMediaContent>
+#include <QUrl>
 
 VideoKeyFrameDlg::VideoKeyFrameDlg(QWidget *parent)
 	: QDialog(parent)
@@ -9,13 +11,11 @@ VideoKeyFrameDlg::VideoKeyFrameDlg(QWidget *parent)
 	setWindowModality(Qt::ApplicationModal);
 	m_VideoKeyFrame=new VideoKeyFrame();
 
-	m_videoWidget=new Phonon::VideoWidget(this);
+	m_videoWidget=new QVideoWidget(this);
 	m_videoWidget->setVisible(false);
-	Phonon::createPath(&m_MediaObject, m_videoWidget);
-	Phonon::createPath(&m_MediaObject, &m_AudioOutput);
-	connect(&m_MediaObject, SIGNAL(stateChanged(Phonon::State,Phonon::State)), this, SLOT(stateChanged(Phonon::State,Phonon::State)));
-	connect(&m_MediaObject, SIGNAL(currentSourceChanged(const Phonon::MediaSource&)), this, SLOT(sourceChanged(const Phonon::MediaSource&)));
-	connect(&m_MediaObject, SIGNAL(totalTimeChanged(qint64)), this, SLOT(onTotalTimeChanged()));
+	m_MediaObject.setVideoOutput(m_videoWidget);
+	connect(&m_MediaObject, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChanged(QMediaPlayer::State)));
+	connect(&m_MediaObject, SIGNAL(durationChanged(qint64)), this, SLOT(onTotalTimeChanged()));
 
 	connect(ui.pushButtonCancel,SIGNAL(clicked()),this,SLOT(onCancel()));
 	connect(ui.pushButtonOk,SIGNAL(clicked()),this,SLOT(onOk()));
@@ -48,55 +48,38 @@ void VideoKeyFrameDlg::onBrowser()
 
 	if(fileName=="") return;
 
-	m_MediaObject.setCurrentSource(Phonon::MediaSource(fileName));
+	m_MediaObject.setMedia(QUrl::fromLocalFile(fileName));
 }
 
 
-void VideoKeyFrameDlg::stateChanged(Phonon::State newstate, Phonon::State oldstate)
+void VideoKeyFrameDlg::stateChanged(QMediaPlayer::State newstate)
 {
 	switch (newstate)
 	{
-	case Phonon::ErrorState:
-		//QMessageBox::warning(this, "Phonon Mediaplayer", m_MediaObject.errorString(), QMessageBox::Close);
+	case QMediaPlayer::StoppedState:
 		break;
-
-	case Phonon::StoppedState:
-		{
-
-		}
+	case QMediaPlayer::PausedState:
 		break;
-	case Phonon::PausedState:
-
-		break;
-	case Phonon::PlayingState:
-
-		// Fall through
-	case Phonon::BufferingState:
-
-		break;
-	case Phonon::LoadingState:
-
+	case QMediaPlayer::PlayingState:
 		break;
 	}
 }
 
 void VideoKeyFrameDlg::onTotalTimeChanged()
 {
-	Phonon::MediaSource s=m_MediaObject.currentSource();
-
-	QString fileName=s.fileName();
+	QString fileName = m_MediaObject.currentMedia().canonicalUrl().toLocalFile();
 
 	if(fileName=="") 
 		return;
 
-	qint64 totoltime=m_MediaObject.totalTime();
+	qint64 totoltime=m_MediaObject.duration();
 	if(totoltime==0)
 		return ;
 
 	ui.lineEditFileName->setText(fileName);
 	ui.spinBoxTime->setValue(totoltime);
 
-	m_MediaObject.setCurrentSource(Phonon::MediaSource(""));
+	m_MediaObject.setMedia(QMediaContent());
 }
 
 

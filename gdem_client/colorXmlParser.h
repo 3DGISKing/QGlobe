@@ -1,6 +1,11 @@
 #ifndef COLORXMLPARSER_H
 #define	COLORXMLPARSER_H
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4996) // QtXml SAX classes are deprecated in Qt 5.15
+#endif
+
 #include <QtXml/QXmlDefaultHandler>
 #include <QString>
 #include <QVector>
@@ -34,4 +39,8 @@ private:
 	QVector<ShapeAttribute> m_shpAttrList;
 
 };
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 #endif

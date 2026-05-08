@@ -1,4 +1,4 @@
-#include "GeoTerrainSceneNode.h"
+﻿#include "GeoTerrainSceneNode.h"
 #include "GDM_TextureMgr.h"
 #include "GIS_TextureMgr.h"
 #include "GDM_FPSTester.h"
@@ -66,7 +66,7 @@ namespace scene
 
 			char textureName[256] = {0,};
 
-			sprintf(textureName, "%s", name.toAscii().data());
+			sprintf(textureName, "%s", name.toUtf8().data());
 
 			Q_ASSERT(strlen(textureName)<256);
 
@@ -380,8 +380,8 @@ void CGeoTerrainSceneNode::drawMark()
 		destRect.LowerRightCorner.X = transPos.X + renderTargetSize.Width / 50;
 		destRect.LowerRightCorner.Y = renderTargetSize.Height - 100;
 
-		strTop.sprintf("%d%c", GDM_GIS_MAX_ANGLE , 0x00B0);
-		strBot.sprintf("%d%c", 0 , 0x00B0);
+		strTop = QString("%1%2").arg(GDM_GIS_MAX_ANGLE).arg(QChar(0x00B0));
+		strBot = QString("%1%2").arg(0).arg(QChar(0x00B0));
 
 		driver->draw2DImage(rateAngleTexture, destRect, sourceRect);
 
@@ -406,8 +406,8 @@ void CGeoTerrainSceneNode::drawMark()
 		destRect.LowerRightCorner.X = transPos.X + renderTargetSize.Width / 50;
 		destRect.LowerRightCorner.Y = renderTargetSize.Height - 100;
 
-		strTop.sprintf("%dkm", (int)(GDM_MAX_HEIGHT / 1000));
-		strBot.sprintf("%dm", 0);
+		strTop = QString("%1km").arg((int)(GDM_MAX_HEIGHT / 1000));
+		strBot = QString("%1m").arg(0);
 
 		driver->draw2DImage(heightTexture, destRect, sourceRect);
 
@@ -487,7 +487,7 @@ void CGeoTerrainSceneNode::DrawRasterSymbol()
 	float max=rasterlayer->GetStatistics()._maxvalue;
 	float min=rasterlayer->GetStatistics()._minvalue;
 
-	char* strsymbolname=symbolname.toAscii().data();
+	char* strsymbolname=symbolname.toUtf8().data();
 
 	geo::video::ITexture* texture;
 
@@ -511,8 +511,8 @@ void CGeoTerrainSceneNode::DrawRasterSymbol()
 	destRect.LowerRightCorner.X = transPos.X + renderTargetSize.Width / 50;
 	destRect.LowerRightCorner.Y = renderTargetSize.Height - 100;
 
-	strTop.sprintf("%f%s", max ,rasterlayer->GetUnitDescription());
-	strBot.sprintf("%f%s", min,rasterlayer->GetUnitDescription());
+	strTop = QString("%1%2").arg(max, 0, 'f', 6).arg(rasterlayer->GetUnitDescription());
+	strBot = QString("%1%2").arg(min, 0, 'f', 6).arg(rasterlayer->GetUnitDescription());
 
 	driver->draw2DImage(texture, destRect, sourceRect);
 

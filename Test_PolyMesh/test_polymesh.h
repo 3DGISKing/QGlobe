@@ -1,7 +1,7 @@
-#ifndef TEST_POLYMESH_H
+﻿#ifndef TEST_POLYMESH_H
 #define TEST_POLYMESH_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_test_polymesh.h"
 
 class RenderView;

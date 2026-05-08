@@ -29,6 +29,8 @@
 #include "rendersrv.h"
 #include "../gdem_scene/GDM_SceneManager.h"
 #include "../gdem_scene/GDM_TextureMgr.h"
+#include <QtXml/QXmlInputSource>
+#include <QtXml/QXmlSimpleReader>
 
 CGDM_DataMgr* g_pGDMDataMgr = NULL;
 
@@ -143,12 +145,23 @@ void CGDM_DataMgr::ReadGeoShapeColorWidth()
 	QString m_shapeAttrFName = gdm_GetWorkPath() + "/ShapeAttribute.xml";
 
 	QFile file(m_shapeAttrFName);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		return;
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable: 4996) // QtXml SAX API is deprecated in Qt 5.15
+#endif
 	QXmlSimpleReader reader;
+	QXmlInputSource source(&file);
 
 	ColorXmlParser handler;
 	reader.setContentHandler(&handler);
 	reader.setErrorHandler(&handler);
-	reader.parse(&file);
+	reader.parse(&source);
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 	handler.SetAttributeList(m_sOption.m_geoShapeAttr);
 }
 

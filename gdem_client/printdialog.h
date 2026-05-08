@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QList>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrinterInfo>
 #include "ui_printdlg.h"
 
 class PrintDialog : public QDialog

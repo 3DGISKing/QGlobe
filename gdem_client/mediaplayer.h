@@ -42,23 +42,16 @@
 #ifndef MEDIALAYER_H
 #define MEDIAPLAYER_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QApplication>
-#include <QtCore/QTimerEvent>
-#include <QtGui/QShowEvent>
-#include <QtGui/QIcon>
-#include <QtCore/QBasicTimer>
-#include <QtGui/QAction>
-
-#include <phonon/audiooutput.h>
-#include <phonon/backendcapabilities.h>
-#include <phonon/effect.h>
-#include <phonon/effectparameter.h>
-#include <phonon/effectwidget.h>
-#include <phonon/mediaobject.h>
-#include <phonon/seekslider.h>
-#include <phonon/videowidget.h>
-#include <phonon/volumeslider.h>
+#include <QWidget>
+#include <QApplication>
+#include <QTimerEvent>
+#include <QShowEvent>
+#include <QIcon>
+#include <QBasicTimer>
+#include <QAction>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QSlider>
 
 QT_BEGIN_NAMESPACE
 class QPushButton;
@@ -71,7 +64,7 @@ QT_END_NAMESPACE
 
 class MediaPlayer;
 
-class MediaVideoWidget : public Phonon::VideoWidget
+class MediaVideoWidget : public QVideoWidget
 {
     Q_OBJECT
 
@@ -107,7 +100,7 @@ public:
     void setLocation(const QString &location);
     void initVideoWindow();
     void initSettingsDialog();
-    void setVolume(qreal volume);
+    void setVolume(int volume);
     void setSmallScreen(bool smallScreen);
 	void play();
 	QString getCurrentTitle();
@@ -122,7 +115,7 @@ public slots:
 signals:
 	void videoFinished();
 private slots:
-    void stateChanged(Phonon::State newstate, Phonon::State oldstate);
+    void stateChanged(QMediaPlayer::State newstate);
     void bufferStatus(int percent);
 
 #ifdef Q_OS_SYMBIAN
@@ -142,23 +135,21 @@ private:
     QPushButton *playButton;
     QPushButton *rewindButton;
     QPushButton *forwardButton;
-    Phonon::SeekSlider *slider;
+    QSlider *slider;
     QLabel *timeLabel;
     QLabel *progressLabel;
-    Phonon::VolumeSlider *volume;
+    QSlider *volume;
     QSlider *m_hueSlider;
     QSlider *m_satSlider;
     QSlider *m_contSlider;
     QLabel *info;
-    Phonon::Effect *nextEffect;
+    QObject *nextEffect;
     QDialog *settingsDialog;
     Ui_settings *ui;
 
     QWidget m_videoWindow;
-    Phonon::MediaObject m_MediaObject;
-    Phonon::AudioOutput m_AudioOutput;
+    QMediaPlayer m_MediaObject;
     MediaVideoWidget *m_videoWidget;
-    Phonon::Path m_audioOutputPath;
     bool m_smallScreen;
 };
 

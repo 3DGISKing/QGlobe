@@ -7,8 +7,7 @@
 #include <memory.h>
 #include <iostream>
 #include <vector>
-#include <QObject>
-#include <QtGui/QApplication>
-#include <QThread>
+#include <QtCore/QObject>
+#include <QtCore/QThread>
 
 #endif // STABLE_H

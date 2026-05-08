@@ -1,12 +1,11 @@
 
 #include "TinyWebBrowser.h"
-#include <QtWebkit/QWebFrame>
 
 TinyWebBrowser::TinyWebBrowser( QWidget* parent )
     : QFrame( parent )
      
 {
-	m_WebView=new QWebView(this);
+	m_WebView=new QWebEngineView(this);
 
 	m_WebView->move(0,-25);
 	
@@ -46,24 +45,7 @@ void TinyWebBrowser::onLoadFinished(bool ok)
 }
 QString TinyWebBrowser::getCurrentTitle()
 {
-	QString html=m_WebView->page()->currentFrame()->toHtml();
-
-	QString tmpStr, title;
-	int startpos, endpos;
-
-	startpos = html.indexOf("<!--Title Begin-->");
-	if(startpos >= 0) 
-	{
-		endpos = html.indexOf("<!--Title End-->");
-		tmpStr = html.mid(startpos, endpos - startpos);
-		tmpStr = tmpStr.replace("<br>", "\n");
-		tmpStr = tmpStr.replace("&nbsp;", " ");
-		tmpStr = tmpStr.remove(QRegExp("<[^<]*>&nbsp;</[^<]*>"));
-		tmpStr = tmpStr.remove(QRegExp("<[^<]*>|</[^<]*>"));
-		title = tmpStr.trimmed();
-	}
-
-	return title;
+	return m_WebView->title().trimmed();
 }
 
 

@@ -188,7 +188,7 @@ void PlaceMarkMgr::GetNewPlaceFolderData(PLACEMARK_DATA *data)
 	PLACEMARK_DATA pmd;
 	memset(&pmd, 0, sizeof(pmd));
 
-	QString name = QApplication::translate("PlaceMarkMgr","Unnamed Place Folder",0,QApplication::UnicodeUTF8);
+	QString name = QApplication::translate("PlaceMarkMgr","Unnamed Place Folder");
 	gu_qstring2ushort(name, pmd.name, PMD_STR_MAX_SIZE);
 	pmd.itemtype = IT_FOLDER;
 	pmd.showmark = SMT_SHOW;

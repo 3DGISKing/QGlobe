@@ -1,5 +1,6 @@
-#include <QtCore/QFileInfo>
+﻿#include <QtCore/QFileInfo>
 #include <QtCore/QDir>
+#include <QtCore/QStandardPaths>
 #include <string.h>
 #include "gdemclient.h"
 #include "config.h"
@@ -191,7 +192,7 @@ QString GDemClient::Trans(const char *s, const char *c)
 
 QString GDemClient::Trans(const QString &s)
 {
-	QByteArray byteArr = s.toAscii();
+	QByteArray byteArr = s.toUtf8();
 	QString res = m_translator.translate(NULL, byteArr.data(), NULL);
 	if (res.isEmpty() && s.length() > 0)
 		res = s;
@@ -330,13 +331,13 @@ void GDemClient::UpdateOptionInfo()
  */
 void GDemClient::CreateUserDataDir()
 {
-	m_userDataDir = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
+	m_userDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
 	QDir dir;
 	bool res = dir.mkpath(m_userDataDir);
 #ifdef DEBUG
 	qDebug("GDemClient::CreateUserDataDir: %s(%s)", res ? "true" : "false",
-		   m_userDataDir.toAscii().data());
+		   m_userDataDir.toUtf8().data());
 #endif
 }
 
@@ -398,16 +399,16 @@ void GDemClient::ResetRenderKeys()
 
 void GDemClient::FullExtent()
 {
-#define LATI_KOREA		39.02 
-#define LONGI_KOREA		125.75 
+#define LATI_CHINA		35.8617 
+#define LONGI_CHINA		104.1954 
 #define DST			    (10500000)
 #define TIME            4000
 
 	GDM_CAMERA_INFO cameraInfo;	
 	memset(&cameraInfo , 0 , sizeof(GDM_CAMERA_INFO));
 	cameraInfo.m_loc.m_dDist=DST;
-	cameraInfo.m_loc.m_dLongitude=LONGI_KOREA*gdm_DEGTORAD;
-	cameraInfo.m_loc.m_dLatitude=LATI_KOREA*gdm_DEGTORAD;
+	cameraInfo.m_loc.m_dLongitude=LONGI_CHINA*gdm_DEGTORAD;
+	cameraInfo.m_loc.m_dLatitude=LATI_CHINA*gdm_DEGTORAD;
 
 	m_renderProxy->GetRenderSrv()->m_pCameraController->AutoMoveTo(0, cameraInfo, TIME);
 

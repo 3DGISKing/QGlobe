@@ -45,7 +45,7 @@
 ****************************************************************************/
 #include <qglobal.h>
 
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
 #include "gdsunixserversocket.h"
 #include <sys/types.h>
 #include <sys/un.h>

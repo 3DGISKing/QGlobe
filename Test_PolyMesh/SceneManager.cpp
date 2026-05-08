@@ -1,4 +1,4 @@
-#include <QGLWidget>
+ï»¿#include <QGLWidget>
 #include <QtCore>
 #include "os.h"
 
@@ -67,14 +67,14 @@ void SceneManager::unregisterRenderEngine()
 void ConvertToCharFromQString(QString &str, char* buffer)
 {
 	char *data;
-	QByteArray byte = str.toAscii();
+	QByteArray byte = str.toUtf8();
 	data = byte.data();
 	int len = strlen(data);
 
 	memcpy(buffer, data, len + 1);
 }
 
-//Terrain, Shape, SkyBoxµî SceneGraph¸¦ ±¸¼ºÇÑ´Ù.
+//Terrain, Shape, SkyBoxï¿½ï¿½ SceneGraphï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 bool SceneManager::prepareSceneGraph()
 {
 	if(!_smgr)
@@ -142,8 +142,8 @@ void SceneManager::setupEnv()
 	_smgr->setAmbientLight(video::SColorf(0.6f, 0.6f, 0.6f, 0.6f));
 }
 
-//Ä«¸Þ¶óÁ¤º¸¸¦ °»½ÅÇØÁØ´Ù.
-//Input : Ä«¸Þ¶óÀ§Ä¡, È¸Àü°¢Á¤º¸
+//Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
+//Input : Ä«ï¿½Þ¶ï¿½ï¿½ï¿½Ä¡, È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void SceneManager::setCameraPos(geo::core::vector3df& absPos, geo::core::vector3df& pos, geo::core::vector3df& target, geo::core::vector3df& up)
 {
 	video::IVideoDriver* driver = _Device->getVideoDriver();

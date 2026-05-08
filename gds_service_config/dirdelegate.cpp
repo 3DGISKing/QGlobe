@@ -1,6 +1,6 @@
 #include "dirdelegate.h"
 #include "directorybox.h"
-#include <QtGui>
+#include <QtWidgets>
 
 DirDelegate::DirDelegate(QObject *parent)
 	: QItemDelegate(parent)

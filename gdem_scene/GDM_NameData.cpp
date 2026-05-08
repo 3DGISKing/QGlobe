@@ -87,8 +87,13 @@ void gdm_MakeRenderTileName()
 
 		int m=pTile->nX/128; int n=pTile->nY/128;
 
-		QString tilname;
-		tilname.sprintf("%d th :%d_%d_%d_%d_%d",i,pTile->nX,pTile->nY,pTile->nLevel,m,n);
+		QString tilname = QString("%1 th :%2_%3_%4_%5_%6")
+			.arg(i)
+			.arg(pTile->nX)
+			.arg(pTile->nY)
+			.arg(pTile->nLevel)
+			.arg(m)
+			.arg(n);
 
 		gdm_GetDataMgr()->m_pTextMgr->AddText(E_GDM_SUBDATA_TYPE_NONE,locPt, RTT_NAME_DEFAULT, tilname, 0, false);
 

@@ -1,4 +1,4 @@
-// GDSGeoNameDBManager.cpp : implementation file
+﻿// GDSGeoNameDBManager.cpp : implementation file
 
 #include "GDSGeoNameDBManager.h"
 
@@ -18,7 +18,6 @@
 #include "../gdem_gis/GIS_Polygon.h"
 #include "../gdem_gis/GIS_Area.h"
 #include "../gdem_gis/GIS_Path.h"
-#include "../gdem_client/gdemclient.h"
 #include "../gdem_libmain/Layer.h"
 
 
@@ -44,13 +43,11 @@ GDSGeoNameDBManager::GDSGeoNameDBManager()
 	QString strDBPath;
 #ifdef GEONAME_MODIFY_TEMP
 	strDBPath.sprintf("%s/database/%s",
-		g_ServerConfig.GetCurrentPath().toAscii().data(),
+		g_ServerConfig.GetCurrentPath().toUtf8().data(),
 		SQLITE_DB_PATH);
 #else
-	QString path=g_app->GetWorkDir();
-
 	strDBPath.sprintf("%s/%s",
-		g_ServerConfig.GetFileDBPath().toAscii().data(),
+		g_ServerConfig.GetFileDBPath().toUtf8().data(),
 		SQLITE_DB_PATH);
 
 #endif
@@ -81,7 +78,7 @@ bool GDSGeoNameDBManager::connect_mysql()
 {
 	if (!m_Database.open())
 	{
-		GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::connect_mysql.[error : %s]", m_Database.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::connect_mysql.[error : %s]", m_Database.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -100,7 +97,7 @@ bool GDSGeoNameDBManager::InitTableData()
 	{
 		if (!m_Database.open())
 		{
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::InitTableData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::InitTableData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -150,7 +147,7 @@ bool GDSGeoNameDBManager::InitTableData()
 			qFatal("Error");
 		}
 
-		memcpy(m_pTableList[i].table_name, strName.toAscii().data(), strName.length() + 1);
+		memcpy(m_pTableList[i].table_name, strName.toUtf8().data(), strName.length() + 1);
 
 		m_pTableList[i].start_level	= oSqlQueryModel.record(i).field("start_level").value().toInt();
 		m_pTableList[i].end_level	= oSqlQueryModel.record(i).field("end_level").value().toInt();
@@ -219,7 +216,7 @@ bool GDSGeoNameDBManager::GetGeoIdList(IN ST_REQUEST_SEARCH_IDLIST* a_pRequest,
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -306,7 +303,7 @@ bool GDSGeoNameDBManager::GetGeoIdList(IN ST_REQUEST_SEARCH_IDLIST* a_pRequest,
 	else
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", oSqlQueryModel.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", oSqlQueryModel.lastError().text().toUtf8().data());
 	}
 
 	m_Lock.unlock();
@@ -604,7 +601,7 @@ bool GDSGeoNameDBManager::MakeQueryNameList(IN ST_REQUEST_SEARCH_DATA* a_pReques
 		if (strIdArr == "")
 			strIdArr.sprintf("%d", nId);
 		else
-			strIdArr.sprintf("%s,%d", strIdArr.toAscii().data(), nId);
+			strIdArr.sprintf("%s,%d", strIdArr.toUtf8().data(), nId);
 
 		pBuff+= sizeof(ST_RECORD_ID);
 	}
@@ -651,7 +648,7 @@ bool GDSGeoNameDBManager::MakeQueryNameList(IN ST_REQUEST_SEARCH_DATA* a_pReques
 		if (strIdArr == "")
 			strIdArr.sprintf("%d", nId);
 		else
-			strIdArr.sprintf("%s,%d", strIdArr.toAscii().data(), nId);
+			strIdArr.sprintf("%s,%d", strIdArr.toUtf8().data(), nId);
 
 		pBuff+= sizeof(ST_RECORD_ID);
 	}
@@ -700,7 +697,7 @@ bool GDSGeoNameDBManager::GetGeoNameList(IN ST_REQUEST_SEARCH_DATA* a_pRequest,
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -780,7 +777,7 @@ bool GDSGeoNameDBManager::GetGeoNameList(IN ST_REQUEST_SEARCH_DATA* a_pRequest,
 	else
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", oSqlQueryModel.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameRecordData.[error : %s]", oSqlQueryModel.lastError().text().toUtf8().data());
 	}
 
 	m_Lock.unlock();
@@ -839,7 +836,7 @@ bool GDSGeoNameDBManager::GetGeoNameListInTile(IN E_GDM_SUBDATA_TYPE a_eSubDataT
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameListInTile.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::GetGeoNameListInTile.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -927,7 +924,7 @@ bool GDSGeoNameDBManager::GetGeoNameListInTile(IN E_GDM_SUBDATA_TYPE a_eSubDataT
 	else
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameListInTile.[error : %s]", oSqlQueryModel.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::GetGeoNameListInTile.[error : %s]", oSqlQueryModel.lastError().text().toUtf8().data());
 	}
 
 
@@ -946,7 +943,7 @@ bool GDSGeoNameDBManager::AddGeoNameData(IN ST_ADDNAME_DATA* a_pCommand,
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::AddGeoNameData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::AddGeoNameData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -958,7 +955,7 @@ bool GDSGeoNameDBManager::AddGeoNameData(IN ST_ADDNAME_DATA* a_pCommand,
 	if (EditAddQueryString(a_pCommand, strQuery)==false) 
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::AddGeoNameData.[error : %s]", oSqlQuery.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::AddGeoNameData.[error : %s]", oSqlQuery.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -1006,7 +1003,7 @@ bool GDSGeoNameDBManager::UpdateGeoNameData(IN ST_UPDATENAME_DATA* a_pCommand,
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::UpdateGeoNameData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::UpdateGeoNameData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -1019,7 +1016,7 @@ bool GDSGeoNameDBManager::UpdateGeoNameData(IN ST_UPDATENAME_DATA* a_pCommand,
 	if (EditUpdateQueryString(a_pCommand, strQuery)==false)
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::UpdateGeoNameData.[error : %s]", oSqlQuery.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::UpdateGeoNameData.[error : %s]", oSqlQuery.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -1030,7 +1027,7 @@ bool GDSGeoNameDBManager::UpdateGeoNameData(IN ST_UPDATENAME_DATA* a_pCommand,
 	if (bsuccess== false)
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -1046,7 +1043,7 @@ bool GDSGeoNameDBManager::DeleteGeoNameData(IN ST_DELETENAME_DATA* a_pCommand,
 		if (!m_Database.open())
 		{
 			*a_pErrorCode = E_RESPONSE_ERROR_DATABASE_OPEN;
-			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", m_Database.lastError().text().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "Database engine open failed at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", m_Database.lastError().text().toUtf8().data());
 			return false;
 		}
 	}
@@ -1058,7 +1055,7 @@ bool GDSGeoNameDBManager::DeleteGeoNameData(IN ST_DELETENAME_DATA* a_pCommand,
 	if (EditDeleteQueryString(a_pCommand, strQuery) == false)
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -1069,7 +1066,7 @@ bool GDSGeoNameDBManager::DeleteGeoNameData(IN ST_DELETENAME_DATA* a_pCommand,
 	if (bsuccess== false)
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_SQL_QUERY;
-		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Query is invalid at GDSGeoNameDBManager::DeleteGeoNameData.[error : %s]", oSqlQuery.lastError().text().toUtf8().data());
 		return false;
 	}
 
@@ -1301,10 +1298,10 @@ bool GDSGeoNameDBManager::EditAddQueryString(IN ST_GEODATA_NAME* a_pstGeoNameDat
 						a_pstGeoNameData->type,
 						strNameEn.toUtf8().data(),
 						strName.toUtf8().data(),
-						strLatitude.toAscii().data(),
-						strLongitude.toAscii().data(),
-						strHeight.toAscii().data(),
-						strViewHeight.toAscii().data()
+						strLatitude.toUtf8().data(),
+						strLongitude.toUtf8().data(),
+						strHeight.toUtf8().data(),
+						strViewHeight.toUtf8().data()
 						);
 #else
 	a_strQuery.sprintf("INSERT INTO %s (type, name, name_ko, latitude, longitude, height, view_height) VALUES(%d,'%s','%s','%s','%s','%s','%s') ", 
@@ -1312,10 +1309,10 @@ bool GDSGeoNameDBManager::EditAddQueryString(IN ST_GEODATA_NAME* a_pstGeoNameDat
 						a_pstGeoNameData->type,
 						strNameEn.toUtf8().data(),
 						strName.toUtf8().data(),
-						strLatitude.toAscii().data(),
-						strLongitude.toAscii().data(),
-						strHeight.toAscii().data(),
-						strViewHeight.toAscii().data()
+						strLatitude.toUtf8().data(),
+						strLongitude.toUtf8().data(),
+						strHeight.toUtf8().data(),
+						strViewHeight.toUtf8().data()
 						);
 #endif
 
@@ -1367,10 +1364,10 @@ bool GDSGeoNameDBManager::EditUpdateQueryString(IN ST_UPDATENAME_DATA* a_pstUpda
 		a_pstUpdateNameData->type,
 		strNameEn.toUtf8().data(),
 		strName.toUtf8().data(),
-		strLatitude.toAscii().data(),
-		strLongitude.toAscii().data(),
-		strHeight.toAscii().data(),
-		strViewHeight.toAscii().data(),
+		strLatitude.toUtf8().data(),
+		strLongitude.toUtf8().data(),
+		strHeight.toUtf8().data(),
+		strViewHeight.toUtf8().data(),
 		a_pstUpdateNameData->id
 		);
 #else
@@ -1380,10 +1377,10 @@ bool GDSGeoNameDBManager::EditUpdateQueryString(IN ST_UPDATENAME_DATA* a_pstUpda
 		a_pstUpdateNameData->type,
 		strNameEn.toUtf8().data(),
 		strName.toUtf8().data(),
-		strLatitude.toAscii().data(),
-		strLongitude.toAscii().data(),
-		strHeight.toAscii().data(),
-		strViewHeight.toAscii().data(),
+		strLatitude.toUtf8().data(),
+		strLongitude.toUtf8().data(),
+		strHeight.toUtf8().data(),
+		strViewHeight.toUtf8().data(),
 		a_pstUpdateNameData->id
 		);
 #endif
@@ -1787,7 +1784,7 @@ CGIS_Polygon* GDSGeoNameDBManager::CreateFeature(E_GDM_SUBDATA_TYPE type,int id,
 	if(!GetTableInfoFromType(type,&ntableno))
 		return NULL;
 
-	QString tablename=QString::fromAscii(m_pTableList[ntableno].table_name);
+	QString tablename = QString::fromLatin1(m_pTableList[ntableno].table_name);
 	
 	ShapeType shapetype=(ShapeType)m_pTableList[ntableno].shape_type;
 

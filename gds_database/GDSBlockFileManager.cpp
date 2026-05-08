@@ -1,4 +1,4 @@
-#include "GDSBlockFileManager.h"
+﻿#include "GDSBlockFileManager.h"
 #include "GDSFileManager.h"
 #include "../gds_common/GDSCommon.h"
 #include "../gds_common/GDSConfigMgr.h"
@@ -58,7 +58,7 @@ bool GetGeoDataFromBlock(IN E_GDM_MAINDATA_TYPE a_eMainDataType,
 		}
 
 		*a_pErrorCode = E_RESPONSE_ERROR_FILE_OPEN;
-		GDSLogOutput(E_LOG_ERROR, "OpenFileMap failed at GetGeoDataFromBlock! [file : %s]", tFileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "OpenFileMap failed at GetGeoDataFromBlock! [file : %s]", tFileName.toUtf8().data());
 		return false;
 	}
 
@@ -188,7 +188,7 @@ bool CalcTileOffset(IN GDSFILEHANDLE a_mapHandle,
 	if (tHeaderSize == 0)
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_BLOCKFILE_HEADERSIZE_ZERO;
-		GDSLogOutput(E_LOG_ERROR, "Size of header of block file is zero at CalcTileOffset! [file : %s]", g_FileManager->GetFileName(a_mapHandle).toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "Size of header of block file is zero at CalcTileOffset! [file : %s]", g_FileManager->GetFileName(a_mapHandle).toUtf8().data());
 		return false;
 	}
 
@@ -219,7 +219,7 @@ bool CalcTileOffset(IN GDSFILEHANDLE a_mapHandle,
 	if (!g_FileManager->CheckFileOffsetAndSize(a_mapHandle, *a_pOffset, *a_pSize))
 	{
 		*a_pErrorCode = E_RESPONSE_ERROR_BLOCKFILE_HEADERSIZE_ZERO;
-		GDSLogOutput(E_LOG_ERROR, "File size is smaller than offset invalid at CalcTileOffset! [file : %s]", g_FileManager->GetFileName(a_mapHandle).toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File size is smaller than offset invalid at CalcTileOffset! [file : %s]", g_FileManager->GetFileName(a_mapHandle).toUtf8().data());
 		return false;
 	}
 
