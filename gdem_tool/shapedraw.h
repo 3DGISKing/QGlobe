@@ -14,7 +14,7 @@ class ShapeDraw : public QMainWindow
 	Q_OBJECT
 
 public:
-	ShapeDraw(QWidget *parent = 0, Qt::WFlags flags = 0);
+	ShapeDraw(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~ShapeDraw();
 
 private:

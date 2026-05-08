@@ -14,7 +14,7 @@ class VectorConverter : public QMainWindow
 	Q_OBJECT
 
 public:
-	VectorConverter(QWidget *parent = 0, Qt::WFlags flags = 0);
+	VectorConverter(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~VectorConverter();
 
 private:

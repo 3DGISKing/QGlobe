@@ -41,7 +41,7 @@
 
 #include "connectionwidget.h"
 
-#include <QtGui>
+#include <QtWidgets>
 #include <QtSql>
 
 ConnectionWidget::ConnectionWidget(QWidget *parent)
@@ -51,7 +51,7 @@ ConnectionWidget::ConnectionWidget(QWidget *parent)
     tree = new QTreeWidget(this);
     tree->setObjectName(QLatin1String("tree"));
     tree->setHeaderLabels(QStringList(tr("database")));
-    tree->header()->setResizeMode(QHeaderView::Stretch);
+    tree->header()->setSectionResizeMode(QHeaderView::Stretch);
 	QAction *refreshAction = new QAction(tr("Refresh"), tree);
 	metaDataAction = new QAction(tr("Show Schema"), tree);
 	connect(metaDataAction, SIGNAL(triggered()), SLOT(showMetaData()));

@@ -49,7 +49,7 @@ QString GetKey(QString deviceInfo)
 			ss[0]=number2/2;
 			ss[1]=0;
 
-			QString q=QString::fromAscii(ss);
+			QString q = QString::fromLatin1(ss);
 
 			key=key+q;
 		}
@@ -166,7 +166,7 @@ QString GetPhysicalDrive0ModelNumber()
 
 	strmodelnumber[pos]=0;
 
-	QString modelnumber=QString::fromAscii(strmodelnumber);
+	QString modelnumber = QString::fromLatin1(strmodelnumber);
 
 	return modelnumber.trimmed();
 #else
@@ -176,7 +176,7 @@ QString GetPhysicalDrive0ModelNumber()
 
 
 
-KeyGenerator::KeyGenerator(QWidget *parent, Qt::WFlags flags)
+KeyGenerator::KeyGenerator(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
 	ui.setupUi(this);

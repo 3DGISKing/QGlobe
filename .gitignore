@@ -14,6 +14,7 @@ gdem_client/GeneratedFiles/
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 # User-specific files
+Directory.Build.local.props
 *.rsuser
 *.suo
 *.user

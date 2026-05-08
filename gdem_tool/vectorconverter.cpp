@@ -6,7 +6,7 @@
 #include "shapedef.h"
 
 
-VectorConverter::VectorConverter(QWidget *parent, Qt::WFlags flags)
+VectorConverter::VectorConverter(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
 	ui.setupUi(this);

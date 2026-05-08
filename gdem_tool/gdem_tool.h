@@ -23,7 +23,7 @@ class gdem_tool : public QMainWindow
 	Q_OBJECT
 
 public:
-	gdem_tool(QWidget *parent = 0, Qt::WFlags flags = 0);
+	gdem_tool(QWidget *parent = nullptr, Qt::WindowFlags flags = Qt::WindowFlags());
 	~gdem_tool();
 
 private:
