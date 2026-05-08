@@ -5,6 +5,7 @@
 #include "../gdem_base/GDM_Location.h"
 #include "../gdem_base/GDM_Rect.h"
 #include "../gdem_common/gdemclientbase.h"
+#include <QDataStream>
 
 // geometric node type
 typedef enum 

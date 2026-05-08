@@ -1,4 +1,4 @@
-#include "keygenerator.h"
+﻿#include "keygenerator.h"
 #include <math.h>
 
 #include <Windows.h>
@@ -10,9 +10,9 @@ QString GetKey(QString deviceInfo)
 	if(serialnumber.isEmpty()) return "";
 	QString serialupper=serialnumber.toUpper();
 
-	QByteArray bytedata=serialnumber.toAscii();
+	QByteArray bytedata=serialnumber.toUtf8();
 
-	char* data=serialupper.toAscii().data();
+	char* data=serialupper.toUtf8().data();
 
 	int average=0;
 
@@ -60,7 +60,7 @@ QString GetKey(QString deviceInfo)
 
 QString FormatKey(QString strKey, int strSize)
 {
-	QByteArray byteStr = strKey.toAscii();
+	QByteArray byteStr = strKey.toUtf8();
 
 	QList<int> xx;
 	for(int jj = 0; jj < byteStr.size(); jj++)

@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+﻿#include <QApplication>
 #if 0 /* Old Dialog */
 #include "configdialog.h"
 #else /* New Dialog */

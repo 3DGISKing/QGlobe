@@ -1,7 +1,7 @@
 #ifndef LAYERSTREEVIEW_H
 #define LAYERSTREEVIEW_H
 
-#include <QtGui/QTreeView>
+#include <QtWidgets/QTreeView>
 
 class LayersDlg;
 

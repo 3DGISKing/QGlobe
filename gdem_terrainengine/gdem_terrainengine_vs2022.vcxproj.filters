@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{747208d8-1255-4777-a149-d120c64649a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Core\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Core\Texture">
+      <UniqueIdentifier>{c4eb0543-97f7-4348-bf4f-b6be011f207e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Texture\ImageLoader">
+      <UniqueIdentifier>{2f19a106-6a6e-4c5b-9735-81efd1078667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\SceneNode">
+      <UniqueIdentifier>{afcf3cf5-6079-44ef-ac97-bc969a41351c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C3DSMeshFileLoader.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CXMLReader.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CXMLReaderImpl.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CZipReader.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gdem_terrainengine_global.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="geopack.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="geounpack.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICursorControl.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="path.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SGeoMesh.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C3DSMeshFileLoader.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CAttributes.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CColorConverter.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEmptySceneNode.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileList.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileSystem.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFPSCounter.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeoDeviceLinux.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeoDeviceQT.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeoDeviceSDL.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeoDeviceStub.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeoDeviceWin32.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeometryCreator.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLimitReadFile.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogger.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryReadFile.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeshCache.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeshManipulator.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaTriangleSelector.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CNullDriver.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLDriver.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLExtensionHandler.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLNormalMapRenderer.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLParallaxMapRenderer.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLShaderMaterialRenderer.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLSLMaterialRenderer.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPakReader.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CReadFile.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneCollisionManager.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorCameraFPS.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorCameraMaya.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorCollisionResponse.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorDelete.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorFlyCircle.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorFlyStraight.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorFollowSpline.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorRotation.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneNodeAnimatorTexture.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTriangleBBSelector.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTriangleSelector.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CVideoModeList.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWriteFile.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CXMLReader.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CXMLWriter.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CZipReader.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoEngine.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CImage.cpp">
+      <Filter>Core\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="COpenGLTexture.cpp">
+      <Filter>Core\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderBMP.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderJPG.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderPCX.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderPNG.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderPPM.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderPSD.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderTGA.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageLoaderWAL.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterBMP.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterJPG.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterPCX.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterPNG.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterPPM.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterPSD.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageWriterTGA.cpp">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CCameraSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CCubeSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CLightSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeshSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManager.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkyBoxSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkyDomeSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CSphereSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="CVolumeLightSceneNode.cpp">
+      <Filter>Core\SceneNode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="aabbox3d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CAttributeImpl.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CAttributes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CColorConverter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CDynamicMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CFileList.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CFileSystem.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CFPSCounter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceLinux.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceQT.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceSDL.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceStub.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceWin32.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeoMeshWriter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CGeometryCreator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CIndexBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CLimitReadFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CLogger.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMemoryReadFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMeshCache.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMeshManipulator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMetaTriangleSelector.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CNullDriver.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLDriver.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLExtensionHandler.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLMaterialRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLNormalMapRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLParallaxMapRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLShaderMaterialRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLSLMaterialRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="coreutil.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CPakReader.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CReadFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneCollisionManager.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCameraFPS.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCameraMaya.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCollisionResponse.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorDelete.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFlyCircle.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFlyStraight.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFollowSpline.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorRotation.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorTexture.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CTimer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CTriangleBBSelector.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CTriangleSelector.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CVertexBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CVideoModeList.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CWriteFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CXMLWriter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dimension2d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dmfsupport.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ECullingTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EDebugSceneTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EDriverFeatures.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EDriverTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EGUIAlignment.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EGUIElementTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EHardwareBufferFlags.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EMaterialFlags.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EMaterialTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EMeshWriterEnums.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EMessageBoxFlags.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ESceneNodeAnimatorTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ESceneNodeTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ETerrainElements.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="fast_atof.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoAllocator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoArray.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoCompileConfig.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoEngine.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoEngineDevice.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoList.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoMap.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoMath.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoString.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoTypes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="geoXML.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="glext.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="glxext.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="heapsort.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IAnimatedMesh.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IAttributeExchangingObject.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IAttributes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IDynamicMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IEventReceiver.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IFileList.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IFileSystem.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IGPUProgrammingServices.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IImagePresenter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IIndexBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ILogger.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMaterialRenderer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMaterialRendererServices.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMesh.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshCache.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshLoader.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshManipulator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshWriter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMetaTriangleSelector.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IOSOperator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IReadFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IReferenceCounted.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneCollisionManager.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimator.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCameraFPS.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCameraMaya.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCollisionResponse.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IShaderConstantSetCallBack.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ITimer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ITriangleSelector.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IVertexBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IVideoDriver.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IVideoModeList.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IWriteFile.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IXMLReader.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IXMLWriter.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Keycodes.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="line2d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="line3d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="matrix4.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="OctTree.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="os.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="plane3d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="position2d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="quaternion.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="rect.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="S3DVertex.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SAnimatedMesh.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SceneParameters.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SColor.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SExposedVideoData.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SGeoCreationParameters.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SKeyMap.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SLight.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMaterial.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMaterialLayer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMesh.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBufferLightMap.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBufferTangents.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SoftwareDriver2_compile_config.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SoftwareDriver2_helper.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SParticle.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SSharedMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SSkinMeshBuffer.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SVertexIndex.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="SViewFrustum.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="triangle3d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="vector2d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="vector3d.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="wglext.h">
+      <Filter>Core\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImage.h">
+      <Filter>Core\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLTexture.h">
+      <Filter>Core\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IImage.h">
+      <Filter>Core\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ITexture.h">
+      <Filter>Core\Texture</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderBMP.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderJPG.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPCX.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPNG.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPPM.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPSD.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderTGA.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderWAL.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterBMP.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterJPG.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPCX.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPNG.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPPM.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPSD.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterTGA.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IImageLoader.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IImageWriter.h">
+      <Filter>Core\Texture\ImageLoader</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CCameraSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CCubeSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CEmptySceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CLightSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CMeshSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSceneManager.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSkyBoxSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSkyDomeSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CSphereSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CVolumeLightSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ICameraSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ILightSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IMeshSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneManager.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ITextSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+    <CustomBuild Include="IVolumeLightSceneNode.h">
+      <Filter>Core\SceneNode</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

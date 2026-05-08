@@ -1,8 +1,8 @@
-#ifndef PLACEMARKWIN_H 
+﻿#ifndef PLACEMARKWIN_H 
 
 #define PLACEMARKWIN_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 class QPushButton;
 class QHBoxLayout;

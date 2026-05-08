@@ -1,5 +1,6 @@
 #include <QtCore/QString>
 #include <QtCore/QDir>
+#include <algorithm>
 #include "MapSceneNode.h"
 #include "ISceneManager.h"
 #include "IVideoDriver.h"
@@ -32,7 +33,7 @@ namespace scene
 			if(!tmp.isNull())
 				m_MapList.push_back(tmp);
 		}
-		qSort(m_MapList.begin(),m_MapList.end());
+		std::sort(m_MapList.begin(), m_MapList.end());
 
 		borderWidth=20;
 		crossWidth=5;

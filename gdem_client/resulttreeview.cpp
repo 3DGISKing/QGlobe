@@ -1232,7 +1232,6 @@ void ResultTreeView::SetupTreeView()
 	setWordWrap(true);
 	m_model = new TreeItemModel;
 	setModel(m_model);
-	m_model->setSupportedDragActions(Qt::MoveAction);
 
 	setItemDelegate(new TreeItemDelegate(this));
 

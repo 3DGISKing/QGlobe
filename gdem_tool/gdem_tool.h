@@ -1,7 +1,7 @@
-#ifndef GDEM_TOOL_H
+﻿#ifndef GDEM_TOOL_H
 #define GDEM_TOOL_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include <QSplitter>
 #include "ui_gdem_tool.h"
 

@@ -1,5 +1,5 @@
-#include "gdem_tool.h"
-#include <QtGui/QApplication>
+﻿#include "gdem_tool.h"
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {

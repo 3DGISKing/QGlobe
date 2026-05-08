@@ -1,4 +1,4 @@
-#include "key.h"
+﻿#include "key.h"
 
 #define BUFFER_SIZE 1052
 QString GetPhysicalDrive0ModelNumber()
@@ -75,7 +75,7 @@ QString GetPhysicalDrive0ModelNumber()
 
 	strmodelnumber[pos]=0;
 
-	QString modelnumber=QString::fromAscii(strmodelnumber);
+	QString modelnumber = QString::fromLatin1(strmodelnumber);
 
 	delete bout;
 	return modelnumber.trimmed();
@@ -90,9 +90,9 @@ QString GetKey(QString deviceInfo)
 	if(serialnumber.isEmpty()) return "";
 	QString serialupper=serialnumber.toUpper();
 
-	QByteArray bytedata=serialnumber.toAscii();
+	QByteArray bytedata=serialnumber.toUtf8();
 
-	char* data=serialupper.toAscii().data();
+	char* data=serialupper.toUtf8().data();
 
 	int average=0;
 
@@ -129,7 +129,7 @@ QString GetKey(QString deviceInfo)
 			ss[0]=number2/2;
 			ss[1]=0;
 
-			QString q=QString::fromAscii(ss);
+			QString q = QString::fromLatin1(ss);
 
 			key=key+q;
 		}
@@ -140,7 +140,7 @@ QString GetKey(QString deviceInfo)
 
 QString FormatKey(QString strKey, int strSize)
 {
-	QByteArray byteStr = strKey.toAscii();
+	QByteArray byteStr = strKey.toUtf8();
 
 	QList<int> xx;
 	for(int jj = 0; jj < byteStr.size(); jj++)

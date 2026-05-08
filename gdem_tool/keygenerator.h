@@ -1,7 +1,7 @@
-#ifndef KEYGENERATOR_H
+﻿#ifndef KEYGENERATOR_H
 #define KEYGENERATOR_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_keygenerator.h"
 
 class KeyGenerator : public QMainWindow

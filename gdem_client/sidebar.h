@@ -1,7 +1,7 @@
 #ifndef SIDEBAR_H
 #define SIDEBAR_H
 
-#include <QtGui/QTabWidget>
+#include <QtWidgets/QTabWidget>
 #include "gdemclientbase.h"
 
 class PlaceDlg;

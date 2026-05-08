@@ -174,7 +174,8 @@ void PListTableModel::setData(CGDM_LocationArr &cPtArr)
 		m_pointList.append(p);
 	}
 
-	reset();
+	beginResetModel();
+	endResetModel();
 }
 
 void PListTableModel::getData(CGDM_LocationArr &cPtArr)

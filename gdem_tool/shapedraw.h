@@ -1,7 +1,7 @@
-#ifndef SHAPEDRAW_H
+﻿#ifndef SHAPEDRAW_H
 #define SHAPEDRAW_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_shapedraw.h"
 #include "renderarea.h"
 #include <QDomDocument>

@@ -1,4 +1,4 @@
-#include "configdialog.h"
+﻿#include "configdialog.h"
 #include "ui_configdialog.h"
 #include "directorydialog.h"
 #include "../gds_service_common/gdsservice_common.h"
@@ -330,7 +330,7 @@ int ConfigDialog::GetValues()
 			strIP = item->text();
 			if (strIP.isEmpty())
 				continue;
-			strcpy(pc.ip_address, strIP.toAscii());
+			strcpy(pc.ip_address, strIP.toUtf8());
 
 			item = m_pcModel->item(i, 3);
 			if (!item)

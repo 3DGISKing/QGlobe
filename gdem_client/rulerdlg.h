@@ -1,7 +1,7 @@
-#ifndef RULERDLG_H
+﻿#ifndef RULERDLG_H
 #define RULERDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "gdemclientbase.h"
 #include "GDM_CommandDlg.h"
 

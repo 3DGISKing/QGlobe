@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QCoreApplication>
 #include "GeoNameSceneNode.h"
 #include "ISceneManager.h"
 #include "IVideoDriver.h"
@@ -351,8 +352,8 @@ namespace geo
 				{
 					CGIS_Node* node=gdm_GetGISNode(nameCell.datatype,nameCell.key);
 					
-					QString prelen=QApplication::translate("PathDlg", "Length:", 0, QApplication::UnicodeUTF8);
-					QString prearea=QApplication::translate("PolygonDlg", "Area:", 0, QApplication::UnicodeUTF8);
+					QString prelen = QCoreApplication::translate("PathDlg", "Length:");
+					QString prearea = QCoreApplication::translate("PolygonDlg", "Area:");
 					
 					if(node && node->Get_GisType()==E_GISNODE_TYPE_PATH)
 					{

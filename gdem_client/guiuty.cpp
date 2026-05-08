@@ -27,13 +27,13 @@ int gu_MessageBox(QWidget *parent, const QString &title, const QString &text, un
 		id = MSGBOX_IDOK;
 
 	if (id & MSGBOX_IDOK)
-		okButton = msgBox.addButton(QApplication::translate("GDemClient","Ok",0,QApplication::UnicodeUTF8), QMessageBox::AcceptRole);
+		okButton = msgBox.addButton(QApplication::translate("GDemClient","Ok"), QMessageBox::AcceptRole);
 	if (id & MSGBOX_IDYES)
-		yesButton = msgBox.addButton(QApplication::translate("GDemClient","Yes",0,QApplication::UnicodeUTF8), QMessageBox::YesRole);
+		yesButton = msgBox.addButton(QApplication::translate("GDemClient","Yes"), QMessageBox::YesRole);
 	if (id & MSGBOX_IDNO)
-		noButton = msgBox.addButton(QApplication::translate("GDemClient","No",0,QApplication::UnicodeUTF8), QMessageBox::NoRole);
+		noButton = msgBox.addButton(QApplication::translate("GDemClient","No"), QMessageBox::NoRole);
 	if (id & MSGBOX_IDCANCEL)
-		cancelButton = msgBox.addButton(QApplication::translate("GDemClient","Cancel",0,QApplication::UnicodeUTF8), QMessageBox::RejectRole);
+		cancelButton = msgBox.addButton(QApplication::translate("GDemClient","Cancel"), QMessageBox::RejectRole);
 
 	if (ic == MSGBOX_ICONQUESTION)
 		msgBox.setIcon(QMessageBox::Question);

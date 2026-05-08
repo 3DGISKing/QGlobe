@@ -1,7 +1,7 @@
-#ifndef DIRECTORYDIALOG_H
+﻿#ifndef DIRECTORYDIALOG_H
 #define DIRECTORYDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class DirectoryDialog;

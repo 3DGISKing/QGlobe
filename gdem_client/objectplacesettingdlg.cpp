@@ -1,5 +1,5 @@
-#include <QtGui/QFileDialog>
-#include <QtGui/QColorDialog>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QColorDialog>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlRecord>
 #include <QtSql/QSqlField>

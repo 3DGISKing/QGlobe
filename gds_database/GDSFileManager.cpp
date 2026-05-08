@@ -1,4 +1,4 @@
-#include "GDSFileManager.h"
+﻿#include "GDSFileManager.h"
 #include "../gds_common/GDSLog.h"
 
 #include <QMutex>
@@ -169,7 +169,7 @@ bool GDSFileManager::CreatFileMap(IN QString& a_FileName,
 	{
 		if (!RemoveIdleFileMap(&tHandle))
 		{
-			GDSLogOutput(E_LOG_ERROR, "RemoveIdleFileMap failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, "RemoveIdleFileMap failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toUtf8().data());
 			return false;
 		}
 	}
@@ -181,7 +181,7 @@ bool GDSFileManager::CreatFileMap(IN QString& a_FileName,
 	QFile* newFile = new QFile(a_FileName);
 	if (newFile == NULL)
 	{
-		GDSLogOutput(E_LOG_ERROR, "new QFile failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "new QFile failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toUtf8().data());
 		return false;
 	}
 
@@ -190,14 +190,14 @@ bool GDSFileManager::CreatFileMap(IN QString& a_FileName,
 	if (0 == tFileSize)
 	{
 		delete newFile;
-		GDSLogOutput(E_LOG_ERROR, "File size is zero at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File size is zero at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toUtf8().data());
 		return false;
 	}
 
 	if ( !newFile->open(QIODevice::ReadOnly) )
 	{
 		delete newFile;
-		GDSLogOutput(E_LOG_ERROR, "File open failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File open failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toUtf8().data());
 		return false;
 	}
 
@@ -207,7 +207,7 @@ bool GDSFileManager::CreatFileMap(IN QString& a_FileName,
 	{
 		newFile->close();
 		delete newFile;
-		GDSLogOutput(E_LOG_ERROR, "File mapping failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toAscii().data());
+		GDSLogOutput(E_LOG_ERROR, "File mapping failed at GDSFileManager::CreatFileMap.[file : %s]", a_FileName.toUtf8().data());
 		return false;
 	}
 

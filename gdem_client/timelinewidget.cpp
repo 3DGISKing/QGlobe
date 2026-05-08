@@ -1,7 +1,7 @@
 #include "timelinewidget.h"
 
 #include <QtGui/QPainter>
-#include <QtGui/QMenu>
+#include <QtWidgets/QMenu>
 #include <QtGui/QResizeEvent>
 
 #include "keyframedelegate.h"

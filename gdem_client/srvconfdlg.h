@@ -1,7 +1,7 @@
-#ifndef SRVCONFDLG_H
+﻿#ifndef SRVCONFDLG_H
 #define SRVCONFDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class SrvConfDlg;

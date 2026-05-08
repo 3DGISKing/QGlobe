@@ -1,4 +1,4 @@
-#include <qglobal.h>
+﻿#include <qglobal.h>
 #include <qdebug.h>
 #include <qlabel.h>
 #include <qgroupbox.h>
@@ -78,7 +78,7 @@ void ColorDialog::TransObjectText(QObject *parent, int level)
 #if COLORDLG_DEBUG
 			QString dbstr(8*level, ' ');
 			dbstr += QString::number(i) + QString(":") + className;
-			qDebug(dbstr.toAscii().data());
+			qDebug(dbstr.toUtf8().data());
 #endif
 			TransObjectText(obj, level+1);
 			continue;
@@ -102,11 +102,11 @@ void ColorDialog::TransObjectText(QObject *parent, int level)
 		QString dbstr(8*level, ' ');
 		dbstr += QString::number(i) + QString(":") + className + QString(":") + text
 				 + QString(":") + transText;
-		qDebug(dbstr.toAscii().data());
+		qDebug(dbstr.toUtf8().data());
 #endif
 #if COLORDLG_DEBUGTEXT
 		if (text.length() > 0 && text == transText)
-			qDebug(text.toAscii().data());
+			qDebug(text.toUtf8().data());
 #endif
 	}
 }

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{8d5dab3c-5d8a-4243-9b61-3f0b9c6f17e4}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{226d2072-2558-4544-a568-6386593202e4}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Test">
+      <UniqueIdentifier>{b3879374-c528-45a4-ad14-500520f3de98}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug_Alone">
+      <UniqueIdentifier>{d5cd8260-668b-49a0-befd-413477c9135c}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release_Alone">
+      <UniqueIdentifier>{f8b2c529-038b-445c-b2c5-fb2a6d359d71}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{3cbf639e-0e18-4a5a-a1ce-eab52247b95e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{966b6661-7bfc-4396-b234-4daa895c9447}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cameracontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_ObjectAddCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoMeshUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rendersrv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\release\moc_GDM_CommandDlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\test\moc_GDM_CommandDlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\debug_alone\moc_GDM_CommandDlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\release_alone\moc_GDM_CommandDlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="generatedfiles\debug\moc_GDM_CommandDlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stable.h.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_CameraCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_Command.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_CommandMgr.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_DrawCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_DrawObjectCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_DrawPolygonCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_MeasureAreaCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_PointCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_RulerCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_SimCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_CommandDlg.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GDM_ObjectAddCmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoMeshUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="render_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_CameraCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_Command.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_CommandMgr.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_DrawCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_DrawObjectCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_DrawPolygonCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_PointCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_RulerCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_SimCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cameracontroller.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="rendersrv.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="stable.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GDM_MeasureAreaCmd.h">
+      <Filter>Command</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GDM_CommandDlg.h">
+      <Filter>Dialog</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

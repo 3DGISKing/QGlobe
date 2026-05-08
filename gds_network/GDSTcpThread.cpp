@@ -1,4 +1,4 @@
-// GDSTcpThread.cpp
+﻿// GDSTcpThread.cpp
 
 #include <QtNetwork>
 
@@ -31,7 +31,7 @@ GDSTcpThread::~GDSTcpThread()
 	{
 		if (tcpSocket.state() != QAbstractSocket::UnconnectedState)
 		{
-			strcpy(ipStr, tcpSocket.peerAddress().toString().toAscii().data());
+			strcpy(ipStr, tcpSocket.peerAddress().toString().toUtf8().data());
 
 			tcpSocket.disconnectFromHost();
 			if (tcpSocket.state() != QAbstractSocket::UnconnectedState)
@@ -58,7 +58,7 @@ void GDSTcpThread::run()
 
 	if (tcpSocket.setSocketDescriptor(m_socketDescriptor))
 	{
-		strcpy(ipStr, tcpSocket.peerAddress().toString().toAscii().data());
+		strcpy(ipStr, tcpSocket.peerAddress().toString().toUtf8().data());
 
 		GDSLogOutput(E_LOG_TRACK, "%s connected to thread %p.", ipStr, this);
 

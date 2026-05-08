@@ -1,4 +1,4 @@
-// GDSNetworkInterface.cpp
+﻿// GDSNetworkInterface.cpp
 
 #include "GDSNetworkInterface.h"
 #include "GDSTcpServer.h"
@@ -26,7 +26,7 @@ bool InitializeGDSNetwork(unsigned short a_PortNo, int a_MaxConnNum, RECEIVEDREQ
 
 		if (!g_tcpServer->start())
 		{
-			GDSLogOutput(E_LOG_ERROR, g_tcpServer->errorString().toAscii().data());
+			GDSLogOutput(E_LOG_ERROR, g_tcpServer->errorString().toUtf8().data());
 			return false;
 		}
 	}

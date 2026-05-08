@@ -30,7 +30,6 @@ typedef struct tagFILEENTRY
 
 class GDSFileManager : QObject
 {
-	Q_OBJECT
 public:
 	GDSFileManager (IN unsigned int	a_nMaxEntryCount,
 					IN unsigned int	a_nTimerPeriod);

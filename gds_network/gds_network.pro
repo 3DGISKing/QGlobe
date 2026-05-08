@@ -11,10 +11,8 @@ TEMPLATE = lib
 TARGET = gds_network
 DESTDIR = ./../lib
 QT += network
-macx: {
-CONFIG += x86
-}
 CONFIG += staticlib
+include(../qt5_compat.pri)
 DEFINES += GDSNETWORK_LIB QT_NETWORK_LIB
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles

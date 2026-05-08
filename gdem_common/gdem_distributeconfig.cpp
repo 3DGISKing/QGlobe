@@ -5,6 +5,7 @@
 #include <QTextStream>
 #include <QStringList>
 #include <QFile>
+#include <cstring>
 
 #ifndef TILE_ROW_COUNT_IN_BLOCK
 #define TILE_ROW_COUNT_IN_BLOCK		128
@@ -115,7 +116,9 @@ bool GDEMDistributeConfig::ReadFromRegistry()
 			pc.end_index	= settings.value(CONF_DIST_SERVER_ENDID).toUInt();
 			strIP			= settings.value(CONF_DIST_SERVER_ADDR).toString();
 			pc.port			= settings.value(CONF_DIST_SERVER_PORT).toUInt();
-			strcpy(pc.ip_address, strIP.toAscii());
+			const QByteArray ipUtf8 = strIP.toUtf8();
+			std::strncpy(pc.ip_address, ipUtf8.constData(), sizeof(pc.ip_address) - 1);
+			pc.ip_address[sizeof(pc.ip_address) - 1] = '\0';
 			m_ServerPCMap.append(pc);
 		}
 		settings.endArray();

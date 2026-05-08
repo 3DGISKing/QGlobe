@@ -19,14 +19,14 @@
 //#define GDEM_SUB_VERSION		"0.0.0.0.1.0"	// Modified NAME structure.
 
 // main version check type
-typedef enum E_VERSION_MISMATCH_TYPE
+typedef enum
 {
 	E_VERSION_EQUAL = 0,
 	E_VERSION_MISMATCH_EXTRA,
 	E_VERSION_MISMATCH_MICRO,
 	E_VERSION_MISMATCH_MINOR,
 	E_VERSION_MISMATCH_MAJOR,
-};
+} E_VERSION_MISMATCH_TYPE;
 
 
 

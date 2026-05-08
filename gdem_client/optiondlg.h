@@ -1,7 +1,7 @@
-#ifndef OPTIONDLG_H
+﻿#ifndef OPTIONDLG_H
 #define OPTIONDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class OptionDlg;

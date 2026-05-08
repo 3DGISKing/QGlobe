@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+﻿#include <QApplication>
 #include "gds_ctrldialog.h"
 #include "gds_servicetrayicon.h"
 #include <qglobal.h>

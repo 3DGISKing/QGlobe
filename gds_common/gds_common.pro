@@ -12,9 +12,7 @@ TARGET = gds_common
 DESTDIR = ./../lib
 QT += network
 CONFIG += staticlib
-macx: {
-CONFIG += x86
-}
+include(../qt5_compat.pri)
 DEFINES += GDSCOMMON_LIB QT_NETWORK_LIB
 DEPENDPATH += .
 UI_DIR += ./GeneratedFiles

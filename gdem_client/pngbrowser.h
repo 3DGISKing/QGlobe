@@ -1,7 +1,7 @@
-#ifndef PNGBROWSER_H
+﻿#ifndef PNGBROWSER_H
 #define PNGBROWSER_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 class PngView;
 class QComboBox;

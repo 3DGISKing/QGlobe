@@ -1,5 +1,6 @@
-#include <QtCore/QFileInfo>
+﻿#include <QtCore/QFileInfo>
 #include <QtCore/QDir>
+#include <QtCore/QStandardPaths>
 #include <string.h>
 #include "gdemclient.h"
 #include "config.h"
@@ -191,7 +192,7 @@ QString GDemClient::Trans(const char *s, const char *c)
 
 QString GDemClient::Trans(const QString &s)
 {
-	QByteArray byteArr = s.toAscii();
+	QByteArray byteArr = s.toUtf8();
 	QString res = m_translator.translate(NULL, byteArr.data(), NULL);
 	if (res.isEmpty() && s.length() > 0)
 		res = s;
@@ -330,13 +331,13 @@ void GDemClient::UpdateOptionInfo()
  */
 void GDemClient::CreateUserDataDir()
 {
-	m_userDataDir = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
+	m_userDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
 	QDir dir;
 	bool res = dir.mkpath(m_userDataDir);
 #ifdef DEBUG
 	qDebug("GDemClient::CreateUserDataDir: %s(%s)", res ? "true" : "false",
-		   m_userDataDir.toAscii().data());
+		   m_userDataDir.toUtf8().data());
 #endif
 }
 

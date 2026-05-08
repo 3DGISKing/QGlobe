@@ -1,7 +1,7 @@
-#ifndef GOTODIALOG_H
+﻿#ifndef GOTODIALOG_H
 #define GOTODIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_gotodialog.h"
 #include <QtCore/QMetaType>
 

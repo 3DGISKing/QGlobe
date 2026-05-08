@@ -18,7 +18,7 @@ class CGDM_ObjectAddCmd :public CGDM_Command
 {
 	Q_DECLARE_TR_FUNCTIONS(CGDM_ObjectAddCmd)
 
-	typedef enum ToolState
+	enum ToolState
 	{   	
 		SetPosition,
 		SetDirection,
@@ -34,7 +34,7 @@ class CGDM_ObjectAddCmd :public CGDM_Command
 		Select,
 	};
 
-	typedef enum ObjectType
+	enum ObjectType
 	{
 		Building,
 		Other

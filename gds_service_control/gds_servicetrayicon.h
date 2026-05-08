@@ -1,4 +1,4 @@
-/*
+﻿/*
 	This file is part of Free Space Monitor.
 
     Free Space Monitor is free software; you can redistribute it and/or modify
@@ -22,7 +22,7 @@
 
 #include <QtGui>
 #include <QtGui/QPainter>
-#include <QtGui/QApplication>
+#include <QApplication>
 #include "../gds_service_common/gdsservice_common.h"
 #include <qglobal.h>
 

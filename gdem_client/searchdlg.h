@@ -1,7 +1,7 @@
-#ifndef SEARCHDLG_H
+﻿#ifndef SEARCHDLG_H
 #define SEARCHDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QtCore/QBasicTimer>
 #include "GDM_CommandDlg.h"
 

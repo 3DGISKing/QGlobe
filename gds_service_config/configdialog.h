@@ -1,7 +1,7 @@
-#ifndef CONFIGDIALOG_H
+﻿#ifndef CONFIGDIALOG_H
 #define CONFIGDIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <qsharedmemory.h>
 #include <QAbstractButton>
 

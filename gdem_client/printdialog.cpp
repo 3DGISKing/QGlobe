@@ -321,7 +321,7 @@ bool PrintDialog::SetPrinterInfo()
         PrintOutputDlg printoutputdlg(&strOutput);
         if (QDialog::Accepted == printoutputdlg.exec())
         {
-            m_pPrinter->setOutputFormat(QPrinter::PostScriptFormat);
+            m_pPrinter->setOutputFormat(QPrinter::PdfFormat);
             m_pPrinter->setOutputFileName(QDir::homePath() + "/" + strOutput);
         }
         else

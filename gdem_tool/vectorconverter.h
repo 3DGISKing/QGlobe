@@ -1,7 +1,7 @@
-#ifndef VECTORCONVERTER_H
+﻿#ifndef VECTORCONVERTER_H
 #define VECTORCONVERTER_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_vectorconverter.h"
 
 #define		AV_NULL_SHP				0

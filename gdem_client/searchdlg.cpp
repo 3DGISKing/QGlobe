@@ -964,9 +964,11 @@ void SearchDlg::searchRangeData()
 			list->data_list[id].type = qry.record().value("type").toInt();
 			//tmpstr = ""; tempkey = 0;
 			tmpstr = qry.record().value("name_ko").toString();
-			tmpstr.toWCharArray(tempkey);
-			tempkey[tmpstr.count()] = 0;
-			wcscpy(list->data_list[id].name, tempkey);
+			int nameLen = qMin(tmpstr.count(), 253);
+			tmpstr.left(nameLen).toWCharArray(tempkey);
+			tempkey[nameLen] = 0;
+			gu_wchar2ushort(tempkey, list->data_list[id].name, nameLen);
+			list->data_list[id].name[nameLen] = 0;
 			//wcscpy(list->data_list[id].description, L"");
 
 			list->data_list[id].altitude = 500;
@@ -1010,7 +1012,7 @@ loopBreak:
 		return;
 	}
 
-	//<span style=" font-size:8pt; color:#ff0000;">1</span>&nbsp;<a href="http://pic.com/maps?q=´ª&start=17^itemkey=3"><span style=" text-decoration: underline; color:#0000ff;">2</span></a>&nbsp;
+	//<span style=" font-size:8pt; color:#ff0000;">1</span>&nbsp;<a href="http://pic.com/maps?q=ï¿½ï¿½&start=17^itemkey=3"><span style=" text-decoration: underline; color:#0000ff;">2</span></a>&nbsp;
 
 	//for (int i = 0; i < responseData->count; i++)
 	//{

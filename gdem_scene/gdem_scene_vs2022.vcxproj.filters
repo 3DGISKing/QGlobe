@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GeoGrid">
+      <UniqueIdentifier>{c51598da-f74b-4db6-9ddb-3485a3d4b610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoAtmosphere">
+      <UniqueIdentifier>{6d0fe4b5-6fbb-4265-b086-b1067b49a6e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoTerrainScene">
+      <UniqueIdentifier>{ec3b9545-2aa4-4161-ab91-696b4418473a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoContour">
+      <UniqueIdentifier>{1b2e82b1-e922-47ac-a8ec-2c5a1e286886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoName">
+      <UniqueIdentifier>{7b07dcce-2872-40af-aa92-450af939ca91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GIS">
+      <UniqueIdentifier>{82b68a27-042f-4505-88e9-f8ba06d7ef5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoShape">
+      <UniqueIdentifier>{66183643-4f00-4b51-bc7b-3bfd2fd8394b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{d4a765e3-26a7-4ea1-ae99-ee1bd9c86769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Sim">
+      <UniqueIdentifier>{a2de06da-bdff-4881-bb84-d8aaac3e398c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GDM_GridData.cpp">
+      <Filter>GeoGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoGridSceneNode.cpp">
+      <Filter>GeoGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmosphereAffector.cpp">
+      <Filter>GeoAtmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmospherePixelBuffer.cpp">
+      <Filter>GeoAtmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmosphereSceneNode.cpp">
+      <Filter>GeoAtmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_RenderData.cpp">
+      <Filter>GeoTerrainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_TextureIDCache.cpp">
+      <Filter>GeoTerrainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_TextureMgr.cpp">
+      <Filter>GeoTerrainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoTerrainSceneNode.cpp">
+      <Filter>GeoTerrainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_ContourData.cpp">
+      <Filter>GeoContour</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoContourSceneNode.cpp">
+      <Filter>GeoContour</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_NameData.cpp">
+      <Filter>GeoName</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_PlaceData.cpp">
+      <Filter>GeoName</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoFont.cpp">
+      <Filter>GeoName</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoFontTypeFace.cpp">
+      <Filter>GeoName</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoNameSceneNode.cpp">
+      <Filter>GeoName</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoGISSceneNode.cpp">
+      <Filter>GIS</Filter>
+    </ClCompile>
+    <ClCompile Include="GIS_GenerateTexture.cpp">
+      <Filter>GIS</Filter>
+    </ClCompile>
+    <ClCompile Include="GIS_TextureIDCache.cpp">
+      <Filter>GIS</Filter>
+    </ClCompile>
+    <ClCompile Include="GIS_TextureMgr.cpp">
+      <Filter>GIS</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_ShapeData.cpp">
+      <Filter>GeoShape</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoShapeSceneNode.cpp">
+      <Filter>GeoShape</Filter>
+    </ClCompile>
+    <ClCompile Include="gdm_renderview.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="GDM_SceneManager.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="Geo3dObjectSceneNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLightSceneNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSceneNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RasterTextureIDCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RasterTextureMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleMeshSceneNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimSceneNode.cpp">
+      <Filter>Sim</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeoGridSceneNode.h">
+      <Filter>GeoGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmosphereAffector.h">
+      <Filter>GeoAtmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmospherePixelBuffer.h">
+      <Filter>GeoAtmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmosphereSceneNode.h">
+      <Filter>GeoAtmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_TextureIDCache.h">
+      <Filter>GeoTerrainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_TextureMgr.h">
+      <Filter>GeoTerrainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoTerrainSceneNode.h">
+      <Filter>GeoTerrainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoContourSceneNode.h">
+      <Filter>GeoContour</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoFont.h">
+      <Filter>GeoName</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoFontTypeFace.h">
+      <Filter>GeoName</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoNameSceneNode.h">
+      <Filter>GeoName</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoGISSceneNode.h">
+      <Filter>GIS</Filter>
+    </ClInclude>
+    <ClInclude Include="GIS_GenerateTexture.h">
+      <Filter>GIS</Filter>
+    </ClInclude>
+    <ClInclude Include="GIS_TextureIDCache.h">
+      <Filter>GIS</Filter>
+    </ClInclude>
+    <ClInclude Include="GIS_TextureMgr.h">
+      <Filter>GIS</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoShapeSceneNode.h">
+      <Filter>GeoShape</Filter>
+    </ClInclude>
+    <ClInclude Include="gdem_scene_global.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="GDM_SceneManager.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="Geo3dObjectSceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLightSceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterTextureIDCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterTextureMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleMeshSceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimSceneNode.h">
+      <Filter>Sim</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="gdm_renderview.h">
+      <Filter>main</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

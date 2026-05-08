@@ -10,24 +10,24 @@ GDS_MAX_TRANSFER_SIZE²÷ MAX_TILE_SIZE_3DÌ® ¿Í±¨°¡ °¯»¡³£³Þ.
 #define GDS_MAX_TRANSFER_SIZE	(1024*1024*20)	// 10MB
 //#define GDS_MAX_TRANSFER_SIZE	(150*1024)	    // 150KB
 #endif
-typedef enum E_LOG_OUTPUT_TYPE
+typedef enum
 {
 	E_LOG_OUTPUT_NONE = 0,
 	E_LOG_OUTPUT_FILE,
 	E_LOG_OUTPUT_QDEBUG,
-};
+} E_LOG_OUTPUT_TYPE;
 
-typedef enum E_LOG_OUTPUT_LEVEL
+typedef enum
 {
 	E_LOG_LEVEL_0 = 0,				 // only error log
 	E_LOG_LEVEL_1,				     // error and general
-};
+} E_LOG_OUTPUT_LEVEL;
 
-typedef enum E_LOG_LEVEL
+typedef enum
 {
 	E_LOG_ERROR,				   // only error log
 	E_LOG_TRACK,				   // error and general
-};
+} E_LOG_LEVEL;
 
 #define DEM_BLOCKFILE_PATH_FMT					"/%d/%d_%d_%d.gd"
 #define TEXTURE_BLOCKFILE_PATH_FMT				"/%d/%d_%d_%d.gt"

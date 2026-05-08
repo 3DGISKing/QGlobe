@@ -1,7 +1,7 @@
-#ifndef PRINTOUTPUTDLG_H
+﻿#ifndef PRINTOUTPUTDLG_H
 #define PRINTOUTPUTDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "ui_printoutputdlg.h"
 
 class PrintOutputDlg : public QDialog {

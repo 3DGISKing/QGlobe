@@ -2470,8 +2470,8 @@ void MainWindow::ShowBuildingPropDlg(quint64 buildingid)
 	else
 	{
 		gu_MessageBox(NULL,
-					  QApplication::translate("CGDM_CommandMgr", "GDMClient", 0, QApplication::UnicodeUTF8),
-			          QApplication::translate("CGDM_CommandMgr", "Can not find data of given building in database", 0, QApplication::UnicodeUTF8));
+					  QApplication::translate("CGDM_CommandMgr", "GDMClient"),
+			          QApplication::translate("CGDM_CommandMgr", "Can not find data of given building in database"));
 	}
 }
 

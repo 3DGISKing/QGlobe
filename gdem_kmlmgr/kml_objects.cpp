@@ -7,7 +7,7 @@
 	Kml Default Starting Location Object
 ********************************************************/
 #define ID_STR_DEFAULT_STARTING_LOCATION	"default_starting_location"
-const char ID_STR_UNKNOWN_NAME_STRING[] = {0x5B, 0xEC, 0x9D, 0xB4, 0xEB, 0xA6, 0x84, 0xEC, 0x97, 0x86, 0xEC, 0x9D, 0x8C, 0x5D }; // "[이름없음]"
+const char ID_STR_UNKNOWN_NAME_STRING[] = u8"[이름없음]";
 
 //--------------------------------------------------- Check Kml Default Starting Location Object
 static bool IsKmlStaringtLocationObj(const kmldom::FeaturePtr feature)

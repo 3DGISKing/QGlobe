@@ -4,9 +4,8 @@
 #include <QDialog>
 #include "ui_videokeyframedlg.h"
 
-#include <phonon/videowidget.h>
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QVideoWidget>
+#include <QMediaPlayer>
 
 class VideoKeyFrame;
 
@@ -24,16 +23,15 @@ private slots:
 	void onCancel(){reject();}
 	void onBrowser();
 
-	void stateChanged(Phonon::State newstate, Phonon::State oldstate);
+	void stateChanged(QMediaPlayer::State newstate);
 	void onTotalTimeChanged();
 
 private:
 	Ui::VideoKeyFrameDlg ui;
 	VideoKeyFrame* m_VideoKeyFrame;
 
-	Phonon::VideoWidget *m_videoWidget;
-	Phonon::MediaObject m_MediaObject;
-	Phonon::AudioOutput m_AudioOutput;
+	QVideoWidget *m_videoWidget;
+	QMediaPlayer m_MediaObject;
 };
 
 #endif // VIDEOKEYFRAMEDLG_H

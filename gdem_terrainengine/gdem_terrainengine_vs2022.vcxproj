@@ -1,0 +1,2246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Alone|x64">
+      <Configuration>Debug_Alone</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Alone|x64">
+      <Configuration>Release_Alone</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>gdem_terrainengine</ProjectName>
+    <ProjectGuid>{479E1ACD-FDA1-34C6-866B-2E981FA8135D}</ProjectGuid>
+    <RootNamespace>gdem_terrainengine</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.37203.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">
+    <OutDir>$(SolutionDir)lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">
+    <OutDir>$(SolutionDir)lib\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+            <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34189 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\..\gdem_decodeimg;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;.;$(QTDIR)\include\ActiveQt;.\debug;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);.\..\gdem_base;.\..\gdem_freetypelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4005;4100;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34189 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>.\..\gdem_decodeimg;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;.;$(QTDIR)\include\ActiveQt;.\release;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);.\..\gdem_scene;.\..\gdem_freetypelib\include;.\..\gdem_base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+            <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34189 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\..\gdem_decodeimg;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;.;$(QTDIR)\include\ActiveQt;.\debug;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);.\..\gdem_base;.\..\gdem_freetypelib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_CRT_SECURE_NO_DEPRECATE;_DEBUG;GEOENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4005;4100;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>debug\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">
+    <Midl>
+      <WarningLevel>0</WarningLevel>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/FS /Fd"$(IntDir)$(ProjectName).pdb" -Zm200 -w34189 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>.\..\gdem_decodeimg;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include;.;$(QTDIR)\include\ActiveQt;.\release;$(QTDIR)\mkspecs\win32-msvc;.\GeneratedFiles\$(Configuration);.\..\gdem_scene;.\..\gdem_freetypelib\include;.\..\gdem_base;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level2</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat />
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>QT_NO_DEBUG;NDEBUG;UNICODE;WIN32;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName>release\/%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="aabbox3d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="C3DSMeshFileLoader.h" />
+    <CustomBuild Include="CAttributeImpl.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CAttributes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CCameraSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CColorConverter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CCubeSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CDynamicMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CEmptySceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CFileList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CFileSystem.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CFPSCounter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceLinux.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceQT.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceSDL.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceStub.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoDeviceWin32.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeoMeshWriter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CGeometryCreator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImage.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderBMP.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderJPG.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPCX.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPNG.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPPM.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderPSD.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderTGA.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageLoaderWAL.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterBMP.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterJPG.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPCX.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPNG.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPPM.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterPSD.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CImageWriterTGA.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CIndexBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CLightSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CLimitReadFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CLogger.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMemoryReadFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMeshCache.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMeshManipulator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMeshSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CMetaTriangleSelector.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CNullDriver.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLDriver.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLExtensionHandler.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLMaterialRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLNormalMapRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLParallaxMapRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLShaderMaterialRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLSLMaterialRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="COpenGLTexture.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="coreutil.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CPakReader.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CReadFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneCollisionManager.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneManager.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCameraFPS.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCameraMaya.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorCollisionResponse.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorDelete.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFlyCircle.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFlyStraight.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorFollowSpline.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorRotation.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSceneNodeAnimatorTexture.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSkyBoxSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSkyDomeSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CSphereSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CTimer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CTriangleBBSelector.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CTriangleSelector.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CVertexBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CVideoModeList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CVolumeLightSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="CWriteFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="CXMLReader.h" />
+    <ClInclude Include="CXMLReaderImpl.h" />
+    <CustomBuild Include="CXMLWriter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="CZipReader.h" />
+    <CustomBuild Include="dimension2d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="dmfsupport.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ECullingTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EDebugSceneTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EDriverFeatures.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EDriverTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EGUIAlignment.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EGUIElementTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EHardwareBufferFlags.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EMaterialFlags.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EMaterialTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EMeshWriterEnums.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="EMessageBoxFlags.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ESceneNodeAnimatorTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ESceneNodeTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ETerrainElements.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="fast_atof.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="gdem_terrainengine_global.h" />
+    <CustomBuild Include="geoAllocator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoArray.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoCompileConfig.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoEngine.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoEngineDevice.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoMap.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoMath.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="geopack.h" />
+    <CustomBuild Include="geoString.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="geoTypes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="geounpack.h" />
+    <CustomBuild Include="geoXML.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="glext.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="glxext.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="heapsort.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IAnimatedMesh.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IAttributeExchangingObject.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IAttributes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ICameraSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="ICursorControl.h" />
+    <CustomBuild Include="IDynamicMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IEventReceiver.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IFileList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IFileSystem.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IGPUProgrammingServices.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IImage.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IImageLoader.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IImagePresenter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IImageWriter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IIndexBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ILightSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ILogger.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMaterialRenderer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMaterialRendererServices.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMesh.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshCache.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshLoader.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshManipulator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMeshWriter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IMetaTriangleSelector.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IOSOperator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IReadFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IReferenceCounted.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneCollisionManager.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneManager.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimator.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCameraFPS.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCameraMaya.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ISceneNodeAnimatorCollisionResponse.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IShaderConstantSetCallBack.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ITextSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ITexture.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ITimer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="ITriangleSelector.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IVertexBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IVideoDriver.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IVideoModeList.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IVolumeLightSceneNode.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IWriteFile.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IXMLReader.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="IXMLWriter.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="Keycodes.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="line2d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="line3d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="matrix4.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="OctTree.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="os.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="path.h" />
+    <CustomBuild Include="plane3d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="position2d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="quaternion.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="rect.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="S3DVertex.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SAnimatedMesh.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SceneParameters.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SColor.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SExposedVideoData.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SGeoCreationParameters.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <ClInclude Include="SGeoMesh.h" />
+    <CustomBuild Include="SKeyMap.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SLight.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMaterial.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMaterialLayer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMesh.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBufferLightMap.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SMeshBufferTangents.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SoftwareDriver2_compile_config.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SoftwareDriver2_helper.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SParticle.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SSharedMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SSkinMeshBuffer.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SVertexIndex.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="SViewFrustum.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="triangle3d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="vector2d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="vector3d.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+    <CustomBuild Include="wglext.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'"></Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Step</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C3DSMeshFileLoader.cpp" />
+    <ClCompile Include="CAttributes.cpp" />
+    <ClCompile Include="CCameraSceneNode.cpp" />
+    <ClCompile Include="CColorConverter.cpp" />
+    <ClCompile Include="CCubeSceneNode.cpp" />
+    <ClCompile Include="CEmptySceneNode.cpp" />
+    <ClCompile Include="CFileList.cpp" />
+    <ClCompile Include="CFileSystem.cpp" />
+    <ClCompile Include="CFPSCounter.cpp" />
+    <ClCompile Include="CGeoDeviceLinux.cpp" />
+    <ClCompile Include="CGeoDeviceQT.cpp" />
+    <ClCompile Include="CGeoDeviceSDL.cpp" />
+    <ClCompile Include="CGeoDeviceStub.cpp" />
+    <ClCompile Include="CGeoDeviceWin32.cpp" />
+    <ClCompile Include="CGeometryCreator.cpp" />
+    <ClCompile Include="CImage.cpp" />
+    <ClCompile Include="CImageLoaderBMP.cpp" />
+    <ClCompile Include="CImageLoaderJPG.cpp" />
+    <ClCompile Include="CImageLoaderPCX.cpp" />
+    <ClCompile Include="CImageLoaderPNG.cpp" />
+    <ClCompile Include="CImageLoaderPPM.cpp" />
+    <ClCompile Include="CImageLoaderPSD.cpp" />
+    <ClCompile Include="CImageLoaderTGA.cpp" />
+    <ClCompile Include="CImageLoaderWAL.cpp" />
+    <ClCompile Include="CImageWriterBMP.cpp" />
+    <ClCompile Include="CImageWriterJPG.cpp" />
+    <ClCompile Include="CImageWriterPCX.cpp" />
+    <ClCompile Include="CImageWriterPNG.cpp" />
+    <ClCompile Include="CImageWriterPPM.cpp" />
+    <ClCompile Include="CImageWriterPSD.cpp" />
+    <ClCompile Include="CImageWriterTGA.cpp" />
+    <ClCompile Include="CLightSceneNode.cpp" />
+    <ClCompile Include="CLimitReadFile.cpp" />
+    <ClCompile Include="CLogger.cpp" />
+    <ClCompile Include="CMemoryReadFile.cpp" />
+    <ClCompile Include="CMeshCache.cpp" />
+    <ClCompile Include="CMeshManipulator.cpp" />
+    <ClCompile Include="CMeshSceneNode.cpp" />
+    <ClCompile Include="CMetaTriangleSelector.cpp" />
+    <ClCompile Include="CNullDriver.cpp" />
+    <ClCompile Include="COpenGLDriver.cpp" />
+    <ClCompile Include="COpenGLExtensionHandler.cpp" />
+    <ClCompile Include="COpenGLNormalMapRenderer.cpp" />
+    <ClCompile Include="COpenGLParallaxMapRenderer.cpp" />
+    <ClCompile Include="COpenGLShaderMaterialRenderer.cpp" />
+    <ClCompile Include="COpenGLSLMaterialRenderer.cpp" />
+    <ClCompile Include="COpenGLTexture.cpp" />
+    <ClCompile Include="CPakReader.cpp" />
+    <ClCompile Include="CReadFile.cpp" />
+    <ClCompile Include="CSceneCollisionManager.cpp" />
+    <ClCompile Include="CSceneManager.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorCameraFPS.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorCameraMaya.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorCollisionResponse.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorDelete.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorFlyCircle.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorFlyStraight.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorFollowSpline.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorRotation.cpp" />
+    <ClCompile Include="CSceneNodeAnimatorTexture.cpp" />
+    <ClCompile Include="CSkyBoxSceneNode.cpp" />
+    <ClCompile Include="CSkyDomeSceneNode.cpp" />
+    <ClCompile Include="CSphereSceneNode.cpp" />
+    <ClCompile Include="CTriangleBBSelector.cpp" />
+    <ClCompile Include="CTriangleSelector.cpp" />
+    <ClCompile Include="CVideoModeList.cpp" />
+    <ClCompile Include="CVolumeLightSceneNode.cpp" />
+    <ClCompile Include="CWriteFile.cpp" />
+    <ClCompile Include="CXMLReader.cpp" />
+    <ClCompile Include="CXMLWriter.cpp" />
+    <ClCompile Include="CZipReader.cpp" />
+    <ClCompile Include="GeoEngine.cpp" />
+    <ClCompile Include="os.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gdem_decodeimg\gdem_decodeimg_vs2022.vcxproj">
+      <Project>{3a85a40d-ff94-357f-97a0-45727ccf64a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\gdem_freetypelib\gdem_freetypelib_vs2022.vcxproj">
+      <Project>{cc203fcb-3481-4af2-b99e-e669d1b57b30}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties QtVersion="4.8.5" QtVersion_x0020_Win32="4.8.5" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

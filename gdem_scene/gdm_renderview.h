@@ -1,7 +1,7 @@
 #ifndef RENDERVIEW_H
 #define RENDERVIEW_H
 
-#include <QGLWidget>
+#include <QOpenGLWidget>
 
 #include "gdem_scene_global.h"
 #include "geoEngine.h"
@@ -11,7 +11,7 @@
 
 class GDM_SceneManager;
 
-class GDEM_SCENE_EXPORT RenderView : public QGLWidget
+class GDEM_SCENE_EXPORT RenderView : public QOpenGLWidget
 {
 public:
     RenderView(QWidget *parent=0);

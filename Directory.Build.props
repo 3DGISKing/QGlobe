@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <!-- Prefer externally provided QTDIR/QtDir, but keep a local fallback for IDE IntelliSense. -->
+    <QTDIR Condition="'$(QTDIR)'=='' and '$(QtDir)'!=''">$(QtDir)</QTDIR>
+    <QTDIR Condition="'$(QTDIR)'=='' and Exists('C:\OSGeo4W\apps\Qt5\include')">C:\OSGeo4W\apps\Qt5</QTDIR>
+  </PropertyGroup>
+</Project>

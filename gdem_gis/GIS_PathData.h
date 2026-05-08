@@ -4,6 +4,7 @@
 #include "gdem_gis_global.h"
 #include <QtGui/QPainter>
 #include <QtGui/QPolygonF>
+#include <QtGui/QPainterPath>
 
 class GDEM_GIS_EXPORT GIS_PathData
 {

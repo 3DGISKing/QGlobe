@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "srvconfdlg.h"
 #include "ui_srvconfdlg.h"
 
@@ -52,7 +52,7 @@ void SrvConfDlg::SetServer(char *addr, unsigned int port)
 
 void SrvConfDlg::GetServer(char *addr, int len, unsigned int *port)
 {
-	QByteArray ba = m_addr.toAscii();
+	QByteArray ba = m_addr.toUtf8();
 	const char *data = ba.constData();
 
 	strncpy(addr, data, len);

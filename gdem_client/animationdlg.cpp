@@ -1,11 +1,11 @@
 #include "animationdlg.h"
 #include "timelinewidget.h"
 
-#include <QtGui/QSlider>
-#include <QtGui/QPushButton>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QFileDialog>
+#include <QtWidgets/QSlider>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QFileDialog>
 
 #include "Proxy.h"
 #include "gdemclient.h"

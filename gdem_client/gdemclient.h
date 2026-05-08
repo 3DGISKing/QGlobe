@@ -1,9 +1,9 @@
 #ifndef GDEMCLIENT_H
 #define GDEMCLIENT_H
 
-#include <QtGui/QApplication>
-#include <QtGui/QStringListModel>
-#include <QtCore/QTranslator>
+#include <QApplication>
+#include <QStringListModel>
+#include <QTranslator>
 
 #include "proxy.h"
 #include "../gdem_common/gdemclientbase.h"

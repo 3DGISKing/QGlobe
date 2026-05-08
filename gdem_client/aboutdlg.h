@@ -1,7 +1,7 @@
-#ifndef ABOUTDLG_H
+﻿#ifndef ABOUTDLG_H
 #define ABOUTDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class AboutDlg;

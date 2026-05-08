@@ -92,7 +92,7 @@ gdmMemStringCpy(const char * s1)
 {
  static char * funcName = "gdmMemStringCpy()";
  char * s2;
- int len;
+ size_t len;
 
     if(!s1) {
       gdmError (funcName, "NULL passed to strdup, idiot."); 
@@ -101,7 +101,7 @@ gdmMemStringCpy(const char * s1)
     len = strlen(s1) + 1;
     s2 = (char*)gdmMemMalloc(len);
     if(!s2) {
-      gdmError (funcName, "Unable to dup string of len %d: %s", strlen(s1), s1);
+      gdmError (funcName, "Unable to dup string of len %zu: %s", len - 1, s1);
       return NULL;
     }
     memcpy (s2, s1, len);

@@ -1,7 +1,7 @@
-#ifndef GDSTESTSUITE_H
+﻿#ifndef GDSTESTSUITE_H
 #define GDSTESTSUITE_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include "ui_gdstestsuite.h"
 
 class GDSTestSuite : public QMainWindow

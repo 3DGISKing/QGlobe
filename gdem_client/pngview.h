@@ -1,7 +1,7 @@
 #ifndef ICON_VIEW_H
 #define ICON_VIEW_H
 
-#include <QtGui/QTableWidget>
+#include <QtWidgets/QTableWidget>
 
 class PngView :public QTableWidget
 {

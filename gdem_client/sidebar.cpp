@@ -1,4 +1,4 @@
-#include <QtGui/QSplitter>
+#include <QtWidgets/QSplitter>
 #include "gdemclient.h"
 #include "sidebar.h"
 #include "searchdlg.h"

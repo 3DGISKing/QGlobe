@@ -11,9 +11,7 @@ TEMPLATE = lib
 TARGET = gds_core
 DESTDIR = ./../lib
 CONFIG += staticlib
-macx: {
-CONFIG += x86
-}
+include(../qt5_compat.pri)
 DEFINES += GDSCORE_LIB
 DEPENDPATH += .
 UI_DIR += ./GeneratedFiles

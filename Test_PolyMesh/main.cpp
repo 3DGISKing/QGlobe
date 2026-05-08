@@ -1,6 +1,6 @@
-#include "test_polymesh.h"
+﻿#include "test_polymesh.h"
 #include "textureview.h"
-#include <QtGui/QApplication>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {

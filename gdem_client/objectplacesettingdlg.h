@@ -1,7 +1,7 @@
-#ifndef OBJECTPLACESETTINGDLG_H
+﻿#ifndef OBJECTPLACESETTINGDLG_H
 #define OBJECTPLACESETTINGDLG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class ObjectPlaceSettingDlg;

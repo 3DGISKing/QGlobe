@@ -1,4 +1,4 @@
-#include <QtCore/QCoreApplication>
+﻿#include <QtCore/QCoreApplication>
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
 #include <QtCore/QTextStream>
@@ -57,7 +57,7 @@ protected:
 #ifdef DEBUG
 #ifdef SERVICE_CUR_PATH
 		QString msg;
-		msg.sprintf("current path : %s", tCurPath.toAscii().data());
+		msg.sprintf("current path : %s", tCurPath.toUtf8().data());
 		GDSServiceLog svcLog;
 		svcLog.write(msg);
 #endif

@@ -4,6 +4,9 @@
 TEMPLATE = app
 QT += network \
     opengl \
+    webenginewidgets \
+    multimedia \
+    multimediawidgets \
 
 DESTDIR = ../bin
 
@@ -11,9 +14,6 @@ DEFINES += GDEM_CLIENT
 
 CONFIG += precompile_header \
     build_pass
-macx: {
-CONFIG += x86
-}
 
 TRANSLATIONS += translation\gdem_client.ts
 
@@ -32,5 +32,6 @@ else: {
     OBJECTS_DIR = ./release
 }
 
-include(gdemlib.lib)
+exists(gdemlib.lib):include(gdemlib.lib)
+include(../qt5_compat.pri)
 include(gdem_client.pri)

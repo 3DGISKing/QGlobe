@@ -131,10 +131,20 @@ QString grid_Degree2DMS(double degree, unsigned int type)
 		switch(type)
 		{
 			case GEO_TYPE_LONGITUDE:
-				res.sprintf("%c%d%c%d\'%2d\"", (sign?'E':'W'),d, 0x00B0, m, ss);
+				res = QString("%1%2%3%4'%5\"")
+					.arg(sign ? 'E' : 'W')
+					.arg(d)
+					.arg(QChar(0x00B0))
+					.arg(m)
+					.arg(ss, 2, 10, QChar('0'));
 				break;
 			case GEO_TYPE_LATITUDE:
-				res.sprintf("%c%d%c%d\'%2d\"", (sign?'N':'S'), d, 0x00B0, m, ss);
+				res = QString("%1%2%3%4'%5\"")
+					.arg(sign ? 'N' : 'S')
+					.arg(d)
+					.arg(QChar(0x00B0))
+					.arg(m)
+					.arg(ss, 2, 10, QChar('0'));
 				break;
 			default:
 				break;
@@ -145,10 +155,18 @@ QString grid_Degree2DMS(double degree, unsigned int type)
 		switch(type)
 		{
 			case GEO_TYPE_LONGITUDE:
-				res.sprintf("%c%d%c%d\'", (sign?'E':'W'),d, 0x00B0, m);
+				res = QString("%1%2%3%4'")
+					.arg(sign ? 'E' : 'W')
+					.arg(d)
+					.arg(QChar(0x00B0))
+					.arg(m);
 				break;
 			case GEO_TYPE_LATITUDE:
-				res.sprintf("%c%d%c%d\'", (sign?'N':'S'), d, 0x00B0, m);
+				res = QString("%1%2%3%4'")
+					.arg(sign ? 'N' : 'S')
+					.arg(d)
+					.arg(QChar(0x00B0))
+					.arg(m);
 				break;
 			default:
 				break;
@@ -159,10 +177,16 @@ QString grid_Degree2DMS(double degree, unsigned int type)
 		switch(type)
 		{
 			case GEO_TYPE_LONGITUDE:
-				res.sprintf("%c%d%c", (sign?'E':'W'),d, 0x00B0);
+				res = QString("%1%2%3")
+					.arg(sign ? 'E' : 'W')
+					.arg(d)
+					.arg(QChar(0x00B0));
 				break;
 			case GEO_TYPE_LATITUDE:
-				res.sprintf("%c%d%c", (sign?'N':'S'), d, 0x00B0);
+				res = QString("%1%2%3")
+					.arg(sign ? 'N' : 'S')
+					.arg(d)
+					.arg(QChar(0x00B0));
 				break;
 			default:
 				break;
@@ -183,10 +207,18 @@ QString grid_Degree2DM(double degree, unsigned int type)
 	switch(type)
 	{
 		case GEO_TYPE_LONGITUDE:
-			res.sprintf("%c%d%c%.3lf\'", (sign?'E':'W'),d, 0x00B0, m );
+			res = QString("%1%2%3%4'")
+				.arg(sign ? 'E' : 'W')
+				.arg(d)
+				.arg(QChar(0x00B0))
+				.arg(m, 0, 'f', 3);
 			break;
 		case GEO_TYPE_LATITUDE:
-			res.sprintf("%c%d%c%.3lf\'", (sign?'N':'S'), d, 0x00B0, m);
+			res = QString("%1%2%3%4'")
+				.arg(sign ? 'N' : 'S')
+				.arg(d)
+				.arg(QChar(0x00B0))
+				.arg(m, 0, 'f', 3);
 			break;
 		default:
 			break;
@@ -206,10 +238,16 @@ QString grid_Degree2Degree(double degree, unsigned int type)
 	switch(type)
 	{
 		case GEO_TYPE_LONGITUDE:
-			res.sprintf("%c%.4lf%c", (sign?'E':'W'),degree,0x00B0);
+			res = QString("%1%2%3")
+				.arg(sign ? 'E' : 'W')
+				.arg(degree, 0, 'f', 4)
+				.arg(QChar(0x00B0));
 			break;
 		case GEO_TYPE_LATITUDE:
-			res.sprintf("%c%.4lf%c", (sign?'N':'S'),degree,0x00B0);			
+			res = QString("%1%2%3")
+				.arg(sign ? 'N' : 'S')
+				.arg(degree, 0, 'f', 4)
+				.arg(QChar(0x00B0));
 			break;
 	}
 	return res;
