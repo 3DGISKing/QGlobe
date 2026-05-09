@@ -28,55 +28,55 @@
     <ClCompile Include="avl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Aabbox3D.cpp">
+    <ClCompile Include="QGlobe_Aabbox3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Coord3D.cpp">
+    <ClCompile Include="QGlobe_Coord3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Dimension2D.cpp">
+    <ClCompile Include="QGlobe_Dimension2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Line2D.cpp">
+    <ClCompile Include="QGlobe_Line2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Line3D.cpp">
+    <ClCompile Include="QGlobe_Line3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Location.cpp">
+    <ClCompile Include="QGlobe_Location.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Math.cpp">
+    <ClCompile Include="QGlobe_Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Matrix4.cpp">
+    <ClCompile Include="QGlobe_Matrix4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Mem.cpp">
+    <ClCompile Include="QGlobe_Mem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Plane3D.cpp">
+    <ClCompile Include="QGlobe_Plane3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Position2D.cpp">
+    <ClCompile Include="QGlobe_Position2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Quaternion.cpp">
+    <ClCompile Include="QGlobe_Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Rect.cpp">
+    <ClCompile Include="QGlobe_Rect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Triangle3d.cpp">
+    <ClCompile Include="QGlobe_Triangle3d.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Triangulate.cpp">
+    <ClCompile Include="QGlobe_Triangulate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Vector2D.cpp">
+    <ClCompile Include="QGlobe_Vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Vector3D.cpp">
+    <ClCompile Include="QGlobe_Vector3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,73 +84,73 @@
     <ClInclude Include="avl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_base_global.h">
+    <ClInclude Include="qglobe_base_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Aabbox3D.h">
+    <ClInclude Include="QGlobe_Aabbox3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Allocator.h">
+    <ClInclude Include="QGlobe_Allocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Array.h">
+    <ClInclude Include="QGlobe_Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Coord3D.h">
+    <ClInclude Include="QGlobe_Coord3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Define.h">
+    <ClInclude Include="QGlobe_Define.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Dimension2D.h">
+    <ClInclude Include="QGlobe_Dimension2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Heapsort.h">
+    <ClInclude Include="QGlobe_Heapsort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Line2D.h">
+    <ClInclude Include="QGlobe_Line2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Line3D.h">
+    <ClInclude Include="QGlobe_Line3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_List.h">
+    <ClInclude Include="QGlobe_List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Location.h">
+    <ClInclude Include="QGlobe_Location.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Math.h">
+    <ClInclude Include="QGlobe_Math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Matrix4.h">
+    <ClInclude Include="QGlobe_Matrix4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Mem.h">
+    <ClInclude Include="QGlobe_Mem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Plane3D.h">
+    <ClInclude Include="QGlobe_Plane3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Position2D.h">
+    <ClInclude Include="QGlobe_Position2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Quaternion.h">
+    <ClInclude Include="QGlobe_Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Rect.h">
+    <ClInclude Include="QGlobe_Rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Triangle3d.h">
+    <ClInclude Include="QGlobe_Triangle3d.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Triangulate.h">
+    <ClInclude Include="QGlobe_Triangulate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Vector2D.h">
+    <ClInclude Include="QGlobe_Vector2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Vector3D.h">
+    <ClInclude Include="QGlobe_Vector3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

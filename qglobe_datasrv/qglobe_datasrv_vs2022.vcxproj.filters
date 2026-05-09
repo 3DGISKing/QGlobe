@@ -48,7 +48,7 @@
     <ClInclude Include="dataconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_datasrv_global.h">
+    <ClInclude Include="qglobe_datasrv_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stable.h">

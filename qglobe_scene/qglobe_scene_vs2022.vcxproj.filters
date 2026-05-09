@@ -38,7 +38,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GDM_GridData.cpp">
+    <ClCompile Include="QGlobe_GridData.cpp">
       <Filter>GeoGrid</Filter>
     </ClCompile>
     <ClCompile Include="GeoGridSceneNode.cpp">
@@ -53,28 +53,28 @@
     <ClCompile Include="AtmosphereSceneNode.cpp">
       <Filter>GeoAtmosphere</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_RenderData.cpp">
+    <ClCompile Include="QGlobe_RenderData.cpp">
       <Filter>GeoTerrainScene</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_TextureIDCache.cpp">
+    <ClCompile Include="QGlobe_TextureIDCache.cpp">
       <Filter>GeoTerrainScene</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_TextureMgr.cpp">
+    <ClCompile Include="QGlobe_TextureMgr.cpp">
       <Filter>GeoTerrainScene</Filter>
     </ClCompile>
     <ClCompile Include="GeoTerrainSceneNode.cpp">
       <Filter>GeoTerrainScene</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_ContourData.cpp">
+    <ClCompile Include="QGlobe_ContourData.cpp">
       <Filter>GeoContour</Filter>
     </ClCompile>
     <ClCompile Include="GeoContourSceneNode.cpp">
       <Filter>GeoContour</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_NameData.cpp">
+    <ClCompile Include="QGlobe_NameData.cpp">
       <Filter>GeoName</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_PlaceData.cpp">
+    <ClCompile Include="QGlobe_PlaceData.cpp">
       <Filter>GeoName</Filter>
     </ClCompile>
     <ClCompile Include="GeoFont.cpp">
@@ -98,7 +98,7 @@
     <ClCompile Include="GIS_TextureMgr.cpp">
       <Filter>GIS</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_ShapeData.cpp">
+    <ClCompile Include="QGlobe_ShapeData.cpp">
       <Filter>GeoShape</Filter>
     </ClCompile>
     <ClCompile Include="GeoShapeSceneNode.cpp">
@@ -107,7 +107,7 @@
     <ClCompile Include="gdm_renderview.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_SceneManager.cpp">
+    <ClCompile Include="QGlobe_SceneManager.cpp">
       <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="Geo3dObjectSceneNode.cpp">
@@ -148,10 +148,10 @@
     <ClInclude Include="AtmosphereSceneNode.h">
       <Filter>GeoAtmosphere</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_TextureIDCache.h">
+    <ClInclude Include="QGlobe_TextureIDCache.h">
       <Filter>GeoTerrainScene</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_TextureMgr.h">
+    <ClInclude Include="QGlobe_TextureMgr.h">
       <Filter>GeoTerrainScene</Filter>
     </ClInclude>
     <ClInclude Include="GeoTerrainSceneNode.h">
@@ -184,10 +184,10 @@
     <ClInclude Include="GeoShapeSceneNode.h">
       <Filter>GeoShape</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_scene_global.h">
+    <ClInclude Include="qglobe_scene_global.h">
       <Filter>main</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_SceneManager.h">
+    <ClInclude Include="QGlobe_SceneManager.h">
       <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="Geo3dObjectSceneNode.h">

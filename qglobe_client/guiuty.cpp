@@ -27,13 +27,13 @@ int gu_MessageBox(QWidget *parent, const QString &title, const QString &text, un
 		id = MSGBOX_IDOK;
 
 	if (id & MSGBOX_IDOK)
-		okButton = msgBox.addButton(QApplication::translate("GDemClient","Ok"), QMessageBox::AcceptRole);
+		okButton = msgBox.addButton(QApplication::translate("QGlobeClient","Ok"), QMessageBox::AcceptRole);
 	if (id & MSGBOX_IDYES)
-		yesButton = msgBox.addButton(QApplication::translate("GDemClient","Yes"), QMessageBox::YesRole);
+		yesButton = msgBox.addButton(QApplication::translate("QGlobeClient","Yes"), QMessageBox::YesRole);
 	if (id & MSGBOX_IDNO)
-		noButton = msgBox.addButton(QApplication::translate("GDemClient","No"), QMessageBox::NoRole);
+		noButton = msgBox.addButton(QApplication::translate("QGlobeClient","No"), QMessageBox::NoRole);
 	if (id & MSGBOX_IDCANCEL)
-		cancelButton = msgBox.addButton(QApplication::translate("GDemClient","Cancel"), QMessageBox::RejectRole);
+		cancelButton = msgBox.addButton(QApplication::translate("QGlobeClient","Cancel"), QMessageBox::RejectRole);
 
 	if (ic == MSGBOX_ICONQUESTION)
 		msgBox.setIcon(QMessageBox::Question);

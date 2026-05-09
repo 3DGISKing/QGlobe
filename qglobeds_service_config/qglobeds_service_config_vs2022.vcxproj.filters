@@ -104,7 +104,7 @@
     <CustomBuild Include="GeneratedFiles\ui_directorydialog.h">
       <Filter>Generated Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="translation\gds_service_config.ts">
+    <CustomBuild Include="translation\qglobeds_service_config.ts">
       <Filter>Translation Files</Filter>
     </CustomBuild>
     <CustomBuild Include="configdialog.ui">

@@ -11,7 +11,7 @@
 #include "sidebar.h"
 #include "searchdlg.h"
 #include "guiuty.h"
-#include "QGlobe_Interface.h"
+#include "../qglobe_libmain/QGlobe_Interface.h"
 
 #include "proxy.h"
 #include "msgdata.h"
@@ -31,7 +31,7 @@
 
 QSplashScreen* g_Splash; 
 
-GDemClient::GDemClient(int argc, char **argv) :
+QGlobeClient::QGlobeClient(int argc, char **argv) :
 		QtSingleApplication(argc, argv)
 {
 	m_mainWnd = NULL;
@@ -52,7 +52,7 @@ GDemClient::GDemClient(int argc, char **argv) :
         m_workDir = dir.absolutePath();
 #endif
 #ifdef DEBUG
-        qDebug() << "GDemClient::GDemClient:working dir=" << m_workDir;
+        qDebug() << "QGlobeClient::QGlobeClient:working dir=" << m_workDir;
 #endif
 
 	qglobe_SetWorkPath(m_workDir);
@@ -75,13 +75,13 @@ GDemClient::GDemClient(int argc, char **argv) :
 	QCoreApplication::addLibraryPath(m_workDir+APP_PLUGIN_PATH);
 }
 
-GDemClient::~GDemClient()
+QGlobeClient::~QGlobeClient()
 {
 	if(g_app)
 		Release();
 }
 
-bool GDemClient::Init()
+bool QGlobeClient::Init()
 {
 	if (!InitSearchHistroy())
 		return false;
@@ -97,7 +97,7 @@ bool GDemClient::Init()
 	return true;
 }
 
-bool GDemClient::InitConfig()
+bool QGlobeClient::InitConfig()
 {
     m_config = new Config();
 	if (m_config)
@@ -113,7 +113,7 @@ bool GDemClient::InitConfig()
 	return false;
 }
 
-bool GDemClient::InitProxy()
+bool QGlobeClient::InitProxy()
 {
 	//init data server
 	m_dataProxy = new DataProxy();
@@ -132,7 +132,7 @@ bool GDemClient::InitProxy()
 	return true;
 }
 
-bool GDemClient::InitSearchHistroy()
+bool QGlobeClient::InitSearchHistroy()
 {
 	//set search history
 	QString shPath = GetUserDataDir() + APP_SEARCH_HISTORY;
@@ -141,7 +141,7 @@ bool GDemClient::InitSearchHistroy()
 	return (m_searchModel != NULL) ? true : false;
 }
 
-void GDemClient::Release()
+void QGlobeClient::Release()
 {
 	if (m_config)
 		m_config->WriteSettings();
@@ -170,19 +170,19 @@ void GDemClient::Release()
 		delete m_searchModel;
 }
 
-QString GDemClient::GetResource(const char *fileName)
+QString QGlobeClient::GetResource(const char *fileName)
 {
     QString path = m_workDir + QString("/res") + fileName;
     return path;
 }
 
-QString GDemClient::GetResource(QString &fileName)
+QString QGlobeClient::GetResource(QString &fileName)
 {
     QString path = m_workDir + QString("/res") + fileName;
     return path;
 }
 
-QString GDemClient::Trans(const char *s, const char *c)
+QString QGlobeClient::Trans(const char *s, const char *c)
 {
 	QString res = m_translator.translate(NULL, s, c);
 	if (res.isEmpty() && s!=NULL)
@@ -190,7 +190,7 @@ QString GDemClient::Trans(const char *s, const char *c)
 	return res;
 }
 
-QString GDemClient::Trans(const QString &s)
+QString QGlobeClient::Trans(const QString &s)
 {
 	QByteArray byteArr = s.toUtf8();
 	QString res = m_translator.translate(NULL, byteArr.data(), NULL);
@@ -199,7 +199,7 @@ QString GDemClient::Trans(const QString &s)
 	return res;
 }
 
-void GDemClient::InitializeGL()
+void QGlobeClient::InitializeGL()
 {
 	m_renderProxy->SendMessage(PM_SET_RENDERVIEW, (PrxParam)m_mainWnd->GetRenderFrame());
 
@@ -228,67 +228,67 @@ void GDemClient::InitializeGL()
 	UpdateOptionInfo();
 }
 
-void GDemClient::ChangedRenderSize(int w, int h)
+void QGlobeClient::ChangedRenderSize(int w, int h)
 {
 	m_renderProxy->SendMessage(PM_CHANGED_VIEWSIZE, (PrxParam)w, (PrxParam)h);
 }
 
-int GDemClient::GetDrawFontSize(int size)
+int QGlobeClient::GetDrawFontSize(int size)
 {
 	int dpi = QApplication::desktop()->physicalDpiX();
 	return (96 * size) / dpi;
 }
 
-int GDemClient::GetDrawFontMargin(int size)
+int QGlobeClient::GetDrawFontMargin(int size)
 {
 	int dpi = QApplication::desktop()->physicalDpiX();
 	return (dpi * size) / 96;
 }
 
 //key & nav's view joystic
-void GDemClient::MoveView(int x, int y)
+void QGlobeClient::MoveView(int x, int y)
 {
 	m_renderProxy->GetRenderSrv()->MoveView(x , y);
 }
 
 //nav's look joystic
-void GDemClient::LookView(int x, int y)
+void QGlobeClient::LookView(int x, int y)
 {
 	m_renderProxy->GetRenderSrv()->LookView(x , y);
 }
 
 //key & nav's zoom slider
-void GDemClient::ZoomView(int speed)
+void QGlobeClient::ZoomView(int speed)
 {
 	m_renderProxy->GetRenderSrv()->MoveForward(speed , 1);
 }
 
 //key & navigation
-void GDemClient::ResetView()
+void QGlobeClient::ResetView()
 {
 	m_renderProxy->GetRenderSrv()->ResetView();
 }
 
 //key
-void GDemClient::ResetTilt()
+void QGlobeClient::ResetTilt()
 {
 	m_renderProxy->GetRenderSrv()->ResetTilt();
 }
 
 //key
-void GDemClient::ResetAll()
+void QGlobeClient::ResetAll()
 {
 	m_renderProxy->GetRenderSrv()->ResetAll();
 }
 
 //key
-void GDemClient::StopView()
+void QGlobeClient::StopView()
 {
 	m_renderProxy->GetRenderSrv()->StopView();
 }
 
 //nav's ring
-void GDemClient::ChangedCompassAngle(double angle)
+void QGlobeClient::ChangedCompassAngle(double angle)
 {
 	MainWindow *mainWnd = g_app->GetMainWindow();
 	NavBar *navBar = mainWnd->GetRenderFrame()->GetNavBar();
@@ -299,7 +299,7 @@ void GDemClient::ChangedCompassAngle(double angle)
 	m_renderProxy->SendMessage(PM_CHANGED_COMPASSANGLE, (PrxParam)&rad);
 }
 
-void GDemClient::UpdateOptionInfo()
+void QGlobeClient::UpdateOptionInfo()
 {
 	m_renderProxy->SendMessage(PM_CHANGE_DISTMODE, (PrxParam)&m_config->m_distShowMode);
 	m_renderProxy->SendMessage(PM_CHANGE_LABLESIZE, (PrxParam)&m_config->m_lableSize);
@@ -329,19 +329,19 @@ void GDemClient::UpdateOptionInfo()
 /*
  * protected
  */
-void GDemClient::CreateUserDataDir()
+void QGlobeClient::CreateUserDataDir()
 {
 	m_userDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
 	QDir dir;
 	bool res = dir.mkpath(m_userDataDir);
 #ifdef DEBUG
-	qDebug("GDemClient::CreateUserDataDir: %s(%s)", res ? "true" : "false",
+	qDebug("QGlobeClient::CreateUserDataDir: %s(%s)", res ? "true" : "false",
 		   m_userDataDir.toUtf8().data());
 #endif
 }
 
-QStringListModel* GDemClient::LoadSearchHistory(QString fileName)
+QStringListModel* QGlobeClient::LoadSearchHistory(QString fileName)
 {
 	QFile file(fileName);
 	if (!file.open(QFile::ReadOnly))
@@ -362,7 +362,7 @@ QStringListModel* GDemClient::LoadSearchHistory(QString fileName)
 	return new QStringListModel(words);
 }
 
-void GDemClient::SaveSearchHistory()
+void QGlobeClient::SaveSearchHistory()
 {
 	if (m_searchModel == NULL)
 		return;
@@ -392,12 +392,12 @@ void GDemClient::SaveSearchHistory()
 	}
 }
 
-void GDemClient::ResetRenderKeys()
+void QGlobeClient::ResetRenderKeys()
 {
 	GetMainWindow()->GetRenderFrame()->ResetRenderKey();
 }
 
-void GDemClient::FullExtent()
+void QGlobeClient::FullExtent()
 {
 #define LATI_CHINA		35.8617 
 #define LONGI_CHINA		104.1954 
@@ -414,7 +414,7 @@ void GDemClient::FullExtent()
 
 }
 
-QString GDemClient::GetFontName(bool blKorean)
+QString QGlobeClient::GetFontName(bool blKorean)
 {
 	QString fontName;
 
@@ -426,7 +426,7 @@ QString GDemClient::GetFontName(bool blKorean)
 	return fontName;
 }
 
-QString GDemClient::GetFontFileName(bool blKorean)
+QString QGlobeClient::GetFontFileName(bool blKorean)
 {
 	QString fontName;
 

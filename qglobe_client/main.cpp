@@ -19,7 +19,7 @@ public:
 #include <crtdbg.h>
 #endif
 
-GDemClient *g_app;
+QGlobeClient *g_app;
 
 int main(int argc, char *argv[])
 {
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CRTDBG_ALLOC_MEM_DF);
 #endif
 
-	GDemClient a(argc, argv);
+	QGlobeClient a(argc, argv);
     g_app = &a;
 
 	if (a.isRunning())
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	splash.show();
 	a.processEvents();
 
-	splash.showMessage(QApplication::translate("GDemClient","Initializing Application..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+	splash.showMessage(QApplication::translate("QGlobeClient","Initializing Application..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 	a.processEvents();
 
 	if (!a.Init())
@@ -53,12 +53,12 @@ int main(int argc, char *argv[])
 
 	a.SetMainWindow(&mainWnd);
 	
-	splash.showMessage(QApplication::translate("GDemClient","Creating Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+	splash.showMessage(QApplication::translate("QGlobeClient","Creating Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 	a.processEvents();
 
 	if (mainWnd.Init())
     {
-		splash.showMessage(QApplication::translate("GDemClient","Initializing Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
+		splash.showMessage(QApplication::translate("QGlobeClient","Initializing Mainwindow..."),Qt::AlignCenter|Qt::AlignBottom,Qt::darkGray);
 		a.processEvents();
 
         mainWnd.InitUpdate();
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-		gu_MessageBox(NULL, QApplication::translate("GDemClient","Error"),QApplication::translate("GDemClient","Occured error in initialization"),MSGBOX_ICONCRITICAL);
+		gu_MessageBox(NULL, QApplication::translate("QGlobeClient","Error"),QApplication::translate("QGlobeClient","Occured error in initialization"),MSGBOX_ICONCRITICAL);
 		mainWnd.Release();
 		return 0;
     }

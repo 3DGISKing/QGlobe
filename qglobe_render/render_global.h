@@ -9,8 +9,8 @@
 #define RENDER_EXPORT Q_DECL_EXPORT
 #endif
 
-class GDemClient;
-extern GDemClient* g_app;
+class QGlobeClient;
+extern QGlobeClient* g_app;
 
 typedef enum
 {

@@ -21,7 +21,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gds_service_monitoring.cpp">
+    <ClCompile Include="qglobeds_service_monitoring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -29,7 +29,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="gds_service_monitoring.h">
+    <CustomBuild Include="qglobeds_service_monitoring.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

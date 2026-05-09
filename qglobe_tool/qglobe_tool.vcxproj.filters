@@ -47,10 +47,10 @@
     <ClCompile Include="dbasefile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gdem_tool.cpp">
+    <ClCompile Include="qglobe_tool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gdemdbextractdlg.cpp">
+    <ClCompile Include="qglobedbextractdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="hopedbtogdem.cpp">
@@ -98,7 +98,7 @@
     <ClCompile Include="writeremovejgw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_gdem_tool.cpp">
+    <ClCompile Include="GeneratedFiles\qrc_qglobe_tool.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_browser.cpp">
@@ -107,10 +107,10 @@
     <ClCompile Include="GeneratedFiles\Release\moc_connectionwidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_gdem_tool.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_qglobe_tool.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_gdemdbextractdlg.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_qglobedbextractdlg.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_hopedbtogdem.cpp">
@@ -155,10 +155,10 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_connectionwidget.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_gdem_tool.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_qglobe_tool.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_gdemdbextractdlg.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_qglobedbextractdlg.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_hopedbtogdem.cpp">
@@ -217,10 +217,10 @@
     <ClInclude Include="GeneratedFiles\ui_browserwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_gdem_tool.h">
+    <ClInclude Include="GeneratedFiles\ui_qglobe_tool.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_gdemdbextractdlg.h">
+    <ClInclude Include="GeneratedFiles\ui_qglobedbextractdlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_hopedbtogdem.h">
@@ -264,10 +264,10 @@
     <CustomBuild Include="connectionwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="gdem_tool.h">
+    <CustomBuild Include="qglobe_tool.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="gdemdbextractdlg.h">
+    <CustomBuild Include="qglobedbextractdlg.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="hopedbtogdem.h">
@@ -309,10 +309,10 @@
     <CustomBuild Include="browserwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="gdem_tool.ui">
+    <CustomBuild Include="qglobe_tool.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="gdemdbextractdlg.ui">
+    <CustomBuild Include="qglobedbextractdlg.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="hopedbtogdem.ui">
@@ -348,7 +348,7 @@
     <CustomBuild Include="writeremovejgw.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="gdem_tool.qrc">
+    <CustomBuild Include="qglobe_tool.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>

@@ -49,7 +49,7 @@
     <ClCompile Include="cameracontroller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_ObjectAddCmd.cpp">
+    <ClCompile Include="QGlobe_ObjectAddCmd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GeoMeshUtil.cpp">
@@ -58,60 +58,60 @@
     <ClCompile Include="rendersrv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="generatedfiles\release\moc_GDM_CommandDlg.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="generatedfiles\debug\moc_QGlobe_CommandDlg.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="generatedfiles\test\moc_GDM_CommandDlg.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="generatedfiles\debug_alone\moc_QGlobe_CommandDlg.cpp">
+      <Filter>Generated Files\Debug_Alone</Filter>
     </ClCompile>
-    <ClCompile Include="generatedfiles\debug_alone\moc_GDM_CommandDlg.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="generatedfiles\release\moc_QGlobe_CommandDlg.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="generatedfiles\release_alone\moc_GDM_CommandDlg.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="generatedfiles\release_alone\moc_QGlobe_CommandDlg.cpp">
+      <Filter>Generated Files\Release_Alone</Filter>
     </ClCompile>
-    <ClCompile Include="generatedfiles\debug\moc_GDM_CommandDlg.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="generatedfiles\test\moc_QGlobe_CommandDlg.cpp">
+      <Filter>Generated Files\Test</Filter>
     </ClCompile>
     <ClCompile Include="stable.h.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_CameraCmd.cpp">
+    <ClCompile Include="QGlobe_CameraCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Command.cpp">
+    <ClCompile Include="QGlobe_Command.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_CommandMgr.cpp">
+    <ClCompile Include="QGlobe_CommandMgr.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_DrawCmd.cpp">
+    <ClCompile Include="QGlobe_DrawCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_DrawObjectCmd.cpp">
+    <ClCompile Include="QGlobe_DrawObjectCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_DrawPolygonCmd.cpp">
+    <ClCompile Include="QGlobe_DrawPolygonCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_MeasureAreaCmd.cpp">
+    <ClCompile Include="QGlobe_MeasureAreaCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_PointCmd.cpp">
+    <ClCompile Include="QGlobe_PointCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_RulerCmd.cpp">
+    <ClCompile Include="QGlobe_RulerCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_SimCmd.cpp">
+    <ClCompile Include="QGlobe_SimCmd.cpp">
       <Filter>Command</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_CommandDlg.cpp">
+    <ClCompile Include="QGlobe_CommandDlg.cpp">
       <Filter>Dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GDM_ObjectAddCmd.h">
+    <ClInclude Include="QGlobe_ObjectAddCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GeoMeshUtil.h">
@@ -120,31 +120,31 @@
     <ClInclude Include="render_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_CameraCmd.h">
+    <ClInclude Include="QGlobe_CameraCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Command.h">
+    <ClInclude Include="QGlobe_Command.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_CommandMgr.h">
+    <ClInclude Include="QGlobe_CommandMgr.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_DrawCmd.h">
+    <ClInclude Include="QGlobe_DrawCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_DrawObjectCmd.h">
+    <ClInclude Include="QGlobe_DrawObjectCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_DrawPolygonCmd.h">
+    <ClInclude Include="QGlobe_DrawPolygonCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_PointCmd.h">
+    <ClInclude Include="QGlobe_PointCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_RulerCmd.h">
+    <ClInclude Include="QGlobe_RulerCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_SimCmd.h">
+    <ClInclude Include="QGlobe_SimCmd.h">
       <Filter>Command</Filter>
     </ClInclude>
   </ItemGroup>
@@ -158,10 +158,10 @@
     <CustomBuild Include="stable.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="GDM_MeasureAreaCmd.h">
+    <CustomBuild Include="QGlobe_MeasureAreaCmd.h">
       <Filter>Command</Filter>
     </CustomBuild>
-    <CustomBuild Include="GDM_CommandDlg.h">
+    <CustomBuild Include="QGlobe_CommandDlg.h">
       <Filter>Dialog</Filter>
     </CustomBuild>
   </ItemGroup>

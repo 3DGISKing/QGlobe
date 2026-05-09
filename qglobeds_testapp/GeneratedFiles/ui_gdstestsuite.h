@@ -22,7 +22,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_GDSTestSuiteClass
+class Ui_QGlobeDSTestSuiteClass
 {
 public:
     QAction *actionStart_Server;
@@ -109,7 +109,7 @@ public:
 };
 
 namespace Ui {
-    class QGlobeDSTestSuiteClass: public Ui_GDSTestSuiteClass {};
+    class QGlobeDSTestSuiteClass: public Ui_QGlobeDSTestSuiteClass {};
 } // namespace Ui
 
 QT_END_NAMESPACE

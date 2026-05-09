@@ -11,27 +11,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gdem_distributeconfig.cpp">
+    <ClCompile Include="qglobe_distributeconfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gdem_protocol.cpp">
+    <ClCompile Include="qglobe_protocol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gdem_version.cpp">
+    <ClCompile Include="qglobe_version.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gdem_config.h">
+    <ClInclude Include="qglobe_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_distributeconfig.h">
+    <ClInclude Include="qglobe_distributeconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_protocol.h">
+    <ClInclude Include="qglobe_protocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_version.h">
+    <ClInclude Include="qglobe_version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gdemclientbase.h">

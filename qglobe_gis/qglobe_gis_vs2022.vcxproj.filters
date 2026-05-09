@@ -61,7 +61,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gdem_gis_global.h">
+    <ClInclude Include="qglobe_gis_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GIS_Dataset.h">

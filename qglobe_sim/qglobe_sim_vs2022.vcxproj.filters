@@ -23,63 +23,63 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GDM_SimMgr.cpp">
+    <ClCompile Include="QGlobe_SimMgr.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Simulator.cpp">
+    <ClCompile Include="QGlobe_Simulator.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_Car.cpp">
+    <ClCompile Include="QGlobe_Car.cpp">
       <Filter>CarSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_CarSim.cpp">
+    <ClCompile Include="QGlobe_CarSim.cpp">
       <Filter>CarSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_AircraftSpecs.cpp">
+    <ClCompile Include="QGlobe_AircraftSpecs.cpp">
       <Filter>FlightSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_ControlSurface.cpp">
+    <ClCompile Include="QGlobe_ControlSurface.cpp">
       <Filter>FlightSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_FlightSim.cpp">
+    <ClCompile Include="QGlobe_FlightSim.cpp">
       <Filter>FlightSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_FlightSimInput.cpp">
+    <ClCompile Include="QGlobe_FlightSimInput.cpp">
       <Filter>FlightSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_FlightSimPhysics.cpp">
+    <ClCompile Include="QGlobe_FlightSimPhysics.cpp">
       <Filter>FlightSim</Filter>
     </ClCompile>
-    <ClCompile Include="GDM_PathSim.cpp">
+    <ClCompile Include="QGlobe_PathSim.cpp">
       <Filter>PathSim</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GDM_SimMgr.h">
+    <ClInclude Include="QGlobe_SimMgr.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Simulator.h">
+    <ClInclude Include="QGlobe_Simulator.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_Car.h">
+    <ClInclude Include="QGlobe_Car.h">
       <Filter>CarSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_CarSim.h">
+    <ClInclude Include="QGlobe_CarSim.h">
       <Filter>CarSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_AircraftSpecs.h">
+    <ClInclude Include="QGlobe_AircraftSpecs.h">
       <Filter>FlightSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_ControlSurface.h">
+    <ClInclude Include="QGlobe_ControlSurface.h">
       <Filter>FlightSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_FlightSim.h">
+    <ClInclude Include="QGlobe_FlightSim.h">
       <Filter>FlightSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_FlightSimTypes.h">
+    <ClInclude Include="QGlobe_FlightSimTypes.h">
       <Filter>FlightSim</Filter>
     </ClInclude>
-    <ClInclude Include="GDM_PathSim.h">
+    <ClInclude Include="QGlobe_PathSim.h">
       <Filter>PathSim</Filter>
     </ClInclude>
   </ItemGroup>

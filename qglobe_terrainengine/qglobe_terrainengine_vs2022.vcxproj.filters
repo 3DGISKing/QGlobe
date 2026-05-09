@@ -43,7 +43,7 @@
     <ClInclude Include="CZipReader.h">
       <Filter>Core\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdem_terrainengine_global.h">
+    <ClInclude Include="qglobe_terrainengine_global.h">
       <Filter>Core\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="geopack.h">

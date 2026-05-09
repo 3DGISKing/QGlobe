@@ -1,5 +1,5 @@
-#ifndef GDEMCLIENT_H
-#define GDEMCLIENT_H
+#ifndef QGLOBECLIENT_H
+#define QGLOBECLIENT_H
 
 #include <QApplication>
 #include <QStringListModel>
@@ -15,11 +15,11 @@ class QSplashScreen;
 class Config;
 class MainWindow;
 
-class GDemClient : public QtSingleApplication
+class QGlobeClient : public QtSingleApplication
 {
 public:
-	GDemClient(int argc, char **argv);
-	~GDemClient();
+	QGlobeClient(int argc, char **argv);
+	~QGlobeClient();
 
 	QString& GetWorkDir()
 	{	return m_workDir; }
@@ -98,8 +98,8 @@ protected:
 	void SaveSearchHistory();
 };
 
-extern GDemClient *g_app;
+extern QGlobeClient *g_app;
 
 extern QSplashScreen* g_Splash; 
 
-#endif // GDEMCLIENT_H
+#endif // QGLOBECLIENT_H

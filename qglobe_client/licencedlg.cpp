@@ -15,7 +15,7 @@ LicenceDlg::LicenceDlg(QWidget *parent)
 
 	if(modelnumber.isEmpty())
 	{
-		gu_MessageBox(NULL,tr("GDEMClient"),tr("Excuse me. Inform me!"),MSGBOX_IDOK);
+		gu_MessageBox(NULL,tr("QGlobeClient"),tr("Excuse me. Inform me!"),MSGBOX_IDOK);
 		return;
 	}
 
@@ -44,7 +44,7 @@ void LicenceDlg::setLicence()
 
 	if(licence==FormatKey(GetKey(formatedserial),16))
 	{
-		gu_MessageBox(NULL,tr("GDEMClient"),tr("Licence Ok"));
+		gu_MessageBox(NULL,tr("QGlobeClient"),tr("Licence Ok"));
 		
 		g_app->GetConfig()->WriteLicence(licence);
 		g_app->GetMainWindow()->DisableLicenceAction();
@@ -52,7 +52,7 @@ void LicenceDlg::setLicence()
 	}
 	else
 	{
-		gu_MessageBox(NULL,tr("GDEMClient"),tr("Invalid licence. Inform me"));
+		gu_MessageBox(NULL,tr("QGlobeClient"),tr("Invalid licence. Inform me"));
 		trynumber++;
 		ui.lineEditLicence->setText("");
 
