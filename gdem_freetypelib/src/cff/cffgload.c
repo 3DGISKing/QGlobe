@@ -863,10 +863,18 @@
     decoder->read_width = 1;
 
     /* compute random seed from stack address of parameter */
-    seed = (FT_Fixed)(char*)&seed           ^
-           (FT_Fixed)(char*)&decoder        ^
-           (FT_Fixed)(char*)&charstring_base;
-    seed = ( seed ^ ( seed >> 10 ) ^ ( seed >> 20 ) ) & 0xFFFFL;
+    {
+      FT_Offset  mix = (FT_Offset)(FT_Pointer)&seed    ^
+                       (FT_Offset)(FT_Pointer)&decoder ^
+                       (FT_Offset)(FT_Pointer)charstring_base;
+      FT_UInt32  mix32 = (FT_UInt32)mix;
+
+      if ( sizeof( mix ) > 4 )
+        mix32 ^= (FT_UInt32)( mix >> 32 );
+
+      seed = (FT_Fixed)mix32;
+    }
+    seed = (FT_Fixed)( ( seed ^ ( seed >> 10 ) ^ ( seed >> 20 ) ) & 0xFFFFL );
     if ( seed == 0 )
       seed = 0x7384;
 

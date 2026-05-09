@@ -15,7 +15,7 @@ public:
 	~LayerTreeItem();
 	Layer*                  GetLayer();
 	void                    SetCheckState(Qt::CheckState state);
-	inline void             SetExclusiveChildItem (LayerTreeItem* item);
+	void                    SetExclusiveChildItem (LayerTreeItem* item);
 	void                    PropagateStateToExclusiveChild(Qt::CheckState state);
 	void                    PropagateStateToAllChilds(Qt::CheckState state);
 	void                    OnClicked();

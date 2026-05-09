@@ -18,7 +18,7 @@ inline void Read(void * dst, char*& src_pointer,size_t size)
 	src_pointer+=size;
 }
 
-inline void GetXY(double longi,double lat,int level,int &x,int& y)
+void GetXY(double longi,double lat,int level,int &x,int& y)
 {
 	double tilewidth=2*gdm_PI/(1<<level);
 
@@ -36,7 +36,7 @@ void ReadString(char* dest,char *& pRaw)
 		Read(dest + index,pRaw, 1);
 }
 
-inline void ConvertToCharFromQString(QString &str, char* buffer)
+void ConvertToCharFromQString(QString &str, char* buffer)
 {
 	char *data;
 	QByteArray byte = str.toUtf8();
@@ -47,7 +47,7 @@ inline void ConvertToCharFromQString(QString &str, char* buffer)
 }
 
 
-inline void MakeDirectory(QString path)
+void MakeDirectory(QString path)
 {
 	QDir tmp;
 

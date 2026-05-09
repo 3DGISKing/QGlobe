@@ -64,9 +64,9 @@ private:
 	static QString GetFileNameOfSmplBldTile(int x,int y,int level);
   };
 
-inline void MakeDirectory(QString path);
-inline void GetXY(double longi,double lat,int level,int &x,int& y);
-inline void ConvertToCharFromQString(QString &str, char* buffer);
+void MakeDirectory(QString path);
+void GetXY(double longi,double lat,int level,int &x,int& y);
+void ConvertToCharFromQString(QString &str, char* buffer);
 
 
 

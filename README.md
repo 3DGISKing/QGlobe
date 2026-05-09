@@ -39,15 +39,15 @@ Only needed if you do not use a prebuilt Qt. Summary of steps; full detail is in
 
 Prerequisites include Visual Studio 2022, Node.js, Strawberry Perl, Python 2.7 (as required by that Qt branch), **flex/bison/gperf** (often from Qt’s `gnuwin32` bundle), and **libclang** for Qt WebEngine.
 
-1 install visual studio2022.
+1 install visual studio2022.  
 2 install Node.js.  
-3 download libclang-release_140-based-windows-vs2019_64.7z from https://download.qt.io/development_releases/prebuilt/libclang/.
-4 extract it to C.
-5 download https://strawberryperl.com/ and install perl.
-6 install python 2.7.
-7 download qt-everywhere-opensource-src-5.15.18 from https://download.qt.io/archive/qt/5.15/5.15.18/single/.
-8 extract to C:\qt\qt-everywhere-src-5.15.18.
-9 create folder C:\qt\qt-5-5.15.18-vs2022-build.
+3 download libclang-release_140-based-windows-vs2019_64.7z from https://download.qt.io/development_releases/prebuilt/libclang/.  
+4 extract it to C.  
+5 download https://strawberryperl.com/ and install perl.  
+6 install python 2.7.  
+7 download qt-everywhere-opensource-src-5.15.18 from https://download.qt.io/archive/qt/5.15/5.15.18/single/.  
+8 extract to C:\qt\qt-everywhere-src-5.15.18.  
+9 create folder C:\qt\qt-5-5.15.18-vs2022-build.  
 10 open x64 Native Tools Command Prompt for VS2022.
 
 ```bat

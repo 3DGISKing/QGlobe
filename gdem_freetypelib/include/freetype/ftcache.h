@@ -211,11 +211,13 @@ FT_BEGIN_HEADER
 
  /* */
 
-#define FT_POINTER_TO_ULONG( p )  ( (FT_ULong)(FT_Pointer)(p) )
-
-#define FTC_FACE_ID_HASH( i )                                \
-          ((FT_UInt32)(( FT_POINTER_TO_ULONG( i ) >> 3 ) ^   \
-                       ( FT_POINTER_TO_ULONG( i ) << 7 ) ) )
+#define FTC_FACE_ID_HASH( i )                                          \
+          ( (FT_UInt32)( ( ( (FT_Offset)(FT_Pointer)(i) >> 3 ) ^        \
+                           ( (FT_Offset)(FT_Pointer)(i) << 7 ) ) ^      \
+                        ( sizeof( FT_Offset ) > 4 ?                      \
+                          ( ( ( (FT_Offset)(FT_Pointer)(i) >> 3 ) ^      \
+                              ( (FT_Offset)(FT_Pointer)(i) << 7 ) ) >> 32 ) : \
+                          (FT_Offset)0 ) ) )
 
 
   /*************************************************************************/

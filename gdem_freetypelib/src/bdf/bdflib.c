@@ -33,6 +33,8 @@
 
 #include <ft2build.h>
 
+#include <stdint.h>
+
 #include FT_FREETYPE_H
 #include FT_INTERNAL_DEBUG_H
 #include FT_INTERNAL_STREAM_H
@@ -1003,7 +1005,7 @@
 
     n = _num_bdf_properties + font->nuser_props;
 
-    error = hash_insert( p->name, (void *)n, &(font->proptbl), memory );
+    error = hash_insert( p->name, (void *)(uintptr_t)n, &(font->proptbl), memory );
     if ( error )
       goto Exit;
 
@@ -1019,7 +1021,7 @@
                     bdf_font_t*  font )
   {
     hashnode       hn;
-    unsigned long  propid;
+    uintptr_t      propid;
 
 
     if ( name == 0 || *name == 0 )
@@ -1028,9 +1030,9 @@
     if ( ( hn = hash_lookup( name, &(font->proptbl) ) ) == 0 )
       return 0;
 
-    propid = (unsigned long)hn->data;
-    if ( propid >= _num_bdf_properties )
-      return font->user_props + ( propid - _num_bdf_properties );
+    propid = (uintptr_t)hn->data;
+    if ( propid >= (uintptr_t)_num_bdf_properties )
+      return font->user_props + ( propid - (uintptr_t)_num_bdf_properties );
 
     return (bdf_property_t*)_bdf_properties + propid;
   }
@@ -1261,7 +1263,7 @@
                      char*        name,
                      char*        value )
   {
-    unsigned long   propid;
+    uintptr_t       propid;
     hashnode        hn;
     bdf_property_t  *prop, *fp;
     FT_Memory       memory = font->memory;
@@ -1273,7 +1275,7 @@
     {
       /* The property already exists in the font, so simply replace */
       /* the value of the property with the current value.          */
-      fp = font->props + (unsigned long)hn->data;
+      fp = font->props + (uintptr_t)hn->data;
 
       switch ( fp->format )
       {
@@ -1335,9 +1337,9 @@
       font->props_size++;
     }
 
-    propid = (unsigned long)hn->data;
-    if ( propid >= _num_bdf_properties )
-      prop = font->user_props + ( propid - _num_bdf_properties );
+    propid = (uintptr_t)hn->data;
+    if ( propid >= (uintptr_t)_num_bdf_properties )
+      prop = font->user_props + ( propid - (uintptr_t)_num_bdf_properties );
     else
       prop = (bdf_property_t*)_bdf_properties + propid;
 
@@ -1372,7 +1374,7 @@
     if ( ft_memcmp( name, "COMMENT", 7 ) != 0 ) {
       /* Add the property to the font property table. */
       error = hash_insert( fp->name,
-                           (void *)font->props_used,
+                           (void *)(uintptr_t)font->props_used,
                            (hashtable *)font->internal,
                            memory );
       if ( error )
@@ -2054,7 +2056,7 @@
         for ( i = 0, prop = (bdf_property_t*)_bdf_properties;
               i < _num_bdf_properties; i++, prop++ )
         {
-          error = hash_insert( prop->name, (void *)i,
+          error = hash_insert( prop->name, (void *)(uintptr_t)i,
                                &(font->proptbl), memory );
           if ( error )
             goto Exit;
@@ -2472,7 +2474,7 @@
 
     hn = hash_lookup( name, (hashtable *)font->internal );
 
-    return hn ? ( font->props + (unsigned long)hn->data ) : 0;
+    return hn ? ( font->props + (uintptr_t)hn->data ) : 0;
   }
 
 

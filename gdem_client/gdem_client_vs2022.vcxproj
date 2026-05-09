@@ -79,12 +79,14 @@
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>geobrowser</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Alone|x64'">
     <OutDir>$(SolutionDir)bin\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>geobrowserd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Alone|x64'">
     <OutDir>$(SolutionDir)bin\</OutDir>
@@ -174,8 +176,8 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27" "/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27" %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;gdi32.lib;user32.lib;qtmain.lib;Qt5OpenGL.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5Network.lib;Qt5Core.lib;Qt5Xml.lib;Qt5Sql.lib;Qt5PrintSupport.lib;Qt5Multimedia.lib;Qt5MultimediaWidgets.lib;Qt5WebEngineWidgets.lib;gdem_kmlmgr.lib;gdem_libkml.lib;gdem_render.lib;gdem_libmain.lib;gdem_base.lib;gdem_compress.lib;gdem_datasrv.lib;gdem_scene.lib;gdem_terrainengine.lib;gdem_decodeimg.lib;gdem_freetypelib.lib;gdem_gis.lib;gdem_sim.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)geobrowser.exe</OutputFile>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;gdi32.lib;user32.lib;qtmain.lib;Qt5OpenGL.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5Network.lib;Qt5Core.lib;Qt5Xml.lib;Qt5Sql.lib;Qt5PrintSupport.lib;Qt5Multimedia.lib;Qt5MultimediaWidgets.lib;Qt5WebEngineWidgets.lib;gdem_kmlmgr.lib;gdem_libkml.lib;gdem_render.lib;gdem_libmain.lib;gdem_base.lib;gdem_compress.lib;gdem_datasrv.lib;gdem_scene.lib;gdem_terrainengine.lib;gdem_decodeimg.lib;gdem_freetypelib.lib;gdem_gis.lib;gdem_sim.lib;gds_common.lib;gds_core.lib;gds_database.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -223,7 +225,7 @@
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27" "/MANIFESTDEPENDENCY:type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27 processorArchitecture=%27*%27" /WHOLEARCHIVE:gdem_decodeimgd.lib
 /fixed:no %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>opengl32.lib;glu32.lib;gdi32.lib;user32.lib;qtmaind.lib;Qt5OpenGLd.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5Networkd.lib;Qt5Cored.lib;Qt5Xmld.lib;Qt5Sqld.lib;Qt5PrintSupportd.lib;Qt5Multimediad.lib;Qt5MultimediaWidgetsd.lib;Qt5WebEngineWidgetsd.lib;gdem_kmlmgrd.lib;gdem_libkmld.lib;gdem_renderd.lib;gdem_libmaind.lib;gdem_based.lib;gdem_compressd.lib;gdem_datasrvd.lib;gdem_scened.lib;gdem_terrainengined.lib;gdem_decodeimgd.lib;gdem_freetypelibd.lib;gdem_gisd.lib;gds_commond.lib;gds_cored.lib;gds_databased.lib;gdem_simd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)geobrowserd.exe</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
