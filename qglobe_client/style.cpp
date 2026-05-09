@@ -2,7 +2,7 @@
 
 #include "style.h"
 
-void GdemCustomStyle::polish(QPalette &palette)
+void QGlobeCustomStyle::polish(QPalette &palette)
 {
     QColor brown(212, 140, 95);
     QColor beige(236, 182, 120);
@@ -38,21 +38,21 @@ void GdemCustomStyle::polish(QPalette &palette)
     palette.setBrush(QPalette::Disabled, QPalette::Mid, brush);
 }
 
-void GdemCustomStyle::polish(QWidget *widget)
+void QGlobeCustomStyle::polish(QWidget *widget)
 {
     if (qobject_cast<QPushButton *>(widget)
             || qobject_cast<QComboBox *>(widget))
         widget->setAttribute(Qt::WA_Hover, true);
 }
 
-void GdemCustomStyle::unpolish(QWidget *widget)
+void QGlobeCustomStyle::unpolish(QWidget *widget)
 {
     if (qobject_cast<QPushButton *>(widget)
             || qobject_cast<QComboBox *>(widget))
         widget->setAttribute(Qt::WA_Hover, false);
 }
 
-int GdemCustomStyle::pixelMetric(PixelMetric metric,
+int QGlobeCustomStyle::pixelMetric(PixelMetric metric,
                                     const QStyleOption *option,
                                     const QWidget *widget) const
 {
@@ -66,7 +66,7 @@ int GdemCustomStyle::pixelMetric(PixelMetric metric,
     }
 }
 
-int GdemCustomStyle::styleHint(StyleHint hint, const QStyleOption *option,
+int QGlobeCustomStyle::styleHint(StyleHint hint, const QStyleOption *option,
                                   const QWidget *widget,
                                   QStyleHintReturn *returnData) const
 {
@@ -80,7 +80,7 @@ int GdemCustomStyle::styleHint(StyleHint hint, const QStyleOption *option,
     }
 }
 
-void GdemCustomStyle::drawPrimitive(PrimitiveElement element,
+void QGlobeCustomStyle::drawPrimitive(PrimitiveElement element,
                                        const QStyleOption *option,
                                        QPainter *painter,
                                        const QWidget *widget) const
@@ -190,7 +190,7 @@ void GdemCustomStyle::drawPrimitive(PrimitiveElement element,
     }
 }
 
-void GdemCustomStyle::drawControl(ControlElement element,
+void QGlobeCustomStyle::drawControl(ControlElement element,
                                      const QStyleOption *option,
                                      QPainter *painter,
                                      const QWidget *widget) const
@@ -219,7 +219,7 @@ void GdemCustomStyle::drawControl(ControlElement element,
     }
 }
 
-void GdemCustomStyle::setTexture(QPalette &palette, QPalette::ColorRole role,
+void QGlobeCustomStyle::setTexture(QPalette &palette, QPalette::ColorRole role,
                                     const QPixmap &pixmap)
 {
     for (int i = 0; i < QPalette::NColorGroups; ++i) {
@@ -228,7 +228,7 @@ void GdemCustomStyle::setTexture(QPalette &palette, QPalette::ColorRole role,
     }
 }
 
-QPainterPath GdemCustomStyle::roundRectPath(const QRect &rect)
+QPainterPath QGlobeCustomStyle::roundRectPath(const QRect &rect)
 {
     int radius = qMin(rect.width(), rect.height()) / 2;
     int diam = 2 * radius;

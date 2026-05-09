@@ -129,7 +129,7 @@ QGlobe_ERROR_NO qglobe_LocationToScreen(double longitude, double latitude, doubl
 {
 	QGlobe_POINT3D pt;
 
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return QGlobe_SUCCESS;
 
 	qglobe_get3DWorldPoint(longitude, latitude, pt, height);
@@ -137,16 +137,16 @@ QGlobe_ERROR_NO qglobe_LocationToScreen(double longitude, double latitude, doubl
 	pOutPt->m_tY = pt.m_Y;
 	pOutPt->m_tZ = pt.m_Z;
 
-	g_pGDMDataMgr->m_pCamera->WorldToScreen(pOutPt);
+	g_pQGlobeDataMgr->m_pCamera->WorldToScreen(pOutPt);
 
 	return QGlobe_SUCCESS;
 }
 
 QGlobe_ERROR_NO qglobe_WorldToScreen(INOUT CQGlobe_Point3DF* pOutPt)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return QGlobe_SUCCESS;
-	g_pGDMDataMgr->m_pCamera->WorldToScreen(pOutPt);
+	g_pQGlobeDataMgr->m_pCamera->WorldToScreen(pOutPt);
 	return QGlobe_SUCCESS;
 }
 
@@ -171,9 +171,9 @@ QGlobe_ERROR_NO qglobe_ScreenToCamera(QGlobe_RENDER_HANDLE handle , CQGlobe_Vect
 
 QGlobe_ERROR_NO qglobe_GetHitLocation(int x , int y , CQGlobe_Location3D* pPt)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return QGlobe_SUCCESS;
-	return g_pGDMDataMgr->m_pCamera->GetHitLocation(x , y , pPt);
+	return g_pQGlobeDataMgr->m_pCamera->GetHitLocation(x , y , pPt);
 }
 
 QGlobe_ERROR_NO qglobe_CameraGetInfo(QGlobe_RENDER_HANDLE handle , QGlobe_CAMERA_INFO *pCameraInfo, char bMode)
@@ -364,7 +364,7 @@ QGlobe_ERROR_NO qglobe_HitPoint(CQGlobe_Point3DF orgPt , CQGlobe_Vector3DF vt , 
 	}
 	if(retVal == QGlobe_FAIL)
 	{
-		qglobe_CameraGetCoord(g_pGDMDataMgr , &coord);
+		qglobe_CameraGetCoord(g_pQGlobeDataMgr , &coord);
 		vt1 = -coord.m_org; // org
 		vt1.normalize();
 		vt2 = vt; // hit vector
@@ -403,16 +403,16 @@ QGlobe_ERROR_NO qglobe_HitPoint(CQGlobe_Point3DF orgPt , CQGlobe_Vector3DF vt , 
 	vt.normalize();
 	retVal = QGlobe_FAIL;
 #if 0
-	if(isDem && g_pGDMDataMgr->m_sOption.is_LayerTerrain)
+	if(isDem && g_pQGlobeDataMgr->m_sOption.is_LayerTerrain)
 	{
 		int x , y;
 		double pos3D[3]; 
 		CQGlobe_Point3DF targetPt = orgPt + vt * EARTH_RADIUS;
-		qglobe_WorldToScreen(g_pGDMDataMgr , &targetPt);
+		qglobe_WorldToScreen(g_pQGlobeDataMgr , &targetPt);
 		x = targetPt.m_tX;
 		y = targetPt.m_tY;
-		g_pGDMDataMgr->GetGDMSceneManager()->RenderDevice()->getVideoDriver()->screenToWorld(x, y, pos3D);
-		g_pGDMDataMgr->m_pCamera->GetCameraCoord(&coord);
+		g_pQGlobeDataMgr->GetQGlobeSceneManager()->RenderDevice()->getVideoDriver()->screenToWorld(x, y, pos3D);
+		g_pQGlobeDataMgr->m_pCamera->GetCameraCoord(&coord);
 		CQGlobe_Vector3DF pt(pos3D[0], -pos3D[1], pos3D[2]);
 		pt += coord.m_org;
 		if (pt.getLength() > EARTH_RADIUS * 1.3)
@@ -427,7 +427,7 @@ QGlobe_ERROR_NO qglobe_HitPoint(CQGlobe_Point3DF orgPt , CQGlobe_Vector3DF vt , 
 	else
 #endif
 
-		if(isDem && g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+		if(isDem && g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 		{			
 #if USE_FAST_HITPOINT			
 			retVal = qglobe_intersectRayDEM2(orgPt, vt, pPt);
@@ -465,17 +465,17 @@ void qglobe_ServerChange()
 
 QGlobe_ERROR_NO qglobe_IsModified(OUT bool& blModified)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return QGlobe_FAIL;
-	blModified = g_pGDMDataMgr->IsModified();
+	blModified = g_pQGlobeDataMgr->IsModified();
 	return QGlobe_SUCCESS;
 }
 
 QGlobe_ERROR_NO qglobe_CameraGetFrustumInfo(QGlobe_RENDER_HANDLE handle , QGlobe_ViewFrustum& frustumInfo)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return QGlobe_FAIL;
-	frustumInfo = g_pGDMDataMgr->m_pCamera->m_frustum;
+	frustumInfo = g_pQGlobeDataMgr->m_pCamera->m_frustum;
 	return QGlobe_SUCCESS;
 
 }
@@ -493,7 +493,7 @@ void qglobe_GetOptimzeCameraCoord(IN QGlobe_LOCATION ltPos, IN QGlobe_LOCATION r
 	qglobe_GetLocation(&centerPt, &orgPos);
 	qglobe_GetStandardCoord(&orgPos, pCoord);
 	// determin distance
-	qglobe_CameraGetFrustumInfo(g_pGDMDataMgr, frustumInfo);
+	qglobe_CameraGetFrustumInfo(g_pQGlobeDataMgr, frustumInfo);
 	fovy = frustumInfo.m_dFovy;
 	hFovy = atan(tan(fovy) * frustumInfo.m_dAspect);
 	fovy = fovy > hFovy ? hFovy : fovy;
@@ -507,11 +507,11 @@ void qglobe_GetOptimzeCameraCoord(IN QGlobe_LOCATION ltPos, IN QGlobe_LOCATION r
 
 bool qglobe_IsBackFace(double x , double y, double z)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return false;
 	QGlobe_POINT3D vt;
 	QGlobe_Coord3D coord;
-	qglobe_CameraGetCoord(g_pGDMDataMgr, &coord);
+	qglobe_CameraGetCoord(g_pQGlobeDataMgr, &coord);
 
 	vt.m_X = coord.m_org.m_tX - x;
 	vt.m_Y = coord.m_org.m_tY - y;
@@ -523,16 +523,16 @@ bool qglobe_IsBackFace(double x , double y, double z)
 
 bool qglobe_IsPtInDem(CQGlobe_Point3DF pt)
 {
-	if(g_pGDMDataMgr == NULL)
+	if(g_pQGlobeDataMgr == NULL)
 		return false;
-	return g_pGDMDataMgr->m_pCollisionHandler->IsInvaildPos(&pt);
+	return g_pQGlobeDataMgr->m_pCollisionHandler->IsInvaildPos(&pt);
 }
 
 #include "QGlobe_RequestMgr.h"
 void qglobe_CheckRequest()
 {
-	int offsetlevl=g_pGDMDataMgr->m_pRequestMgr->GetOffsetLevel();
+	int offsetlevl=g_pQGlobeDataMgr->m_pRequestMgr->GetOffsetLevel();
 
 	if(offsetlevl>0)
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest();
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest();
 }

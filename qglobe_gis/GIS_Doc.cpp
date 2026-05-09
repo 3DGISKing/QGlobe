@@ -1,15 +1,15 @@
 #include "GIS_Doc.h"
 
-CGIS_Doc *g_pGdm_GIS_doc;
+CGIS_Doc *g_pQGlobe_GIS_doc;
 
 CGIS_Doc* qglobe_GetGISDoc()
 {
-	return g_pGdm_GIS_doc;
+	return g_pQGlobe_GIS_doc;
 }
 
 CGIS_Doc::CGIS_Doc(void)
 {
-	g_pGdm_GIS_doc = this;
+	g_pQGlobe_GIS_doc = this;
 	m_pSelectNode = NULL;
 }
 

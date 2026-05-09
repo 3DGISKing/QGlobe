@@ -33,7 +33,7 @@ typedef enum {
 	E_TILE_STATUS_RESP_SEA,     /* response tile with sea */
 } E_TILE_STATUS;
 
-typedef struct _gdmTileInfo{
+typedef struct _QGlobeTileInfo{
 	int					nX;             // the x coordinate of the tile
 	int					nY;             // the y coordinate of the tile
 	int					nLevel;         // the level number of the tile
@@ -50,14 +50,14 @@ typedef struct _gdmTileInfo{
 	double				cx,cy,cz,radius;
 }QGlobe_TILE_INFO;
 
-typedef struct _gdmTileInfoArr{
+typedef struct _QGlobeTileInfoArr{
 	int	           count;				/* the count of tile */
 	int			   maxLevel;
 	QGlobe_TILE_INFO  data[QGlobe_MAX_TILE];
 }QGlobe_TILE_INFO_ARR;
 
 // common tile structure
-typedef struct _gdmTile
+typedef struct _QGlobeTile
 {
 	QGlobe_TILE_INFO	m_sInfo;			// tile information
 	char		    m_isValidBuffer;	// 0: no invalid buffer, 1: valid buffer 
@@ -65,7 +65,7 @@ typedef struct _gdmTile
 }QGlobe_TILE;
 
 // texture tile structure
-typedef struct _gdemTexTureTile
+typedef struct _QGlobeTextureTile
 {
 	QGlobe_TILE_INFO	m_sInfo;			// tile information
 	char		    m_isValidBuffer;	// 0: no invalid buffer, 1: valid buffer 
@@ -75,7 +75,7 @@ typedef struct _gdemTexTureTile
 }QGlobe_TEXTURE_TILE;
 
 // dem tile structure
-typedef struct _gdmDemTile
+typedef struct _QGlobeDemTile
 {
 	QGlobe_TILE_INFO	m_sInfo;			// tile information
 	char		    m_isValidBuffer;	// 0: no invalid buffer, 1: valid buffer 
@@ -89,7 +89,7 @@ typedef struct _gdmDemTile
 	short			m_pData[QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT];	// the buffer of height
 }QGlobe_DEM_TILE;
 
-typedef struct _gdmPoint2D
+typedef struct _QGlobePoint2D
 {
 	double			m_X;
 	double			m_Y;
@@ -97,7 +97,7 @@ typedef struct _gdmPoint2D
 
 
 
-typedef struct _gdmPolygon
+typedef struct _QGlobePolygon
 {	
 	unsigned int		m_nCount;			// the count of vertex
 	int                 ID;  
@@ -112,7 +112,7 @@ typedef struct _gdmPolygon
 }QGlobe_POLYGON;
 
 // shape tile structure
-typedef struct _gdmShapeTile
+typedef struct _QGlobeShapeTile
 {
 	QGlobe_TILE_INFO	m_sInfo;			// tile information
 	char		    m_isValidBuffer;	// 0: no invalid buffer, 1: valid buffer 
@@ -129,7 +129,7 @@ typedef struct tagGEODATA_SHAPELIST
 	QGlobe_POLYGON		m_pPolygon[1];
 } QGlobe_SHAPE_DATA;
 
-typedef struct _gdmPoint3D
+typedef struct _QGlobePoint3D
 {
 	double			m_X;
 	double			m_Y;

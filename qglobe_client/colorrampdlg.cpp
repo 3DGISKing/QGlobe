@@ -10,7 +10,7 @@ ColorRampDlg::ColorRampDlg(QWidget *parent,IColorRamp* colorramp)
 
 	Q_ASSERT(colorramp!=NULL);
 
-	QList<IColorRamp*> colorramplist=g_pGDMDataMgr->m_ColorRampList;
+	QList<IColorRamp*> colorramplist=g_pQGlobeDataMgr->m_ColorRampList;
 
 	int rampindex=0;
 	

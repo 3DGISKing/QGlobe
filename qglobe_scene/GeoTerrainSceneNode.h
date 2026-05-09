@@ -6,7 +6,7 @@
 #include "ISceneNode.h"
 #include <QtCore/QHash>
 
-typedef struct _gdemRenderGeoParam
+typedef struct _QGlobeRenderGeoParam
 {
 	int								nIndex;			// tile index
 	geo::video::S3DVertex2TCoords*	pVertexBuf;		// vertex buff

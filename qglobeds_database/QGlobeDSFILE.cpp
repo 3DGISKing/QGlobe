@@ -103,7 +103,7 @@ bool GetFileName(IN E_QGlobe_MAINDATA_TYPE a_eMainDataType,
 		break;
 	}
 
-	Layer* layer=g_pGDMDataMgr->m_LayerHash[a_eSubDataType];
+	Layer* layer=g_pQGlobeDataMgr->m_LayerHash[a_eSubDataType];
 	Q_ASSERT(layer!=NULL);
 
 	QString datapath=layer->GetDataPath();

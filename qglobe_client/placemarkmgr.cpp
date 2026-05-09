@@ -225,9 +225,9 @@ bool PlaceMarkMgr::MouseClickEvent(const CursorState *event)
 			mainWnd->ShowContextMenu(pos, false);
 	}
 
-    E_QGlobe_SUBDATA_TYPE type=g_pGDMDataMgr->m_pTextMgr->GetFocusType();
+    E_QGlobe_SUBDATA_TYPE type=g_pQGlobeDataMgr->m_pTextMgr->GetFocusType();
 
-	int nFocusID = g_pGDMDataMgr->m_pTextMgr->GetFocusID();	
+	int nFocusID = g_pQGlobeDataMgr->m_pTextMgr->GetFocusID();	
 
 	if(nFocusID!=-1 && type!=E_QGlobe_SUBDATA_TYPE_NONE)
 	{

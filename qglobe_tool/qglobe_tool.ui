@@ -40,8 +40,8 @@
     <property name="title">
      <string>Database</string>
     </property>
-    <addaction name="actionShowGDemExtractDlg"/>
-    <addaction name="actionHopeDBToGDem"/>
+    <addaction name="actionShowQGlobeExtractDlg"/>
+    <addaction name="actionHopeDBToQGlobe"/>
     <addaction name="actionWriteRemoveJgw"/>
     <addaction name="actionShowSimpleBuildingProDlg"/>
     <addaction name="actionLatLongToImage"/>
@@ -92,7 +92,7 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionShowGDemExtractDlg">
+  <action name="actionShowQGlobeExtractDlg">
    <property name="text">
     <string>Extract</string>
    </property>
@@ -102,7 +102,7 @@
     <string>Generate Simple Building </string>
    </property>
   </action>
-  <action name="actionHopeDBToGDem">
+  <action name="actionHopeDBToQGlobe">
    <property name="text">
     <string>Make Gt File</string>
    </property>

@@ -1,7 +1,7 @@
 #include "qglobe_tool.h"
 #include "qglobedbextractdlg.h"
 #include "smpbuildingprodlg.h"
-#include "hopedbtogdem.h"
+#include "hopedbtoqgblobe.h"
 #include "writeremovejgw.h"
 #include "latlongtohopeimage.h"
 #include "imagemerge.h"
@@ -17,9 +17,9 @@ qglobe_tool::qglobe_tool(QWidget *parent, Qt::WindowFlags flags)
 {
 	ui.setupUi(this);
 
-	connect(ui.actionShowGDemExtractDlg,SIGNAL(triggered()),this,SLOT(showGDemDbExtractDlg()));
+	connect(ui.actionShowQGlobeExtractDlg,SIGNAL(triggered()),this,SLOT(showQGlobeDbExtractDlg()));
 	connect(ui.actionShowSimpleBuildingProDlg,SIGNAL(triggered()),this,SLOT(showSmpBuildingProDlg()));
-	connect(ui.actionHopeDBToGDem,SIGNAL(triggered()),this,SLOT(showHopeDBtoGDem()));
+	connect(ui.actionHopeDBToQGlobe,SIGNAL(triggered()),this,SLOT(showHopeDBtoQGlobe()));
 	connect(ui.actionWriteRemoveJgw,SIGNAL(triggered()),this,SLOT(showWriteRemoveJgw()));
 	connect(ui.actionLatLongToImage,SIGNAL(triggered()),this,SLOT(showLatLongToImage()));
 	connect(ui.actionImageMerge,SIGNAL(triggered()),this,SLOT(showImageMerge()));
@@ -31,9 +31,9 @@ qglobe_tool::qglobe_tool(QWidget *parent, Qt::WindowFlags flags)
 	connect(ui.actionMergeJpgFiles,SIGNAL(triggered()),this,SLOT(showImgTileMergeDlg()));
 	connect(ui.actionExit,SIGNAL(triggered()),this,SLOT(onExit()));
 
-	_gdemExtractDlg=NULL;
+	_qglobeExtractDlg=NULL;
 	_smpBuildingProDlg=NULL;
-	_hopeDBtoGDem=NULL;
+	_hopeDBtoQGlobe=NULL;
 	_writeRemoveJgw=NULL;
 	_latlongToImage=NULL;
 	_imageMerge=NULL;
@@ -51,11 +51,11 @@ qglobe_tool::~qglobe_tool()
 
 }
 
-void qglobe_tool::showGDemDbExtractDlg()
+void qglobe_tool::showQGlobeDbExtractDlg()
 {
-	if(!_gdemExtractDlg)
-		_gdemExtractDlg=new GDemDbExtractDlg(this);
-	_gdemExtractDlg->show();
+	if(!_qglobeExtractDlg)
+		_qglobeExtractDlg=new QGlobeDbExtractDlg(this);
+	_qglobeExtractDlg->show();
 }
 
 void qglobe_tool::showSmpBuildingProDlg()
@@ -65,11 +65,11 @@ void qglobe_tool::showSmpBuildingProDlg()
 	_smpBuildingProDlg->show();
 }
 
-void qglobe_tool::showHopeDBtoGDem()
+void qglobe_tool::showHopeDBtoQGlobe()
 {
-	if(!_hopeDBtoGDem)
-		_hopeDBtoGDem=new HopeDBToGDem(this);
-	_hopeDBtoGDem->show();
+	if(!_hopeDBtoQGlobe)
+		_hopeDBtoQGlobe=new HopeDBToQGlobe(this);
+	_hopeDBtoQGlobe->show();
 }
 
 void qglobe_tool::showWriteRemoveJgw()

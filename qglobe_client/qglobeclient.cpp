@@ -92,7 +92,7 @@ bool QGlobeClient::Init()
 
     // apply style
 	setStyle("Plastique");
-	//QApplication::setStyle(new GDEMCustomStyle);
+	//QApplication::setStyle(new QGlobeCustomStyle);
 	
 	return true;
 }

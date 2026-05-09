@@ -84,7 +84,7 @@ bool PlaceDlg::TempToMyPlaces()
 	if (!m_placeView->IsTempToMyPlaces())
 		return true;
 
-	int result = gu_MessageBox(this, tr("GDEM Client"), tr("You have unsaved items in your \"Temporary Places\" folder. Would you like to save them to your \"My Places\" folder?"),
+	int result = gu_MessageBox(this, tr("QGLOBE Client"), tr("You have unsaved items in your \"Temporary Places\" folder. Would you like to save them to your \"My Places\" folder?"),
 						  MSGBOX_ICONQUESTION|MSGBOX_IDYES|MSGBOX_IDCANCEL|MSGBOX_IDNO);
 
 	if (result == MSGBOX_IDCANCEL)

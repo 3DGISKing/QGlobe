@@ -99,7 +99,7 @@ namespace scene
 			for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 			{
 				meshtile=ptile->sArr3DMeshTile[j];
-				meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+				meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 					                                                            meshtile->m_sInfo.nY,
 																				meshtile->m_sInfo.nLevel,
 																				meshtile->m_pBuffer);
@@ -121,8 +121,8 @@ namespace scene
 					/*******************************
 					DEM̩ ���˶� ������˺�� �ֵ��ױʲ���� ���ָ��
 					********************************/
-					if(g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
-						loc.m_dDist= mesh->GeoInfo.Height*g_pGDMDataMgr->m_sOption.dem_detail_rate;
+					if(g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+						loc.m_dDist= mesh->GeoInfo.Height*g_pQGlobeDataMgr->m_sOption.dem_detail_rate;
 					else
 						loc.m_dDist =0;
 
@@ -149,7 +149,7 @@ namespace scene
 
 					this->Transform.transformBoxEx(boundingbox);
 
-					if(!g_pGDMDataMgr->m_pPyramidMgr->Intersect(boundingbox))
+					if(!g_pQGlobeDataMgr->m_pPyramidMgr->Intersect(boundingbox))
 						continue;
 
 
@@ -377,7 +377,7 @@ namespace scene
 				
 				QGlobe_TILE *polyTile=pTile->sArrPolygonTile[j];
 
-				pBuildingArr=g_pGDMDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
+				pBuildingArr=g_pQGlobeDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
 
 				if(!pBuildingArr)		continue;
 

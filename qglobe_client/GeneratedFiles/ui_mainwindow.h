@@ -467,7 +467,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "GDEM Client", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "QGLOBE Client", nullptr));
         actionPrint->setText(QCoreApplication::translate("MainWindow", "Print...", nullptr));
 #if QT_CONFIG(shortcut)
         actionPrint->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+P", nullptr));
@@ -547,7 +547,7 @@ public:
         actionAddPlaceMark->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Shift+P", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionHelpManual->setText(QCoreApplication::translate("MainWindow", "User Guide", nullptr));
-        actionAbout->setText(QCoreApplication::translate("MainWindow", "About GDEM Client", nullptr));
+        actionAbout->setText(QCoreApplication::translate("MainWindow", "About QGLOBE Client", nullptr));
         actionRuler1->setText(QCoreApplication::translate("MainWindow", "Ruler", nullptr));
 #if QT_CONFIG(tooltip)
         actionRuler1->setToolTip(QCoreApplication::translate("MainWindow", "Show Ruler", nullptr));

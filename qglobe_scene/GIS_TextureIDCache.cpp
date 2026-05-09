@@ -85,18 +85,18 @@ long CGIS_TextureIDCache::GetTextureID(int level,int x,int y)
 
 	QList<E_QGlobe_SUBDATA_TYPE>		arrTypes;
 
-	arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
+	arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
 
 	GISLayer* layer;
 
 	for(int i=0;i< arrTypes.size();i++)
 	{
-		if(!g_pGDMDataMgr->IsVisible(arrTypes[i]))
+		if(!g_pQGlobeDataMgr->IsVisible(arrTypes[i]))
 			continue;
-		if(g_pGDMDataMgr->IsInvalidLevel(arrTypes[i],level))
+		if(g_pQGlobeDataMgr->IsInvalidLevel(arrTypes[i],level))
 			continue;
 
-		layer=g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,arrTypes[i]);
+		layer=g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,arrTypes[i]);
 
 		if(layer==NULL) continue;
 

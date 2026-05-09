@@ -1,13 +1,13 @@
-﻿#ifndef QGLOBE_TOOL_H
+#ifndef QGLOBE_TOOL_H
 #define QGLOBE_TOOL_H
 
 #include <QMainWindow>
 #include <QSplitter>
 #include "ui_qglobe_tool.h"
 
-class GDemDbExtractDlg;
+class QGlobeDbExtractDlg;
 class SmpBuildingProDlg;
-class HopeDBToGDem;
+class HopeDBToQGlobe;
 class WriteRemoveJGW;
 class LatLongToHopeImage;
 class ImageMerge;
@@ -30,9 +30,9 @@ private:
 	Ui::qglobe_toolClass ui;
 
 	QSplitter*         _splitter;
-	GDemDbExtractDlg*  _gdemExtractDlg;
+	QGlobeDbExtractDlg*  _qglobeExtractDlg;
 	SmpBuildingProDlg* _smpBuildingProDlg;
-	HopeDBToGDem*      _hopeDBtoGDem;
+	HopeDBToQGlobe*      _hopeDBtoQGlobe;
 	WriteRemoveJGW*    _writeRemoveJgw;
 	LatLongToHopeImage*_latlongToImage;
 	ImageMerge*        _imageMerge;
@@ -44,9 +44,9 @@ private:
 	ImgTileMergeDlg*    _imgTileMergeDlg;
 
 private slots:
-	void showGDemDbExtractDlg();
+	void showQGlobeDbExtractDlg();
 	void showSmpBuildingProDlg();
-	void showHopeDBtoGDem();
+	void showHopeDBtoQGlobe();
 	void showWriteRemoveJgw();
 	void showLatLongToImage();
 	void showImageMerge();

@@ -144,9 +144,9 @@ void shapeColorPick::ConfirmShapeAttribute()
 		layerNode.setAttribute("width", widthStr);
 		layerNode.setAttribute("color", colStr);
 		
-		g_pGDMDataMgr->m_sOption.m_geoShapeAttr[i].color = oldColorList._attr[i].color;
-		g_pGDMDataMgr->m_sOption.m_geoShapeAttr[i].id    = oldColorList._attr[i].id;
-		g_pGDMDataMgr->m_sOption.m_geoShapeAttr[i].width = oldColorList._attr[i].width;
+		g_pQGlobeDataMgr->m_sOption.m_geoShapeAttr[i].color = oldColorList._attr[i].color;
+		g_pQGlobeDataMgr->m_sOption.m_geoShapeAttr[i].id    = oldColorList._attr[i].id;
+		g_pQGlobeDataMgr->m_sOption.m_geoShapeAttr[i].width = oldColorList._attr[i].width;
 	}
 	XMLFile.appendChild(root);
 

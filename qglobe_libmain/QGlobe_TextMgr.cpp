@@ -145,11 +145,11 @@ void CQGlobe_TextMgr::ResetScreenPt(CQGlobe_TextNode *pNode)
 
 	double height = pNode->m_data.height;
 
-	if(!g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(!g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 		height = 0;
 
 	// get screen point
-	ret = g_pGDMDataMgr->m_pCamera->WorldToScreen(pNode->m_data.dLongitude, pNode->m_data.dLatitude, height, &pos);
+	ret = g_pQGlobeDataMgr->m_pCamera->WorldToScreen(pNode->m_data.dLongitude, pNode->m_data.dLatitude, height, &pos);
 
 	if(ret != QGlobe_SUCCESS)
 	{
@@ -177,7 +177,7 @@ void CQGlobe_TextMgr::AddText(E_QGlobe_SUBDATA_TYPE datatype,CQGlobe_Location3D 
 		loc.m_tZ = qglobe_getExactHeight(loc.m_tX, loc.m_tY) ;
 
 	//if(loc.m_tZ <= 0)
-	//	loc.m_tZ = qglobe_getMaxHeight(loc.m_tX, loc.m_tY) / g_pGDMDataMgr->m_sOption.dem_detail_rate;
+	//	loc.m_tZ = qglobe_getMaxHeight(loc.m_tX, loc.m_tY) / g_pQGlobeDataMgr->m_sOption.dem_detail_rate;
 
 	textNode.m_data.datatype        =datatype; 
 	textNode.m_data.rendertype		= type;
@@ -218,7 +218,7 @@ void CQGlobe_TextMgr::SetInfo(QGlobe_TextCell* pTextCell , double	screenX, doubl
 
 	pTextCell->iconSizeX = pTextCell->iconSizeY = 0;
 
-	double dist = g_pGDMDataMgr->m_pCamera->m_location.m_dDist;
+	double dist = g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist;
 
 	switch(type)
 	{
@@ -254,7 +254,7 @@ void CQGlobe_TextMgr::SetInfo(QGlobe_TextCell* pTextCell , double	screenX, doubl
 			{
 				if(pTextCell->datatype!=E_QGlobe_SUBDATA_TYPE_NONE)
 				{
-					PlaceNameLayer* layer=(PlaceNameLayer*)g_pGDMDataMgr->m_LayerHash[pTextCell->datatype];
+					PlaceNameLayer* layer=(PlaceNameLayer*)g_pQGlobeDataMgr->m_LayerHash[pTextCell->datatype];
 					Q_ASSERT(layer!=NULL);
 					fontID = layer->GetFontSizeID();
 					pTextCell->iconSizeX = layer->GetIconSizeX();
@@ -545,7 +545,7 @@ void CQGlobe_TextMgr::SetFocusState()
 	bool findSelect	= false;
 	n_FocusType=E_QGlobe_SUBDATA_TYPE_NONE;
 
-	mousePos = g_pGDMDataMgr->m_pCamera->GetMousePosition();
+	mousePos = g_pQGlobeDataMgr->m_pCamera->GetMousePosition();
 	nCount = m_cOldList.size();
 
 	// find focus index
@@ -594,7 +594,7 @@ void CQGlobe_TextMgr::AddText(CQGlobe_Location3D &loc, RENTER_TEXT_TYPE type, QS
 		loc.m_tZ = qglobe_getExactHeight(loc.m_tX, loc.m_tY) ;
 
 	//if(loc.m_tZ <= 0)
-	//	loc.m_tZ = qglobe_getMaxHeight(loc.m_tX, loc.m_tY) / g_pGDMDataMgr->m_sOption.dem_detail_rate;
+	//	loc.m_tZ = qglobe_getMaxHeight(loc.m_tX, loc.m_tY) / g_pQGlobeDataMgr->m_sOption.dem_detail_rate;
 
 	textNode.m_data.rendertype		= type;
 	textNode.m_data.dLongitude	= loc.m_tX;

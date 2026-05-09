@@ -47,7 +47,7 @@ static int _clear_entry (void *data, void *aux)
 	CACHE_FILE_INDEX* entry = (CACHE_FILE_INDEX*) data;
 
 	if (entry)
-		gdmMemFree(entry);
+		qGlobeMemFree(entry);
 
 	return 0;
 }
@@ -151,7 +151,7 @@ CQGlobe_FileCacheMgr::CQGlobe_FileCacheMgr()
 	QString tmpPath;
 
 	/* Create index tree for each data type */
-	m_pIndices = (CQGlobe_CacheIndexTree**)gdmMemMalloc(sizeof(CQGlobe_CacheIndexTree*) * E_QGlobe_MAINDATA_TYPE_MAX);
+	m_pIndices = (CQGlobe_CacheIndexTree**)qGlobeMemMalloc(sizeof(CQGlobe_CacheIndexTree*) * E_QGlobe_MAINDATA_TYPE_MAX);
 	if (m_pIndices != NULL)
 	{
 		for (int i = 0; i < E_QGlobe_MAINDATA_TYPE_MAX; i++)
@@ -185,7 +185,7 @@ CQGlobe_FileCacheMgr::~CQGlobe_FileCacheMgr()
 		}
 	}
 
-	gdmMemFree(m_pIndices);
+	qGlobeMemFree(m_pIndices);
 	if (m_fpCacheData)
 		fclose(m_fpCacheData);
 }
@@ -264,13 +264,13 @@ void CQGlobe_FileCacheMgr::LoadStoredData()
 	fseek(m_fpCacheData, CACHE_FILE_HEADER_SIZE, SEEK_SET);
 	while (!feof(m_fpCacheData))
 	{
-		entry = (CACHE_FILE_INDEX*)gdmMemMalloc(sizeof(CACHE_FILE_INDEX));
+		entry = (CACHE_FILE_INDEX*)qGlobeMemMalloc(sizeof(CACHE_FILE_INDEX));
 		if (entry == NULL)
 			break;
 
 		if (fread (entry, sizeof(CACHE_FILE_INDEX), 1, m_fpCacheData) != 1)
 		{
-			gdmMemFree(entry);
+			qGlobeMemFree(entry);
 			break;
 		}
 
@@ -386,7 +386,7 @@ void CQGlobe_FileCacheMgr::WriteTileBuffer(QGlobe_TILE_INFO *pInfo, void *buffer
 	datasize = pHdr->bytes;
 
 	// create and set index entry
-	pentry = (CACHE_FILE_INDEX*)gdmMemMalloc(sizeof(CACHE_FILE_INDEX));
+	pentry = (CACHE_FILE_INDEX*)qGlobeMemMalloc(sizeof(CACHE_FILE_INDEX));
 	if (pentry == NULL)
 		return;
 	memcpy(pentry, &entry, sizeof(CACHE_FILE_INDEX));
@@ -401,7 +401,7 @@ void CQGlobe_FileCacheMgr::WriteTileBuffer(QGlobe_TILE_INFO *pInfo, void *buffer
 #endif
 	}
 	else
-		gdmMemFree(pentry); // fail
+		qGlobeMemFree(pentry); // fail
 }
 
 int CQGlobe_FileCacheMgr::ReadTileBuffer(QGlobe_TILE_INFO* pInfo, void* buffer)

@@ -313,7 +313,7 @@ QGlobe_TILE_INFO *	qglobe_GetTilesFromLine(CQGlobe_Location3D startPos, CQGlobe_
 	int tileCounts = 0;
 	QGlobe_TILE_INFO* pTileInfo = NULL;
 	QGlobe_TILE_INFO tileInfo1 , tileInfo2;
-	pTileInfo = (QGlobe_TILE_INFO *)gdmMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
+	pTileInfo = (QGlobe_TILE_INFO *)qGlobeMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
 	tileInfo1 = qglobe_GetTileFromPt(startPos, i_Level);
 	tileInfo2 = qglobe_GetTileFromPt(endPos, i_Level);
 
@@ -369,7 +369,7 @@ QGlobe_TILE_INFO *	qglobe_GetTilesFromPolyLine(CQGlobe_LocationArr &i_arrPt,  in
 	int tileCounts = 0;
 	QGlobe_TILE_INFO* pTileInfo = NULL;
 
-	pTileInfo = (QGlobe_TILE_INFO *)gdmMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
+	pTileInfo = (QGlobe_TILE_INFO *)qGlobeMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
 	for (int k = 0; k < (int)i_arrPt.size() - 1 ; k++)
 	{
 		QGlobe_TILE_INFO tileInfo1 , tileInfo2;
@@ -438,7 +438,7 @@ QGlobe_TILE_INFO *	qglobe_GetCrossTilesFromPolygon(CQGlobe_LocationArr &i_arrPt,
 	int tileCounts = 0;
 	QGlobe_TILE_INFO* pTileInfo = NULL;
 
-	pTileInfo = (QGlobe_TILE_INFO *)gdmMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
+	pTileInfo = (QGlobe_TILE_INFO *)qGlobeMemMalloc(QGLOBE_MAX_TILE_COUNTS * sizeof(QGlobe_TILE_INFO));
 	for (int k = 0; k < (int)i_arrPt.size() ; k++)
 	{
 		QGlobe_TILE_INFO tileInfo1 , tileInfo2;

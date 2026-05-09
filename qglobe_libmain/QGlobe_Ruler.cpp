@@ -153,7 +153,7 @@ double CQGlobe_Ruler::CountAngle (bool blLine)
 
 
 #ifdef	DEBUG_TERRAIN
-	extern CQGlobe_DataMgr*	g_pGDMDataMgr;
+	extern CQGlobe_DataMgr*	g_pQGlobeDataMgr;
 	extern CQGlobe_Vector3DF	g_OffsetBodyPt;
 #endif
 
@@ -171,7 +171,7 @@ void CQGlobe_Ruler::AddPoint (geo::core::array<geo::core::vector3df> *a_pPointAr
 					dLongitude	= a_pLocation->m_dLongitude;
 		double		dHeight		= a_dHeight;
 
-		if(bHeight && g_pGDMDataMgr->m_sOption.is_LayerTerrain)
+		if(bHeight && g_pQGlobeDataMgr->m_sOption.is_LayerTerrain)
 		{
 			QGlobe_DEM_TILE* pTile = NULL;
 			double	dValue = 0;

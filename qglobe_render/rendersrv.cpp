@@ -25,7 +25,7 @@ RenderSrv::RenderSrv()
     m_pCameraController = NULL;
 	m_blFirstPaint = TRUE;
 
-	m_pGDMDataMgr	= new CQGlobe_DataMgr();
+	m_pQGlobeDataMgr	= new CQGlobe_DataMgr();
 	m_pSceneMgr		= new QGlobe_SceneManager();
 	m_pCmdMgr		= new CQGlobe_CommandMgr();
 	m_pSimMgr		= new CQGlobe_SimMgr;
@@ -39,8 +39,8 @@ RenderSrv::~RenderSrv()
 		delete m_pSimMgr;
 	if(m_pCameraController)
 		delete m_pCameraController;
-	if(m_pGDMDataMgr)
-		delete m_pGDMDataMgr;
+	if(m_pQGlobeDataMgr)
+		delete m_pQGlobeDataMgr;
 	if(m_pSceneMgr)
 		delete m_pSceneMgr;
 	if(m_pCmdMgr)
@@ -53,7 +53,7 @@ RenderSrv::~RenderSrv()
 
 bool RenderSrv::Init()
 {
-	g_pRender = m_pGDMDataMgr;
+	g_pRender = m_pQGlobeDataMgr;
 
 	if(g_pRender == NULL)
 		return false;
@@ -71,7 +71,7 @@ bool RenderSrv::Init()
 	if (!m_pCameraController->Init())
 		return false;
 
-	m_pSimMgr->SetCamera(m_pGDMDataMgr->m_pCamera);
+	m_pSimMgr->SetCamera(m_pQGlobeDataMgr->m_pCamera);
 
     return true;
 }
@@ -123,15 +123,15 @@ QGlobe_ERROR_NO RenderSrv::OnRender(QGlobe_RENDER_INFO *renderInfo)
 	qglobe_GetFPSTester()->m_totalLineCount = 0;
 
 	// set camera
-	if(m_pGDMDataMgr->IsModified())
+	if(m_pQGlobeDataMgr->IsModified())
 	{
 		QGlobe_Coord3D coord;
-		m_pGDMDataMgr->m_pCamera->GetCameraCoord(&coord);
-		m_pView->UpdateCameraInfo(coord, m_pGDMDataMgr->m_pCamera->m_frustum);
+		m_pQGlobeDataMgr->m_pCamera->GetCameraCoord(&coord);
+		m_pView->UpdateCameraInfo(coord, m_pQGlobeDataMgr->m_pCamera->m_frustum);
     }
 
 	// prepare rendering data
-	m_pGDMDataMgr->OnBeforeRender();
+	m_pQGlobeDataMgr->OnBeforeRender();
 	m_pSceneMgr->onBeforeRender();
 	
 	m_pView->OnPaint(renderInfo);
@@ -140,7 +140,7 @@ QGlobe_ERROR_NO RenderSrv::OnRender(QGlobe_RENDER_INFO *renderInfo)
 
 	m_pSceneMgr->onAfterRender();
 	m_pGisDoc->SetModifyFlag(false);
-	m_pGDMDataMgr->SetModifyFlag(false);
+	m_pQGlobeDataMgr->SetModifyFlag(false);
 	return QGlobe_SUCCESS;
 }
 
@@ -158,7 +158,7 @@ void RenderSrv::ChangedViewSize(int w, int h)
 	if(m_pCameraController)
 		m_pCameraController->OnChangedViewSize(w , h);
 
-	m_pGDMDataMgr->m_pPyramidMgr->Update();
+	m_pQGlobeDataMgr->m_pPyramidMgr->Update();
 }
 
 void RenderSrv::MoveView(int x, int y)
@@ -403,17 +403,17 @@ void RenderSrv::InitializeFontInfo(QString *korName, QString *engName)
 
 void RenderSrv::SetFontSize(int size)
 {
-	m_pGDMDataMgr->m_pTextMgr->SetFontSize(size);
+	m_pQGlobeDataMgr->m_pTextMgr->SetFontSize(size);
 }
 
 void RenderSrv::OnChangeServer()
 {
-	m_pGDMDataMgr->OnChangeServer();
+	m_pQGlobeDataMgr->OnChangeServer();
 }
 
 void RenderSrv::ShowLengthArea(bool blShow)
 {
-	m_pGDMDataMgr->m_sOption.showLenArea = blShow;
+	m_pQGlobeDataMgr->m_sOption.showLenArea = blShow;
 }
 
 void RenderSrv::StartSimulation(QGlobe_SIM_TYPE simType, bool restart)
@@ -439,11 +439,11 @@ void RenderSrv::DataThreadInit()
 
 void RenderSrv::ClearRasterCache()
 {
-	m_pGDMDataMgr->	m_pCacheMgr->RasterCacheClear();
+	m_pQGlobeDataMgr->	m_pCacheMgr->RasterCacheClear();
 	qglobe_GetRasterTextureIDCache()->Clear();
-	m_pGDMDataMgr->	m_pRequestMgr->UpdateRequest();
+	m_pQGlobeDataMgr->	m_pRequestMgr->UpdateRequest();
 
-	m_pGDMDataMgr->SetModifyFlag();
+	m_pQGlobeDataMgr->SetModifyFlag();
 }
 
 void RenderSrv::SetSunLightEnabled(bool* enabled)
@@ -473,5 +473,5 @@ void RenderSrv::SetLightAttenuation(double c,double l,double q)
 
 void RenderSrv::SetCameraFOV(double fov)
 {
-	m_pGDMDataMgr->m_pCamera->SetFOV(fov);
+	m_pQGlobeDataMgr->m_pCamera->SetFOV(fov);
 }

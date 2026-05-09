@@ -210,18 +210,18 @@ bool CQGlobe_CommandMgr::OnMouseDblClick(CursorState* mouseEvent)
 	if(GetCurrentCmd()->GetCmdType() == eQGlobe_CMD_DRAW_OBJECT) { //asd 14.4.11
 		ObjectPlaceEditDlg *objectplaceEditDlg = g_app->GetMainWindow()->getObjectPlaceEditDlg();
 		if(objectplaceEditDlg->IsPropertyMode()) {
-			nFocusID = g_pGDMDataMgr->m_pTextMgr->GetFocusID();	
+			nFocusID = g_pQGlobeDataMgr->m_pTextMgr->GetFocusID();	
 			if(nFocusID >= 0) {
-				type = g_pGDMDataMgr->m_pTextMgr->GetFocusType();
+				type = g_pQGlobeDataMgr->m_pTextMgr->GetFocusType();
 				objectplaceEditDlg->setPropertyData(type, nFocusID);
 			}
 			return false;
 		} else if(objectplaceEditDlg->IsEditMode()) {
 			return m_pEditCmd->OnMouseDblClick(mouseEvent);
 		} else {
-			nFocusID = g_pGDMDataMgr->m_pTextMgr->GetFocusID();	
+			nFocusID = g_pQGlobeDataMgr->m_pTextMgr->GetFocusID();	
 			if(nFocusID >= 0) {
-				type = g_pGDMDataMgr->m_pTextMgr->GetFocusType();
+				type = g_pQGlobeDataMgr->m_pTextMgr->GetFocusType();
 				objectplaceEditDlg->setModifyData(type, nFocusID);
 			}
 			return false;
@@ -358,7 +358,7 @@ bool CQGlobe_CommandMgr::OnCheckSelectGeo3dObject()
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 																			meshtile->m_sInfo.nY,
 																			meshtile->m_sInfo.nLevel,
 																			meshtile->m_pBuffer);
@@ -388,7 +388,7 @@ bool CQGlobe_CommandMgr::OnCheckSelectGeo3dObject()
 		{
 			QGlobe_TILE *polyTile=ptile->sArrPolygonTile[j];
 
-			pSimpleBuildingArr=g_pGDMDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
+			pSimpleBuildingArr=g_pQGlobeDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
 
 			if(!pSimpleBuildingArr)		continue;
 
@@ -514,7 +514,7 @@ void CQGlobe_CommandMgr::OnCheckSelect3dObject()
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 																			meshtile->m_sInfo.nY,
 																			meshtile->m_sInfo.nLevel,
 																			meshtile->m_pBuffer);
@@ -543,7 +543,7 @@ void CQGlobe_CommandMgr::OnCheckSelect3dObject()
 		{
 			QGlobe_TILE *polyTile=ptile->sArrPolygonTile[j];
 
-			pSimpleBuildingArr=g_pGDMDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
+			pSimpleBuildingArr=g_pQGlobeDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
 
 			if(!pSimpleBuildingArr)		continue;
 

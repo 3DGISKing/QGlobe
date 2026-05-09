@@ -214,8 +214,8 @@ namespace geo
 			}
 
 			int n = nType - (int)E_QGlobe_SUBDATA_TYPE_SHAPE_COUNTRY;
-			fWidth = g_pGDMDataMgr->m_sOption.m_geoShapeAttr[n].width;
-			color.set(g_pGDMDataMgr->m_sOption.m_geoShapeAttr[n].color);
+			fWidth = g_pQGlobeDataMgr->m_sOption.m_geoShapeAttr[n].width;
+			color.set(g_pQGlobeDataMgr->m_sOption.m_geoShapeAttr[n].color);
 			return fWidth;
 		}
 

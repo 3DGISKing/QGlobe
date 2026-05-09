@@ -589,7 +589,7 @@ void ObjectAddDlg::Save()
 {
 	if(m_pCommand->_sampleMesh)
 	{
-		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Are you sure to save? Please check object type!"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
+		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Are you sure to save? Please check object type!"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
 		if(ret != MSGBOX_IDOK) return;	
 
 		//check validity of building property.
@@ -605,8 +605,8 @@ void ObjectAddDlg::Save()
 		QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
 		m_pCommand->Save();
-		g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 
 		QApplication::restoreOverrideCursor();
 		return;
@@ -619,7 +619,7 @@ void ObjectAddDlg::Save()
 		{
 			gu_MessageBox(NULL,tr("Warning"),tr("one more object is selected!"),MSGBOX_ICONINFO);
 		}
-		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Are you sure to revised result?"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
+		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Are you sure to revised result?"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
 		if(ret == MSGBOX_IDOK)	
 		{
 			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -632,42 +632,42 @@ void ObjectAddDlg::Save()
 			m_pCommand->_selectedGeoMeshUpdated=false;
 			m_pCommand->_selectedGeoMesh=NULL;
 
-			g_pGDMDataMgr->Clear3DCache();
-			g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-			g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->Clear3DCache();
+			g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 
 			QApplication::restoreOverrideCursor();
 		}
 		else
 		{
 			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-			g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-			g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 			QApplication::restoreOverrideCursor();
 		}
 		return;
 	}
 
-	gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("No save data!"), MSGBOX_ICONCRITICAL);
+	gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("No save data!"), MSGBOX_ICONCRITICAL);
 }
 
 void ObjectAddDlg::DeleteObj()
 {
 	if(!m_pCommand->_selectedGeoMesh)
 	{
-		gu_MessageBox(NULL, tr("GDEM Client"), tr("No Mesh selected!"), MSGBOX_ICONCRITICAL);
+		gu_MessageBox(NULL, tr("QGLOBE Client"), tr("No Mesh selected!"), MSGBOX_ICONCRITICAL);
 		return;
 	}
 
-	int ret = gu_MessageBox(NULL, tr("GDEM Client"), tr("Are you sure to delete ?"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
+	int ret = gu_MessageBox(NULL, tr("QGLOBE Client"), tr("Are you sure to delete ?"), MSGBOX_IDOKCANCEL|MSGBOX_ICONQUESTION);
 	if(ret != MSGBOX_IDOK) return;	
 
 	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
 	m_pCommand->DeleteSelectedGeoMeshs();
-	g_pGDMDataMgr->Clear3DCache();
-	g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-	g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+	g_pQGlobeDataMgr->Clear3DCache();
+	g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+	g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 
 	QApplication::restoreOverrideCursor();
 

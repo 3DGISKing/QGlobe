@@ -10,12 +10,12 @@
 
 //! Very simple allocator implementation, containers using it can be used across dll boundaries
 template<typename T>
-class gdmAllocator
+class QGlobeAllocator
 {
 public:
 
 	//! Destructor
-	virtual ~gdmAllocator() {}
+	virtual ~QGlobeAllocator() {}
 
 	//! Allocate memory for an array of objects
 	T* allocate(size_t cnt)

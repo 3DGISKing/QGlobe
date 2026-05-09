@@ -1,14 +1,14 @@
 #include "QGlobe_TextureMgr.h"
 
-CQGlobe_TextureMgr* g_pGdmTextureMgr;
+CQGlobe_TextureMgr* g_pQGlobeTextureMgr;
 QMutex           g_TextureListMutex;
 
-CQGlobe_TextureMgr * qglobe_GetTextureMgr(){return g_pGdmTextureMgr;}
+CQGlobe_TextureMgr * qglobe_GetTextureMgr(){return g_pQGlobeTextureMgr;}
 
 CQGlobe_TextureMgr::CQGlobe_TextureMgr(void)
 {
 	_Driver = 0;
-	g_pGdmTextureMgr = this;
+	g_pQGlobeTextureMgr = this;
 }
 
 CQGlobe_TextureMgr::~CQGlobe_TextureMgr(void)

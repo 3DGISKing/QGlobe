@@ -71,7 +71,7 @@ QGlobe_POINT3D* CQGlobe_TerrainPtCache::GetPts(QGlobe_DEM_TILE *pTile)
 		return pVertexBuf;
 
 	// malloc memory
-	pVertexBuf = (QGlobe_POINT3D*)gdmMemMalloc(QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT * sizeof(QGlobe_POINT3D));
+	pVertexBuf = (QGlobe_POINT3D*)qGlobeMemMalloc(QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT * sizeof(QGlobe_POINT3D));
 
 	// calculate pts
 	CalcutatePts(pTile, pVertexBuf, m_dHeightRate, m_blHeight);
@@ -135,7 +135,7 @@ void CQGlobe_TerrainPtCache::CalcutatePts(QGlobe_DEM_TILE *pTile, QGlobe_POINT3D
 
 void CQGlobe_TerrainPtCache::FreeData(void *pData)
 {
-	gdmMemFree(pData);
+	qGlobeMemFree(pData);
 }
 
 
@@ -172,7 +172,7 @@ QGlobe_DIRECTION_INFO* CQGlobe_TerrainDirCache::GetInfos(QGlobe_DEM_TILE *pTile)
 		return pVertexBuf;
 
 	// malloc memory
-	pVertexBuf = (QGlobe_DIRECTION_INFO*)gdmMemMalloc(QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT * sizeof(QGlobe_DIRECTION_INFO));
+	pVertexBuf = (QGlobe_DIRECTION_INFO*)qGlobeMemMalloc(QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT * sizeof(QGlobe_DIRECTION_INFO));
 	memset(pVertexBuf, 0, QGLOBE_MAX_DEM_PT_COUNT * QGLOBE_MAX_DEM_PT_COUNT * sizeof(QGlobe_DIRECTION_INFO));
 
 	// calculate pts
@@ -356,5 +356,5 @@ void CQGlobe_TerrainDirCache::MergeBottom(QGlobe_DIRECTION_INFO* pInfo, QGlobe_D
 
 void CQGlobe_TerrainDirCache::FreeData(void *pData)
 {
-	gdmMemFree(pData);
+	qGlobeMemFree(pData);
 }

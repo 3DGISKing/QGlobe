@@ -73,7 +73,7 @@ int CQGlobe_CacheDataMgr::AddEntry(int key1, int key2, void *buf)
 	QGlobe_CACHE_ENTRY	*pEntry;
 	list_head		*hlist;
 
-	pEntry = (QGlobe_CACHE_ENTRY *)gdmMemMalloc(sizeof(QGlobe_CACHE_ENTRY));
+	pEntry = (QGlobe_CACHE_ENTRY *)qGlobeMemMalloc(sizeof(QGlobe_CACHE_ENTRY));
 	if (pEntry == NULL)
 		return FALSE;
 
@@ -162,7 +162,7 @@ void CQGlobe_CacheDataMgr::DeleteEntry(void *entry)
 	if (pEntry->pData != NULL)
 		FreeData(pEntry->pData);
 
-	gdmMemFree(pEntry);
+	qGlobeMemFree(pEntry);
 
 	data.pData = NULL;
 
@@ -177,7 +177,7 @@ void CQGlobe_CacheDataMgr::DeleteEntry(void *entry)
 
 void CQGlobe_CacheDataMgr::FreeData(void *pData)
 {
-	gdmMemFree(pData);
+	qGlobeMemFree(pData);
 }
 
 void CQGlobe_CacheDataMgr::CleanUp()
@@ -238,7 +238,7 @@ void CQGlobe_CacheDataMgr::Clear(bool blDestroy)
 					/* Destroy entry */
 					if (pEntry->pData)
 						FreeData(pEntry->pData);
-					gdmMemFree(pEntry);
+					qGlobeMemFree(pEntry);
 				}
 			}
 		}

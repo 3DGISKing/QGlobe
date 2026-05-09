@@ -38,7 +38,7 @@ long RasterTextureIDCache::GetTextureID(QGlobe_TILE *tile)
 
 	if(textureID != 0)	return textureID;
 
-	RasterLayer *layer=(RasterLayer*)g_pGDMDataMgr->m_LayerHash.value(tile->m_sInfo.eSubType);
+	RasterLayer *layer=(RasterLayer*)g_pQGlobeDataMgr->m_LayerHash.value(tile->m_sInfo.eSubType);
 
 	QImage im(256,256,QImage::Format_ARGB32);
 

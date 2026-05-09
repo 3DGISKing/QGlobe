@@ -146,7 +146,7 @@ void CQGlobe_ObjectAddCmd::SetToolState(ToolState state)
 
 void CQGlobe_ObjectAddCmd::SetTopViewState()
 {
-   if(g_pGDMDataMgr->m_pCamera->m_location.m_dDist>INIT_HEIGHT)
+   if(g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist>INIT_HEIGHT)
    {
 		QGlobe_CAMERA_INFO cameraInfo;	
 		memset(&cameraInfo , 0 , sizeof(QGlobe_CAMERA_INFO));
@@ -214,7 +214,7 @@ void  CQGlobe_ObjectAddCmd::SelectGeoMesh(int x,int y)
 
 		if(_selectedGeoMesh && _selectedGeoMeshUpdated)
 		{	
-			int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
+			int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
 			if(ret == MSGBOX_IDYES) 
 			{
 				QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -223,9 +223,9 @@ void  CQGlobe_ObjectAddCmd::SelectGeoMesh(int x,int y)
 					SaveRevisedGeoMesh(mesh);
 				QApplication::restoreOverrideCursor();
 			}
-			g_pGDMDataMgr->Clear3DCache();
-			g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-			g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->Clear3DCache();
+			g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+			g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 
 			_SelectedGeoMeshs.clear();
 			_selectedGeoMeshUpdated=false;
@@ -247,7 +247,7 @@ void  CQGlobe_ObjectAddCmd::SelectGeoMesh(int x,int y)
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 				meshtile->m_sInfo.nY,
 				meshtile->m_sInfo.nLevel,
 				meshtile->m_pBuffer);
@@ -337,7 +337,7 @@ void  CQGlobe_ObjectAddCmd::SetSelectState(bool val)
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 				meshtile->m_sInfo.nY,
 				meshtile->m_sInfo.nLevel,
 				meshtile->m_pBuffer);
@@ -401,8 +401,8 @@ bool CQGlobe_ObjectAddCmd::OnMousePress(CursorState* mouseEvent)
 					 for(int i=THREED_MIN_LEVEL;i<=THREED_MAX_LEVEL;i++)
 						 Save(i);
 					
-					g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-					g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+					g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+					g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 				 }				 
 				 break;
 			}	
@@ -431,7 +431,7 @@ void CQGlobe_ObjectAddCmd::OnCancel()
 
 	if(_selectedGeoMesh && _selectedGeoMeshUpdated)
 	{	
-		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
+		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
 		if(ret == MSGBOX_IDYES) 
 		{
 			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -440,9 +440,9 @@ void CQGlobe_ObjectAddCmd::OnCancel()
 				SaveRevisedGeoMesh(mesh);
 			QApplication::restoreOverrideCursor();
 		}
-		g_pGDMDataMgr->Clear3DCache();
-		g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->Clear3DCache();
+		g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 	}
 
 	_SelectedGeoMeshs.clear();
@@ -464,7 +464,7 @@ void CQGlobe_ObjectAddCmd::OnEnd()
 
 	if(_selectedGeoMesh && _selectedGeoMeshUpdated)
 	{	
-		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
+		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
 		if(ret == MSGBOX_IDYES) 
 		{
 			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -473,9 +473,9 @@ void CQGlobe_ObjectAddCmd::OnEnd()
 				SaveRevisedGeoMesh(mesh);
 			QApplication::restoreOverrideCursor();
 		}
-		g_pGDMDataMgr->Clear3DCache();
-		g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->Clear3DCache();
+		g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 	}
 
 	_SelectedGeoMeshs.clear();
@@ -738,7 +738,7 @@ bool CQGlobe_ObjectAddCmd::OnMouseWheelEvent(CursorState* mouseEvent)
 
 	if(_selectedGeoMesh && _selectedGeoMeshUpdated)
 	{	
-		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("GDEM Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
+		int ret = gu_MessageBox((QWidget*)g_app->GetMainWindow(), tr("QGLOBE Client"), tr("Exist modified data! Are you sure to save?"), MSGBOX_IDYESNO|MSGBOX_ICONQUESTION);
 		if(ret == MSGBOX_IDYES) 
 		{
 			QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
@@ -747,9 +747,9 @@ bool CQGlobe_ObjectAddCmd::OnMouseWheelEvent(CursorState* mouseEvent)
 				SaveRevisedGeoMesh(mesh);
 			QApplication::restoreOverrideCursor();
 		}
-		g_pGDMDataMgr->Clear3DCache();
-		g_pGDMDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->Clear3DCache();
+		g_pQGlobeDataMgr->m_pRequestMgr->ClearRequest(E_QGlobe_MAINDATA_TYPE_3D);
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest(E_QGlobe_MAINDATA_TYPE_3D);
 	}
 
 	_SelectedGeoMeshs.clear();
@@ -903,7 +903,7 @@ void CQGlobe_ObjectAddCmd::Save(int level)
 		else
 			QFile::remove(backupfilename);
 
-		g_pGDMDataMgr->Delete3DData(x,y,level);
+		g_pQGlobeDataMgr->Delete3DData(x,y,level);
 	}
 }
 
@@ -977,7 +977,7 @@ void CQGlobe_ObjectAddCmd::DeleteSelectedGeoMeshs()
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 				meshtile->m_sInfo.nY,
 				meshtile->m_sInfo.nLevel,
 				meshtile->m_pBuffer);

@@ -42,20 +42,20 @@ void gs_wchar2ushort(wchar_t *src, ushort *dst, int len)
 	dst[i] = 0;
 }
 
-GDEMDistributeConfig g_DistributeConfig;
+QGlobeDistributeConfig g_DistributeConfig;
 
-GDEMDistributeConfig::GDEMDistributeConfig()
+QGlobeDistributeConfig::QGlobeDistributeConfig()
 {
 	Initialize();
 }
 
 
-GDEMDistributeConfig::~GDEMDistributeConfig()
+QGlobeDistributeConfig::~QGlobeDistributeConfig()
 {
 	Initialize();
 }
 
-void GDEMDistributeConfig::Initialize()
+void QGlobeDistributeConfig::Initialize()
 {
 	m_DistributeNum = 0;
 	m_TargetNum = 0;
@@ -92,7 +92,7 @@ void GDEMDistributeConfig::Initialize()
 	m_DistributeStartLevel = 0;
 }
 
-bool GDEMDistributeConfig::ReadFromRegistry()
+bool QGlobeDistributeConfig::ReadFromRegistry()
 {
 	Initialize();
 
@@ -153,7 +153,7 @@ bool GDEMDistributeConfig::ReadFromRegistry()
 	return true;
 }
 
-bool GDEMDistributeConfig::WriteToRegistry()
+bool QGlobeDistributeConfig::WriteToRegistry()
 {
 	QSettings settings(QSettings::SystemScope, CONF_SET_ORG, CONF_SET_APP);
 	settings.beginGroup(CONF_SET_DISTRIBUTE);
@@ -195,7 +195,7 @@ bool GDEMDistributeConfig::WriteToRegistry()
 	return true;
 }
 
-bool GDEMDistributeConfig::ReadFromBuffer(char* a_pBuffer, unsigned int a_nBytes)
+bool QGlobeDistributeConfig::ReadFromBuffer(char* a_pBuffer, unsigned int a_nBytes)
 {
 	Initialize();
 
@@ -274,7 +274,7 @@ bool GDEMDistributeConfig::ReadFromBuffer(char* a_pBuffer, unsigned int a_nBytes
 	return true;
 }
 
-bool GDEMDistributeConfig::WriteToBuffer(char* a_pBuffer, unsigned int& a_nBytes)
+bool QGlobeDistributeConfig::WriteToBuffer(char* a_pBuffer, unsigned int& a_nBytes)
 {
 	unsigned int tBytes = 0;
 	char* pTempBuffer = a_pBuffer;
@@ -318,7 +318,7 @@ bool GDEMDistributeConfig::WriteToBuffer(char* a_pBuffer, unsigned int& a_nBytes
 	return true;
 }
 
-void GDEMDistributeConfig::MakeIndexingMap()
+void QGlobeDistributeConfig::MakeIndexingMap()
 {
 	m_IndexingMap.clear();
 	if (m_DistributeType == E_DISTRIBUTE_TYPE_PC)
@@ -347,7 +347,7 @@ void GDEMDistributeConfig::MakeIndexingMap()
 	}
 }
 
-bool GDEMDistributeConfig::GetPCInfo(unsigned int a_nIndex, ST_DISTRIBUTE_PC& a_PCInfo)
+bool QGlobeDistributeConfig::GetPCInfo(unsigned int a_nIndex, ST_DISTRIBUTE_PC& a_PCInfo)
 {
 	if (a_nIndex < 0 || a_nIndex >= m_TargetNum)
 		return false;
@@ -357,7 +357,7 @@ bool GDEMDistributeConfig::GetPCInfo(unsigned int a_nIndex, ST_DISTRIBUTE_PC& a_
 	return true;
 }
 
-bool GDEMDistributeConfig::GetFolderInfo(unsigned int a_nIndex, ST_DISTRIBUTE_FOLDER& a_FolderInfo)
+bool QGlobeDistributeConfig::GetFolderInfo(unsigned int a_nIndex, ST_DISTRIBUTE_FOLDER& a_FolderInfo)
 {
 	if (a_nIndex < 0 || a_nIndex >= m_TargetNum)
 		return false;
@@ -367,22 +367,22 @@ bool GDEMDistributeConfig::GetFolderInfo(unsigned int a_nIndex, ST_DISTRIBUTE_FO
 	return true;
 }
 
-void GDEMDistributeConfig::AddPCInfo(ST_DISTRIBUTE_PC& a_PCInfo)
+void QGlobeDistributeConfig::AddPCInfo(ST_DISTRIBUTE_PC& a_PCInfo)
 {
 	m_ServerPCMap.append(a_PCInfo);
 }
 
-void GDEMDistributeConfig::AddFolderInfo(ST_DISTRIBUTE_FOLDER& a_FolderInfo)
+void QGlobeDistributeConfig::AddFolderInfo(ST_DISTRIBUTE_FOLDER& a_FolderInfo)
 {
 	m_FolderMap.append(a_FolderInfo);
 }
 
-void GDEMDistributeConfig::UpdateFolderInfo(unsigned int a_nIndex, ST_DISTRIBUTE_FOLDER& a_FolderInfo)
+void QGlobeDistributeConfig::UpdateFolderInfo(unsigned int a_nIndex, ST_DISTRIBUTE_FOLDER& a_FolderInfo)
 {
 	m_FolderMap[a_nIndex] = a_FolderInfo;
 }
 
-bool GDEMDistributeConfig::ConvertIPStringToLong(QString& a_strIP, long& a_lIP)
+bool QGlobeDistributeConfig::ConvertIPStringToLong(QString& a_strIP, long& a_lIP)
 {
 	QStringList fields = a_strIP.split('.');
 	if (fields.size() != 4 /* Key=Value */)
@@ -397,7 +397,7 @@ bool GDEMDistributeConfig::ConvertIPStringToLong(QString& a_strIP, long& a_lIP)
 	return true;
 }
 
-void GDEMDistributeConfig::CalcDistributeStartLevel()
+void QGlobeDistributeConfig::CalcDistributeStartLevel()
 {
 	unsigned int tNum = m_DistributeNum;
 	unsigned int tPrefix = 0;
@@ -414,7 +414,7 @@ void GDEMDistributeConfig::CalcDistributeStartLevel()
 	m_DistributeStartLevel = 7+tPrefix;
 }
 
-unsigned int GDEMDistributeConfig::GetTargetIndex(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY)
+unsigned int QGlobeDistributeConfig::GetTargetIndex(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY)
 {
 	if (a_eDataType != E_QGlobe_MAINDATA_TYPE_DEM && a_eDataType != E_QGlobe_MAINDATA_TYPE_IMG)
 		return 0;
@@ -439,12 +439,12 @@ unsigned int GDEMDistributeConfig::GetTargetIndex(E_QGlobe_MAINDATA_TYPE a_eData
 	return m_IndexingMap[nIndex];
 }
 
-bool GDEMDistributeConfig::GetPCInfo(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY, ST_DISTRIBUTE_PC& a_PCInfo)
+bool QGlobeDistributeConfig::GetPCInfo(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY, ST_DISTRIBUTE_PC& a_PCInfo)
 {
 	return GetPCInfo(GetTargetIndex(a_eDataType, a_nLevel, a_nX, a_nY), a_PCInfo);
 }
 
-bool GDEMDistributeConfig::GetFolderInfo(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY, ST_DISTRIBUTE_FOLDER& a_Path)
+bool QGlobeDistributeConfig::GetFolderInfo(E_QGlobe_MAINDATA_TYPE a_eDataType, unsigned int a_nLevel, unsigned int a_nX, unsigned int a_nY, ST_DISTRIBUTE_FOLDER& a_Path)
 {
 	return GetFolderInfo(GetTargetIndex(a_eDataType, a_nLevel, a_nX, a_nY), a_Path);
 }

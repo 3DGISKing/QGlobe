@@ -139,7 +139,7 @@ bool MainWindow::Init()
 
 	setWindowFilePath(workDir);
 
-	setWindowTitle(tr("GDEM Client"));
+	setWindowTitle(tr("QGLOBE Client"));
 	SetIcon();
 	
 #ifdef STANDARD_ALONE
@@ -1590,7 +1590,7 @@ void MainWindow::OpenFile()
 			// Error
 			else
 			{
-				gu_MessageBox(this, tr("GDEM Client"), tr("File open error."), MSGBOX_ICONCRITICAL);
+				gu_MessageBox(this, tr("QGLOBE Client"), tr("File open error."), MSGBOX_ICONCRITICAL);
 			}
 		}
 	}
@@ -1639,14 +1639,14 @@ void MainWindow::SaveAsPlaceMarkFile()
 			// Error
 			else
 			{
-				gu_MessageBox(this, tr("GDEM Client"), tr("File save error."), MSGBOX_ICONCRITICAL);
+				gu_MessageBox(this, tr("QGLOBE Client"), tr("File save error."), MSGBOX_ICONCRITICAL);
 			}
 		}
 	}
 	// Error (No item is selected)
 	else
 	{
-		gu_MessageBox(this, tr("GDEM Client"), tr("No item is selected."), MSGBOX_ICONWARNING);
+		gu_MessageBox(this, tr("QGLOBE Client"), tr("No item is selected."), MSGBOX_ICONWARNING);
 	}
 }
 
@@ -2473,7 +2473,7 @@ void MainWindow::ShowBuildingPropDlg(quint64 buildingid)
 	else
 	{
 		gu_MessageBox(NULL,
-					  QApplication::translate("CQGlobe_CommandMgr", "GDMClient"),
+					  QApplication::translate("CQGlobe_CommandMgr", "QGlobeClient"),
 			          QApplication::translate("CQGlobe_CommandMgr", "Can not find data of given building in database"));
 	}
 }

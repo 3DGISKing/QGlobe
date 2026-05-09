@@ -39,10 +39,10 @@ void CQGlobe_PyramidMgr::Update()
 
 	m_nMaxLevel = m_sTileInfoArrOrg.maxLevel;
 
-	if(!g_pGDMDataMgr->IsStopDataLoad())
+	if(!g_pQGlobeDataMgr->IsStopDataLoad())
 	{
-		g_pGDMDataMgr->m_pRequestMgr->UpdateRequest();
-		g_pGDMDataMgr->SetModifyFlag();
+		g_pQGlobeDataMgr->m_pRequestMgr->UpdateRequest();
+		g_pQGlobeDataMgr->SetModifyFlag();
 	}
 	m_onWorking = false;
 }
@@ -254,7 +254,7 @@ QGlobe_QUAD_TILE* CQGlobe_PyramidMgr::MakeNewQuadTile(IN double a_west, IN doubl
 	quadTile->centerLongitude = (quadTile->west + quadTile->east) * 0.5f;
 	quadTile->centerLatitude = (quadTile->south + quadTile->north) * 0.5f;
 
-	double offsetHeight = QGlobe_MAX_HEIGHT * g_pGDMDataMgr->m_sOption.dem_detail_rate;
+	double offsetHeight = QGlobe_MAX_HEIGHT * g_pQGlobeDataMgr->m_sOption.dem_detail_rate;
 
 	CalcBoundBox(a_west, a_east, a_south, a_north, g_earthRadius, g_earthRadius + offsetHeight, &quadTile->bonndBox);
 
@@ -576,7 +576,7 @@ void PerspectiveMatrix (double fovy, double aspect, double nearPlane, double far
 // Extract view informations from camera 
 void CQGlobe_PyramidMgr::UpdateViewInfo()
 {
-	CQGlobe_Camera *a_pCamera=g_pGDMDataMgr->m_pCamera;
+	CQGlobe_Camera *a_pCamera=g_pQGlobeDataMgr->m_pCamera;
 
 	QGlobe_LOCATION location;
 
@@ -588,7 +588,7 @@ void CQGlobe_PyramidMgr::UpdateViewInfo()
 	double h = qglobe_getHeight(m_viewInfo.cameraLongitude, m_viewInfo.cameraLatitude);
 
 	// the level must be same for contour. RYM
-	if(g_pGDMDataMgr->m_sOption.blContour)
+	if(g_pQGlobeDataMgr->m_sOption.blContour)
 		h = 0;
 
 	double cameraAltitude = location.m_dDist - h;
@@ -804,7 +804,7 @@ void CQGlobe_PyramidMgr::CheckAndCompleteTiles()
 	int nX, nY, nLevel;
 	bool	checkDivision = true;
 
-	compareLen = QGlobe_PYRAMID_STANDARD_TILE_WIDTH * (1 - g_pGDMDataMgr->m_sOption.dem_quality_rate) + QGlobe_PYRAMID_STANDARD_TILE_WIDTH / 2;
+	compareLen = QGlobe_PYRAMID_STANDARD_TILE_WIDTH * (1 - g_pQGlobeDataMgr->m_sOption.dem_quality_rate) + QGlobe_PYRAMID_STANDARD_TILE_WIDTH / 2;
 	int count = m_sTileInfoArrOrg.count;
 
 	for(int i = 0; i <m_sTileInfoArrOrg.count; i++)
@@ -815,7 +815,7 @@ void CQGlobe_PyramidMgr::CheckAndCompleteTiles()
 		pTile->minLatitude	= pTile->tileWidth * pTile->nY - qglobe_PI;
 
 		// get area
-		pTile->area2D = g_pGDMDataMgr->m_pCamera->GetAreaInScreen(pTile->minLongitude, pTile->minLongitude + pTile->tileWidth, 
+		pTile->area2D = g_pQGlobeDataMgr->m_pCamera->GetAreaInScreen(pTile->minLongitude, pTile->minLongitude + pTile->tileWidth, 
 			pTile->minLatitude, pTile->minLatitude + pTile->tileWidth);
 
 		len = sqrt(pTile->area2D);

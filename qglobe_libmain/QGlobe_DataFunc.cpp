@@ -31,7 +31,7 @@ QGlobe_TILE*	qglobe_GetCoverTileAndUpdate(int nX, int nY, int nLevel, E_QGlobe_S
 	E_QGlobe_MAINDATA_TYPE mainType = qglobe_GetMainType(eType);
 
 	int offsetLevel =nOffset;
-	int minLevel = g_pGDMDataMgr->GetMinLevel(eType);
+	int minLevel = g_pQGlobeDataMgr->GetMinLevel(eType);
 
 	if((nLevel - offsetLevel) < minLevel)
 	{
@@ -49,7 +49,7 @@ QGlobe_TILE*	qglobe_GetCoverTileAndUpdate(int nX, int nY, int nLevel, E_QGlobe_S
 
 	while (pTile == NULL && nLevel >= minLevel)
 	{
-		pTile = (QGlobe_TILE*)g_pGDMDataMgr->m_pCacheMgr->GetEntry(eType, nLevel, nX, nY);
+		pTile = (QGlobe_TILE*)g_pQGlobeDataMgr->m_pCacheMgr->GetEntry(eType, nLevel, nX, nY);
 
 		if (pTile == NULL)
 		{
@@ -77,14 +77,14 @@ void qglobe_MakePrepareRenderData()
 	double tileWidth;
 	
 #ifdef QGlobe_RENDER_APPLY_OFFSET_BODY
-	g_pGDMDataMgr->m_pCamera->GetBodyOffset(g_OffsetBodyPt);
+	g_pQGlobeDataMgr->m_pCamera->GetBodyOffset(g_OffsetBodyPt);
 #endif
 
 	memset(&g_qglobe_tile_list, 0, sizeof(g_qglobe_tile_list));
 
-	nBaseOffsetLevel = g_pGDMDataMgr->m_pRequestMgr->GetOffsetLevel();
+	nBaseOffsetLevel = g_pQGlobeDataMgr->m_pRequestMgr->GetOffsetLevel();
 
-	g_pGDMDataMgr->m_pPyramidMgr->GetPyramidTiles(&sTileInfoArr);
+	g_pQGlobeDataMgr->m_pPyramidMgr->GetPyramidTiles(&sTileInfoArr);
 
 	g_qglobe_tile_list.nCount = sTileInfoArr.count;
 	g_qglobe_tile_list.nLevel = sTileInfoArr.maxLevel;
@@ -112,7 +112,7 @@ void qglobe_MakePrepareRenderData()
 		nImgOffsetLevel=qBound(0,nImgOffsetLevel,nLevel-2);
 
 		// dem tile
-		if(g_pGDMDataMgr->m_sOption.layerTextureMode != LTM_TEXTURE || g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+		if(g_pQGlobeDataMgr->m_sOption.layerTextureMode != LTM_TEXTURE || g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 			pTile->pDemTile = (QGlobe_DEM_TILE*)qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, E_QGlobe_SUBDATA_TYPE_DEM, nOffsetLevel);
 		else if(nLevel < 7)
 			pTile->pDemTile = (QGlobe_DEM_TILE*)qglobe_GetCoverTileAndUpdate(0, 0, 0, E_QGlobe_SUBDATA_TYPE_DEM, 0); // 0 level tile
@@ -120,17 +120,17 @@ void qglobe_MakePrepareRenderData()
 			pTile->pDemTile = NULL;
 
 		if(pTile->pDemTile == NULL)
-			pTile->pDemTile = g_pGDMDataMgr->m_pTerrainPtCache->GetDefaultDemTile();
+			pTile->pDemTile = g_pQGlobeDataMgr->m_pTerrainPtCache->GetDefaultDemTile();
 
 		// texture tile
-		if(g_pGDMDataMgr->m_sOption.layerTextureMode == LTM_TEXTURE)
-			pTile->pImgTile = (QGlobe_TEXTURE_TILE*)qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, g_pGDMDataMgr->m_pActiveImageLayer->GetSubType(), nImgOffsetLevel);
+		if(g_pQGlobeDataMgr->m_sOption.layerTextureMode == LTM_TEXTURE)
+			pTile->pImgTile = (QGlobe_TEXTURE_TILE*)qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, g_pQGlobeDataMgr->m_pActiveImageLayer->GetSubType(), nImgOffsetLevel);
 		else
 			pTile->pImgTile = NULL;
 
 		// raster tile
-		if(g_pGDMDataMgr->m_sOption.layerTextureMode == LTM_RASTER)
-			pTile->prasterTile = qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, g_pGDMDataMgr->m_pActiveRasterLayer->GetSubType(), nImgOffsetLevel);
+		if(g_pQGlobeDataMgr->m_sOption.layerTextureMode == LTM_RASTER)
+			pTile->prasterTile = qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, g_pQGlobeDataMgr->m_pActiveRasterLayer->GetSubType(), nImgOffsetLevel);
 		else
 			pTile->prasterTile = NULL;
 			
@@ -144,15 +144,15 @@ void qglobe_MakePrepareRenderData()
 		pTile->nNameTileCnt = 0;
 
 		// name tiles
-		arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
-		maxCount = 30 + (int)(g_pGDMDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_NAME_TILES);
+		arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
+		maxCount = 30 + (int)(g_pQGlobeDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_NAME_TILES);
 
 		// name tiles
-		arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
+		arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
 
 		Q_ASSERT(arrTypes.size()==QGlobe_MAX_NAME_CHILD_TYPE_COUNT);
 
-		maxCount = 30+(int)(g_pGDMDataMgr->m_pCamera->m_fScalarOfDir * sTileInfoArr.count);
+		maxCount = 30+(int)(g_pQGlobeDataMgr->m_pCamera->m_fScalarOfDir * sTileInfoArr.count);
 
 		/******************************************
 		2013 3 6 ugi
@@ -165,7 +165,7 @@ void qglobe_MakePrepareRenderData()
 			{
 				E_QGlobe_SUBDATA_TYPE type = arrTypes[k];
 
-				if(!g_pGDMDataMgr->IsVisible(type))
+				if(!g_pQGlobeDataMgr->IsVisible(type))
 					continue;
 
 				if(pTile->nNameTileCnt >= QGlobe_MAX_NAME_CHILD_TYPE_COUNT)
@@ -181,8 +181,8 @@ void qglobe_MakePrepareRenderData()
 		}
 
 		// shape tiles
-		arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_SHAPE);
-		maxCount = 30 + (int)(g_pGDMDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_SHAPE_TILES);
+		arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_SHAPE);
+		maxCount = 30 + (int)(g_pQGlobeDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_SHAPE_TILES);
 
 		/******************************************
 		2013 3 6 ugi
@@ -195,7 +195,7 @@ void qglobe_MakePrepareRenderData()
 			{
 				E_QGlobe_SUBDATA_TYPE type = arrTypes[k];
 
-				if(!g_pGDMDataMgr->IsVisible(type))
+				if(!g_pQGlobeDataMgr->IsVisible(type))
 					continue;
 
 				if(pTile->nShapeTileCnt >= QGlobe_MAX_CHILD_TYPE_COUNT)
@@ -211,8 +211,8 @@ void qglobe_MakePrepareRenderData()
 		}
 		
 		// 3d mesh tiles
-		arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_3D);
-		maxCount = 30 + (int)(g_pGDMDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_3DMESH_TILES);
+		arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_3D);
+		maxCount = 30 + (int)(g_pQGlobeDataMgr->m_pCamera->m_fScalarOfDir * QGlobe_MAX_3DMESH_TILES);
 
 		/******************************************
 		2013 3 6 ugi
@@ -226,7 +226,7 @@ void qglobe_MakePrepareRenderData()
 			{
 				E_QGlobe_SUBDATA_TYPE type = arrTypes[k];
 
-				if(!g_pGDMDataMgr->IsVisible(type))
+				if(!g_pQGlobeDataMgr->IsVisible(type))
 					continue;
 
 				if(type==E_QGlobe_SUBDATA_TYPE_3D_BUILDING)
@@ -257,7 +257,7 @@ void qglobe_MakePrepareRenderData()
 		}
 
 		// contour dem tile
-		if((g_pGDMDataMgr->m_sOption.blContour) && nLevel > 2)
+		if((g_pQGlobeDataMgr->m_sOption.blContour) && nLevel > 2)
 		{
 			pTile->pContourDemTile = (QGlobe_DEM_TILE*)qglobe_GetCoverTileAndUpdate(nX, nY, nLevel, E_QGlobe_SUBDATA_TYPE_DEM, nOffsetLevel);
 		}
@@ -281,7 +281,7 @@ void   qglobe_get3DWorldPoint(double dLongitude, double dLatitude, QGlobe_POINT3
 	double dRadius, dXRadius, d;
 
 	dRadius	   = EARTH_RADIUS + offsetRadius;
-	if(bHeight && g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(bHeight && g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 	{
 		if(pTile == NULL)
 			dRadius += qglobe_getHeight(dLongitude, dLatitude);
@@ -304,7 +304,7 @@ void   qglobe_get3DWorldPoint(double dLongitude, double dLatitude, CQGlobe_Point
 	double dRadius, dXRadius, d;
 
 	dRadius	   = EARTH_RADIUS + offsetRadius;
-	if(bHeight && g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(bHeight && g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 	{
 		if(pTile == NULL)
 			dRadius += qglobe_getHeight(dLongitude, dLatitude);
@@ -351,8 +351,8 @@ short  qglobe_getHeightInTile(double dLongitude, double dLatitude, QGlobe_DEM_TI
 
 	height = pTile->m_pData[iY * QGLOBE_MAX_DEM_PT_COUNT + iX];
 
-	if(g_pGDMDataMgr)
-		height = g_pGDMDataMgr->m_sOption.dem_detail_rate * height;
+	if(g_pQGlobeDataMgr)
+		height = g_pQGlobeDataMgr->m_sOption.dem_detail_rate * height;
 
 	return height;
 }
@@ -368,7 +368,7 @@ QGlobe_DIRECTION_INFO	qglobe_getRateInfoInTile(double dLongitude, double dLatitu
 		dLatitude < pTile->minLatitude || dLatitude > pTile->maxLatitude)
 		return info;
 
-	pInfos = g_pGDMDataMgr->m_pTerrainDirCache->GetInfos(pTile);
+	pInfos = g_pQGlobeDataMgr->m_pTerrainDirCache->GetInfos(pTile);
 
 	int iX = ((dLongitude - pTile->minLongitude) / pTile->gridWidth + 0.5);
 	int iY = ((dLatitude - pTile->minLatitude) / pTile->gridWidth + 0.5);
@@ -410,8 +410,8 @@ short  qglobe_getMaxHeightInTile(double dLongitude, double dLatitude, QGlobe_DEM
 			high = height[i];
 	}
 
-	if(g_pGDMDataMgr)
-		high = g_pGDMDataMgr->m_sOption.dem_detail_rate * high;
+	if(g_pQGlobeDataMgr)
+		high = g_pQGlobeDataMgr->m_sOption.dem_detail_rate * high;
 
 	return high;
 }
@@ -470,9 +470,9 @@ double  qglobe_getExactHeightInTile(double dLongitude, double dLatitude, QGlobe_
 	high = (h[0] * d[1] * d[2] * d[3] + d[0] * h[1] * d[2] * d[3] + d[0] * d[1] * h[2] * d[3] + d[0] * d[1] * d[2] * h[3]) /
 		(d[1] * d[2] * d[3] + d[0] * d[2] * d[3] + d[0] * d[1] * d[3] + d[0] * d[1] * d[2]);
 
-	Q_ASSERT(g_pGDMDataMgr!=NULL);
+	Q_ASSERT(g_pQGlobeDataMgr!=NULL);
 	
-	high = g_pGDMDataMgr->m_sOption.dem_detail_rate * high;
+	high = g_pQGlobeDataMgr->m_sOption.dem_detail_rate * high;
 
 	return high;
 
@@ -553,7 +553,7 @@ void   qglobe_get3DWorldHighPoint(double dLongitude, double dLatitude, QGlobe_PO
 	int height = 0;
 	QGlobe_DEM_TILE *pTile = qglobe_getDemTile(dLongitude, dLatitude);
 
-	if(pTile && g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(pTile && g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 	{
 		height = qglobe_getMaxHeightInTile(dLongitude, dLatitude, pTile);
 	}
@@ -595,7 +595,7 @@ QGlobe_DIRECTION_INFO	qglobe_getRateInfo(double dLongitude, double dLatitude)
 
 	memset(&info, 0, sizeof(info));
 
-	if(g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_IMG))
+	if(g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_IMG))
 		return info;
 
 	pTile = qglobe_getDemTile(dLongitude, dLatitude);
@@ -802,7 +802,7 @@ QGlobe_ERROR_NO qglobe_intersectRayDEM(CQGlobe_Point3DF& rayOrg , CQGlobe_Vector
 		nX = pTile->nX - ( pDEMTile->m_sInfo.nX << nDelta );
 		nY = pTile->nY - ( pDEMTile->m_sInfo.nY << nDelta );
 		base = QGLOBE_MAX_DEM_PT_COUNT * nDivision * nY + nDivision * nX;
-		vertBuf	= g_pGDMDataMgr->m_pTerrainPtCache->GetPts (pDEMTile ) + base;	
+		vertBuf	= g_pQGlobeDataMgr->m_pTerrainPtCache->GetPts (pDEMTile ) + base;	
 
 		nDivision /= QGlobe_PATCH_SIZE_IN_TILE ;
 

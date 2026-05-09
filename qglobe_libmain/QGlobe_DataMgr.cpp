@@ -32,7 +32,7 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
-CQGlobe_DataMgr* g_pGDMDataMgr = NULL;
+CQGlobe_DataMgr* g_pQGlobeDataMgr = NULL;
 
 #define QGLOBE_MAX_CACHE_DEM_ENTRY_CNT		200
 
@@ -50,7 +50,7 @@ QString	qglobe_GetWorkPath()
 
 const E_QGlobe_MAINDATA_TYPE qglobe_GetMainType(E_QGlobe_SUBDATA_TYPE subType)
 {
-	Layer* layer=g_pGDMDataMgr->m_LayerHash[subType];
+	Layer* layer=g_pQGlobeDataMgr->m_LayerHash[subType];
 
 	Q_ASSERT(layer!=NULL);
 
@@ -69,7 +69,7 @@ CQGlobe_DataMgr::CQGlobe_DataMgr()
 	m_pNodeMgr			= NULL;
 	m_pContour			= NULL;
 
-	g_pGDMDataMgr		= this;
+	g_pQGlobeDataMgr		= this;
 	m_pCamera			= new CQGlobe_Camera();
 	m_pFileCacheMgr		= new CQGlobe_FileCacheMgr();
 	m_pPyramidMgr		= new CQGlobe_PyramidMgr();
@@ -292,9 +292,9 @@ bool CQGlobe_DataMgr::IsNecessary(E_QGlobe_SUBDATA_TYPE type)
 	switch(type)
 	{
 	case E_QGlobe_SUBDATA_TYPE_DEM:
-		return (g_pGDMDataMgr->m_sOption.blTerrain) || 
-			(g_pGDMDataMgr->m_sOption.layerTextureMode != LTM_TEXTURE) ||
-			(g_pGDMDataMgr->m_sOption.blContour);
+		return (g_pQGlobeDataMgr->m_sOption.blTerrain) || 
+			(g_pQGlobeDataMgr->m_sOption.layerTextureMode != LTM_TEXTURE) ||
+			(g_pQGlobeDataMgr->m_sOption.blContour);
 	default:
 		return IsVisible(type);
 	}
@@ -329,7 +329,7 @@ void CQGlobe_DataMgr::OnChangeServer()
 
 CQGlobe_DataMgr* qglobe_GetDataMgr() 
 {
-	return g_pGDMDataMgr;
+	return g_pQGlobeDataMgr;
 }
 
 void CQGlobe_DataMgr::AddLayer(Layer* layer)
@@ -396,7 +396,7 @@ void CQGlobe_DataMgr::SetLayer(Layer* layer)
 
 CGIS_Node* qglobe_GetGISNode(E_QGlobe_SUBDATA_TYPE type,int id)
 {
-	GISLayer* layer=g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,type);
+	GISLayer* layer=g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,type);
 
 	if(!layer)
 		return NULL;
@@ -464,7 +464,7 @@ void CQGlobe_DataMgr::Clear3DCache()
 	qglobe_GetDataMgr()->m_p3DObjectCache->Clear();
 	g_3dCacheMutex.unlock();
 
-	g_pGDMDataMgr->SetModifyFlag();
+	g_pQGlobeDataMgr->SetModifyFlag();
 }
 
 void CQGlobe_DataMgr::Delete3DData(int nX,int nY,int nLevel)
@@ -482,7 +482,7 @@ void CQGlobe_DataMgr::Delete3DData(int nX,int nY,int nLevel)
 	qglobe_GetDataMgr()->m_p3DObjectCache->DeleteMeshEntry(nX,nY,nLevel);
 	g_3dCacheMutex.unlock();
 
-	g_pGDMDataMgr->SetModifyFlag();
+	g_pQGlobeDataMgr->SetModifyFlag();
 }
 
 double CQGlobe_DataMgr::CameraHeight()

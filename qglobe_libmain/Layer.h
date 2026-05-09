@@ -142,9 +142,9 @@ public:
 	static unsigned int         MaxTileSize;
 };
 
-struct GDemRasterBandStatistics
+struct QGlobeRasterBandStatistics
 {
-	GDemRasterBandStatistics()
+	QGlobeRasterBandStatistics()
 	{
 		_minvalue=0.0;
 		_maxvalue=0.0;
@@ -167,7 +167,7 @@ public:
 	RasterLayer(E_QGlobe_SUBDATA_TYPE subtype,QString name,QString iconfilename="");
 	~RasterLayer();
 
-	inline  GDemRasterBandStatistics GetStatistics()              {return _statistics;}
+	inline  QGlobeRasterBandStatistics GetStatistics()              {return _statistics;}
 	inline  IRasterRenderer*          GetRenderer()                {return _renderer;}
 	inline  double                    GetNoDataValue()             {return _nodatavalue;} 
 	virtual void                      SetDataPath(QString path);
@@ -177,7 +177,7 @@ public:
 	static unsigned int         MaxTileSize;
 private:
 
-	GDemRasterBandStatistics _statistics;
+	QGlobeRasterBandStatistics _statistics;
 	IRasterRenderer*          _renderer;
 	double                    _nodatavalue;
 

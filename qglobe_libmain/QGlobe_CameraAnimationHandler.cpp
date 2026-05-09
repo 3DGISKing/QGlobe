@@ -184,7 +184,7 @@ bool CQGlobe_CameraRotAnimationHandler::OnAnimation(double deltaHour)
 		double curLen , dstLen;
 		m_pCamera->GetCameraCoord(&curCoord);
 		qglobe_RotateAroundVector(&coord , offset , vt);
-		g_pGDMDataMgr->m_pCollisionHandler->ValidatePos(&coord.m_org);
+		g_pQGlobeDataMgr->m_pCollisionHandler->ValidatePos(&coord.m_org);
 		curLen = curCoord.m_org.getLength();
 		dstLen = coord.m_org.getLength();
 		if(dstLen < curLen)
@@ -253,9 +253,9 @@ void CQGlobe_CameraMoveToAnimationHandler::SetAniInfo(QGlobe_MOVETO_ANI_INFO* pI
 	m_pCamera->GetInfo(&m_cameraInfo[nCurStep]);	
 
 	double dist = 0;
-	qglobe_GetLength(g_pGDMDataMgr , &m_cameraInfo[0].m_loc , &m_aniInfo.m_dstLocation.m_loc , &dist);
-	if(g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
-		dist *= g_pGDMDataMgr->m_sOption.dem_detail_rate;// ���� ����� ����
+	qglobe_GetLength(g_pQGlobeDataMgr , &m_cameraInfo[0].m_loc , &m_aniInfo.m_dstLocation.m_loc , &dist);
+	if(g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+		dist *= g_pQGlobeDataMgr->m_sOption.dem_detail_rate;// ���� ����� ����
 	curHeight = m_cameraInfo[0].m_loc.m_dDist + m_cameraInfo[0].m_orgDist;
 
 	if(m_aniInfo.m_pathType == 0)

@@ -17,9 +17,9 @@ CQGlobe_CollisionHandler::~CQGlobe_CollisionHandler(void)
 
 QGlobe_ERROR_NO CQGlobe_CollisionHandler::ValidatePos(INOUT CQGlobe_Point3DF *Pt)
 {
-	double maxHeight = g_pGDMDataMgr->m_sOption.dem_detail_rate * QGlobe_MAX_HEIGHT;
+	double maxHeight = g_pQGlobeDataMgr->m_sOption.dem_detail_rate * QGlobe_MAX_HEIGHT;
 
-	if(g_pGDMDataMgr->m_pCamera->m_location.m_dDist < maxHeight)
+	if(g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist < maxHeight)
 	{
 		QGlobe_LOCATION loc;
 
@@ -32,7 +32,7 @@ QGlobe_ERROR_NO CQGlobe_CollisionHandler::ValidatePos(INOUT CQGlobe_Point3DF *Pt
 
 		if(loc.m_dDist< height+CollisionRad)
 		{
-			g_pGDMDataMgr->m_pCamera->m_frustum.m_dNear = 1;
+			g_pQGlobeDataMgr->m_pCamera->m_frustum.m_dNear = 1;
 			loc.m_dDist = height + COLLISION_RADIUS;
 
 			qglobe_GetPosition(&loc , Pt);
@@ -47,9 +47,9 @@ QGlobe_ERROR_NO CQGlobe_CollisionHandler::ValidatePos(INOUT CQGlobe_Point3DF *Pt
 
 bool CQGlobe_CollisionHandler::IsInvaildPos(CQGlobe_Point3DF *Pt)
 {
-	double maxHeight = g_pGDMDataMgr->m_sOption.dem_detail_rate * QGlobe_MAX_HEIGHT;
+	double maxHeight = g_pQGlobeDataMgr->m_sOption.dem_detail_rate * QGlobe_MAX_HEIGHT;
 
-	if(g_pGDMDataMgr->m_pCamera->m_location.m_dDist < maxHeight)
+	if(g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist < maxHeight)
 	{
 		QGlobe_LOCATION loc;
 

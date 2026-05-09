@@ -23,7 +23,7 @@ CQGlobe_CacheMgr::CQGlobe_CacheMgr()
 {
 	int i;
 
-	m_pItemMgr = (CQGlobe_CacheDataMgr **)gdmMemMalloc(sizeof(CQGlobe_CacheDataMgr*) * MAX_CACHE_GEODATA_TYPE);
+	m_pItemMgr = (CQGlobe_CacheDataMgr **)qGlobeMemMalloc(sizeof(CQGlobe_CacheDataMgr*) * MAX_CACHE_GEODATA_TYPE);
 
 	for (i = 0; i < MAX_CACHE_GEODATA_TYPE; i++)
 	{
@@ -52,7 +52,7 @@ CQGlobe_CacheMgr::~CQGlobe_CacheMgr()
 			delete m_pItemMgr[i];
 	}
 
-	gdmMemFree(m_pItemMgr);
+	qGlobeMemFree(m_pItemMgr);
 }
 
 int CQGlobe_CacheMgr::AddEntry(int type, int key1, int key2, void *buf)

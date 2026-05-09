@@ -567,7 +567,7 @@ void ResultTreeView::DeleteItem(bool message)
 
 	if (message)
 	{
-		int result = gu_MessageBox(this, tr("GDEM Client"), contents,
+		int result = gu_MessageBox(this, tr("QGLOBE Client"), contents,
 				  MSGBOX_ICONQUESTION|MSGBOX_IDYES|MSGBOX_IDNO);
 		if ( result == MSGBOX_IDNO)
 			return;
@@ -584,7 +584,7 @@ void ResultTreeView::DeleteContents()
 	if (!item || !item->hasChildren())
 		return;
 
-	if (MSGBOX_IDNO == gu_MessageBox(this, tr("GDEM Client"), tr("Do yo want to delete all the contents?"),
+	if (MSGBOX_IDNO == gu_MessageBox(this, tr("QGLOBE Client"), tr("Do yo want to delete all the contents?"),
 				  MSGBOX_ICONQUESTION|MSGBOX_IDYES|MSGBOX_IDNO))
 		return;
 

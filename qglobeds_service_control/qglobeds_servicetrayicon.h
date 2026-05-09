@@ -30,7 +30,7 @@
 #include "qglobeds_ctrldialog.h"
 #endif
 
-#define SERVICE_NAME    "GDEMService"
+#define SERVICE_NAME    "QGLOBEService"
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
 #if defined(Q_OS_WIN)
 #define SERVICE_PATH    "/qglobeds_service.exe"

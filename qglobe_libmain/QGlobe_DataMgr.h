@@ -119,6 +119,6 @@ private:
 	bool					m_blStopDataLoad;
 };
 
-extern CQGlobe_DataMgr* g_pGDMDataMgr;
+extern CQGlobe_DataMgr* g_pQGlobeDataMgr;
 extern CQGlobe_Vector3DF g_OffsetBodyPt;
 

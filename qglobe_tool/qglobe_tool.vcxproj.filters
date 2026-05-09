@@ -53,7 +53,7 @@
     <ClCompile Include="qglobedbextractdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hopedbtogdem.cpp">
+    <ClCompile Include="hopedbtoqgblobe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="imagemerge.cpp">
@@ -113,7 +113,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_qglobedbextractdlg.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_hopedbtogdem.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_hopedbtoqgblobe.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_imagemerge.cpp">
@@ -161,7 +161,7 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_qglobedbextractdlg.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_hopedbtogdem.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_hopedbtoqgblobe.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_imagemerge.cpp">
@@ -223,7 +223,7 @@
     <ClInclude Include="GeneratedFiles\ui_qglobedbextractdlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_hopedbtogdem.h">
+    <ClInclude Include="GeneratedFiles\ui_hopedbtoqgblobe.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_imagemerge.h">
@@ -270,7 +270,7 @@
     <CustomBuild Include="qglobedbextractdlg.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="hopedbtogdem.h">
+    <CustomBuild Include="hopedbtoqgblobe.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="imagemerge.h">
@@ -315,7 +315,7 @@
     <CustomBuild Include="qglobedbextractdlg.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="hopedbtogdem.ui">
+    <CustomBuild Include="hopedbtoqgblobe.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="imagemerge.ui">

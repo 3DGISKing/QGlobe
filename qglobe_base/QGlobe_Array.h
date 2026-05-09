@@ -1,4 +1,4 @@
-// This file is part of the "GDM Engine"
+// This file is part of the "QGlobe Engine"
 // For conditions of distribution and use, see copyright notice in geoEngine.h and irrXML.h
 
 #ifndef _QGlobe_ARRAY_H_
@@ -12,7 +12,7 @@
 //! Self reallocating template qglobe_array (like stl vector) with additional features.
 /** Some features are: Heap sorting, binary search methods, easier debugging.
 */
-template <class T, typename TAlloc = gdmAllocator<T> >
+template <class T, typename TAlloc = QGlobeAllocator<T> >
 class qglobe_array
 {
 

@@ -110,7 +110,7 @@ void qglobe_MakeRenderTileName()
 #include "GeoMeshUtil.h"
 void qglobe_MakeRenderGeo3dObjectName()
 {
-	double offsetheight=g_pGDMDataMgr->m_pCamera->m_location.m_dDist/100.0;
+	double offsetheight=g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist/100.0;
 	
 	const QGlobe_LOGIC_TILE *ptile;
 	QGlobe_TILE* meshtile;
@@ -133,7 +133,7 @@ void qglobe_MakeRenderGeo3dObjectName()
 		for(int j=0;j<ptile->n3dMeshTileCnt;j++)
 		{
 			meshtile=ptile->sArr3DMeshTile[j];
-			meshs=(SAnimatedMesh*)g_pGDMDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
+			meshs=(SAnimatedMesh*)g_pQGlobeDataMgr->m_p3DObjectCache->GetMeshs(meshtile->m_sInfo.nX,
 																			meshtile->m_sInfo.nY,
 																			meshtile->m_sInfo.nLevel,
 																			meshtile->m_pBuffer);
@@ -167,7 +167,7 @@ void qglobe_MakeRenderGeo3dObjectName()
 		{
 			QGlobe_TILE *polyTile=ptile->sArrPolygonTile[j];
 
-			pSimpleBuildingArr=g_pGDMDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
+			pSimpleBuildingArr=g_pQGlobeDataMgr->m_pSimpleBuildingCache->GetBuildingArray(polyTile);
 
 			if(!pSimpleBuildingArr)		continue;
 
@@ -312,8 +312,8 @@ void qglobe_MakeRenderGeoNameData()
 		qglobe_MakeRenderTileName();
 #endif
 
-	if(g_pGDMDataMgr->m_pCamera->m_location.m_dDist<500)
-	if(g_pGDMDataMgr->m_pCamera->m_fScalarOfDir>0.5)
+	if(g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist<500)
+	if(g_pQGlobeDataMgr->m_pCamera->m_fScalarOfDir>0.5)
 	if(g_app->GetConfig()->m_IsShowBuildingName)
 		qglobe_MakeRenderGeo3dObjectName();
 }

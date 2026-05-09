@@ -32,11 +32,11 @@ typedef struct tagDISTRIBUTE_FOLDER
 	ushort			path[MAX_DIST_PATH];
 } ST_DISTRIBUTE_FOLDER;
 
-class GDEMDistributeConfig
+class QGlobeDistributeConfig
 {
 public:
-	GDEMDistributeConfig();
-	~GDEMDistributeConfig();
+	QGlobeDistributeConfig();
+	~QGlobeDistributeConfig();
 
 public:
 	void Initialize();
@@ -92,6 +92,6 @@ private:
 	unsigned int		m_DistributeStartLevel;
 };
 
-extern GDEMDistributeConfig g_DistributeConfig;
+extern QGlobeDistributeConfig g_DistributeConfig;
 
 #endif // __QGLOBE_DISTRIBUTECONFIG_H__

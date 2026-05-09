@@ -25,7 +25,7 @@ CQGlobe_LoadDataMgr::~CQGlobe_LoadDataMgr(void)
 }
 
 /*
- * int	gdmGetTileBuffer(const GdmTileInfo *tileInfo, char * buffer)
+ * int	qGlobeGetTileBuffer(const QGlobe_TILE_INFO *tileInfo, char * buffer)
  *
  * Description:
  *   Get buffer from tile information
@@ -66,12 +66,12 @@ QGlobe_TILE * CQGlobe_LoadDataMgr::LoadOneTile(QGlobe_TILE_INFO *pTileInfo, void
 
 	/* from local */
 #ifndef STANDARD_ALONE
-	nRet = g_pGDMDataMgr->m_pFileCacheMgr->ReadTileBuffer(pTileInfo, buffer);
+	nRet = g_pQGlobeDataMgr->m_pFileCacheMgr->ReadTileBuffer(pTileInfo, buffer);
 #endif
 
 	/* from server */
 	if (nRet != RESPONSE_GET_TILE_ERROR_NO)
-		nRet = g_pGDMDataMgr->m_pLoadDataMgr->GetTileBuffer(pTileInfo, buffer, channel);
+		nRet = g_pQGlobeDataMgr->m_pLoadDataMgr->GetTileBuffer(pTileInfo, buffer, channel);
 
 
 	//success
@@ -124,29 +124,29 @@ E_LOAD_RESP	qglobe_LoadOneTile(QGlobe_TILE_INFO *pInfo, void * buffer, DataChann
 	bool blFileCached = false;
 
 	// set request flag
-	g_pGDMDataMgr->m_pRequestMgr->SetStatusFlag(&sInfo, E_TILE_STATUS_REQ);
+	g_pQGlobeDataMgr->m_pRequestMgr->SetStatusFlag(&sInfo, E_TILE_STATUS_REQ);
 
 	// check quad node tree
-	flag = g_pGDMDataMgr->m_pNodeMgr->GetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType);
+	flag = g_pQGlobeDataMgr->m_pNodeMgr->GetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType);
 	if(flag == E_NODE_VALID_FLAG_INVALID)
 		return LOAD_RESP_NO_EXIST;
 
 	// check cache data 
-	if(g_pGDMDataMgr && g_pGDMDataMgr->m_pCacheMgr)
+	if(g_pQGlobeDataMgr && g_pQGlobeDataMgr->m_pCacheMgr)
 	{
-		if(g_pGDMDataMgr->m_pCacheMgr->IsEntryExist(sInfo.eSubType, sInfo.nLevel, sInfo.nX, sInfo.nY))
+		if(g_pQGlobeDataMgr->m_pCacheMgr->IsEntryExist(sInfo.eSubType, sInfo.nLevel, sInfo.nX, sInfo.nY))
 			return LOAD_RESP_OK;
 	}
 
-	if(g_pGDMDataMgr->IsInvalidLevel(pInfo->eSubType,pInfo->nLevel))
+	if(g_pQGlobeDataMgr->IsInvalidLevel(pInfo->eSubType,pInfo->nLevel))
 	{
-		g_pGDMDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_INVALID);
+		g_pQGlobeDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_INVALID);
 		return LOAD_RESP_NO_EXIST;
 	}
 
 	/* from local */
 #ifndef STANDARD_ALONE
-	nRet = g_pGDMDataMgr->m_pFileCacheMgr->ReadTileBuffer(&sInfo, buffer);
+	nRet = g_pQGlobeDataMgr->m_pFileCacheMgr->ReadTileBuffer(&sInfo, buffer);
 #endif
 	if(nRet == RESPONSE_GET_TILE_ERROR_NO)
 		blFileCached = true;
@@ -154,7 +154,7 @@ E_LOAD_RESP	qglobe_LoadOneTile(QGlobe_TILE_INFO *pInfo, void * buffer, DataChann
 	
 	/* from server */
 	if (nRet != RESPONSE_GET_TILE_ERROR_NO)
-		nRet = g_pGDMDataMgr->m_pLoadDataMgr->GetTileBuffer(&sInfo, buffer, channel);
+		nRet = g_pQGlobeDataMgr->m_pLoadDataMgr->GetTileBuffer(&sInfo, buffer, channel);
 
 	/*****************************************************
 	2013 3 6 ugi explained by ugi
@@ -189,23 +189,23 @@ E_LOAD_RESP	qglobe_LoadOneTile(QGlobe_TILE_INFO *pInfo, void * buffer, DataChann
 			// write to cache file 
 #ifndef STANDARD_ALONE
 			if(!blFileCached)
-				g_pGDMDataMgr->m_pFileCacheMgr->WriteTileBuffer(&sInfo, buffer);
+				g_pQGlobeDataMgr->m_pFileCacheMgr->WriteTileBuffer(&sInfo, buffer);
 #endif
 			// add tile to the cache
 			g_CacheMgrMutex.lock();
-			g_pGDMDataMgr->m_pCacheMgr->AddEntry(sInfo.eSubType, sInfo.nLevel, sInfo.nX, sInfo.nY, pTile);
+			g_pQGlobeDataMgr->m_pCacheMgr->AddEntry(sInfo.eSubType, sInfo.nLevel, sInfo.nX, sInfo.nY, pTile);
 			g_CacheMgrMutex.unlock();
 
 			// add quad node tree
-			g_pGDMDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_VALID);
+			g_pQGlobeDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_VALID);
 
-			g_pGDMDataMgr->SetModifyFlag();
+			g_pQGlobeDataMgr->SetModifyFlag();
 			return LOAD_RESP_OK;
 		}
 		else
 		{
 			// add quad node tree
-			g_pGDMDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_INVALID);
+			g_pQGlobeDataMgr->m_pNodeMgr->SetValidFlag(sInfo.nX, sInfo.nY, sInfo.nLevel, sInfo.eSubType, E_NODE_VALID_FLAG_INVALID);
 			return LOAD_RESP_NO_EXIST;
 		}
 	}
@@ -223,9 +223,9 @@ void qglobe_DataLoadThread(void *param)
 	int					minLevel;		
 	int		            index;
 
-	Q_ASSERT(g_pGDMDataMgr!=NULL);
+	Q_ASSERT(g_pQGlobeDataMgr!=NULL);
 	
-	arrTypes=g_pGDMDataMgr->GetTypes(eMainDataType);
+	arrTypes=g_pQGlobeDataMgr->GetTypes(eMainDataType);
 	
 	pThread->Sleep(1000);
 
@@ -233,8 +233,8 @@ void qglobe_DataLoadThread(void *param)
 	int  bufferSize;
 
 	// malloc buffer
-	bufferSize	= g_pGDMDataMgr->GetMaxTileSize(eMainDataType) + 50/*header size */;
-	buffer		= gdmMemMalloc(bufferSize);
+	bufferSize	= g_pQGlobeDataMgr->GetMaxTileSize(eMainDataType) + 50/*header size */;
+	buffer		= qGlobeMemMalloc(bufferSize);
 
 	while(1)
 	{
@@ -243,11 +243,11 @@ void qglobe_DataLoadThread(void *param)
 			if(!pThread->IsActive())
 				break;
 
-			if(g_pGDMDataMgr->IsStopDataLoad())
+			if(g_pQGlobeDataMgr->IsStopDataLoad())
 				break;
 
 			// get high priority request tile
-			if(!g_pGDMDataMgr->m_pRequestMgr->GetHighRequestTile(&sTileInfoOrg, eMainDataType))
+			if(!g_pQGlobeDataMgr->m_pRequestMgr->GetHighRequestTile(&sTileInfoOrg, eMainDataType))
 				break;
 
 			Q_ASSERT(sTileInfoOrg.nX>=0);
@@ -261,12 +261,12 @@ void qglobe_DataLoadThread(void *param)
 				sTileInfo.eMainType = eMainDataType;
 				sTileInfo.eSubType  = arrTypes[index];
 
-				if(!g_pGDMDataMgr->IsNecessary(sTileInfo.eSubType))
+				if(!g_pQGlobeDataMgr->IsNecessary(sTileInfo.eSubType))
 					continue;
 
 				eRet = qglobe_LoadOneTile(&sTileInfo, buffer, channel);
 
-				minLevel=g_pGDMDataMgr->GetMinLevel(sTileInfo.eSubType);
+				minLevel=g_pQGlobeDataMgr->GetMinLevel(sTileInfo.eSubType);
 				while(eRet == LOAD_RESP_NO_EXIST)
 				{
 					sTileInfo.nLevel--;
@@ -279,7 +279,7 @@ void qglobe_DataLoadThread(void *param)
 				}
 				
 				if(eRet == LOAD_RESP_OK)
-					g_pGDMDataMgr->SetModifyFlag();
+					g_pQGlobeDataMgr->SetModifyFlag();
 
 				if(eMainDataType != E_QGlobe_MAINDATA_TYPE_IMG)
 					pThread->Sleep(5);
@@ -300,7 +300,7 @@ void qglobe_DataLoadThread(void *param)
 		channel = NULL;
 	}
 
-	gdmMemFree(buffer);
+	qGlobeMemFree(buffer);
 
 	pThread->SetState(CQGlobe_LoadThread::QGlobe_THREAD_STOPED);
 }

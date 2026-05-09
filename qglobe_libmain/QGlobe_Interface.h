@@ -80,7 +80,7 @@ typedef struct
 }QGlobe_ViewFrustum;
 
 
-typedef struct _gdmOption
+typedef struct _QGlobeOption
 {
 	// navigation
 	float		        nav_moveto_rate;

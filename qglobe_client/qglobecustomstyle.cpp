@@ -2,11 +2,11 @@
 
 static bool UsePixmapCache = true;
 
-GDEMCustomStyle::GDEMCustomStyle()
+QGlobeCustomStyle::QGlobeCustomStyle()
 {
 }
 
-GDEMCustomStyle::~GDEMCustomStyle()
+QGlobeCustomStyle::~QGlobeCustomStyle()
 {
 }
 
@@ -112,7 +112,7 @@ static QString uniqueName(const QString &key, const QStyleOption *option, const 
     return tmp;
 }
 
-void GDEMCustomStyle::polish(QWidget *widget)
+void QGlobeCustomStyle::polish(QWidget *widget)
 {
 #ifdef Q_WS_MAC
 	QMacStyle::polish(widget);
@@ -155,7 +155,7 @@ void GDEMCustomStyle::polish(QWidget *widget)
 #endif
 }
 
-void GDEMCustomStyle::polish(QPalette &palette)
+void QGlobeCustomStyle::polish(QPalette &palette)
 {
     QProxyStyle::polish(palette);
     palette.setBrush(QPalette::AlternateBase, palette.base().color().darker(110));
@@ -186,7 +186,7 @@ void GDEMCustomStyle::polish(QPalette &palette)
 #endif
 }
 
-int GDEMCustomStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget *widget,
+int QGlobeCustomStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget *widget,
                                QStyleHintReturn *returnData) const
 {
 	int ret = 0;
@@ -207,7 +207,7 @@ int GDEMCustomStyle::styleHint(StyleHint hint, const QStyleOption *option, const
 	return ret;
 }
 
-void GDEMCustomStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option,
+void QGlobeCustomStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option,
                                     QPainter *painter, const QWidget *widget) const
 {
     Q_ASSERT(option);
@@ -358,7 +358,7 @@ void GDEMCustomStyle::drawPrimitive(PrimitiveElement element, const QStyleOption
 #endif
 }
 
-void GDEMCustomStyle::setTexture(QPalette &palette, QPalette::ColorRole role,
+void QGlobeCustomStyle::setTexture(QPalette &palette, QPalette::ColorRole role,
                                     const QBrush &brush)
 {
     for (int i = 0; i < QPalette::NColorGroups; ++i) {

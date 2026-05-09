@@ -1,4 +1,4 @@
-// This file is part of the "GDM Engine".
+// This file is part of the "QGlobe Engine".
 // For conditions of distribution and use, see copyright notice in geoEngine.h
 
 #ifndef _QGlobe_HEAPSORT_H_

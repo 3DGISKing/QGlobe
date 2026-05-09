@@ -38,7 +38,7 @@ bool IsInvalidLevel(IN E_QGlobe_SUBDATA_TYPE a_eDataType, IN unsigned int a_nLev
 	if (a_nLevel < MIN_LEVEL || a_nLevel > MAX_LEVEL)
 		return false;
 
-	Layer* layer=g_pGDMDataMgr->m_LayerHash[a_eDataType];
+	Layer* layer=g_pQGlobeDataMgr->m_LayerHash[a_eDataType];
 
 	Q_ASSERT(layer!=NULL);
 	

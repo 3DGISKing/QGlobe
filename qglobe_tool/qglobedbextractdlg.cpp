@@ -64,7 +64,7 @@ void deCompressBuffer(int inBufLen, void* iBuf, int outBufLen, void *oBuf)
 		*((size_t*)iBuf));
 }
 
-GDemDbExtractDlg::GDemDbExtractDlg(QWidget *parent)
+QGlobeDbExtractDlg::QGlobeDbExtractDlg(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
@@ -104,9 +104,9 @@ GDemDbExtractDlg::GDemDbExtractDlg(QWidget *parent)
 	_strSavePath=QDir::tempPath();
 	ui.lineEditSavePath->setText(_strSavePath);
 
-	ui.progressBarGDemCount->setVisible(false);
+	ui.progressBarQGlobeCount->setVisible(false);
 	ui.progressBarTileCount->setVisible(false);
-	ui.labelGDemFileName->setVisible(false);
+	ui.labelQGlobeFileName->setVisible(false);
 	ui.labelTileFileName->setVisible(false);
 	ui.pushButtonCancel->setVisible(false);
 
@@ -133,14 +133,14 @@ GDemDbExtractDlg::GDemDbExtractDlg(QWidget *parent)
 	connect(ui.groupBoxBounding,SIGNAL(toggled(bool)),this,SLOT(onToggleBounding(bool)));
 }
 
-GDemDbExtractDlg::~GDemDbExtractDlg()
+QGlobeDbExtractDlg::~QGlobeDbExtractDlg()
 {
 
 }
 
-void GDemDbExtractDlg::browserInput()
+void QGlobeDbExtractDlg::browserInput()
 {
-	QString tmppath=QFileDialog::getExistingDirectory(this,	tr("Select folder where exists GDem files!"), _strInputPath);
+	QString tmppath=QFileDialog::getExistingDirectory(this,	tr("Select folder where exists QGlobe files!"), _strInputPath);
 
 	if(!tmppath.isEmpty())
 	{
@@ -149,7 +149,7 @@ void GDemDbExtractDlg::browserInput()
 	}
 }
 
-void GDemDbExtractDlg::browserSave()
+void QGlobeDbExtractDlg::browserSave()
 {
 	QString tmppath=QFileDialog::getExistingDirectory(this,	tr("Open folder where exists Gt file!"), _strSavePath);
 
@@ -160,7 +160,7 @@ void GDemDbExtractDlg::browserSave()
 	}
 }
 
-void GDemDbExtractDlg::onToggleImage(bool checked)
+void QGlobeDbExtractDlg::onToggleImage(bool checked)
 {
 	if(checked)
 	{
@@ -173,7 +173,7 @@ void GDemDbExtractDlg::onToggleImage(bool checked)
 }
 
 
-void GDemDbExtractDlg::onToggleDem(bool checked)
+void QGlobeDbExtractDlg::onToggleDem(bool checked)
 {
 	if(checked)
 	{
@@ -183,7 +183,7 @@ void GDemDbExtractDlg::onToggleDem(bool checked)
 }
 
 
-void GDemDbExtractDlg::onToggleShape(bool checked)
+void QGlobeDbExtractDlg::onToggleShape(bool checked)
 {
 	if(checked)
 	{
@@ -193,14 +193,14 @@ void GDemDbExtractDlg::onToggleShape(bool checked)
 }
 
 
-void GDemDbExtractDlg::onToggleBounding(bool checked)
+void QGlobeDbExtractDlg::onToggleBounding(bool checked)
 {
 	if(checked)
 		_blBounding=true;
 	else
 		_blBounding=false;
 }
-void GDemDbExtractDlg::onToggleJgw(bool checked)
+void QGlobeDbExtractDlg::onToggleJgw(bool checked)
 {
 	if(checked)
 		_blWriteJgw=true;
@@ -209,7 +209,7 @@ void GDemDbExtractDlg::onToggleJgw(bool checked)
 }
 
 
-void GDemDbExtractDlg::onLeftChanged(const QString& text)
+void QGlobeDbExtractDlg::onLeftChanged(const QString& text)
 {
 	bool ok;
 
@@ -231,7 +231,7 @@ void GDemDbExtractDlg::onLeftChanged(const QString& text)
 	_left=tmp;
 }
 
-void GDemDbExtractDlg::onRightChanged(const QString& text)
+void QGlobeDbExtractDlg::onRightChanged(const QString& text)
 {
 	bool ok;
 
@@ -253,7 +253,7 @@ void GDemDbExtractDlg::onRightChanged(const QString& text)
 	_right=tmp;
 }
 
-void GDemDbExtractDlg::onTopChanged(const QString& text)
+void QGlobeDbExtractDlg::onTopChanged(const QString& text)
 {
 	bool ok;
 
@@ -275,7 +275,7 @@ void GDemDbExtractDlg::onTopChanged(const QString& text)
 	_top=tmp;
 }
 
-void GDemDbExtractDlg::onBottomChanged(const QString& text)
+void QGlobeDbExtractDlg::onBottomChanged(const QString& text)
 {
 	bool ok;
 
@@ -297,7 +297,7 @@ void GDemDbExtractDlg::onBottomChanged(const QString& text)
 	_bottom=tmp;
 }
 
-bool GDemDbExtractDlg::intersectGDemFile(int m,int n,int level)
+bool QGlobeDbExtractDlg::intersectQGlobeFile(int m,int n,int level)
 {
 	int minx=m*128;
 	int maxx=minx+127;
@@ -321,7 +321,7 @@ bool GDemDbExtractDlg::intersectGDemFile(int m,int n,int level)
 	return rect1.intersects(rect2);
 }
 
-bool GDemDbExtractDlg::intersectTile(int col,int row,int level)
+bool QGlobeDbExtractDlg::intersectTile(int col,int row,int level)
 {
 	double left=CalcFromXYtoLongLat(col,level);
 	double right=CalcFromXYtoLongLat(col+1,level);
@@ -340,7 +340,7 @@ bool GDemDbExtractDlg::intersectTile(int col,int row,int level)
 	return rect1.intersects(rect2);
 }
 
-void GDemDbExtractDlg::extract()
+void QGlobeDbExtractDlg::extract()
 {
 	QDir inputDir = QDir(_strInputPath);        //for example "geotexture/13"
 	if(!inputDir.exists())
@@ -350,10 +350,10 @@ void GDemDbExtractDlg::extract()
 	}
 
 	QString extension="*."+_fileExtension;
-	QStringList gdemfiles;
-	gdemfiles = inputDir.entryList(QStringList(extension),QDir::Files | QDir::NoSymLinks);
+	QStringList qglobefiles;
+	qglobefiles = inputDir.entryList(QStringList(extension),QDir::Files | QDir::NoSymLinks);
 
-	if(gdemfiles.size()==0)
+	if(qglobefiles.size()==0)
 	{
 		messageBox("No file does not exist!");
 		return;
@@ -362,13 +362,13 @@ void GDemDbExtractDlg::extract()
 	_isRunning=true;
 	
 	setRunnningState(true);
-	ui.progressBarGDemCount->setRange(0,gdemfiles.size()-1);
+	ui.progressBarQGlobeCount->setRange(0,qglobefiles.size()-1);
 
-	for(int i=0;i<gdemfiles.size();i++)
+	for(int i=0;i<qglobefiles.size();i++)
 	{
 		qApp->processEvents();
-		ui.progressBarGDemCount->setValue(i);
-		extractOneGDemFile(gdemfiles.at(i));
+		ui.progressBarQGlobeCount->setValue(i);
+		extractOneQGlobeFile(qglobefiles.at(i));
 	}
 
 	_isRunning=false;
@@ -376,13 +376,13 @@ void GDemDbExtractDlg::extract()
 	messageBox("Finished!");
 }
 
-void GDemDbExtractDlg::cancel()
+void QGlobeDbExtractDlg::cancel()
 {
 	_isRunning=false;
 	setRunnningState(false);
 }
 
-bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
+bool QGlobeDbExtractDlg::extractOneQGlobeFile(QString filename)
 {
 	int x,y,level;
 
@@ -390,7 +390,7 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 		return false;
 	
 	if(_blBounding)
-	if(!intersectGDemFile(x,y,level))
+	if(!intersectQGlobeFile(x,y,level))
 		return false;
 
 	QString strlevel;
@@ -416,15 +416,15 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 
 	int filecount=getTileCount(level);
 
-	QFile gdemfile(_strInputPath+"/"+filename);
+	QFile qglobefile(_strInputPath+"/"+filename);
 
-	if(!gdemfile.exists()) return false;
+	if(!qglobefile.exists()) return false;
 
-	if(!gdemfile.open(QIODevice::ReadOnly)) return false;
+	if(!qglobefile.open(QIODevice::ReadOnly)) return false;
 
-	ui.labelGDemFileName->setText("Processing "+_strInputPath+"/"+filename+"...");
+	ui.labelQGlobeFileName->setText("Processing "+_strInputPath+"/"+filename+"...");
 
-	QDataStream in(&gdemfile);
+	QDataStream in(&qglobefile);
 	in.setByteOrder(QDataStream::LittleEndian);
 	int readlevel,readfilecount;
 
@@ -449,7 +449,7 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 		qApp->processEvents();
 		if(!_isRunning)
 		{
-			gdemfile.close();
+			qglobefile.close();
 			return true;
 		}
 		ui.progressBarTileCount->setValue(i+1);
@@ -488,7 +488,7 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 			continue;
 
 		unsigned char* datapointer=NULL;
-		datapointer=gdemfile.map(offset,size);
+		datapointer=qglobefile.map(offset,size);
 
 		if(!datapointer)  continue;
 
@@ -512,7 +512,7 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 
 		file.close();
 		delete	[] file_raw_data;
-		gdemfile.unmap(datapointer);
+		qglobefile.unmap(datapointer);
 
 		if(_dataType==Image && _blWriteJgw)
 		{
@@ -524,21 +524,21 @@ bool GDemDbExtractDlg::extractOneGDemFile(QString filename)
 		}
 	}
 
-	gdemfile.close();
+	qglobefile.close();
 	return true;
 }
 
-void GDemDbExtractDlg::onInputPathChanged(const QString& text)
+void QGlobeDbExtractDlg::onInputPathChanged(const QString& text)
 {
 	_strInputPath=text;
 }
 
-void GDemDbExtractDlg::onSavePathChanged(const QString& text)
+void QGlobeDbExtractDlg::onSavePathChanged(const QString& text)
 {
 	_strSavePath=text;
 }
 
-void GDemDbExtractDlg::setRunnningState(bool state)
+void QGlobeDbExtractDlg::setRunnningState(bool state)
 {
 	if(state)
 	{
@@ -546,9 +546,9 @@ void GDemDbExtractDlg::setRunnningState(bool state)
 		ui.pushButtonBrowserInput->setEnabled(false);
 		ui.pushButtonBrowserSave->setEnabled(false);
 		ui.pushButtonCancel->setVisible(true);
-		ui.progressBarGDemCount->setVisible(true);
+		ui.progressBarQGlobeCount->setVisible(true);
 		ui.progressBarTileCount->setVisible(true);
-		ui.labelGDemFileName->setVisible(true);
+		ui.labelQGlobeFileName->setVisible(true);
 		ui.labelTileFileName->setVisible(true);
 	}
 	else
@@ -557,9 +557,9 @@ void GDemDbExtractDlg::setRunnningState(bool state)
 		ui.pushButtonBrowserInput->setEnabled(true);
 		ui.pushButtonBrowserSave->setEnabled(true);
 		ui.pushButtonCancel->setVisible(false);
-		ui.progressBarGDemCount->setVisible(false);
+		ui.progressBarQGlobeCount->setVisible(false);
 		ui.progressBarTileCount->setVisible(false);
-		ui.labelGDemFileName->setVisible(false);
+		ui.labelQGlobeFileName->setVisible(false);
 		ui.labelTileFileName->setVisible(false);
 	}
 }

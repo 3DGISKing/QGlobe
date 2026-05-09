@@ -1,10 +1,10 @@
-#ifndef GDEMDBEXTRACTDLG_H
-#define GDEMDBEXTRACTDLG_H
+#ifndef QGLOBE_DB_EXTRACT_DLG_H
+#define QGLOBE_DB_EXTRACT_DLG_H
 
 #include <QDialog>
 #include "ui_qglobedbextractdlg.h"
 
-class GDemDbExtractDlg : public QDialog
+class QGlobeDbExtractDlg : public QDialog
 {
 	enum DataType
 	{
@@ -15,11 +15,11 @@ class GDemDbExtractDlg : public QDialog
 	Q_OBJECT
 
 public:
-	GDemDbExtractDlg(QWidget *parent = 0);
-	~GDemDbExtractDlg();
+	QGlobeDbExtractDlg(QWidget *parent = 0);
+	~QGlobeDbExtractDlg();
 
 private:
-	Ui::GDemDbExtractDlg ui;
+	Ui::QGlobeDbExtractDlg ui;
 
 	QString   _strInputPath;
 	QString   _strSavePath;
@@ -52,12 +52,12 @@ private slots:
 	void onInputPathChanged(const QString&);
 	void onSavePathChanged(const QString&);
 private:
-	bool extractOneGDemFile(QString  filename);
-	bool intersectGDemFile(int x,int y,int level);
+	bool extractOneQGlobeFile(QString  filename);
+	bool intersectQGlobeFile(int x,int y,int level);
 	bool intersectTile(int col,int row,int level);	
 
 	void setRunnningState(bool state);
 			
 };
 
-#endif // GDEMDBEXTRACTDLG_H
+#endif // QGLOBE_DB_EXTRACT_DLG_H

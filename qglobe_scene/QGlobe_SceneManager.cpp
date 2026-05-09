@@ -288,7 +288,7 @@ void QGlobe_SceneManager::setViewFrustum(geo::f64 nearValue, geo::f64 farValue, 
 	{
 		m_pCamera->setNearValue(nearValue);
 
-		if(g_pGDMDataMgr->CameraHeight()<m_BlueSkyHeight)
+		if(g_pQGlobeDataMgr->CameraHeight()<m_BlueSkyHeight)
 			m_pCamera->setFarValue(farValue);
 		else
 			m_pCamera->setFarValue(EARTH_RADIUS*100);
@@ -300,7 +300,7 @@ void QGlobe_SceneManager::setViewFrustum(geo::f64 nearValue, geo::f64 farValue, 
 
 void QGlobe_SceneManager::onBeforeRender()
 {
-	if(g_pGDMDataMgr->CameraHeight()<m_BlueSkyHeight)
+	if(g_pQGlobeDataMgr->CameraHeight()<m_BlueSkyHeight)
 	{
 		m_pBlueSkyBox->setVisible(true);
 

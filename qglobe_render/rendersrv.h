@@ -98,7 +98,7 @@ public:
 	CameraController*m_pCameraController;
 	bool			m_blFirstPaint;
 	QGlobe_SceneManager *m_pSceneMgr;
-	CQGlobe_DataMgr	*m_pGDMDataMgr;
+	CQGlobe_DataMgr	*m_pQGlobeDataMgr;
 	CQGlobe_CommandMgr *m_pCmdMgr;
 	CQGlobe_SimMgr		*m_pSimMgr;
 	CGIS_Doc		*m_pGisDoc;

@@ -111,7 +111,7 @@ void CGeoGISSceneNode::render()
 
 	QList<E_QGlobe_SUBDATA_TYPE>		arrTypes;
 
-	arrTypes=g_pGDMDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
+	arrTypes=g_pQGlobeDataMgr->GetTypes(E_QGlobe_MAINDATA_TYPE_NAME);
 
 	GISLayer* layer;
 
@@ -119,22 +119,22 @@ void CGeoGISSceneNode::render()
 	{
 		if(arrTypes[i]!=E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT)
 		{
-			if(!g_pGDMDataMgr->IsVisible(arrTypes[i]))
+			if(!g_pQGlobeDataMgr->IsVisible(arrTypes[i]))
 				continue;
 
-			if(g_pGDMDataMgr->IsInvalidLevel(arrTypes[i],g_pGDMDataMgr->m_pPyramidMgr->GetMaxLevel()))
+			if(g_pQGlobeDataMgr->IsInvalidLevel(arrTypes[i],g_pQGlobeDataMgr->m_pPyramidMgr->GetMaxLevel()))
 				continue;
         }
 
 		if(arrTypes[i]==E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT)
 		{
-			if(!g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT))
+			if(!g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT))
 				continue;
-			if(g_pGDMDataMgr->IsInvalidLevel(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT,g_pGDMDataMgr->m_pPyramidMgr->GetMaxLevel()))
+			if(g_pQGlobeDataMgr->IsInvalidLevel(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT,g_pQGlobeDataMgr->m_pPyramidMgr->GetMaxLevel()))
 				continue;
 		}
 
-		layer=g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,arrTypes[i]);
+		layer=g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,arrTypes[i]);
 
 		if(layer==NULL) continue;
 
@@ -315,8 +315,8 @@ void CGeoGISSceneNode::DrawPolySideSurface(core::array<core::vector3df> arrPt, c
 	if(count < 2)
 		return;
 
-	video::S3DVertex *	pVetex = (video::S3DVertex *)gdmMemMalloc(vertexCnt * sizeof(video::S3DVertex));
-	u16*				pIndex	= (u16*)gdmMemMalloc(indexCnt * sizeof(u16));
+	video::S3DVertex *	pVetex = (video::S3DVertex *)qGlobeMemMalloc(vertexCnt * sizeof(video::S3DVertex));
+	u16*				pIndex	= (u16*)qGlobeMemMalloc(indexCnt * sizeof(u16));
 
 	// set vertex buf
 	memset(pVetex, 0, vertexCnt * sizeof(video::S3DVertex));
@@ -341,8 +341,8 @@ void CGeoGISSceneNode::DrawPolySideSurface(core::array<core::vector3df> arrPt, c
 	video::IVideoDriver* driver = SceneManager->getVideoDriver();
 	driver->drawVertexPrimitiveList(pVetex, vertexCnt, pIndex, (count - 1) , video::EVT_STANDARD, scene::EPT_TRIANGLES, video::EIT_16BIT);
 	
-	gdmMemFree(pVetex);
-	gdmMemFree(pIndex);
+	qGlobeMemFree(pVetex);
+	qGlobeMemFree(pIndex);
 
 }
 
@@ -353,8 +353,8 @@ void CGeoGISSceneNode::DrawCoverPolygon(CQGlobe_MeshArr &meshs, video::SColor cl
 	unsigned int indexCnt  = count * 3;	
 	QGlobe_POINT3D	pos;
 
-	video::S3DVertex *	pVetex = (video::S3DVertex *)gdmMemMalloc(vertexCnt * sizeof(video::S3DVertex));
-	u16*				pIndex	= (u16*)gdmMemMalloc(indexCnt * sizeof(u16));
+	video::S3DVertex *	pVetex = (video::S3DVertex *)qGlobeMemMalloc(vertexCnt * sizeof(video::S3DVertex));
+	u16*				pIndex	= (u16*)qGlobeMemMalloc(indexCnt * sizeof(u16));
 
 	// set vertex buf
 	memset(pVetex, 0, vertexCnt * sizeof(video::S3DVertex));
@@ -391,8 +391,8 @@ void CGeoGISSceneNode::DrawCoverPolygon(CQGlobe_MeshArr &meshs, video::SColor cl
 	video::IVideoDriver* driver = SceneManager->getVideoDriver();
 	driver->drawVertexPrimitiveList(pVetex, vertexCnt, pIndex, count, video::EVT_STANDARD, scene::EPT_TRIANGLES, video::EIT_16BIT);
 
-	gdmMemFree(pVetex);
-	gdmMemFree(pIndex);
+	qGlobeMemFree(pVetex);
+	qGlobeMemFree(pIndex);
 }
 
 }

@@ -67,12 +67,12 @@ QGlobe_TILE * qglobe_ParsingDemTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(pData->bytes == 0)
 		return NULL;
 
-	if(pData->bytes > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_DEM)) // invalide buffer
+	if(pData->bytes > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_DEM)) // invalide buffer
 		return NULL;
 
 	allSize = sizeof(QGlobe_DEM_TILE);
 
-	pTile = (QGlobe_DEM_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_DEM_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL) // fail malloc memory
 		return NULL;
@@ -100,12 +100,12 @@ QGlobe_TILE * qglobe_Parsing3DMeshTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(pData->bytes == 0)
 		return NULL;
 
-	if(pData->bytes > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_3D)) // invalide buffer
+	if(pData->bytes > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_3D)) // invalide buffer
 		return NULL;
 
 	allSize = sizeof(QGlobe_TILE)+ pData->bytes;
 
-	pTile = (QGlobe_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL) // fail malloc memory
 		return NULL;
@@ -132,12 +132,12 @@ QGlobe_TILE * qglobe_ParsingRasterTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(pData->bytes == 0)
 		return NULL;
 
-	if(pData->bytes > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_RASTER)) // invalide buffer
+	if(pData->bytes > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_RASTER)) // invalide buffer
 		return NULL;
 
 	allSize = sizeof(QGlobe_TILE)+ pData->bytes;
 
-	pTile = (QGlobe_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL) // fail malloc memory
 		return NULL;
@@ -166,12 +166,12 @@ QGlobe_TILE * qglobe_ParsingImgTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(pData->bytes == 0)
 		return NULL;
 
-	if(pData->bytes > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_IMG)) // invalide buffer
+	if(pData->bytes > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_IMG)) // invalide buffer
 		return NULL;
 
 	allSize = sizeof(QGlobe_TEXTURE_TILE) + pData->bytes;
 
-	pTile = (QGlobe_TEXTURE_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_TEXTURE_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL)
 		return NULL; // fail malloc memory
@@ -204,12 +204,12 @@ QGlobe_TILE * qglobe_ParsingShapeTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(nBufSize <= 0)
 		return NULL;
 	
-	if((unsigned int)nBufSize > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_SHAPE)) // invalide buffer
+	if((unsigned int)nBufSize > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_SHAPE)) // invalide buffer
 		return NULL;
 		
 	allSize = sizeof(QGlobe_SHAPE_TILE) + nBufSize;
 
-	pTile = (QGlobe_SHAPE_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_SHAPE_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL) // fail malloc memory
 		return NULL;
@@ -242,7 +242,7 @@ QGlobe_TILE * qglobe_ParsingNameTileFromResp(ST_RESPONSE_GEODATA *pResp)
 	if(nBufSize <= 0)
 		return NULL;
 
-	if((unsigned int)nBufSize > g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_NAME)) // invalide buffer
+	if((unsigned int)nBufSize > g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_NAME)) // invalide buffer
 		return NULL;
 
 	if(pNameData->count <= 0)
@@ -250,7 +250,7 @@ QGlobe_TILE * qglobe_ParsingNameTileFromResp(ST_RESPONSE_GEODATA *pResp)
 
 	allSize = sizeof(QGlobe_TILE) + nBufSize;
 
-	pTile = (QGlobe_TILE*)gdmMemMalloc(allSize);
+	pTile = (QGlobe_TILE*)qGlobeMemMalloc(allSize);
 
 	if(pTile == NULL) // fail malloc memory
 		return NULL;

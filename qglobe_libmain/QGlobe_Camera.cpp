@@ -193,7 +193,7 @@ bool CQGlobe_Camera::SetCameraCoord(QGlobe_Coord3D* pCoord , bool blCheckCollisi
 		return false;
 
 	if (blCheckCollision)
-		g_pGDMDataMgr->m_pCollisionHandler->ValidatePos(&pCoord->m_org);
+		g_pQGlobeDataMgr->m_pCollisionHandler->ValidatePos(&pCoord->m_org);
 
 	if(IsSameCoord( &m_coord, pCoord))
 		return false;
@@ -230,7 +230,7 @@ void CQGlobe_Camera::Update()
 	//1 determine camera location
 	qglobe_GetLocation(&m_coord.m_org , &m_location);
 
-	g_pGDMDataMgr->m_pPyramidMgr->Update(); //???
+	g_pQGlobeDataMgr->m_pPyramidMgr->Update(); //???
 
 	//2 update frustum 's near and far
 	
@@ -251,7 +251,7 @@ void CQGlobe_Camera::Update()
 	m_fScalarOfDir = fabs(org.dotProduct(m_coord.m_z));
 
 	CalculateViewRange();
-	g_pGDMDataMgr->SetModifyFlag();   //???
+	g_pQGlobeDataMgr->SetModifyFlag();   //???
 }
 
 double CQGlobe_Camera::ComputeNearClipDistance()
@@ -588,7 +588,7 @@ QGlobe_ERROR_NO CQGlobe_Camera::GetHitLocation(int x , int y , double radius, CQ
 	CQGlobe_Vector3DF vt;
 	CQGlobe_Vector3DF interPt;
 	
-	qglobe_CameraGetHitVector(g_pGDMDataMgr, x, y, &vt);
+	qglobe_CameraGetHitVector(g_pQGlobeDataMgr, x, y, &vt);
     qglobe_HitPoint(m_coord.m_org, vt, radius, &interPt);
 	qglobe_GetLocation(&interPt , pPt);
 

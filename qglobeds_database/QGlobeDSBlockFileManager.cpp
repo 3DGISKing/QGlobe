@@ -120,7 +120,7 @@ bool GetBlockFileName(IN E_QGlobe_MAINDATA_TYPE a_eMainDataType,
 	unsigned int m = a_nColumn / TILE_ROW_COUNT_IN_BLOCK;
 	unsigned int n = a_nRow / TILE_ROW_COUNT_IN_BLOCK;
 
-	Layer* layer=g_pGDMDataMgr->m_LayerHash[a_eSubDataType];
+	Layer* layer=g_pQGlobeDataMgr->m_LayerHash[a_eSubDataType];
 	Q_ASSERT(layer!=NULL);
 
 	QString datapath=layer->GetDataPath();

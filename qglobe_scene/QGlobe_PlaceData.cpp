@@ -31,7 +31,7 @@ double IsBackFace(QGlobe_Coord3D aCameraPos, QGlobe_POINT3D aWorldPos)
 void qglobe_PreparePlacemarkData()
 {
 	CGIS_Doc*			pGISDoc = qglobe_GetGISDoc();
-	CQGlobe_DataMgr*		pGDMDataMgr = qglobe_GetDataMgr();
+	CQGlobe_DataMgr*		pQGlobeDataMgr = qglobe_GetDataMgr();
 	CGIS_Node*			pNode = NULL;
 	unsigned int index, nCount = 0;
 	RENTER_TEXT_TYPE	type = RTT_PLACE_MARK_NORMAL;
@@ -44,7 +44,7 @@ void qglobe_PreparePlacemarkData()
 		return;
 
 	QGlobe_Coord3D camera_coord;
-	pGDMDataMgr->m_pCamera->GetCameraCoord(&camera_coord);
+	pQGlobeDataMgr->m_pCamera->GetCameraCoord(&camera_coord);
 
 	if(pGISDoc == NULL)
 		return;
@@ -83,14 +83,14 @@ void qglobe_PreparePlacemarkData()
 			
 			// get screen point
 			CQGlobe_Vector3DF pos;
-			g_pGDMDataMgr->m_pCamera->WorldToScreen(locPt.m_tX, locPt.m_tY, &pos);
+			g_pQGlobeDataMgr->m_pCamera->WorldToScreen(locPt.m_tX, locPt.m_tY, &pos);
 			pMarkNode->SetScreenPos(pos.m_tX, pos.m_tY);
 
 		}
 		// check length of polyline
 		else if(pNode->Get_GisType() == E_GISNODE_TYPE_PATH || pNode->Get_GisType() == E_GISNODE_TYPE_RULER)
 		{
-			if(pGDMDataMgr->m_sOption.showLenArea)
+			if(pQGlobeDataMgr->m_sOption.showLenArea)
 			{
 				CGIS_Polygon   * pMarkNode	= (CGIS_Polygon*)pNode;
 				//int n = (pMarkNode->GetCount() - 1) / 2;
@@ -129,7 +129,7 @@ void qglobe_PreparePlacemarkData()
 		// check length of polyline
 		else if(pNode->Get_GisType() == E_GISNODE_TYPE_AREA)
 		{
-			if(pGDMDataMgr->m_sOption.showLenArea)
+			if(pQGlobeDataMgr->m_sOption.showLenArea)
 			{
 				CGIS_Area   * pMarkNode	= (CGIS_Area*)pNode;
 
@@ -192,22 +192,22 @@ void qglobe_PreparePlacemarkData()
 		{
 			iconname=QString::fromUtf16(((CGIS_PlaceIcon*)pNode)->m_sIconName);
 
-			pGDMDataMgr->m_pTextMgr->AddText(locPt, type, strName, key, blKorean, iconname,((CGIS_PlaceIcon*)pNode)->m_IconScale);
+			pQGlobeDataMgr->m_pTextMgr->AddText(locPt, type, strName, key, blKorean, iconname,((CGIS_PlaceIcon*)pNode)->m_IconScale);
 		}
 		else
-			pGDMDataMgr->m_pTextMgr->AddText(E_QGlobe_SUBDATA_TYPE_NONE,locPt, type, strName, key, blKorean);
+			pQGlobeDataMgr->m_pTextMgr->AddText(E_QGlobe_SUBDATA_TYPE_NONE,locPt, type, strName, key, blKorean);
 	}
 
 }
 
 void qglobe_PrepareLinkLenAreaName()
 {
-	if(!g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT))
+	if(!g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT))
 		return;
-	if(g_pGDMDataMgr->IsInvalidLevel(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT,g_pGDMDataMgr->m_pPyramidMgr->GetMaxLevel()))
+	if(g_pQGlobeDataMgr->IsInvalidLevel(E_QGlobe_SUBDATA_TYPE_NAME_POLUTANT,g_pQGlobeDataMgr->m_pPyramidMgr->GetMaxLevel()))
 		return;
 	
-	GISLayer* layer=g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT);
+	GISLayer* layer=g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT);
 
 	if(!layer)
 		return;
@@ -235,7 +235,7 @@ void qglobe_PrepareLinkLenAreaName()
 			length = QString("%1km").arg(dlength/1000);
 
 		
-		g_pGDMDataMgr->m_pTextMgr->AddText(E_QGlobe_SUBDATA_TYPE_NONE,locPt, type, length, -1, true);
+		g_pQGlobeDataMgr->m_pTextMgr->AddText(E_QGlobe_SUBDATA_TYPE_NONE,locPt, type, length, -1, true);
 	}
 }
 
@@ -246,7 +246,7 @@ void qglobe_GetPlaceCameraInfo(PLACEMARK_DATA* pData)
 	if (pData == NULL)
 		return;
 
-	g_pGDMDataMgr->m_pCamera->GetInfo(&cameraInfo);
+	g_pQGlobeDataMgr->m_pCamera->GetInfo(&cameraInfo);
 	pData->view_longitude	= cameraInfo.m_loc.m_dLongitude * qglobe_RADTODEG;
 	pData->view_latitude	= cameraInfo.m_loc.m_dLatitude* qglobe_RADTODEG;
 	pData->view_range		= cameraInfo.m_loc.m_dDist;		

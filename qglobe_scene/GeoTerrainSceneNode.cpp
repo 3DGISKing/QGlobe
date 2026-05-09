@@ -52,7 +52,7 @@ namespace scene
 		
 		qglobe_TileListSelector = new TreeListSelector;
 
-		QList<IColorRamp*> ramplist=g_pGDMDataMgr->m_ColorRampList;
+		QList<IColorRamp*> ramplist=g_pQGlobeDataMgr->m_ColorRampList;
 		
 		video::IVideoDriver* driver = SceneManager->getVideoDriver();
 
@@ -325,7 +325,7 @@ void CGeoTerrainSceneNode::render()
 	AfterRender();
 
 	drawMark();
-	if(g_pGDMDataMgr->m_sOption.layerTextureMode==LTM_RASTER)
+	if(g_pQGlobeDataMgr->m_sOption.layerTextureMode==LTM_RASTER)
 		DrawRasterSymbol();
 }
 
@@ -470,9 +470,9 @@ void CGeoTerrainSceneNode::DrawOutlineString( float x, float y, QString& str, fl
 
 void CGeoTerrainSceneNode::DrawRasterSymbol()
 {
-	Q_ASSERT(g_pGDMDataMgr->m_sOption.layerTextureMode==LTM_RASTER);
+	Q_ASSERT(g_pQGlobeDataMgr->m_sOption.layerTextureMode==LTM_RASTER);
 	
-	RasterLayer* rasterlayer=g_pGDMDataMgr->m_pActiveRasterLayer;
+	RasterLayer* rasterlayer=g_pQGlobeDataMgr->m_pActiveRasterLayer;
 
 	Q_ASSERT(rasterlayer!=NULL);
 

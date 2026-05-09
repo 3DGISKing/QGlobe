@@ -611,7 +611,7 @@ void CGIS_Polygon::GetDrawSegPoints(CQGlobe_LocationArr &locArr, CQGlobe_Camera 
 				///***
 				double height = 0;
 				int nDemDivision = 32;
-				int level = g_pGDMDataMgr->m_pPyramidMgr->GetMaxLevel();
+				int level = g_pQGlobeDataMgr->m_pPyramidMgr->GetMaxLevel();
 				if (level > 15)  nDemDivision = 128;
 				if (level > 13)	 level = 13;
 

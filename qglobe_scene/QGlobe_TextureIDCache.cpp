@@ -5,14 +5,14 @@
 #define MAX_TEXTURE_ID_COUNT	180
 
 
-CQGlobe_TextureIDCache*	g_pGdmTextureIDCache;
-CQGlobe_TextureIDCache * qglobe_GetTextureIDCache(){return g_pGdmTextureIDCache;}
+CQGlobe_TextureIDCache*	g_pQGlobeTextureIDCache;
+CQGlobe_TextureIDCache * qglobe_GetTextureIDCache(){return g_pQGlobeTextureIDCache;}
 
 QMutex g_TextureIDCacheMutex;
 CQGlobe_TextureIDCache::CQGlobe_TextureIDCache(void)
 {
 	SetMaxEntryCnt(MAX_TEXTURE_ID_COUNT);
-	g_pGdmTextureIDCache = this;
+	g_pQGlobeTextureIDCache = this;
 }
 
 CQGlobe_TextureIDCache::~CQGlobe_TextureIDCache(void)

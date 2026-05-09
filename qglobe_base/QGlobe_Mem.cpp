@@ -25,7 +25,7 @@ pthr_verror1 (char const *prefix, char const *fmt, va_list ap)
 
 
 void
-gdmError (char const *prefix, char const *fmt, ...)
+qGlobeError (char const *prefix, char const *fmt, ...)
 {
   va_list ap;
   va_start (ap, fmt);
@@ -34,74 +34,74 @@ gdmError (char const *prefix, char const *fmt, ...)
 }
 
 void * 
-gdmMemMalloc(size_t size)
+qGlobeMemMalloc(size_t size)
 {
- static char * funcName = "gdmMemMalloc()";
+ static char * funcName = "qGlobeMemMalloc()";
  void * buffer;
 
     buffer = malloc(size);
     if(!buffer) {
-      gdmError (funcName, "Error in malloc.");
+      qGlobeError (funcName, "Error in malloc.");
       return NULL;
     }
     return buffer;
 }
 
 void * 
-gdmMemRealloc(void * ptr, 
+qGlobeMemRealloc(void * ptr, 
 		     size_t size)
 {
-  static char * funcName = "gdmMemMalloc()";
+  static char * funcName = "qGlobeMemRealloc()";
   void * buffer;
 
   buffer = realloc(ptr, size);
   
   if(!buffer && size) {
-    gdmError (funcName, "Error in realloc'ing %d bytes.", size);
+    qGlobeError (funcName, "Error in realloc'ing %d bytes.", size);
     return (void *) -1;
   }
   return buffer;
 }
 
 void * 
-gdmMemCalloc(size_t nelem,
+qGlobeMemCalloc(size_t nelem,
 		    size_t elsize)
 {
- static char * funcName = "gdmMemCalloc()";
+ static char * funcName = "qGlobeMemCalloc()";
  void * buffer;
 
     buffer = calloc(nelem, elsize);
     if(!buffer) {
-      gdmError (funcName, "Error in callocing %d items of size %d.", nelem, elsize);
+      qGlobeError (funcName, "Error in callocing %d items of size %d.", nelem, elsize);
       return NULL;
     }
     return buffer;
 }
 
 int
-gdmMemFree(void const * ptr)
+qGlobeMemFree(void const * ptr)
 {
-  /*static const char funcName[] = "gdmMemManagerFree()";*/
+  /*static const char funcName[] = "qGlobeMemFree()";*/
 
   free((void *) ptr);
   return TRUE;
 }
 
 char *
-gdmMemStringCpy(const char * s1)
+qGlobeMemStringCpy(const char * s1)
 {
- static char * funcName = "gdmMemStringCpy()";
+ static char * funcName = "qGlobeMemStringCpy()";
  char * s2;
  size_t len;
 
     if(!s1) {
-      gdmError (funcName, "NULL passed to strdup, idiot."); 
+      qGlobeError (funcName, "NULL passed to strdup, idiot."); 
       return NULL;
     }
     len = strlen(s1) + 1;
-    s2 = (char*)gdmMemMalloc(len);
+    s2 = (char*)qGlobeMemMalloc(len);
     if(!s2) {
-      gdmError (funcName, "Unable to dup string of len %zu: %s", len - 1, s1);
+      qGlobeError (funcName, "Unable to dup string of len %zu: %s", len - 1, s1);
       return NULL;
     }
     memcpy (s2, s1, len);

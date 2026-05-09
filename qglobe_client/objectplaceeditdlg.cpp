@@ -661,10 +661,10 @@ void ObjectPlaceEditDlg::btnSave_click()
 
 void ObjectPlaceEditDlg::renderFormRefresh()
 {
-	g_pGDMDataMgr->m_pCacheMgr->NameCacheClear();
+	g_pQGlobeDataMgr->m_pCacheMgr->NameCacheClear();
 	qglobe_GetGISTextureIDCache()->Clear();
-	g_pGDMDataMgr->m_pGISDataCache->Clear();
-	g_pGDMDataMgr->OnChangeServer();
+	g_pQGlobeDataMgr->m_pGISDataCache->Clear();
+	g_pQGlobeDataMgr->OnChangeServer();
 }
 
 void ObjectPlaceEditDlg::btnCancel_click()
@@ -1161,7 +1161,7 @@ void ObjectPlaceEditDlg::SetCenterMark()
 		}
 
 		QGlobe_LOCATION tmp;
-		g_app->GetRenderProxy()->GetRenderSrv()->m_pGDMDataMgr->m_pCamera->GetLocation(&tmp);
+		g_app->GetRenderProxy()->GetRenderSrv()->m_pQGlobeDataMgr->m_pCamera->GetLocation(&tmp);
 		double viewHeight = tmp.m_dDist;
 
 		QGlobe_CAMERA_INFO cameraInfo;	

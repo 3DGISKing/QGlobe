@@ -9,7 +9,7 @@
 #undef MONITOR_SERVICE_NAME
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
 #undef SERVICE_NAME
-#define SERVICE_NAME    "GDEMService"
+#define SERVICE_NAME    "QGLOBEService"
 
 #undef MONITER_INTERVAL_TIME
 #define MONITER_INTERVAL_TIME		30000

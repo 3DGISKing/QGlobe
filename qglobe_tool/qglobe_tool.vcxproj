@@ -102,7 +102,7 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_qglobe_tool.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_hopedbtogdem.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_hopedbtoqgblobe.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_imagemerge.cpp">
@@ -156,7 +156,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_qglobe_tool.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_hopedbtogdem.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_hopedbtoqgblobe.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_imagemerge.cpp">
@@ -192,7 +192,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_writeremovejgw.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="hopedbtogdem.cpp" />
+    <ClCompile Include="hopedbtoqgblobe.cpp" />
     <ClCompile Include="imagemerge.cpp" />
     <ClCompile Include="imgtilemergedlg.cpp" />
     <ClCompile Include="importmanager.cpp" />
@@ -262,7 +262,7 @@
     <ClInclude Include="GeneratedFiles\ui_browserwidget.h" />
     <ClInclude Include="GeneratedFiles\ui_qglobedbextractdlg.h" />
     <ClInclude Include="GeneratedFiles\ui_qglobe_tool.h" />
-    <ClInclude Include="GeneratedFiles\ui_hopedbtogdem.h" />
+    <ClInclude Include="GeneratedFiles\ui_hopedbtoqgblobe.h" />
     <ClInclude Include="GeneratedFiles\ui_imagemerge.h" />
     <ClInclude Include="GeneratedFiles\ui_imgtilemergedlg.h" />
     <ClInclude Include="GeneratedFiles\ui_keygenerator.h" />
@@ -273,13 +273,13 @@
     <ClInclude Include="GeneratedFiles\ui_tilelatlong.h" />
     <ClInclude Include="GeneratedFiles\ui_vectorconverter.h" />
     <ClInclude Include="GeneratedFiles\ui_writeremovejgw.h" />
-    <CustomBuild Include="hopedbtogdem.h">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing hopedbtogdem.h...</Message>
+    <CustomBuild Include="hopedbtoqgblobe.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing hopedbtoqgblobe.h...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"   -DUNICODE -DWIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB  "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(Configuration)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtSql" "-I." "-I.\..\gdal" "-I.\..\qglobe_tile" "-I.\..\qglobe_base" "-I.\..\qglobe_common" "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp"
 </Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing hopedbtogdem.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing hopedbtoqgblobe.h...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(Configuration)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB "-I.\GeneratedFiles" "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(Configuration)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtSql" "-I."
 </Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>
@@ -470,7 +470,7 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
-    <CustomBuild Include="hopedbtogdem.ui">
+    <CustomBuild Include="hopedbtoqgblobe.ui">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Filename)%(Extension)...</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"
 </Command>

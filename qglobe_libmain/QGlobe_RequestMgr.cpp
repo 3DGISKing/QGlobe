@@ -249,7 +249,7 @@ void CQGlobe_RequestMgr:: UpdateRequest()
 	QGlobe_TILE_INFO_ARR tileArr;
 	QGlobe_TILE_INFO_ARR tileArrforEstimate;
 	
-	if(!g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(!g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 		m_blDefaultComplete = true;
 
 	if(!m_blDefaultComplete)
@@ -263,13 +263,13 @@ void CQGlobe_RequestMgr:: UpdateRequest()
 	}
 
 	// get pyramid tiles
-	g_pGDMDataMgr->m_pPyramidMgr->GetPyramidTiles(&tileArr);
+	g_pQGlobeDataMgr->m_pPyramidMgr->GetPyramidTiles(&tileArr);
 
 	// get near tile info for dem tile
-	double logitidue = g_pGDMDataMgr->m_pCamera->m_location.m_dLongitude;
-	double latitude  = g_pGDMDataMgr->m_pCamera->m_location.m_dLatitude;
+	double logitidue = g_pQGlobeDataMgr->m_pCamera->m_location.m_dLongitude;
+	double latitude  = g_pQGlobeDataMgr->m_pCamera->m_location.m_dLatitude;
 	int	   nLevel = tileArr.maxLevel;
-	g_pGDMDataMgr->m_pPyramidMgr->GetNear4Tiles(nLevel, logitidue, latitude, &tileArrforEstimate);
+	g_pQGlobeDataMgr->m_pPyramidMgr->GetNear4Tiles(nLevel, logitidue, latitude, &tileArrforEstimate);
 
 	CheckRate();
 
@@ -477,7 +477,7 @@ void CQGlobe_RequestMgr::CheckRate(void)
 		m_blHighSpeed = true;
 	}
 
-	if(g_pGDMDataMgr->m_sOption.blContour)
+	if(g_pQGlobeDataMgr->m_sOption.blContour)
 		m_nOffsetLevel = baseOffsetLevel;
 	else
 		m_nOffsetLevel = baseOffsetLevel + m_nOffsetBySpeed;
@@ -499,7 +499,7 @@ void CQGlobe_RequestMgr::UpdateRequest(E_QGlobe_MAINDATA_TYPE eType)
 	QGlobe_TILE_INFO_ARR tileArr;
 	QGlobe_TILE_INFO_ARR tileArrforEstimate;
 
-	if(!g_pGDMDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
+	if(!g_pQGlobeDataMgr->IsVisible(E_QGlobe_SUBDATA_TYPE_DEM))
 		m_blDefaultComplete = true;
 
 	if(!m_blDefaultComplete)
@@ -513,13 +513,13 @@ void CQGlobe_RequestMgr::UpdateRequest(E_QGlobe_MAINDATA_TYPE eType)
 	}
 
 	// get pyramid tiles
-	g_pGDMDataMgr->m_pPyramidMgr->GetPyramidTiles(&tileArr);
+	g_pQGlobeDataMgr->m_pPyramidMgr->GetPyramidTiles(&tileArr);
 
 	// get near tile info for dem tile
-	double logitidue = g_pGDMDataMgr->m_pCamera->m_location.m_dLongitude;
-	double latitude  = g_pGDMDataMgr->m_pCamera->m_location.m_dLatitude;
+	double logitidue = g_pQGlobeDataMgr->m_pCamera->m_location.m_dLongitude;
+	double latitude  = g_pQGlobeDataMgr->m_pCamera->m_location.m_dLatitude;
 	int	   nLevel = tileArr.maxLevel;
-	g_pGDMDataMgr->m_pPyramidMgr->GetNear4Tiles(nLevel, logitidue, latitude, &tileArrforEstimate);
+	g_pQGlobeDataMgr->m_pPyramidMgr->GetNear4Tiles(nLevel, logitidue, latitude, &tileArrforEstimate);
 
 	CheckRate();
 

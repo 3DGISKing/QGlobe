@@ -146,7 +146,7 @@ namespace geo
 				m_pSearchHighlightTex->grab();
 
 			Layer* layer;
-			QList<Layer*> layerlist=g_pGDMDataMgr->m_LayerHash.values();
+			QList<Layer*> layerlist=g_pQGlobeDataMgr->m_LayerHash.values();
 
 			foreach(layer,layerlist)
 			{
@@ -324,7 +324,7 @@ namespace geo
 					{
 						if(nameCell.datatype!=E_QGlobe_SUBDATA_TYPE_NONE)
 						{
-							Layer *layer=g_pGDMDataMgr->m_LayerHash.value(nameCell.datatype);
+							Layer *layer=g_pQGlobeDataMgr->m_LayerHash.value(nameCell.datatype);
 							Q_ASSERT(layer!=NULL);
 							Q_ASSERT(layer->IsPlaceNameLayer());
 

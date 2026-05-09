@@ -448,7 +448,7 @@ bool GeoMeshUtil::IsTooBigFileSize(QString geomeshfilename)
 {
 	QFile file(geomeshfilename);
 
-	if(file.size()>g_pGDMDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_3D))
+	if(file.size()>g_pQGlobeDataMgr->GetMaxTileSize(E_QGlobe_MAINDATA_TYPE_3D))
 		return true;
 	else
 		return false;

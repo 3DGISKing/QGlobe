@@ -54,7 +54,7 @@ void qglobe_PreProcessDemTile(QGlobe_DEM_TILE *pTile)
 	pTile->maxLongitude = pTile->minLongitude + pTile->tileWidth;
 	pTile->maxLatitude	= pTile->minLatitude + pTile->tileWidth;
 
-	g_pGDMDataMgr->m_pTerrainPtCache->GetPts(pTile);
+	g_pQGlobeDataMgr->m_pTerrainPtCache->GetPts(pTile);
 
 	if(qglobe_GetDataMgr()->m_sOption.blContour && pTile->m_sInfo.nLevel >= QGlobe_CONTOUR_MIN_LEVEL_100)
 	{
@@ -75,7 +75,7 @@ void qglobe_PreProcess3dMeshTile(QGlobe_TILE *pTile)
 			qglobe_GetDataMgr()->m_p3DObjectCache->GetMeshs(pTile->m_sInfo.nX, pTile->m_sInfo.nY, pTile->m_sInfo.nLevel, 
 				pTile->m_pBuffer);
 		if(pTile->m_sInfo.eSubType==E_QGlobe_SUBDATA_TYPE_BUILDING_SIMPLEBUILDING)
-			g_pGDMDataMgr->m_pSimpleBuildingCache->GetBuildingArray((QGlobe_TILE*)pTile);
+			g_pQGlobeDataMgr->m_pSimpleBuildingCache->GetBuildingArray((QGlobe_TILE*)pTile);
 
 		g_3dCacheMutex.unlock();
 	}
@@ -85,8 +85,8 @@ void qglobe_PreProcessImgTile(QGlobe_TEXTURE_TILE *pTile)
 {
 	g_TextureIDCacheMutex.lock();
 
-	if(g_pGDMDataMgr->m_pTextureIDCache)
-		g_pGDMDataMgr->m_pTextureIDCache->GetTextureID(pTile);
+	if(g_pQGlobeDataMgr->m_pTextureIDCache)
+		g_pQGlobeDataMgr->m_pTextureIDCache->GetTextureID(pTile);
 
 	g_TextureIDCacheMutex.unlock();
 }
@@ -141,10 +141,10 @@ void qglobe_PreProcessNameTile(QGlobe_TILE *pTile)
 		delete polylayer;
 	else
 	{
-		GISLayer* l= g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,pTile->m_sInfo.eSubType);
+		GISLayer* l= g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,pTile->m_sInfo.eSubType);
 		
 		if(l==NULL)
-			g_pGDMDataMgr->m_pGISDataCache->AddLayer(0,0,0,pTile->m_sInfo.eSubType,polylayer);
+			g_pQGlobeDataMgr->m_pGISDataCache->AddLayer(0,0,0,pTile->m_sInfo.eSubType,polylayer);
 		else
 		{
 			for(int j=0;j<polylayer->FeatureCount();j++)
@@ -159,10 +159,10 @@ void qglobe_PreProcessNameTile(QGlobe_TILE *pTile)
 		delete linklayer;
 	else
 	{
-		GISLayer* l= g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT);
+		GISLayer* l= g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT);
 
 		if(l==NULL)
-			g_pGDMDataMgr->m_pGISDataCache->AddLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT,linklayer);
+			g_pQGlobeDataMgr->m_pGISDataCache->AddLayer(0,0,0,E_QGlobe_SUBDATA_TYPE_NAME_ACCIDENT,linklayer);
 		else
 		{
 			for(int j=0;j<linklayer->FeatureCount();j++)
@@ -176,10 +176,10 @@ void qglobe_PreProcessNameTile(QGlobe_TILE *pTile)
 		delete pathlayer;
 	else
 	{
-		GISLayer* l= g_pGDMDataMgr->m_pGISDataCache->GetLayer(0,0,0,pTile->m_sInfo.eSubType);
+		GISLayer* l= g_pQGlobeDataMgr->m_pGISDataCache->GetLayer(0,0,0,pTile->m_sInfo.eSubType);
 
 		if(l==NULL)
-			g_pGDMDataMgr->m_pGISDataCache->AddLayer(0,0,0,pTile->m_sInfo.eSubType,pathlayer);
+			g_pQGlobeDataMgr->m_pGISDataCache->AddLayer(0,0,0,pTile->m_sInfo.eSubType,pathlayer);
 		else
 		{
 			for(int j=0;j<pathlayer->FeatureCount();j++)

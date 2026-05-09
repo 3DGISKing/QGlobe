@@ -1,4 +1,4 @@
-﻿#ifndef CONFIGDIALOG_H
+#ifndef CONFIGDIALOG_H
 #define CONFIGDIALOG_H
 
 #include <QDialog>
@@ -11,7 +11,7 @@ namespace Ui
 }
 
 class QGlobeDSConfig;
-class GDEMDistributeConfig;
+class QGlobeDistributeConfig;
 class DirDelegate;
 class QStandardItemModel;
 class QTableView;

@@ -49,12 +49,12 @@ QT_BEGIN_NAMESPACE
 class QPainterPath;
 QT_END_NAMESPACE
 
-class GdemCustomStyle : public QMotifStyle
+class QGlobeCustomStyle : public QMotifStyle
 {
     Q_OBJECT
 
 public:
-    GdemCustomStyle() {}
+    QGlobeCustomStyle() {}
 
     void polish(QPalette &palette);
     void polish(QWidget *widget);

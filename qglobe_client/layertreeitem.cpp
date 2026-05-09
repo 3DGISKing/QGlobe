@@ -50,7 +50,7 @@ LayerTreeItem::LayerTreeItem(Layer* layer)
 	m_exclusiveChilditem=NULL;
 	m_checkedItemMustBeExist=false;
 
-	g_pGDMDataMgr->AddLayer(layer);
+	g_pQGlobeDataMgr->AddLayer(layer);
 }
 
 LayerTreeItem::~LayerTreeItem()
@@ -91,7 +91,7 @@ void LayerTreeItem::SetState(Qt::CheckState state)
 		else
 			layer->SetVisible(false);
 		
-		g_pGDMDataMgr->SetLayer(layer);
+		g_pQGlobeDataMgr->SetLayer(layer);
 	}
 }
 

@@ -3,11 +3,11 @@
 #include <QString>
 #include <QStringList>
 
-class GDEMVersionMgr
+class QGlobeVersionMgr
 {
 public:
-	GDEMVersionMgr();
-	virtual ~GDEMVersionMgr();
+	QGlobeVersionMgr();
+	virtual ~QGlobeVersionMgr();
 
 	int			m_nMainVersion;
 	int			m_SubVersionCount;
@@ -15,7 +15,7 @@ public:
 };
 
 
-GDEMVersionMgr::GDEMVersionMgr()
+QGlobeVersionMgr::QGlobeVersionMgr()
 {
 	m_nMainVersion = (QGLOBE_VERSION_MAJOR * 0x01000000)
 					+ (QGLOBE_VERSION_MINOR * 0x00010000)
@@ -34,13 +34,13 @@ GDEMVersionMgr::GDEMVersionMgr()
 	}
 }
 
-GDEMVersionMgr::~GDEMVersionMgr()
+QGlobeVersionMgr::~QGlobeVersionMgr()
 {
 	delete[] m_SubVersionList;
 }
 
 
-static GDEMVersionMgr g_VersionMgr;
+static QGlobeVersionMgr g_VersionMgr;
 
 
 

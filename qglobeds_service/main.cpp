@@ -14,15 +14,15 @@
 #include <qglobal.h>
 
 #undef SERVICE_NAME
-#define SERVICE_NAME	"GDEMService"
+#define SERVICE_NAME	"QGLOBEService"
 
 //#define SERVICE_CUR_PATH
 
 #ifndef SERVICE_CUR_PATH
 #ifdef Q_OS_WIN
-QString g_CurrentPath("C:/GDEM Server");
+QString g_CurrentPath("C:/QGLOBE Server");
 #else
-QString g_CurrentPath("/GDEM Server");
+QString g_CurrentPath("/QGLOBE Server");
 #endif
 #endif
 
@@ -30,15 +30,15 @@ QString g_CurrentPath("/GDEM Server");
 #include "../qglobeds_service_common/gdsservice_log.h"
 #endif
 
-class GdemService : public QGlobeDSService<QCoreApplication>
+class QGlobeService : public QGlobeDSService<QCoreApplication>
 {
 public:
-    GdemService(int argc, char **argv)
+    QGlobeService(int argc, char **argv)
         : QGlobeDSService<QCoreApplication>(argc, argv, SERVICE_NAME)
     {
 		m_bGDSCoreRunning = false;
 
-        setServiceDescription("A dummy GDEM service implemented with Qt");
+        setServiceDescription("A dummy QGLOBE service implemented with Qt");
         setServiceFlags(QGlobeDSServiceBase::Default);
 		setStartupType(QGlobeDSServiceController::AutoStartup);
 	}
@@ -97,7 +97,7 @@ int main(int argc, char **argv)
     QSettings::setPath(QSettings::NativeFormat, QSettings::SystemScope, QDir::tempPath());
     qWarning("(Example uses dummy settings file: %s/QtSoftware.conf)", QDir::tempPath().toLatin1().constData());
 #endif
-    GdemService service(argc, argv);
+    QGlobeService service(argc, argv);
 
     QString str = service.serviceName();
     return service.exec();

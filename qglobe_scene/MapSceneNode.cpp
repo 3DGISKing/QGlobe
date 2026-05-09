@@ -49,8 +49,8 @@ namespace scene
 	{
 		video::IVideoDriver* driver = SceneManager->getVideoDriver();
 
-		float vieworglongi=g_pGDMDataMgr->m_pCamera->m_location.m_dLongitude*qglobe_RADTODEG;
-		float vieworglat=g_pGDMDataMgr->m_pCamera->m_location.m_dLatitude*qglobe_RADTODEG;
+		float vieworglongi=g_pQGlobeDataMgr->m_pCamera->m_location.m_dLongitude*qglobe_RADTODEG;
+		float vieworglat=g_pQGlobeDataMgr->m_pCamera->m_location.m_dLatitude*qglobe_RADTODEG;
 
 		int x=longitudeToScreenX(vieworglongi);
 		int y=latitudeToScreenY(vieworglat);
@@ -69,11 +69,11 @@ namespace scene
 
 	void MapSceneNode::setViewExtent()
 	{
-		viewExtent.m_cMinPt.m_tX=g_pGDMDataMgr->m_pCamera->m_dMinLong1*qglobe_RADTODEG;
-		viewExtent.m_cMinPt.m_tY=g_pGDMDataMgr->m_pCamera->m_dMinLati*qglobe_RADTODEG;
+		viewExtent.m_cMinPt.m_tX=g_pQGlobeDataMgr->m_pCamera->m_dMinLong1*qglobe_RADTODEG;
+		viewExtent.m_cMinPt.m_tY=g_pQGlobeDataMgr->m_pCamera->m_dMinLati*qglobe_RADTODEG;
 
-		viewExtent.m_cMaxPt.m_tX=g_pGDMDataMgr->m_pCamera->m_dMaxLong1*qglobe_RADTODEG;
-		viewExtent.m_cMaxPt.m_tY=g_pGDMDataMgr->m_pCamera->m_dMaxLati*qglobe_RADTODEG;
+		viewExtent.m_cMaxPt.m_tX=g_pQGlobeDataMgr->m_pCamera->m_dMaxLong1*qglobe_RADTODEG;
+		viewExtent.m_cMaxPt.m_tY=g_pQGlobeDataMgr->m_pCamera->m_dMaxLati*qglobe_RADTODEG;
 	}
 
 	void MapSceneNode::drawMapAndOutline()
@@ -191,12 +191,12 @@ namespace scene
 		
 		for(int i=0;i<m_MapList.size();i++)
 		{
-			if(g_pGDMDataMgr->m_pCamera->m_location.m_dDist>m_MapList[i].getMaxHeight())
+			if(g_pQGlobeDataMgr->m_pCamera->m_location.m_dDist>m_MapList[i].getMaxHeight())
 				continue;
 			if(!m_MapList[i].isIntersected(viewExtent))
 				continue;
-			if(!m_MapList[i].isContain(g_pGDMDataMgr->m_pCamera->m_location.m_dLongitude*qglobe_RADTODEG,
-												g_pGDMDataMgr->m_pCamera->m_location.m_dLatitude*qglobe_RADTODEG))
+			if(!m_MapList[i].isContain(g_pQGlobeDataMgr->m_pCamera->m_location.m_dLongitude*qglobe_RADTODEG,
+												g_pQGlobeDataMgr->m_pCamera->m_location.m_dLatitude*qglobe_RADTODEG))
 												continue;
 
 			QString path;

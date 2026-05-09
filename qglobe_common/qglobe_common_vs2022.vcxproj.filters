@@ -34,7 +34,7 @@
     <ClInclude Include="qglobe_version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gdemclientbase.h">
+    <ClInclude Include="qglobeclientbase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

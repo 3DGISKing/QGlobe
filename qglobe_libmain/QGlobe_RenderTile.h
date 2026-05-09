@@ -18,7 +18,7 @@ typedef QGlobe_POINT3D   BOUNDARY[QGLOBE_MAX_DEM_DIVISION4+1];
 int intersect_RayTriangle(Vector3DF rayOrg, Vector3DF rayDir, Triangle3DF T, Vector3DF *destPt, double *distance, bool flag = 1);
 
 // the logical tile structure for render
-typedef struct _gdmLogicTile
+typedef struct _QGlobeLogicTile
 {
 	int					nX;				// the x coordinate of the tile 
 	int					nY;             // the y coordinate of the tile 
@@ -53,14 +53,14 @@ typedef struct _gdmLogicTile
 }QGlobe_LOGIC_TILE;
 
 // the logical tile list for render
-typedef struct _gdmLogicTileArr
+typedef struct _QGlobeLogicTileArr
 {
 	int	nLevel;
 	int nCount;
 	QGlobe_LOGIC_TILE pData[QGlobe_MAX_TILE];
 }QGlobe_LOGIC_TILE_ARR;
 
-typedef struct _gdmGridViewInfo
+typedef struct _QGlobeGridViewInfo
 {
 	double dLongiResolution;
 	double dLatiResolution;
@@ -86,7 +86,7 @@ typedef struct _gdmGridViewInfo
 }QGlobe_GRID_VIEW_INFO;
 
 // the logical tile structure for render
-typedef struct _gdmMeshTile
+typedef struct _QGlobeMeshTile
 {
 	int					nX;				// the x coordinate of the tile 
 	int					nY;             // the y coordinate of the tile 
@@ -119,7 +119,7 @@ typedef struct _gdmMeshTile
 }QGlobe_MESH_TILE;
 
 // the logical tile list for render
-typedef struct _gdmMeshTileArr
+typedef struct _QGlobeMeshTileArr
 {
 	int	nLevel;
 	int nCount;

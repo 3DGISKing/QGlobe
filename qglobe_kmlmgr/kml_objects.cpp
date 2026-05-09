@@ -79,8 +79,8 @@ static int SetPlaceSubType(const kmldom::FeaturePtr feature, E_QGlobe_SUBDATA_TY
 /********************************************************
 	Check Kml Page Dom Object
 ********************************************************/
-//--------------------------------------------------- Check GDEM Page Object ?
-// NOTE: This function is not still used. Because the GDEM Page object is ignored for saving.
+//--------------------------------------------------- Check QGLOBE Page Object ?
+// NOTE: This function is not still used. Because the QGLOBE Page object is ignored for saving.
 static bool IsKmlPageObj(const QString name)
 {
 	QString name2(name);

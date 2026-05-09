@@ -9,7 +9,7 @@
 #include <QElapsedTimer>
 #include <QCoreApplication>
 
-#define MAIN_SERVICE_NAME    "GDEMService"
+#define MAIN_SERVICE_NAME    "QGLOBEService"
 #define MONITOR_SERVICE_NAME	"GDS Service Monitoring"
 #if defined(Q_OS_WIN)
 #define SERVICE_PATH    "/qglobeds_service.exe"

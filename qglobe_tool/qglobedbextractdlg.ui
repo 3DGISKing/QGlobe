@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GDemDbExtractDlg</class>
- <widget class="QDialog" name="GDemDbExtractDlg">
+ <class>QGlobeDbExtractDlg</class>
+ <widget class="QDialog" name="QGlobeDbExtractDlg">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GDemDbExtractDlg</string>
+   <string>QGlobeDbExtractDlg</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
@@ -219,14 +219,14 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="labelGDemFileName">
+    <widget class="QLabel" name="labelQGlobeFileName">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QProgressBar" name="progressBarGDemCount">
+    <widget class="QProgressBar" name="progressBarQGlobeCount">
      <property name="value">
       <number>0</number>
      </property>

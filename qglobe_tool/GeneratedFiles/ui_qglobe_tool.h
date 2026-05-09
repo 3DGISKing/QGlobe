@@ -24,9 +24,9 @@ QT_BEGIN_NAMESPACE
 class Ui_qglobe_toolClass
 {
 public:
-    QAction *actionShowGDemExtractDlg;
+    QAction *actionShowQGlobeExtractDlg;
     QAction *actionShowSimpleBuildingProDlg;
-    QAction *actionHopeDBToGDem;
+    QAction *actionHopeDBToQGlobe;
     QAction *actionWriteRemoveJgw;
     QAction *actionLatLongToImage;
     QAction *actionImageMerge;
@@ -53,12 +53,12 @@ public:
         if (qglobe_toolClass->objectName().isEmpty())
             qglobe_toolClass->setObjectName(QString::fromUtf8("qglobe_toolClass"));
         qglobe_toolClass->resize(598, 66);
-        actionShowGDemExtractDlg = new QAction(qglobe_toolClass);
-        actionShowGDemExtractDlg->setObjectName(QString::fromUtf8("actionShowGDemExtractDlg"));
+        actionShowQGlobeExtractDlg = new QAction(qglobe_toolClass);
+        actionShowQGlobeExtractDlg->setObjectName(QString::fromUtf8("actionShowQGlobeExtractDlg"));
         actionShowSimpleBuildingProDlg = new QAction(qglobe_toolClass);
         actionShowSimpleBuildingProDlg->setObjectName(QString::fromUtf8("actionShowSimpleBuildingProDlg"));
-        actionHopeDBToGDem = new QAction(qglobe_toolClass);
-        actionHopeDBToGDem->setObjectName(QString::fromUtf8("actionHopeDBToGDem"));
+        actionHopeDBToQGlobe = new QAction(qglobe_toolClass);
+        actionHopeDBToQGlobe->setObjectName(QString::fromUtf8("actionHopeDBToQGlobe"));
         actionWriteRemoveJgw = new QAction(qglobe_toolClass);
         actionWriteRemoveJgw->setObjectName(QString::fromUtf8("actionWriteRemoveJgw"));
         actionLatLongToImage = new QAction(qglobe_toolClass);
@@ -116,8 +116,8 @@ public:
         menuBar->addAction(menuSqlBrowser->menuAction());
         menuBar->addAction(menuKML->menuAction());
         menuBar->addAction(menuUtility->menuAction());
-        menuDatabase->addAction(actionShowGDemExtractDlg);
-        menuDatabase->addAction(actionHopeDBToGDem);
+        menuDatabase->addAction(actionShowQGlobeExtractDlg);
+        menuDatabase->addAction(actionHopeDBToQGlobe);
         menuDatabase->addAction(actionWriteRemoveJgw);
         menuDatabase->addAction(actionShowSimpleBuildingProDlg);
         menuDatabase->addAction(actionLatLongToImage);
@@ -138,9 +138,9 @@ public:
     void retranslateUi(QMainWindow *qglobe_toolClass)
     {
         qglobe_toolClass->setWindowTitle(QCoreApplication::translate("qglobe_toolClass", "qglobe_tool", nullptr));
-        actionShowGDemExtractDlg->setText(QCoreApplication::translate("qglobe_toolClass", "Extract", nullptr));
+        actionShowQGlobeExtractDlg->setText(QCoreApplication::translate("qglobe_toolClass", "Extract", nullptr));
         actionShowSimpleBuildingProDlg->setText(QCoreApplication::translate("qglobe_toolClass", "Generate Simple Building ", nullptr));
-        actionHopeDBToGDem->setText(QCoreApplication::translate("qglobe_toolClass", "Make Gt File", nullptr));
+        actionHopeDBToQGlobe->setText(QCoreApplication::translate("qglobe_toolClass", "Make Gt File", nullptr));
         actionWriteRemoveJgw->setText(QCoreApplication::translate("qglobe_toolClass", "Write Or Remove jgw files", nullptr));
         actionLatLongToImage->setText(QCoreApplication::translate("qglobe_toolClass", "Tiling Image", nullptr));
         actionImageMerge->setText(QCoreApplication::translate("qglobe_toolClass", "Merge Images", nullptr));

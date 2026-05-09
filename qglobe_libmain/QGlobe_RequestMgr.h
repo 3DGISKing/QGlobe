@@ -6,7 +6,7 @@
 
 #define QGlobe_MAX_REQUEST_LIST_COUNT	E_QGlobe_MAINDATA_TYPE_MAX
 
-typedef struct _gdmTileSpec
+typedef struct _QGlobeTileSpec
 {
 	E_QGlobe_MAINDATA_TYPE     eType;				// the data type
 	int						minLevel;			// the min level
@@ -16,7 +16,7 @@ typedef struct _gdmTileSpec
 	
 }QGlobe_TILE_SPEC;
 
-typedef struct _gdmTileRequest
+typedef struct _QGlobeTileRequest
 {
 	QGlobe_TILE_SPEC	   spec;
 	QGlobe_TILE_INFO_ARR  reqList;
