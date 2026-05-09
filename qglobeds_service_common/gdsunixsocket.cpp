@@ -72,7 +72,7 @@ bool QGlobeDSUnixSocket::connectTo(const QString &path)
 	::memset(&addr, 0, sizeof(struct sockaddr_un));
 	addr.sun_family = AF_UNIX;
 	size_t pathlen = strlen(path.toLatin1().constData());
-        pathlen = qMin(pathlen, sizeof(addr.sun_path));
+        pathlen = qMin(pathlen, sizeof(addr.sun_path) - 1);
 	::memcpy(addr.sun_path, path.toLatin1().constData(), pathlen);
 	int err = ::connect(sock, (struct sockaddr *)&addr, SUN_LEN(&addr));
         if (err != -1) {
