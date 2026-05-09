@@ -175,8 +175,8 @@ void SceneManager::setViewFrustum(geo::f64 nearValue, geo::f64 farValue, geo::f6
 
 void SceneManager::OnBeforeRender()
 {
-	//gdm_PreparePlacemarkData();
-	//gdm_MakeRenderGeoNameData();
+	//qglobe_PreparePlacemarkData();
+	//qglobe_MakeRenderGeoNameData();
 	if(_Earth)
 	{
 		_Earth->OnAnimate(_Device->getTimer()->getTime());

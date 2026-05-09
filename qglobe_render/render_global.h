@@ -1,0 +1,22 @@
+#ifndef RENDER_GLOBAL_H
+#define RENDER_GLOBAL_H
+
+#include <qglobal.h>
+
+#ifdef QGLOBE_STATIC_LIBRARY
+#define RENDER_EXPORT Q_DECL_IMPORT
+#else
+#define RENDER_EXPORT Q_DECL_EXPORT
+#endif
+
+class GDemClient;
+extern GDemClient* g_app;
+
+typedef enum
+{
+	eQGlobe_RENDER_NITIFY_NONE = 0,
+	QGlobe_RENDER_NITIFY_START_ANIMATION,
+	QGlobe_RENDER_NITIFY_END_ANIMATION,
+	QGlobe_RENDER_NITIFY_CAMERA_CHANGED
+}EQGlobe_RENDER_NOTIFY_TYPE;
+#endif // RENDER_GLOBAL_H

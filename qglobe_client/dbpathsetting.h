@@ -1,0 +1,32 @@
+﻿#ifndef DBPATHSETTING_H
+#define DBPATHSETTING_H
+
+#include "../qglobe_common/qglobe_config.h"
+
+#include <QDialog>
+
+#ifdef STANDARD_ALONE
+
+namespace Ui {
+    class SetDBPathDlg;
+}
+
+class DBPathSetting : public QDialog
+{
+    Q_OBJECT
+public:
+    DBPathSetting(QWidget *parent = 0);
+    virtual ~DBPathSetting();
+
+public slots:
+    void on_toolButton_clicked();
+    void on_OKButton_clicked();
+    void on_cancelButton_clicked();
+
+private:
+    Ui::SetDBPathDlg *m_ui;
+};
+
+#endif
+
+#endif // DBPATHSETTING_H

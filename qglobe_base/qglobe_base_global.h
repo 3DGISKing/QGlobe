@@ -1,0 +1,12 @@
+#ifndef QGLOBE_BASE_GLOBAL_H
+#define QGLOBE_BASE_GLOBAL_H
+
+#include <qglobal.h>
+
+#ifdef QGLOBE_STATIC_LIBRARY
+# define QGLOBE_BASE_EXPORT   Q_DECL_IMPORT
+#else
+# define QGLOBE_BASE_EXPORT Q_DECL_EXPORT
+#endif
+
+#endif // QGLOBE_BASE_GLOBAL_H

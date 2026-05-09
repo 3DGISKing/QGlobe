@@ -27,7 +27,7 @@ Image, terrain, vector, and 3D data are distributed as preprocessed **block** fi
 2. Install Qt **5.15.18** for MSVC 2022 64-bit. A prebuilt option with Qt WebEngine is available from [qt-minimalistic-builds 5.15.18](https://github.com/martinrotter/qt-minimalistic-builds/releases/tag/5.15.18-webengine).
 3. Install the **Qt VS Tools** extension and add your Qt version in **Extensions → Qt VS Tools → Qt Versions**.
 4. Ensure **`QTDIR`** (or the version you registered) matches the kit used by the `.vcxproj` files.
-5. Open **`gdem_client_vs2022.sln`**, select **Debug|x64** or **Release|x64**, and build the solution (build order follows project dependencies).
+5. Open **`qglobe_client_vs2022.sln`**, select **Debug|x64** or **Release|x64**, and build the solution (build order follows project dependencies).
 
 Output binaries and libraries are typically placed under the solution **`Debug`** or **`Release`** folder, depending on configuration.
 
@@ -69,7 +69,7 @@ Enable **NTFS long paths** in Windows (Group Policy or registry) to reduce the r
 
 ## Solution contents (high level)
 
-The main solution builds core libraries (`gdem_base`, `gdem_libmain`, `gdem_common`, …), rendering and scene code (`gdem_render`, `gdem_scene`, `gdem_terrainengine`, …), KML support (`gdem_libkml`, `gdem_kmlmgr`), GIS helpers (`gdem_gis`), data server (`gdem_datasrv`), and the **`gdemclient`** application.
+The main solution builds core libraries (`qglobe_base`, `qglobe_libmain`, `qglobe_common`, …), rendering and scene code (`qglobe_render`, `qglobe_scene`, `qglobe_terrainengine`, …), KML support (`qglobe_libkml`, `qglobe_kmlmgr`), GIS helpers (`qglobe_gis`), data server (`qglobe_datasrv`), and the **`qglobeclient`** application.
 
 Other folders in the repo (e.g. tools, tests, services) may have separate projects or solutions—open the matching `.sln` / `.vcxproj` if you need them.
 
